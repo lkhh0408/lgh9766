@@ -1,0 +1,13 @@
+{
+ "model": "veo-3.1-fast-generate-preview",
+ "prompt": "Continuous single-take aerial footage filmed from a flying camera very close to the observation deck of Daegu's 83 Tower (Woobang Tower), high above a wide dense city with mountains in the distance. Point of view of the flying camera only; no aircraft is ever visible in the frame. The camera is already moving when the shot begins and never stops. The camera keeps circling to the left around the deck at the same speed as before while rising steadily above the observation deck and gently tilting down to look at its top, so the deck moves down in the frame while the green mountains and the city spread out behind and below it. The tower keeps exactly the same design throughout: a red and white antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The tower is rigid and never changes shape or size except through perspective. No cuts, no scene change, no zoom. Real camera movement with natural depth parallax: the tower moves faster than the city, and distant mountains barely move. Buildings and roads stay rigid. The horizon stays perfectly level with no camera roll and no sudden moves; the speed stays constant and gentle for the whole shot. Clear bright daylight with a blue sky.",
+ "video_uri": "https://generativelanguage.googleapis.com/v1beta/files/1g8fspjklifb:download?alt=media",
+ "aspect_ratio": "16:9",
+ "resolution": "4k",
+ "number_of_videos": 1,
+ "negative_prompt": "visible drone, quadcopter, propellers, propeller blur, radial streaks, speed lines, dark streaks at the frame edges, aircraft, helicopter, birds, cut, scene transition, dissolve, double exposure, ghosting, two towers, radial blur, motion blur transition, morphing, warping or melting buildings, camera roll, tilted horizon, dutch angle, whip pan, sudden fast movement, freeze, still frame, fog, smudge, flickering, zoom, crossfade, slideshow, text, watermark",
+ "duration_seconds": 8,
+ "first": "work/test2/keyframes/C3f_last.png",
+ "last": null,
+ "extend": null
+}
