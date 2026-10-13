@@ -1,0 +1,13 @@
+{
+ "model": "veo-3.1-fast-generate-preview",
+ "prompt": "Continuous single-take aerial footage filmed from a flying camera approaching the observation deck of Daegu's 83 Tower (Woobang Tower) on a forested hill above a wide dense city, with mountains in the distance. Point of view of the flying camera only; no aircraft is ever visible in the frame. The camera is already moving when the shot begins and never stops. The camera flies straight toward the observation deck at a steady speed, so the deck grows larger and larger in the frame while the city below slides slowly past. The tower keeps exactly the same design throughout: a red and white antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The tower is rigid and never changes shape or size except through perspective. No cuts, no scene change, no zoom. Real camera movement with natural depth parallax: the tower and nearby trees move faster than the city, and distant mountains barely move. Buildings and roads stay rigid. Stable level horizon with no camera roll, smooth steady motion. Clear bright daylight with a blue sky.",
+ "video_uri": "https://generativelanguage.googleapis.com/v1beta/files/uadc832b2uf5:download?alt=media",
+ "aspect_ratio": "16:9",
+ "resolution": "4k",
+ "number_of_videos": 1,
+ "negative_prompt": "visible drone, quadcopter, propellers, propeller blur, radial streaks, speed lines, dark streaks at the frame edges, aircraft, helicopter, birds, cut, scene transition, dissolve, double exposure, ghosting, two towers, radial blur, motion blur transition, morphing, warping or melting buildings, camera roll, tilted horizon, fog, smudge, flickering, zoom, crossfade, slideshow, text, watermark",
+ "duration_seconds": 8,
+ "first": "032_83Tower.png",
+ "last": "040_83Tower.png",
+ "extend": null
+}

@@ -174,6 +174,19 @@ def main():
     jumps = [r for r in rows if r['absdiff'] > 4 * np.median([x['absdiff'] for x in rows]) + 3]
     print(f'  급변(컷 의심) 프레임: {[r["t"] for r in jumps] or "없음"}')
     print(f'  밝기 {rows[0]["luma"]} → {rows[-1]["luma"]}')
+    cum = np.cumsum([r['rot_deg'] for r in rows])
+    print(f'  화면 회전(수평선 기울기) 누적 범위 {np.ptp(np.r_[0, cum]):.2f}°, 프레임당 최대 {max(abs(r["rot_deg"]) for r in rows):.3f}°')
+    still = sp < max(0.25 * np.median(sp), 0.012)
+    run_len, best, best_end = 0, 0, 0
+    for i, s_ in enumerate(still):
+        run_len = run_len + 1 if s_ else 0
+        if run_len > best:
+            best, best_end = run_len, i
+    if best:
+        print(f'  가장 긴 저속(멈춤 의심) 구간 {best / fps:.2f}초 '
+              f'({rows[best_end - best + 1]["t"]}~{rows[best_end]["t"]}s)')
+    accel = np.abs(np.diff(np.convolve(sp, np.ones(5) / 5, mode='same')))
+    print(f'  속도 변화 최대 {accel.max():.3f}%/f² (t={rows[int(accel.argmax())]["t"]}s)')
     cont = continuity(small)
     cv = np.array([r for _, r in cont])
     base = np.median(cv)
