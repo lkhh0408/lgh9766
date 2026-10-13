@@ -27,8 +27,8 @@ LEDGER = os.path.join(os.path.dirname(__file__), '..', 'cost_ledger.csv')
 
 # 달러/초 (오디오 포함 가격, Gemini API 유료 등급)
 VIDEO_PRICE = {
-    'veo-3.1-fast-generate-preview': {'720p': 0.10, '1080p': 0.12},
-    'veo-3.1-generate-preview': {'720p': 0.40, '1080p': 0.40},
+    'veo-3.1-fast-generate-preview': {'720p': 0.10, '1080p': 0.12, '4k': 0.30},
+    'veo-3.1-generate-preview': {'720p': 0.40, '1080p': 0.40, '4k': 0.60},
     'veo-3.1-lite-generate-preview': {'720p': 0.05, '1080p': 0.08},
 }
 # 달러/출력 이미지

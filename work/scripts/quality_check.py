@@ -1,9 +1,9 @@
 """원본 이미지와 생성 영상 프레임의 화질(선명도·세부 묘사) 비교.
 
 측정
-- 선명도: 원본 크기(1672x941)로 맞춘 뒤 라플라시안 분산(클수록 선명)
-- 고주파 비율: 1920x1080 기준 파워 스펙트럼에서 나이퀴스트 0.67~1.0 구간 에너지 / 0.33~0.67 구간 에너지
-  (720p를 1080p로 키운 영상은 0.67 이상 구간이 거의 비어 이 값이 작아진다)
+- 모든 대상을 공통 크기 1280x720으로 줄여서(INTER_AREA) 비교한다. 작은 쪽을 키우면 그쪽의 고주파가 비어 불리해지므로 키우지 않는다.
+- 선명도: 라플라시안 분산(클수록 경계·잔무늬가 많음. 진짜 세부와 과샤프닝 테두리를 구분하지 못함)
+- 고주파 비중: 파워 스펙트럼에서 나이퀴스트 0.33 이상 에너지가 전체에서 차지하는 비율(%)
 - 재인코딩 손실: 생성 원본 프레임 대비 편집본·사본 프레임의 PSNR
 - 확대 비교: 같은 위치를 원본 크기 그대로 잘라 나란히 저장
 
@@ -16,6 +16,7 @@ import numpy as np
 
 OUT = 'work/test1/quality'
 SRC_SIZE = (1672, 941)
+COMMON = (1280, 720)
 
 
 def frames(path, idx):
@@ -33,23 +34,25 @@ def frames(path, idx):
     return [got[i if i >= 0 else n + i] for i in idx]
 
 
+def common_gray(img):
+    if (img.shape[1], img.shape[0]) != COMMON:
+        img = cv2.resize(img, COMMON, interpolation=cv2.INTER_AREA)
+    return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+
 def lap_var(img):
-    g = cv2.cvtColor(cv2.resize(img, SRC_SIZE, interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2GRAY)
-    return float(cv2.Laplacian(g, cv2.CV_64F).var())
+    return float(cv2.Laplacian(common_gray(img), cv2.CV_64F).var())
 
 
 def hf_ratio(img):
-    g = cv2.cvtColor(cv2.resize(img, (1920, 1080), interpolation=cv2.INTER_LANCZOS4),
-                     cv2.COLOR_BGR2GRAY).astype(np.float64)
+    g = common_gray(img).astype(np.float64)
     g -= g.mean()
     win = np.outer(np.hanning(g.shape[0]), np.hanning(g.shape[1]))
     p = np.abs(np.fft.fftshift(np.fft.fft2(g * win))) ** 2
     h, w = p.shape
     yy, xx = np.mgrid[0:h, 0:w]
     r = np.maximum(np.abs(yy - h / 2) / (h / 2), np.abs(xx - w / 2) / (w / 2))
-    hi = p[(r >= 0.67) & (r < 1.0)].sum()
-    mid = p[(r >= 0.33) & (r < 0.67)].sum()
-    return float(hi / mid)
+    return float(p[r >= 0.33].sum() / p[r > 0.005].sum() * 100)
 
 
 def psnr(a, b):
@@ -80,16 +83,13 @@ def main():
     add('T2 1080p 4초', t2[1])
     add('T2 1080p 마지막', t2[2])
     add('T2 끝 키프레임(낮 재조명)', cv2.imread('work/test1/keyframes/T2c_v2_last_day.png'))
-    add('비교용: 원본 011을 720p로 줄였다 다시 키움',
-        cv2.resize(cv2.resize(o011, (1280, 720), interpolation=cv2.INTER_AREA), SRC_SIZE,
-                   interpolation=cv2.INTER_LANCZOS4))
 
     with open(os.path.join(OUT, 'sharpness.csv'), 'w', encoding='utf-8') as f:
-        f.write('대상,가로,세로,라플라시안분산,고주파비율\n')
+        f.write('대상,가로,세로,라플라시안분산(1280x720),고주파비중%(1280x720)\n')
         for r in rows:
-            f.write(f'{r[0]},{r[1]},{r[2]},{r[3]:.1f},{r[4]:.4f}\n')
+            f.write(f'{r[0]},{r[1]},{r[2]},{r[3]:.1f},{r[4]:.2f}\n')
     for r in rows:
-        print(f'{r[0]:<32s} {r[1]}x{r[2]}  선명도 {r[3]:8.1f}  고주파비율 {r[4]:.4f}')
+        print(f'{r[0]:<32s} {r[1]}x{r[2]}  선명도 {r[3]:8.1f}  고주파비중 {r[4]:5.2f}%')
 
     # 재인코딩 손실 (편집본 앞 192프레임 = T1)
     raw = frames('work/test1/raw/T1_v1.mp4', [48, 144])
