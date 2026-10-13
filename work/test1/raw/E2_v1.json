@@ -1,0 +1,12 @@
+{
+ "model": "veo-3.1-fast-generate-preview",
+ "prompt": "Continuous single-take aerial footage filmed from a flying camera above Daegu's 83 Tower (Woobang Tower) on a forested hill with amusement park rides, above a wide city. Point of view of the flying camera only; no aircraft is ever visible in the frame. The camera continues exactly the same leftward orbit at the same speed, then gradually curves into a steady forward flight toward the tower while slowly climbing, so the tower grows larger and the rides pass below the frame. The warm golden sunrise light fades into neutral clear morning daylight with a clean blue sky and white clouds. No cuts, no scene change, no zoom. Real camera movement with natural depth parallax. Buildings, the tower and roads stay rigid and keep their exact shape. Stable level horizon with no camera roll, smooth motion.",
+ "video_uri": "https://generativelanguage.googleapis.com/v1beta/files/i54kslcznppx:download?alt=media",
+ "aspect_ratio": "16:9",
+ "resolution": "720p",
+ "number_of_videos": 1,
+ "negative_prompt": "visible drone, quadcopter, propellers, aircraft, helicopter, birds, cut, scene transition, dissolve, double exposure, ghosting, two towers, radial blur, motion blur transition, morphing, warping or melting buildings, camera roll, tilted horizon, fog, smudge, flickering, zoom, crossfade, slideshow, text, watermark",
+ "first": null,
+ "last": null,
+ "extend": "work/test1/raw/T1_720_v1.mp4"
+}

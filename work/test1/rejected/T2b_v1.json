@@ -1,0 +1,11 @@
+{
+ "model": "veo-3.1-fast-generate-preview",
+ "prompt": "Continuous single-take aerial drone shot of Daegu's 83 Tower (Woobang Tower) on a forested hill with amusement park rides, above a wide city. The drone is already moving when the shot begins and never stops. The drone smoothly curves out of its slow leftward orbit into a steady forward flight toward the tower while climbing higher, the camera tilting down slightly, so the tower grows larger, the amusement park rides pass down and out of the bottom of the frame, and a wide dense city is gradually revealed between the hill and the distant mountains. Warm golden sunrise light turns into clear bright daylight with a blue sky. No cuts, no scene change, no zoom. Real camera movement with natural depth parallax: foreground trees and amusement park rides move faster than the city, and distant mountains barely move. Buildings, the tower and roads stay rigid and keep their exact shape. Stable level horizon with no camera roll, constant speed, smooth motion.",
+ "aspect_ratio": "16:9",
+ "resolution": "1080p",
+ "duration_seconds": 8,
+ "number_of_videos": 1,
+ "negative_prompt": "cut, scene transition, dissolve, double exposure, ghosting, two towers, morphing, warping or melting buildings, camera roll, tilted horizon, fog, smudge, blur, flickering, zoom, crossfade, slideshow, text, watermark",
+ "first": "work/test1/keyframes/T1_v1_last.png",
+ "last": "018_83Tower.png"
+}
