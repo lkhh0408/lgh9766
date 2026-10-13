@@ -11,3 +11,6 @@
 - `analysis/segments.csv` — 구간표(S1~S9)
 - `analysis/image_roles.csv` — 137장 대응표(구간·시간대·역할·사유)
 - `analysis/1단계_분석보고서.md` — 1단계 분석 보고서(이미지 연속성 + 제작 환경)
+- `scripts/color_match.py` — 색 보정(기준 이미지 색 분포에 맞춤). 리터칭 가능 범위 확인용
+- `retouch_test/` — 로컬 리터칭 시험 결과(008을 002 새벽 색으로 맞춤)
+- `analysis/시험1_계획.md` — 시험 1(001~028) 클립 구성·프롬프트 초안·비용
