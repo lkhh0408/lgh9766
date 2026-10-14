@@ -1,0 +1,35 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChctUHpPYXRXOURhM0MtOFlQOUlESWtRVRIXLVB6T2F0VzlEYTNDLThZUDlJRElrUVU",
+ "prompt": "<FIRST_FRAME> <LAST_FRAME> Continuous, unbroken single shot from a flying camera, no scene cuts. The camera is already moving in the first frame and flies straight toward the observation deck of Daegu's 83 Tower at one constant, steady speed for the whole shot, with no pause, no slow start and no sudden jump, so the deck grows smoothly and gradually larger from the first second to the last. Real camera movement with natural depth parallax: the tower grows faster than the distant city, and the far mountains barely change. The tower keeps exactly the same design, and the buildings of the city stay rigid and keep their exact shape; nothing appears, disappears or changes shape. Stable level horizon. Clear bright daylight. Photorealistic aerial footage. No text, no aircraft in the frame. Ambient wind sound only, no music, no dialogue.",
+ "seconds_taken": 66,
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 2200
+   },
+   {
+    "modality": "text",
+    "tokens": 176
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 69504
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 2376,
+  "total_output_tokens": 70229,
+  "total_thought_tokens": 389,
+  "total_tokens": 72994,
+  "total_tool_use_tokens": 0
+ },
+ "resolution": "1080p",
+ "duration": 8,
+ "first": "032_83Tower.png",
+ "last": "040_83Tower.png",
+ "extend_from": null
+}

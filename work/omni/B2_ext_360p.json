@@ -1,0 +1,39 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_Chc4dnZPYXRTT05QMzBqckVQeUt1Ty1RcxIXOV96T2F0WExIdnlOanJFUHJ1YnVxQWs",
+ "prompt": "Extend this video in the same single, unbroken, continuous shot. There are absolutely no scene cuts, no jump cuts, no change of shot and no change of framing at any time: every frame follows smoothly from the previous one.\n[0-3s] The camera keeps flying toward the observation deck at the same speed as before.\n[3-8s] Without cutting, the camera gradually curves into a slow orbit around the observation deck, keeping the deck the same size near the center of the frame, so the distant city and mountains behind the tower slide slowly toward the left.\nThe tower keeps exactly the same design and the city stays rigid. Stable level horizon. Clear bright daylight. Ambient wind sound only, no music, no dialogue.",
+ "seconds_taken": 49,
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 13889
+   },
+   {
+    "modality": "text",
+    "tokens": 153
+   },
+   {
+    "modality": "image",
+    "tokens": 2200
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 15448
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 16242,
+  "total_output_tokens": 16367,
+  "total_thought_tokens": 170,
+  "total_tokens": 32779,
+  "total_tool_use_tokens": 0
+ },
+ "resolution": "360p",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/omni/A_360p.json"
+}

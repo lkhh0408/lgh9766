@@ -1,0 +1,39 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_Chc4dnZPYXRTT05QMzBqckVQeUt1Ty1RcxIXU196T2F2RzZOSlhLLThZUDJ1UEI0QUk",
+ "prompt": "Extend this video. The scene continues in the same single continuous shot with no cuts: the camera keeps moving at the same speed, then gradually curves out of its forward approach into a slow orbit around the observation deck, keeping the deck near the center of the frame, so the distant city and mountains behind the tower slide slowly toward the left of the frame. The tower keeps exactly the same design and the city stays rigid. Stable level horizon. Clear bright daylight. Ambient wind sound only, no music, no dialogue.",
+ "seconds_taken": 52,
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 2200
+   },
+   {
+    "modality": "text",
+    "tokens": 104
+   },
+   {
+    "modality": "video",
+    "tokens": 13889
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 15448
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 16193,
+  "total_output_tokens": 16131,
+  "total_thought_tokens": 538,
+  "total_tokens": 32862,
+  "total_tool_use_tokens": 0
+ },
+ "resolution": "360p",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/omni/A_360p.json"
+}
