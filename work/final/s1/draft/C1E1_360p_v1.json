@@ -1,0 +1,39 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChYxQkxQYXYyZk83M3MtOFlQd3BuVWVREhdCeFBQYXE2Wko4SEstOFlQX3NhRS1RMA",
+ "prompt": "Extend this video in the same single, unbroken, continuous shot. There are absolutely no scene cuts, no jump cuts and no change of shot: every frame follows smoothly from the previous one.\n[0-3s] The camera keeps circling slowly to the left around the tower at exactly the same gentle speed as at the start of the video, so the nearby amusement park rides keep sliding to the right.\n[3-8s] Without stopping, the camera gradually eases out of the orbit into a slow, steady forward glide toward the tower while rising slightly and tilting up a little, so more of the distant mountains and sky come into view.\nTime of day keeps changing gradually and continuously: the warm golden sunrise light fades into clear, neutral early-morning daylight with a clean blue sky and white clouds.\nThe tower keeps exactly the same design and size; buildings, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon. Quiet ambient wind sound only, no music, no dialogue.",
+ "seconds_taken": 50,
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 2200
+   },
+   {
+    "modality": "text",
+    "tokens": 208
+   },
+   {
+    "modality": "video",
+    "tokens": 13889
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 15448
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 16297,
+  "total_output_tokens": 16324,
+  "total_thought_tokens": 276,
+  "total_tokens": 32897,
+  "total_tool_use_tokens": 0
+ },
+ "resolution": "360p",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/s1/draft/C1_360p_v1.json"
+}
