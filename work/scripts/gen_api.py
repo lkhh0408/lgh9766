@@ -34,6 +34,7 @@ VIDEO_PRICE = {
 # 달러/출력 이미지
 IMAGE_PRICE = {
     'gemini-3.1-flash-image': {'1K': 0.067, '2K': 0.101},
+    'gemini-3-pro-image': {'1K': 0.134, '2K': 0.134, '4K': 0.24},
     'gemini-2.5-flash-image': {'1K': 0.039},
 }
 
