@@ -36,3 +36,6 @@ time_utc,kind,model,settings,est_usd,status,output,note
 2026-10-14T03:55:18,video,gemini-omni-1.1-flash,"{""resolution"": ""360p"", ""duration"": 8, ""first"": null, ""last"": null, ""extend_from"": ""work/omni/A_360p.json""}",0.240,ok,work/omni/B2_ext_360p.mp4,Omni 단가는 기사 기준 추정
 2026-10-14T03:55:37,video,gemini-omni-1.1-flash,"{""resolution"": ""1080p"", ""duration"": 8, ""first"": ""032_83Tower.png"", ""last"": ""040_83Tower.png"", ""extend_from"": null}",1.200,ok,work/omni/A_1080p.mp4,Omni 단가는 기사 기준 추정
 2026-10-14T03:57:56,adjust,gemini-omni-1.1-flash,{},0.177,ok,work/omni,"Omni 4건 비용을 응답 토큰 수 기준으로 보정(영상 출력 $17.50/M, 입력 $1.50/M, 생각 $9/M; 기사 기준 단가)"
+2026-10-14T04:05:01,image,gemini-3.1-flash-image,"{""inputs"": [""040_83Tower.png""], ""size"": ""2K"", ""aspect"": ""16:9""}",0.101,ok,work/omni/keyframes/040_clean_raw.png,
+2026-10-14T04:05:42,video,gemini-omni-1.1-flash,"{""resolution"": ""360p"", ""duration"": 8, ""first"": ""032_83Tower.png"", ""last"": ""work/omni/keyframes/040_clean.png"", ""extend_from"": null}",0.240,ok,work/omni/A2_clean_360p.mp4,Omni 단가는 기사 기준 추정
+2026-10-14T04:06:46,adjust,gemini-omni-1.1-flash,{},0.038,ok,work/omni/A2_clean_360p.mp4,토큰 수 기준 보정
