@@ -1,0 +1,40 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChdiQmpQYXZPNkpwejUtOFlQNXRQMmdRZxIXbENmUGF1T3BKX0NoLThZUHc3NlpxQTA",
+ "prompt": "Extend this video in the same single, unbroken, continuous shot. There are absolutely no scene cuts, no jump cuts and no change of shot: every frame follows smoothly from the previous one.\n[0-3s] The camera keeps circling slowly to the left around the tower at exactly the same gentle speed as at the start of the video, so the nearby amusement park rides keep sliding to the right.\n[3-8s] Without stopping, the camera gradually eases out of the orbit into a slow, steady forward glide toward the tower while rising slightly and tilting up a little, so more of the distant mountains and sky come into view.\nTime of day keeps changing slowly and evenly across the whole 8 seconds, never in a sudden step: the warm golden sunrise light gradually fades into bright, clear early-morning sunlight with a clean saturated blue sky and white clouds; the sun lights the hill, the trees and the tower.\nThe tower keeps exactly the same design and size; buildings, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon. Crisp, clear, transparent air with high visibility and no haze; sharp fine detail; natural contrast. Quiet ambient wind sound only, no music, no dialogue.",
+ "seconds_taken": 301,
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 45849
+   },
+   {
+    "modality": "text",
+    "tokens": 254
+   },
+   {
+    "modality": "image",
+    "tokens": 1100
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 139008
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 47203,
+  "total_output_tokens": 139804,
+  "total_thought_tokens": 240,
+  "total_tokens": 187247,
+  "total_tool_use_tokens": 0
+ },
+ "resolution": "4k",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/s1/raw/C1f_4k_v1.json",
+ "extend_video": null
+}

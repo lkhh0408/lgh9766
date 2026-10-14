@@ -43,6 +43,7 @@ def main():
     ap.add_argument('--first')
     ap.add_argument('--last')
     ap.add_argument('--extend-from', help='앞 생성 결과 json(previous interaction id가 들어 있음)')
+    ap.add_argument('--extend-video', help='연장할 영상 파일(10초 이하). 업로드해서 이어 만든다')
     ap.add_argument('--prompt-file', required=True)
     ap.add_argument('--resolution', default='360p', choices=list(PRICE))
     ap.add_argument('--duration', type=int, default=8)
@@ -60,6 +61,11 @@ def main():
     parts, prev_id = [], None
     if a.extend_from:
         prev_id = json.load(open(a.extend_from, encoding='utf-8'))['interaction_id']
+    elif a.extend_video:
+        uri, mime = upload(client, a.extend_video)
+        parts.append({'type': 'video', 'uri': uri, 'mime_type': mime})
+        if '[# Sources' not in prompt:
+            prompt = '[# Sources <VIDEO_0>@Video1] ' + prompt
     else:
         if a.first:
             uri, mime = upload(client, a.first)
@@ -77,13 +83,26 @@ def main():
     if prev_id:
         kwargs['previous_interaction_id'] = prev_id
     settings = {'resolution': a.resolution, 'duration': a.duration, 'first': a.first, 'last': a.last,
-                'extend_from': a.extend_from}
+                'extend_from': a.extend_from, 'extend_video': a.extend_video}
     t0 = time.time()
     try:
-        it = client.interactions.create(**kwargs)
+        # 오래 걸리는 생성(4K·연장)은 응답 없이 기다리면 연결이 끊길 수 있어, 스트리밍으로 진행 이벤트를 받으며 기다린다
+        # (background=True는 영상 입력이 있는 요청을 지원하지 않음)
+        iid, last = None, None
+        for ev in client.interactions.create(stream=True, **kwargs):
+            last = ev
+            obj = getattr(ev, 'interaction', None)
+            iid = iid or getattr(obj, 'id', None) or getattr(ev, 'interaction_id', None)
+            print(f'  이벤트 {getattr(ev, "event_type", type(ev).__name__)} {time.time() - t0:.0f}s', flush=True)
+        if not iid:
+            raise RuntimeError(f'interaction id를 받지 못함: {str(last)[:300]}')
+        it = client.interactions.get(iid)
     except Exception as e:
         log('video', MODEL, settings, 0, 'error', a.out, str(e)[:300])
         raise
+    if getattr(it, 'status', 'completed') != 'completed':
+        log('video', MODEL, settings, 0, 'failed', a.out, f'status={it.status}')
+        sys.exit(f'생성 실패: status={it.status}')
     ov = getattr(it, 'output_video', None)
     if not ov or not getattr(ov, 'uri', None):
         log('video', MODEL, settings, 0, 'no_video', a.out, str(it)[:300])
