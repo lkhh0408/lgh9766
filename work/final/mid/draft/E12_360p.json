@@ -1,0 +1,40 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChcxaV9QYXU3dE0tR1YzOUlQMEtXTzhBYxIXN0NfUGFyVEpIT1hLLThZUDlLSDc2QUU",
+ "prompt": "Extend this video in the same single, unbroken, continuous shot with absolutely no cuts, no dissolves and no change of shot: every frame follows smoothly from the previous one. The camera continues exactly the same smooth arc around the tower at the same speed and the same distance, without moving any closer, keeping the whole observation deck the same size near the center of the frame, so the distant city and mountains behind the tower keep sliding steadily to the left with real depth parallax. The camera never flies into or through the tower. The tower keeps exactly the same design throughout: a red and white lattice antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The observation deck has no external cranes, arms, gondolas or scaffolding. The tower, buildings and roads stay rigid and never appear, disappear or change shape. Stable level horizon. Clear bright daylight with a clean blue sky. Crisp, clear, transparent air with high visibility and no haze; sharp fine detail; natural contrast. Photorealistic aerial footage. No text, no aircraft in the frame. Quiet ambient wind sound only, no music, no dialogue.",
+ "seconds_taken": 52,
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 13889
+   },
+   {
+    "modality": "text",
+    "tokens": 238
+   },
+   {
+    "modality": "image",
+    "tokens": 1100
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 15448
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 15227,
+  "total_output_tokens": 16239,
+  "total_thought_tokens": 269,
+  "total_tokens": 31735,
+  "total_tool_use_tokens": 0
+ },
+ "resolution": "360p",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/mid/draft/E1_360p.json",
+ "extend_video": null
+}

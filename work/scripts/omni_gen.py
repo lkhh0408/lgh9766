@@ -47,6 +47,8 @@ def main():
     ap.add_argument('--prompt-file', required=True)
     ap.add_argument('--resolution', default='360p', choices=list(PRICE))
     ap.add_argument('--duration', type=int, default=8)
+    ap.add_argument('--stream', action='store_true',
+                    help='진행 이벤트를 받으며 기다림(4K 연장처럼 오래 걸릴 때). 스트리밍 생성은 다음 연장의 재료로 쓸 수 없음')
     ap.add_argument('--cap', type=float, default=float(os.environ.get('COST_CAP_USD', 30)))
     a = ap.parse_args()
     from google import genai
@@ -79,7 +81,7 @@ def main():
     parts.append({'type': 'text', 'text': prompt})
     fmt = {'type': 'video', 'delivery': 'uri', 'aspect_ratio': '16:9',
            'duration': f'{a.duration}s', 'resolution': a.resolution}
-    kwargs = dict(model=MODEL, input=parts, response_format=fmt)
+    kwargs = dict(model=MODEL, input=parts, response_format=fmt, store=True)  # 다음 연장이 이 결과를 불러올 수 있게 저장
     if prev_id:
         kwargs['previous_interaction_id'] = prev_id
     settings = {'resolution': a.resolution, 'duration': a.duration, 'first': a.first, 'last': a.last,
@@ -89,7 +91,11 @@ def main():
         # 오래 걸리는 생성(4K·연장)은 응답 없이 기다리면 연결이 끊길 수 있어, 스트리밍으로 진행 이벤트를 받으며 기다린다
         # (background=True는 영상 입력이 있는 요청을 지원하지 않음)
         iid, last = None, None
-        for ev in client.interactions.create(stream=True, **kwargs):
+        events = client.interactions.create(stream=True, **kwargs) if a.stream else []
+        if not a.stream:
+            it0 = client.interactions.create(**kwargs)
+            iid = it0.id
+        for ev in events:
             last = ev
             obj = getattr(ev, 'interaction', None)
             iid = iid or getattr(obj, 'id', None) or getattr(ev, 'interaction_id', None)

@@ -1,0 +1,40 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChdKUzdQYXV6T0U5N1ZqTWNQdTVMeHdBcxIXZWk3UGFwSHBFSUxSanJFUG85Q1MwQTA",
+ "prompt": "Extend this video in the same single, unbroken, continuous shot. There are absolutely no scene cuts, no jump cuts and no change of shot: every frame follows smoothly from the previous one. [0-2s] The camera keeps moving toward the observation deck at the same speed as before. [2-8s] Without slowing down, it smoothly curves into a slow, steady orbit around the main observation deck, keeping the deck near the center of the frame at the same size, so the distant city and mountains behind the tower slide steadily to the left with real depth parallax. The tower keeps exactly the same design throughout: a red and white lattice antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The observation deck has no external cranes, arms, gondolas or scaffolding. The tower, buildings and roads stay rigid and never appear, disappear or change shape. Stable level horizon. Clear bright daylight with a clean blue sky. Crisp, clear, transparent air with high visibility and no haze; sharp fine detail; natural contrast. Photorealistic aerial footage. No text, no aircraft in the frame. Quiet ambient wind sound only, no music, no dialogue.",
+ "seconds_taken": 54,
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 1100
+   },
+   {
+    "modality": "text",
+    "tokens": 251
+   },
+   {
+    "modality": "video",
+    "tokens": 13889
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 15448
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 15240,
+  "total_output_tokens": 16281,
+  "total_thought_tokens": 162,
+  "total_tokens": 31683,
+  "total_tool_use_tokens": 0
+ },
+ "resolution": "360p",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/mid/draft/D1_360p.json",
+ "extend_video": null
+}
