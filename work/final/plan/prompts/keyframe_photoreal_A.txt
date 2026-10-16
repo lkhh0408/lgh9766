@@ -1,0 +1,10 @@
+Edit this image: re-render it as a real, unedited aerial photograph of exactly the same scene, keeping every object in exactly the same place.
+
+Keep exactly the same: the camera position, framing and composition; the pre-dawn violet and pink sky with the same clouds in the same shapes and positions; the same soft, shadowless pre-dawn light, colors and brightness. Keep the tower exactly as it is: the thin red-and-white antenna on top, the small upper ring, the main observation deck with its bands of windows and the thin diagonal struts above and below it, the slender concrete shaft and the wide, layered base building, with the same shape, proportions, size and position, and with no cranes, arms, gondolas or scaffolding on it. Keep the thin mast to its right, the hill, the curved road at the lower left, the distant mountains, every amusement park ride and every building exactly where they are and in the same shape and color.
+
+Change only how the surfaces are rendered, so that it looks like a real photo instead of a painting:
+- Trees: a real mixed forest of pines and broadleaf trees seen from the air, with leaf-level and needle-level texture, individual branches, small dark gaps and shadows between the crowns, and natural variation in tree size, shape and shade of green; no smooth rounded blobs and no brush strokes. Keep the forest as dark as it is now in the pre-dawn light.
+- Rides: thin, real painted steel tubes, rails and lattice supports of even thickness, with small joints, slight wear and natural reflections, in the same colors.
+- Buildings: real concrete facades with window frames and glass, balconies, rooftop equipment and slight irregularity.
+
+Natural, unsharpened photographic detail with soft, realistic edges, like a high-end drone camera with in-camera sharpening turned off; a clean, low-noise image. No painterly, oil-painting, illustrated or cartoon look, no white or dark outlines around objects, no halos, no over-sharpening, no HDR look. Do not add, remove, move or resize anything. No text, no logos, no watermark, no people, no birds, no aircraft.

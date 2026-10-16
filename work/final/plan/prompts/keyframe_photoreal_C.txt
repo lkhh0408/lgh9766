@@ -1,0 +1,10 @@
+Restore this image to a high-resolution original photograph. Treat it as a soft, over-processed copy of a real aerial photo, and recover the real photographic detail that was lost, without changing the content.
+
+Do not change: the composition and framing; the position, size and shape of every object; the tower with its thin red-and-white antenna, small upper ring, main observation deck with bands of windows, thin diagonal struts above and below the deck, slender concrete shaft and wide, layered base building (nothing attached to the deck); the thin mast to its right; the amusement park rides, buildings, curved road, hill outline and mountains; the sky, the clouds, the colors, the brightness and the soft pre-dawn light.
+
+Recover:
+- foliage: real leaf and needle texture inside every tree crown, small shadows and gaps between the crowns, and a natural variety of tree shapes and greens, instead of smooth painted shapes;
+- metal: thin, straight, evenly lit steel members on the rides, with small joints;
+- buildings: real window frames, glass, balconies and rooftop details.
+
+Remove the defects of the copy: the painterly smoothing, the outline halos and the over-sharpened bright or dark edges. Keep edges soft and natural, keep noise low, and keep the colors and brightness exactly as they are. Do not add any new object, text, logo or watermark.

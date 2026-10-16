@@ -1,0 +1,13 @@
+Turn this image into a genuine photograph. It must look exactly like a frame from a real aerial drone photo of the same place at the same moment, taken with a large-sensor drone camera (24 mm equivalent lens, f/2.8, ISO 400, developed from RAW with natural colors and no sharpening).
+
+The layout must stay identical: the same camera position and framing, the same tower, the same thin mast to its right, the same hill, the same amusement park rides, the same buildings, the same curved road, the same mountains, the same sky and clouds, all in exactly the same positions and sizes. The same pre-dawn light: violet and pink sky, soft shadowless light, no sun, cool blue-green shade on the hill.
+
+The tower must stay exactly the same object: a thin red-and-white antenna, a small upper ring, the main observation deck with bands of windows and thin diagonal struts above and below it, a slender concrete shaft and a wide, layered base building; a clean outline with nothing attached to the deck.
+
+Add what a real photo shows and this image lacks:
+- The forest on the hill is made of thousands of individual trees: pines with irregular needle clusters and broadleaf oaks and cherries, each crown with visible leaf clusters, twigs and inner shadows, crowns of different sizes and heights, darker gaps between them, and slightly varied greens, olive and blue-green tones. Nothing looks like rounded green clouds or brush strokes.
+- The ride structures are real painted steel: thin tubes and girders of constant thickness, bolted joints, small cables and lamps, slight dirt and fading, in the same colors as now.
+- The apartment blocks and houses have real facades: rows of windows with frames and glass, balconies, air-conditioner units, rooftop water tanks and antennas, slightly uneven roofs.
+- Edges are as soft as in a real photo at this distance: thin objects stay thin, and there are no bright or dark outlines around the trees, rides, buildings or the tower.
+
+No painting, no illustration, no CGI or video-game render look, no HDR, no over-sharpening, no outline halos, no added film grain. Do not add, remove, move or reshape anything. No text, logos, watermark, people, birds or aircraft.
