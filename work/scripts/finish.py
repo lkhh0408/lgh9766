@@ -20,8 +20,12 @@
             예) 0~16초 원본 전체 = in_s 0, out_s 16 (프레임 0~383, 384장)
     label : 조각 이름(예: A, B, A1-A2). mapping_table.py가 계획 구간을 찾을 때도 쓴다.
   선택 열
-    plan_t0 : 이 원본의 0초가 계획표(plan.csv) 시간으로 몇 초인지. 비우면 label로 찾는다(mapping_table.py).
-              겹침 재시작으로 만든 묶음은 next_chain_frame.py가 알려 주는 값을 적는다.
+    plan_t0 : 이 원본의 0초가 계획표(plan.csv) 시간으로 몇 초인지(mapping_table.py가 씀).
+              비우면 label(A, B, A1-A2 같은 구간·묶음 이름)로 계획 구간을 찾아 그 묶음 첫 구간의 시작 시각을 쓴다.
+              겹침 재시작 묶음도 보통 비워 둔다(프롬프트 내용은 그 원본 0초부터 계획대로 나오므로).
+    plan_segs : 원본 안에서 계획 구간이 차지하는 초(mapping_table.py가 씀). 예) F1:0-8;F2:8-18 (F2를 10초로 만든 경우).
+              비우면 label의 구간들이 8초씩(plan.csv 길이) 0초부터 차례로 들어 있다고 본다.
+              이 열들은 편집 결과에는 영향이 없다.
     ff_s, ff_x : 조각 앞부분 빨리 감기(재시작 '느린 출발' 보정). in_s부터 ff_s초(원본 기준) 동안
               속도를 ff_x배에서 1배로 고르게 줄이며 정수 프레임만 골라 쓴다(건너뛰기만 함, 보간·잔상 없음).
               예) ff_s 1.5, ff_x 1.6. ff_x는 1 이상이어야 한다(느리게 하기는 프레임 반복 = 멈칫이라 금지).
@@ -57,10 +61,14 @@ FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 
 # ---------------------------------------------------------------- 영상 정보
 
+COLOR_KEYS = ('color_range', 'color_space', 'color_transfer', 'color_primaries')
+
+
 def probe(path):
-    """영상 정보(머리 정보 기준): 폭·높이·fps·프레임 수·오디오 유무·길이."""
+    """영상 정보(머리 정보 기준): 폭·높이·fps·프레임 수·오디오 유무·길이·색 표시 정보."""
     out = subprocess.run(['ffprobe', '-v', 'error', '-show_entries',
-                          'stream=index,codec_type,codec_name,width,height,r_frame_rate,nb_frames,pix_fmt',
+                          'stream=index,codec_type,codec_name,width,height,r_frame_rate,nb_frames,pix_fmt,'
+                          + ','.join(COLOR_KEYS),
                           '-show_entries', 'format=duration', '-of', 'json', path],
                          capture_output=True, text=True, check=True).stdout
     j = json.loads(out)
@@ -72,7 +80,8 @@ def probe(path):
     return dict(width=int(v['width']), height=int(v['height']), fps=num / den, fps_str=v['r_frame_rate'],
                 codec=v.get('codec_name'), pix_fmt=v.get('pix_fmt'), nb_frames=int(v.get('nb_frames') or 0),
                 has_audio=any(s['codec_type'] == 'audio' for s in j['streams']),
-                duration=float(j['format'].get('duration') or 0))
+                duration=float(j['format'].get('duration') or 0),
+                color={k: v.get(k, 'unknown') for k in COLOR_KEYS})
 
 
 def count_packets(path):
@@ -194,9 +203,11 @@ def load_trims(csv_path, probe_raws=True):
         if len(kept) < 12:
             notes.append(f'조각이 {len(kept)}프레임(0.5초 미만)으로 짧음')
         pt = (r.get('plan_t0') or '').strip()
+        extra = {kk: (v or '').strip() for kk, v in r.items()
+                 if kk and kk not in ('raw', 'in_s', 'out_s', 'label', 'plan_t0', 'ff_s', 'ff_x') and (v or '').strip()}
         segs.append(dict(index=k + 1, label=r['label'].strip(), raw=raw, raw_frames=n, raw_info=info,
                          in_frame=in_f, out_frame=out_f, ff_s=ff_s, ff_x=ff_x, ff_n=ff_n, kept=kept,
-                         plan_t0=float(pt) if pt else None, notes=notes))
+                         plan_t0=float(pt) if pt else None, extra=extra, notes=notes))
     pos = 0
     for s in segs:
         s['film_start_frame'] = pos
@@ -238,7 +249,7 @@ def build_graph(segs, dehalo, clamp):
             cut = f'trim=start_frame={kept[0]}:end_frame={kept[-1] + 1}'
         else:
             cut = f"select='{select_expr(kept)}'"
-        parts.append(f'[{k}:v]{cut},setpts=N/({FPS}*TB),scale={OUT_W}:{OUT_H}:flags=lanczos[s{k}]')
+        parts.append(f'[{k}:v]{cut},setpts=N/({FPS}*TB),scale={OUT_W}:{OUT_H}:flags=lanczos,setsar=1[s{k}]')
         parts.append(post_filter(f's{k}', f'c{k}', k, dehalo, clamp))
     parts.append(''.join(f'[c{k}]' for k in range(len(segs))) + f'concat=n={len(segs)}:v=1:a=0[out]')
     return ';\n'.join(parts)
@@ -354,6 +365,12 @@ def main():
     checks.append(('오디오 없음', not info['has_audio'], '오디오 있음' if info['has_audio'] else '없음'))
     checks.append(('프레임 수 = 조각 합', len(md5) == total, f'디코드 {len(md5)} / 조각 합 {total}'))
     checks.append(('길이', abs(info['duration'] - total / FPS) < 0.5 / FPS, f'{info["duration"]:.4f}초'))
+    # 색 표시 정보: 원본(지금까지 Omni 4K는 smpte170m 행렬·tv 범위)과 같아야 재생기에서 색이 그대로 보인다
+    raw_colors = {json.dumps(s['raw_info']['color'], sort_keys=True) for s in segs}
+    same_color = len(raw_colors) == 1 and info['color'] == segs[0]['raw_info']['color']
+    checks.append(('색 표시 정보 = 원본', same_color,
+                   '/'.join(info['color'][k] for k in COLOR_KEYS)
+                   + ('' if len(raw_colors) == 1 else f' (원본끼리 다름: {len(raw_colors)}가지)')))
 
     # 3) 조각별 파일: 완성본에서 이음새 키프레임 기준으로 재인코딩 없이 잘라 냄 → 프레임 md5가 같아야 함
     seg_dir = stem + '_segments'
@@ -411,6 +428,7 @@ def main():
         print(f'  이음새 {it["index"]}: {it["before"]} → {it["after"]} 영상 {it["time_s"]:.3f}초 (프레임 {it["frame"]})')
 
     doc = dict(film=a.out, frames=total, seconds=round(total / FPS, 4), fps=FPS, trims=a.trims,
+               color=info['color'],
                settings=dict(scale='1920:1080 lanczos', dehalo_unsharp=a.dehalo or None, clamp_sigma=a.clamp or None,
                              crf=a.crf, preset=a.preset, audio=False, crossfade=False),
                segments=[dict(index=s['index'], label=s['label'], raw=s['raw'], raw_frames=s['raw_frames'],
@@ -419,7 +437,8 @@ def main():
                               kept=s['kept'] if s['ff_n'] and s['ff_x'] > 1 else None,
                               plan_t0=s['plan_t0'], film_start_frame=s['film_start_frame'],
                               film_end_frame=s['film_end_frame'], film_start_s=round(s['film_start_frame'] / FPS, 4),
-                              film_end_s=round(s['film_end_frame'] / FPS, 4), file=s.get('file'), notes=s['notes'])
+                              film_end_s=round(s['film_end_frame'] / FPS, 4), file=s.get('file'),
+                              extra=s['extra'] or None, notes=s['notes'])
                          for s in segs],
                seams=seam_list, verify=vres,
                checks=[dict(name=n, ok=bool(g), detail=d) for n, g, d in checks], all_ok=all_ok,

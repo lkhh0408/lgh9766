@@ -3,18 +3,24 @@
 이음새 시각 = 새 조각의 첫 프레임(그 앞 프레임과의 사이가 이음새). finish.py가 만든 <영상>.edit.json이
 영상 옆에 있으면 이음새를 거기서 읽는다. 원본 4K나 묶음 안 연장 이음새(8초 등)에도 그대로 쓸 수 있다.
 
-재는 것(앞뒤 각 1초, 640×360 회색조, clip_check.py와 같은 DIS 광류)
+재는 것(앞뒤 각 --window초, 기본 1초, 640×360 회색조, clip_check.py와 같은 DIS 광류)
 - 속도: 프레임 간 이동량 중앙값(화면 폭 %/프레임). 이음새 앞 1초 평균 대비 뒤 1초 평균의 비율.
 - 방향: clip_check.global_motion의 화면 이동(x, y)과 확대율(가장자리 기준 %)을 묶은 벡터의 앞뒤 각도 차.
 - 이음새 한 쌍: 바로 그 두 프레임 사이 이동량이 주변(앞뒤 0.25초)보다 확 작으면 '멈칫'(같은 그림 반복),
   확 크면 '튐'(프레임 건너뜀·되돌아감).
-- 멈췄다 가기: 앞뒤 2초 안에서 0.5초 평균 속도가 전체 중앙값의 50% 아래로 떨어지는 곳.
+- 멈췄다 가기: 이음새 앞뒤 --window초(기본 1초) 안에서 0.5초 평균 속도가 그 창 중앙값의 50% 아래로 떨어지는 곳.
+- 프레임 간격 고르기(빨리 감기 떨림): 이음새 뒤 2초, 그리고 .edit.json에 적힌 빨리 감기(ff_s·ff_x) 구간의
+  프레임 쌍마다 이동량을 앞뒤 3쌍의 중앙값과 비교한다. 1.6배 넘게 크거나 1/1.6배 아래로 작고(--cadence)
+  그 차이가 0.03 %W/프레임(1920 폭에서 약 0.6화소, --cadence-min)을 넘으면 '고르지 않은 간격'이다.
+  정수 프레임 건너뛰기 빨리 감기(1배·2배가 번갈아 나옴)가 만드는 떨림을 잡는다.
+  (승인본 두 편의 모든 프레임 쌍: 이 기준에 걸리는 곳 없음. 1.6배 빨리 감기 대조 영상: 2.0배·0.19 %W로 걸림)
 - 팝: 광류로 움직임을 맞춘 뒤 남는 차이(pop_detect.py와 같은 계산)가 주변 중앙값의 2배 이상이고 0.8 넘게 큼.
 - 장면 끊김: clip_check.continuity(ORB 호모그래피 정합 비율)가 이음새 쌍에서 주변의 50% 아래.
 - 밝기: 이음새 앞뒤 프레임 평균 밝기 차(0~255, 계획 기준 2 이하).
 
 판정(장면계획.md 12장 기준, 문턱값은 옵션으로 바꿀 수 있음)
-- 불합격: 장면 끊김, 속도 비율 0.7~1.4 밖, 방향 차 45° 초과, 이음새 멈칫·튐, 멈췄다 가기
+- 불합격: 장면 끊김, 속도 비율 0.7~1.4 밖, 방향 차 45° 초과, 이음새 멈칫·튐, 멈췄다 가기,
+  프레임 간격 고르지 않음(이음새 뒤 2초·빨리 감기 구간)
 - 확인 필요: 팝 비율 2.0 이상, 밝기 차 2 초과 (4배 느린 영상과 시트를 눈으로 본다)
 - 합격: 그 밖
 
@@ -22,9 +28,11 @@
   python3 work/scripts/seam_check.py 영상.mp4                       # 옆의 영상.edit.json에서 이음새를 읽음
   python3 work/scripts/seam_check.py 영상.mp4 --seams 16 f767 31.5  # 초 또는 프레임 번호(f767 = 767번째, 0부터)
   선택: --edit 다른.edit.json --out 결과폴더 --window 1.0 --ratio-lo 0.7 --ratio-hi 1.4 --angle 45 --pop 2.0
+        --cadence 1.6 --cadence-min 0.03 --cadence-after 2.0
 결과(--out, 기본은 영상 옆 <이름>_seamcheck/)
-  <이름>_seams.csv(이음새별 요약), <이름>_seam_pairs.csv(프레임 쌍별 수치), <이름>_seams.jpg(이음새 주변 프레임 시트)
-종료 코드: 불합격 이음새가 없으면 0, 있으면 1.
+  <이름>_seams.csv(이음새별 요약), <이름>_seam_pairs.csv(프레임 쌍별 수치), <이름>_seams.jpg(이음새 주변 프레임 시트),
+  <이름>_cadence.csv(프레임 간격 검사: 쌍별 이동량·주변 중앙값·비율)
+종료 코드: 불합격 이음새·고르지 않은 간격이 없으면 0, 있으면 1.
 """
 import argparse
 import csv
@@ -93,6 +101,44 @@ def angle(u, v):
     if nu < 1e-9 or nv < 1e-9:
         return None
     return float(np.degrees(np.arccos(np.clip(np.dot(u, v) / (nu * nv), -1, 1))))
+
+
+def pair_speed(a, b, dis):
+    """프레임 쌍 이동량만(clip_check와 같은 계산)."""
+    fl = dis.calc(a, b, None)
+    return float(np.median(np.hypot(fl[..., 0], fl[..., 1]) / W * 100))
+
+
+def ff_windows(doc):
+    """.edit.json에서 빨리 감기(정수 프레임 건너뛰기)를 쓴 조각의 영상 프레임 쌍 범위. [(이름, 첫 쌍, 끝 쌍)]"""
+    out = []
+    for seg in (doc or {}).get('segments', []):
+        kept = seg.get('kept')
+        if not kept or len(kept) < 2:
+            continue
+        skips = np.nonzero(np.diff(kept) > 1)[0]
+        if len(skips):
+            fs = int(seg['film_start_frame'])
+            out.append((f'ff {seg["label"]}', fs, fs + int(skips[-1]) + 3))
+    return out
+
+
+def cadence_flags(speeds, lo, hi, ratio, min_diff):
+    """lo~hi 쌍 각각을 앞뒤 3쌍(자기 제외)의 중앙값과 비교. 걸린 쌍: [(쌍, 이동량, 주변 중앙값, 비율)]"""
+    flags, table = [], []
+    for i in range(lo, hi + 1):
+        if i not in speeds:
+            continue
+        nb = [speeds[j] for j in range(i - 3, i + 4) if j != i and j in speeds]
+        if len(nb) < 3:
+            continue
+        med = float(np.median(nb))
+        r = speeds[i] / med if med > 1e-6 else float('inf')
+        bad = (r > ratio or r < 1 / ratio) and abs(speeds[i] - med) > min_diff
+        table.append((i, speeds[i], med, r, bad))
+        if bad:
+            flags.append((i, speeds[i], med, r))
+    return flags, table
 
 
 def check_seam(s, small, n, a, dis, gx, gy):
@@ -196,15 +242,17 @@ def plot_panel(rows, s, w, h, res):
     rs = np.array([rows[i]['resid'] for i in ks])
     m, top = 36, 20
     x = lambda i: m + (i - ks[0]) * (w - m - 10) / max(len(ks) - 1, 1)  # noqa: E731
-    smax = max(sp.max() * 1.15, 0.05)
-    rmax = max(rs.max() * 1.15, 1e-3)
+    # 축 상한: 튀는 한 점(장면 끊김 등)이 앞뒤 속도 수준을 납작하게 만들지 않도록 중앙값의 4배에서 자름
+    smax = max(min(sp.max(), 4 * float(np.median(sp))) * 1.15, 0.05)
+    rmax = max(min(rs.max(), 4 * float(np.median(rs))) * 1.15, 1e-3)
+    sp, rs = np.minimum(sp, smax), np.minimum(rs, rmax)
     d.line([(m, h - 22), (w - 10, h - 22)], fill='gray')
     d.line([(m, top), (m, h - 22)], fill='gray')
     xs = x(s - 1) + (x(s) - x(s - 1)) / 2 if s in rows else x(s - 1)
     d.line([(xs, top), (xs, h - 22)], fill='red', width=2)
     d.line([(x(i), h - 22 - v / smax * (h - 22 - top)) for i, v in zip(ks, sp)], fill='blue', width=2)
     d.line([(x(i), h - 22 - v / rmax * (h - 22 - top)) for i, v in zip(ks, rs)], fill=(220, 120, 0), width=1)
-    d.text((m + 4, 2), f'blue=speed %W/f (max {smax:.3f})  orange=residual  red=seam', fill='black', font=f)
+    d.text((m + 4, 2), f'blue=speed %W/f (axis {smax:.3f}, clipped)  orange=residual  red=seam', fill='black', font=f)
     d.text((m + 4, h - 20), f'{(ks[0] + 1 - s) / 24:+.1f}s', fill='black', font=f)
     d.text((w - 60, h - 20), f'{(ks[-1] + 1 - s) / 24:+.1f}s', fill='black', font=f)
     d.text((m + 4, 20), f'before {res["v_before"]:.3f}  after {res["v_after"]:.3f}  ratio {res["ratio"]:.2f}',
@@ -275,6 +323,9 @@ def main():
     ap.add_argument('--ratio-hi', type=float, default=1.4)
     ap.add_argument('--angle', type=float, default=45.0, help='방향 차 한도(도)')
     ap.add_argument('--pop', type=float, default=2.0, help='팝 비율 한도')
+    ap.add_argument('--cadence', type=float, default=1.6, help='프레임 간격 검사: 앞뒤 3쌍 중앙값 대비 비율 한도')
+    ap.add_argument('--cadence-min', type=float, default=0.03, help='프레임 간격 검사: 최소 차이(%%W/프레임)')
+    ap.add_argument('--cadence-after', type=float, default=2.0, help='프레임 간격 검사: 이음새 뒤 길이(초)')
     a = ap.parse_args()
 
     name = os.path.splitext(os.path.basename(a.film))[0]
@@ -282,21 +333,29 @@ def main():
     os.makedirs(out, exist_ok=True)
     fps = cv2.VideoCapture(a.film).get(cv2.CAP_PROP_FPS)
     labels = {}
+    ej = a.edit or os.path.splitext(a.film)[0] + '.edit.json'
+    doc = None
+    if os.path.exists(ej):
+        with open(ej, encoding='utf-8') as f:
+            doc = json.load(f)
     if a.seams:
         seam_frames = [parse_seam(x, fps) for x in a.seams]
     else:
-        ej = a.edit or os.path.splitext(a.film)[0] + '.edit.json'
-        if not os.path.exists(ej):
+        if doc is None:
             raise SystemExit('--seams 를 주거나 finish.py의 .edit.json 이 필요함')
-        doc = json.load(open(ej, encoding='utf-8'))
         seam_frames = [x['frame'] for x in doc['seams']]
         labels = {x['frame']: f'seam{x["index"]} {x["before"]}>{x["after"]}' for x in doc['seams']}
         print(f'이음새 {len(seam_frames)}개를 {ej}에서 읽음')
-    if not seam_frames:
+    ffw = ff_windows(doc)
+    if not seam_frames and not ffw:
         raise SystemExit('이음새가 없음')
     n = int(round(a.window * fps))
     margin = max(n + 2, max(abs(o) for o in OFFSETS) + 1)
+    # 프레임 간격 검사 창: 이음새 뒤 --cadence-after초 + 빨리 감기 구간 (쌍 번호 i = 프레임 i→i+1)
+    after = int(round(a.cadence_after * fps))
+    cad_windows = [(labels.get(s, f'seam{k}'), s, s + after - 1) for k, s in enumerate(seam_frames, 1)] + ffw
     need = {i for s in seam_frames for i in range(s - margin, s + margin + 1) if i >= 0}
+    need |= {i for _, lo, hi in cad_windows for i in range(lo - 3, hi + 5) if i >= 0}
     full_need = {i for s in seam_frames for i in range(s - 2, s + 2) if i >= 0}
     small, thumbs, fulls, fps, total = read_window_frames(a.film, need, full_need)
 
@@ -319,6 +378,29 @@ def main():
                                   ty_pct=round(r['ty'], 4), zoom_pct=round(r['zoom'], 4), rot_deg=round(r['rot'], 4),
                                   resid=round(r['resid'], 3), luma=round(r['luma_b'], 2),
                                   is_seam=int(i == s - 1)))
+
+    # 프레임 간격 검사(이음새 뒤 2초, 빨리 감기 구간)
+    speeds = {i: r['speed'] for rows in rows_by_seam.values() for i, r in rows.items()}
+    for _, lo, hi in cad_windows:
+        for i in range(max(lo - 3, 0), min(hi + 3, total - 2) + 1):
+            if i not in speeds and i in small and i + 1 in small:
+                speeds[i] = pair_speed(small[i], small[i + 1], dis)
+    cad_rows, cad_bad = [], {}
+    for lab, lo, hi in cad_windows:
+        flags, table = cadence_flags(speeds, max(lo, 0), min(hi, total - 2), a.cadence, a.cadence_min)
+        cad_rows += [dict(window=lab, pair=f'{i}-{i + 1}', t=round((i + 1) / fps, 4), speed_pct=round(sp, 4),
+                          local_median=round(md, 4), ratio=round(r, 3), flag=int(b)) for i, sp, md, r, b in table]
+        if flags:
+            cad_bad[lab] = (lo, hi, flags)
+    for s, r in results:
+        lab = r['label']
+        if lab in cad_bad:
+            lo, hi, flags = cad_bad[lab]
+            r['fails'].append(f'프레임 간격 고르지 않음(이음새 뒤 {a.cadence_after:g}초 안 {len(flags)}쌍, 처음 '
+                              f'{(flags[0][0] + 1) / fps:.2f}초 이동량 {flags[0][1]:.3f} / 주변 {flags[0][2]:.3f}): '
+                              f'빨리 감기 떨림 의심')
+            r['verdict'] = '불합격'
+    ff_bad = {lab: v for lab, v in cad_bad.items() if lab.startswith('ff ')}
 
     print(f'{name}: {total}프레임 @ {fps:.2f}fps, 이음새 {len(results)}개 (앞뒤 {a.window}초 비교)')
     summ = []
@@ -344,8 +426,33 @@ def main():
                          stop_go_min=round(r['stop_go'], 3), pop_ratio=round(r['pop_ratio'], 3),
                          continuity_seam=round(r['cont_seam'], 4), continuity_near=round(r['cont_med'], 4),
                          luma_step=round(r['luma_step'], 2), fails=' / '.join(r['fails']), warns=' / '.join(r['warns'])))
-    if not summ:
+    print(f'프레임 간격 검사: 창 {len(cad_windows)}개(이음새 뒤 {a.cadence_after:g}초 {len(seam_frames)}개, '
+          f'빨리 감기 {len(ffw)}개), 기준 앞뒤 3쌍 중앙값의 {a.cadence:g}배·차이 {a.cadence_min:g} %W')
+    for lab, lo, hi in ffw:
+        if lab in ff_bad:
+            flags = ff_bad[lab][2]
+            print(f'- {lab} (쌍 {lo}~{hi}, {lo / fps:.2f}~{(hi + 1) / fps:.2f}초): 불합격, 고르지 않은 쌍 {len(flags)}개 '
+                  f'(예: 쌍 {flags[0][0]} 이동량 {flags[0][1]:.3f} / 주변 {flags[0][2]:.3f}, {flags[0][3]:.2f}배)')
+        else:
+            print(f'- {lab} (쌍 {lo}~{hi}): 합격')
+    for s, r in results:
+        if r['label'] in cad_bad:
+            print(f'- {r["label"]}: 이음새 뒤 간격 불합격({len(cad_bad[r["label"]][2])}쌍)')
+    for x in summ:
+        x['cadence_flags'] = len(cad_bad.get(x['seam'], (0, 0, []))[2])
+    if not summ and not cad_rows:
         raise SystemExit('검사한 이음새가 없음')
+    if cad_rows:
+        p_cad = os.path.join(out, f'{name}_cadence.csv')
+        with open(p_cad, 'w', newline='', encoding='utf-8-sig') as f:
+            w = csv.DictWriter(f, fieldnames=list(cad_rows[0]))
+            w.writeheader()
+            w.writerows(cad_rows)
+        print(f'저장: {p_cad}')
+    if not summ:
+        bad_ff = len(ff_bad)
+        print(f'결과: 이음새 없음, 빨리 감기 구간 불합격 {bad_ff}')
+        sys.exit(1 if bad_ff else 0)
     p_sum = os.path.join(out, f'{name}_seams.csv')
     with open(p_sum, 'w', newline='', encoding='utf-8-sig') as f:
         w = csv.DictWriter(f, fieldnames=list(summ[0]))
@@ -361,8 +468,9 @@ def main():
     print(f'저장: {p_sum}\n      {p_pair}\n      {p_jpg}')
     bad = [r for _, r in results if r['verdict'] == '불합격']
     print(f'결과: 합격 {sum(r["verdict"] == "합격" for _, r in results)}, '
-          f'확인 필요 {sum(r["verdict"] == "확인 필요" for _, r in results)}, 불합격 {len(bad)}')
-    sys.exit(1 if bad else 0)
+          f'확인 필요 {sum(r["verdict"] == "확인 필요" for _, r in results)}, 불합격 {len(bad)}'
+          + (f', 빨리 감기 구간 불합격 {len(ff_bad)}' if ffw else ''))
+    sys.exit(1 if bad or ff_bad else 0)
 
 
 if __name__ == '__main__':
