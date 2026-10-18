@@ -1,0 +1,19 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChduVjNVYXRTRUo5X2h5dE1QajU2UzBROBIXdUYzVWF0YlRBN3ZjeXRNUHFfbUowUU0",
+ "extendable": true,
+ "prompt": "Extend this video in the same single, unbroken, continuous shot with absolutely no cuts, no dissolves and no change of shot: every frame follows smoothly from the previous one.\n[0-3s] The camera keeps circling slowly to the left around the tower at exactly the same gentle speed as at the start of the video, so the nearby amusement park rides keep sliding to the right.\n[3-8s] Without stopping, the camera gradually eases out of the orbit into a slow, steady forward glide toward the tower while rising slightly and tilting up a little, so more of the distant mountains and sky come into view.\nTime of day keeps changing slowly and evenly across the whole 8 seconds, never in a sudden step: the warm golden sunrise light gradually fades into bright, clear early-morning sunlight with a clean saturated blue sky and white clouds; the sun lights the hill, the trees and the tower.\nThe tower keeps exactly the same design and size: a red and white antenna on top, an upper observation ring and a main observation deck with bands of windows; the deck has no external cranes, arms, gondolas or scaffolding. The tower, buildings, roads, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon.\nPhotorealistic aerial drone footage of a real place: natural, true-to-life trees with individual leaves and varied shapes, sizes and shades of green; real building facades with real windows, balconies and rooftop details; real thin steel structures, rails and supports on the amusement park rides. Natural, unsharpened detail with soft, realistic edges and natural contrast; no painterly, oil-painting, illustrated or cartoon look, no outline halos, no over-sharpening, no HDR look. Clear, clean air with good visibility. No text, no logos, no aircraft or birds in the frame.",
+ "request_start_utc": "2026-10-18T05:48:39+00:00",
+ "call_token": "317376acc588",
+ "resolution": "360p",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/A/draft/c1_1_360p.json",
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 16.0,
+ "downloaded": false,
+ "status": "in_progress",
+ "ledger": "pending"
+}
