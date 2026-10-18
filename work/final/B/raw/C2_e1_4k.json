@@ -1,0 +1,19 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChduazNWYXRULU5jYUYxc2dQMGJDNmtBcxIXZDEzVmF2YjJFWV85eXRNUDg3WFBzQTg",
+ "extendable": true,
+ "prompt": "Extend this video in the same single, unbroken, continuous shot with absolutely no cuts, no dissolves, no cross-fades and no change of shot: every frame follows smoothly from the previous one, and the same tower, hill and city stay continuously visible in every frame.\nThe camera keeps moving around the tower in exactly the same direction and at the same speed as at the end of the video, so the nearby rides and trees keep sliding to the left and the distant city keeps sliding to the right. At the same time it very gradually drifts a little closer to the tower and rises slowly, so the tower becomes slowly and evenly larger in the frame, to about one and a quarter times its size at the start of these 8 seconds. The motion never pauses and never jerks.\nThe light changes very slowly and evenly across these 8 seconds: the warm golden early-morning sunlight gradually becomes a little brighter and a little less orange, and the pale sky slowly gains a hint of light blue. The same clouds stay in place; only the light on them changes.\nThe tower keeps exactly the same design throughout: a red and white lattice antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The observation deck has no external cranes, arms, gondolas, lifts or scaffolding. The tower, buildings, roads, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon.\nPhotorealistic aerial footage of a real place: natural, true-to-life trees with individual leaves and varied shapes, sizes and shades of green; real building facades with real windows, balconies and rooftop details; real thin steel structures, rails and supports on the amusement park rides. Natural, unsharpened detail with soft, realistic edges and natural contrast; no painterly, oil-painting, illustrated or cartoon look, no outline halos, no over-sharpening, no HDR look. Clear, clean air with good visibility. No text, no logos, no aircraft or birds in the frame.",
+ "request_start_utc": "2026-10-18T23:59:48+00:00",
+ "call_token": "6aacc2c9c655",
+ "resolution": "4k",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/B/raw/C2_up3_4k.json",
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 13.013,
+ "downloaded": false,
+ "status": "in_progress",
+ "ledger": "pending"
+}
