@@ -1,0 +1,19 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChdfY3ZVYXRDVkpZX2h5dE1QM0tYMHdBTRIXX2N2VWF0Q1ZKWV9oeXRNUDNLWDB3QU0",
+ "extendable": true,
+ "prompt": "[# Sources <VIDEO_0>@Video1] Extend this video in the same single, unbroken, continuous shot with absolutely no cuts, no dissolves, no cross-fades and no change of shot: every frame follows smoothly from the previous one, and the same tower, hill and city stay continuously visible in every frame.\nThe camera keeps gliding smoothly forward at the same slow, steady speed as at the end of the video, with no pause. The camera keeps moving steadily forward for the whole shot, keeping the tower at the center of the frame. Its forward speed builds up very gradually and smoothly, never in a jump. At the same time it keeps rising gently and keeps tilting up very slightly, exactly as at the end of the video; then, over the first 3 seconds, the upward tilt gradually eases off into a steady level view while the gentle climb continues, and the camera never tilts down, so the forested hill and the amusement park rides slide down toward the bottom edge of the frame and the wide, dense city between the hill and the distant mountains spreads out behind the tower, with real depth parallax. By the end of the shot the tower is about one and a half times its starting height in the frame.\nThe warm early-morning light stays almost exactly the same through the whole shot: the same soft golden sunlight, the same pale sky and the same clouds.\nThe tower keeps exactly the same design throughout: a red and white lattice antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The observation deck has no external cranes, arms, gondolas, lifts or scaffolding. The tower, buildings, roads, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon.\nPhotorealistic aerial footage of a real place: natural, true-to-life trees with individual leaves and varied shapes, sizes and shades of green; real building facades with real windows, balconies and rooftop details; real thin steel structures, rails and supports on the amusement park rides. Natural, unsharpened detail with soft, realistic edges and natural contrast; no painterly, oil-painting, illustrated or cartoon look, no outline halos, no over-sharpening, no HDR look. Clear, clean air with good visibility. No text, no logos, no aircraft or birds in the frame.",
+ "request_start_utc": "2026-10-18T13:39:08+00:00",
+ "call_token": "0f5f9a253606",
+ "resolution": "4k",
+ "duration": 6,
+ "first": null,
+ "last": null,
+ "extend_from": null,
+ "extend_video": "work/final/B/keyframes/A_last2s_1080p.mp4",
+ "mode": "background",
+ "expected_seconds": 8.0,
+ "downloaded": false,
+ "status": "in_progress",
+ "ledger": "pending"
+}
