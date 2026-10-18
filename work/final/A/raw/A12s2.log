@@ -2,3 +2,32 @@
 요청 시작 2026-10-18T19:26:46+00:00 (UTC), 예상 $1.336, 장부 표식 e2b5b3d04815
 background 요청 접수: interaction v1_ChdqV3pVYXRmUEN0N2h5dE1QNHFpZGtRcxIXZ2gzVmF1V2ZCT09IMXNnUGg0dmZ5UU0. 끝날 때까지 20초마다 확인합니다(무료, 최대 3000초)
   아직 in_progress(1초 경과, 최대 3000초 기다림)
+  아직 in_progress(22초 경과, 최대 3000초 기다림)
+  아직 in_progress(42초 경과, 최대 3000초 기다림)
+  아직 in_progress(63초 경과, 최대 3000초 기다림)
+  아직 in_progress(84초 경과, 최대 3000초 기다림)
+  아직 in_progress(105초 경과, 최대 3000초 기다림)
+  아직 in_progress(127초 경과, 최대 3000초 기다림)
+  아직 in_progress(147초 경과, 최대 3000초 기다림)
+  아직 in_progress(168초 경과, 최대 3000초 기다림)
+  아직 in_progress(189초 경과, 최대 3000초 기다림)
+  아직 in_progress(210초 경과, 최대 3000초 기다림)
+  아직 in_progress(231초 경과, 최대 3000초 기다림)
+  아직 in_progress(252초 경과, 최대 3000초 기다림)
+  아직 in_progress(273초 경과, 최대 3000초 기다림)
+  아직 in_progress(293초 경과, 최대 3000초 기다림)
+  아직 in_progress(314초 경과, 최대 3000초 기다림)
+Traceback (most recent call last):
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 836, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 410, in main
+    return generate(a, ap)
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 559, in generate
+    return settle(a, pc, token, est, iid, it, meta, t0)
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 606, in settle
+    path = save_video(pc, uri, a.out, getattr(ov, 'mime_type', None), a.overwrite)
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 311, in save_video
+    f.write(data)
+    ~~~~~~~^^^^^^
+OSError: [Errno 28] No space left on device

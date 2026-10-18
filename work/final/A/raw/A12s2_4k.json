@@ -13,7 +13,17 @@
  "extend_video": null,
  "mode": "background",
  "expected_seconds": 20.0,
- "downloaded": false,
+ "downloaded": true,
  "status": "in_progress",
- "ledger": "pending"
+ "ledger": "ok",
+ "recover_only": true,
+ "output_path": "work/final/A/raw/A12s2_4k.mp4",
+ "output_file": "files/788kse81bv1b",
+ "cost": {
+  "estimate_usd": 1.336,
+  "actual_usd": 1.3472,
+  "used_usd": 1.3472,
+  "basis": "응답 토큰 x 단가"
+ },
+ "chain_seconds": 20.01
 }
