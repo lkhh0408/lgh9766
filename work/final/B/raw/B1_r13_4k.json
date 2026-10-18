@@ -13,7 +13,47 @@
  "extend_video": null,
  "mode": "background",
  "expected_seconds": 9.0,
- "downloaded": false,
- "status": "in_progress",
- "ledger": "pending"
+ "create_seconds": 1,
+ "status": "completed",
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 1100
+   },
+   {
+    "modality": "text",
+    "tokens": 505
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 156384
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 1605,
+  "total_output_tokens": 157445,
+  "total_thought_tokens": 280,
+  "total_tokens": 159330,
+  "total_tool_use_tokens": 0
+ },
+ "cost": {
+  "estimate_usd": 2.757,
+  "actual_usd": 2.7634,
+  "used_usd": 2.7634,
+  "tokens": {
+   "video_output_tokens": 156384,
+   "other_output_tokens": 1341,
+   "input_tokens": 1605
+  },
+  "basis": "응답 토큰 x 단가"
+ },
+ "output_file": "files/197891jctegx",
+ "download_seconds": 6,
+ "seconds_taken": 195,
+ "output_path": "work/final/B/raw/B1_r13_4k.mp4",
+ "ledger": "ok",
+ "chain_seconds": 9.002
 }
