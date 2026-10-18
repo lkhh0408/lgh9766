@@ -1,0 +1,63 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChduVjNVYXRTRUo5X2h5dE1QajU2UzBROBIXYUdIVWFwM01HS2FpeXRNUDQtQ0w2QTg",
+ "extendable": true,
+ "prompt": "Extend this video in the same single, unbroken, continuous shot with absolutely no cuts, no dissolves, no cross-fades and no change of shot: every frame follows smoothly from the previous one, and the same hill, the same rides, the same tower and the same clouds stay continuously visible in every frame.\n[0-3s] The camera keeps circling slowly to the left around the tower at exactly the same gentle speed as at the start of the video, so the nearby amusement park rides keep sliding to the right.\n[3-8s] Without stopping, the camera gradually eases out of the orbit into a slow, steady forward glide toward the tower while rising slightly and tilting up a little, so more of the distant mountains and sky come into view.\nThe light changes very slowly and evenly across the whole 8 seconds, so slowly that no single moment shows a visible jump: the warm golden sunrise light on the same clouds and the same hill gradually becomes softer, brighter morning sunlight, and the sky slowly turns from pale gold to a light, clear blue. The scene itself never changes; only the light on it changes, and it never cross-fades into a different picture.\nThe tower keeps exactly the same design and size: a red and white antenna on top, an upper observation ring and a main observation deck with bands of windows; the deck has no external cranes, arms, gondolas or scaffolding. The tower, buildings, roads, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon.\nPhotorealistic aerial drone footage of a real place: natural, true-to-life trees with individual leaves and varied shapes, sizes and shades of green; real building facades with real windows, balconies and rooftop details; real thin steel structures, rails and supports on the amusement park rides. Natural, unsharpened detail with soft, realistic edges and natural contrast; no painterly, oil-painting, illustrated or cartoon look, no outline halos, no over-sharpening, no HDR look. Clear, clean air with good visibility. No text, no logos, no aircraft or birds in the frame.",
+ "request_start_utc": "2026-10-18T06:04:23+00:00",
+ "call_token": "63e047fc411e",
+ "resolution": "360p",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/A/draft/c1_1_360p.json",
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 16.0,
+ "create_seconds": 2,
+ "status": "completed",
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 1100
+   },
+   {
+    "modality": "text",
+    "tokens": 440
+   },
+   {
+    "modality": "video",
+    "tokens": 13889
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 15448
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 15429,
+  "total_output_tokens": 16488,
+  "total_thought_tokens": 293,
+  "total_tokens": 32210,
+  "total_tool_use_tokens": 0
+ },
+ "cost": {
+  "estimate_usd": 0.33,
+  "actual_usd": 0.3245,
+  "used_usd": 0.3245,
+  "tokens": {
+   "video_output_tokens": 15448,
+   "other_output_tokens": 1333,
+   "input_tokens": 15429
+  },
+  "basis": "응답 토큰 x 단가"
+ },
+ "output_file": "files/foudrnptrd05",
+ "download_seconds": 1,
+ "seconds_taken": 68,
+ "output_path": "work/final/A/draft/c1_2v2_360p.mp4",
+ "ledger": "ok",
+ "chain_seconds": 16.0
+}
