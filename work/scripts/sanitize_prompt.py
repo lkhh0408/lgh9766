@@ -7,6 +7,11 @@ import re
 import sys
 
 RULES = [
+    # 2026-10-18: 'circling'이 들어간 명령문이 여러 번 입력 차단됨(통과한 것은 'circles'·'arc')
+    (r'keeps circling around the tower', 'continues its slow arc around the tower'),
+    (r'keeps circling', 'continues its slow arc'),
+    (r'circling slowly to the (left|right) around the tower', r'moving in a slow arc to the \1 around the tower'),
+    (r'\bcircling\b', 'arc movement'),
     (r'aerial drone footage', 'aerial footage'),
     (r'drone camera', 'aerial camera'),
     (r'an ongoing drone flight', 'a continuous aerial shot'),
