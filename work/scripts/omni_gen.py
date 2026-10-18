@@ -337,6 +337,8 @@ def _load_json(path):
 
 
 def _write_json(path, meta):
+    # background 요청은 영상을 받기 전에 id부터 적으므로, 출력 폴더가 아직 없을 수 있다
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
     with open(os.path.splitext(path)[0] + '.json', 'w', encoding='utf-8') as f:
         json.dump(meta, f, ensure_ascii=False, indent=1, default=str)
 

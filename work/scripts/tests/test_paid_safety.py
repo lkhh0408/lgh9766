@@ -689,6 +689,26 @@ class OmniPaidSafety(Base):
         self.assertEqual(self.rows()[-1]['status'], 'ok')
         self.assertEqual(SERVER.downloads, ['files/bg1'])
 
+    def test_background_into_new_folder_writes_id_before_video(self):
+        # 계획의 연결 시험(T1)처럼 아직 없는 폴더로 내보내도, 영상 전에 id를 json에 먼저 남겨야 한다
+        SERVER.create_behavior = lambda kw: waiting_interaction('in_progress', iid='v1_bgnew')
+        seen = {}
+
+        def during_get():
+            p = os.path.join(self.out_dir, 'newdir', 'T1.json')
+            if 'meta' not in seen and os.path.exists(p):
+                seen['meta'] = load_json(p)
+        SERVER.during_get = during_get
+        SERVER.get_sequence = [waiting_interaction('in_progress', iid='v1_bgnew')]
+        SERVER.interaction = ok_interaction('files/bgnew', iid='v1_bgnew')
+        code, out, err = self.omni('--first', self.first, '--background', '--recover-interval', '0.01',
+                                   out=os.path.join('newdir', 'T1.mp4'))
+        self.assertEqual(code, 0, err)
+        self.assertEqual((seen['meta']['interaction_id'], seen['meta']['downloaded']), ('v1_bgnew', False))
+        self.assertNotIn('요청 오류', out)
+        self.assertEqual(len(SERVER.create_calls), 1)
+        self.assertEqual(self.rows()[-1]['status'], 'ok')
+
     def test_background_and_stream_together_is_refused(self):
         code, out, err = self.omni('--first', self.first, '--background', '--stream')
         self.assertEqual(code, 2)
