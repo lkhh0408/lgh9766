@@ -1,0 +1,146 @@
+장부 누적 $60.63(미확정 포함) + 이번 예상 $0.33 = $60.96 / 예산 상한 $121.98, 80% 보고선 $108.98
+요청 시작 2026-10-18T06:07:30+00:00 (UTC), 예상 $0.330, 장부 표식 2c206c5d5c9b
+background 요청 접수: interaction v1_ChduVjNVYXRTRUo5X2h5dE1QajU2UzBROBIXSTJMVWF2S1dPTURpeXRNUDVhVE8wQU0. 끝날 때까지 20초마다 확인합니다(무료, 최대 1800초)
+  아직 in_progress(1초 경과, 최대 1800초 기다림)
+  아직 in_progress(21초 경과, 최대 1800초 기다림)
+  아직 in_progress(42초 경과, 최대 1800초 기다림)
+  결과 확인 실패(4회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(63초 경과, 최대 1800초 기다림)
+  결과 확인 실패(5회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(84초 경과, 최대 1800초 기다림)
+  결과 확인 실패(6회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(104초 경과, 최대 1800초 기다림)
+  결과 확인 실패(7회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(125초 경과, 최대 1800초 기다림)
+  결과 확인 실패(8회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(146초 경과, 최대 1800초 기다림)
+  결과 확인 실패(9회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(167초 경과, 최대 1800초 기다림)
+  결과 확인 실패(10회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(187초 경과, 최대 1800초 기다림)
+  결과 확인 실패(11회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(208초 경과, 최대 1800초 기다림)
+  결과 확인 실패(12회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(229초 경과, 최대 1800초 기다림)
+  결과 확인 실패(13회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(250초 경과, 최대 1800초 기다림)
+  결과 확인 실패(14회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(271초 경과, 최대 1800초 기다림)
+  결과 확인 실패(15회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(291초 경과, 최대 1800초 기다림)
+  결과 확인 실패(16회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(312초 경과, 최대 1800초 기다림)
+  결과 확인 실패(17회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(333초 경과, 최대 1800초 기다림)
+  결과 확인 실패(18회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(354초 경과, 최대 1800초 기다림)
+  결과 확인 실패(19회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(375초 경과, 최대 1800초 기다림)
+  결과 확인 실패(20회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(395초 경과, 최대 1800초 기다림)
+  결과 확인 실패(21회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(416초 경과, 최대 1800초 기다림)
+  결과 확인 실패(22회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(437초 경과, 최대 1800초 기다림)
+  결과 확인 실패(23회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(458초 경과, 최대 1800초 기다림)
+  결과 확인 실패(24회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(479초 경과, 최대 1800초 기다림)
+  결과 확인 실패(25회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(499초 경과, 최대 1800초 기다림)
+  결과 확인 실패(26회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(520초 경과, 최대 1800초 기다림)
+  결과 확인 실패(27회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(541초 경과, 최대 1800초 기다림)
+  결과 확인 실패(28회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(562초 경과, 최대 1800초 기다림)
+  결과 확인 실패(29회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(582초 경과, 최대 1800초 기다림)
+  결과 확인 실패(30회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(603초 경과, 최대 1800초 기다림)
+  결과 확인 실패(31회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(624초 경과, 최대 1800초 기다림)
+  결과 확인 실패(32회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(645초 경과, 최대 1800초 기다림)
+  결과 확인 실패(33회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(665초 경과, 최대 1800초 기다림)
+  결과 확인 실패(34회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(686초 경과, 최대 1800초 기다림)
+  결과 확인 실패(35회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(707초 경과, 최대 1800초 기다림)
+  결과 확인 실패(36회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(727초 경과, 최대 1800초 기다림)
+  결과 확인 실패(37회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(748초 경과, 최대 1800초 기다림)
+  결과 확인 실패(38회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(769초 경과, 최대 1800초 기다림)
+  결과 확인 실패(39회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(790초 경과, 최대 1800초 기다림)
+  결과 확인 실패(40회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(811초 경과, 최대 1800초 기다림)
+  결과 확인 실패(41회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(831초 경과, 최대 1800초 기다림)
+  결과 확인 실패(42회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(852초 경과, 최대 1800초 기다림)
+  결과 확인 실패(43회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(873초 경과, 최대 1800초 기다림)
+  결과 확인 실패(44회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(894초 경과, 최대 1800초 기다림)
+  결과 확인 실패(45회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(914초 경과, 최대 1800초 기다림)
+  결과 확인 실패(46회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(935초 경과, 최대 1800초 기다림)
+  결과 확인 실패(47회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(956초 경과, 최대 1800초 기다림)
+  결과 확인 실패(48회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(977초 경과, 최대 1800초 기다림)
+  결과 확인 실패(49회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(997초 경과, 최대 1800초 기다림)
+  결과 확인 실패(50회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1018초 경과, 최대 1800초 기다림)
+  결과 확인 실패(51회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1039초 경과, 최대 1800초 기다림)
+  결과 확인 실패(52회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1059초 경과, 최대 1800초 기다림)
+  결과 확인 실패(53회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1080초 경과, 최대 1800초 기다림)
+  결과 확인 실패(54회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1101초 경과, 최대 1800초 기다림)
+  결과 확인 실패(55회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1122초 경과, 최대 1800초 기다림)
+  결과 확인 실패(56회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1143초 경과, 최대 1800초 기다림)
+  결과 확인 실패(57회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1163초 경과, 최대 1800초 기다림)
+  결과 확인 실패(58회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1184초 경과, 최대 1800초 기다림)
+  결과 확인 실패(59회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1205초 경과, 최대 1800초 기다림)
+  결과 확인 실패(60회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1226초 경과, 최대 1800초 기다림)
+  결과 확인 실패(61회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1246초 경과, 최대 1800초 기다림)
+  결과 확인 실패(62회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1267초 경과, 최대 1800초 기다림)
+  결과 확인 실패(63회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1288초 경과, 최대 1800초 기다림)
+  결과 확인 실패(64회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1309초 경과, 최대 1800초 기다림)
+  결과 확인 실패(65회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1330초 경과, 최대 1800초 기다림)
+  결과 확인 실패(66회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1350초 경과, 최대 1800초 기다림)
+  결과 확인 실패(67회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1371초 경과, 최대 1800초 기다림)
+  결과 확인 실패(68회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1392초 경과, 최대 1800초 기다림)
+  결과 확인 실패(69회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1413초 경과, 최대 1800초 기다림)
+  결과 확인 실패(70회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1434초 경과, 최대 1800초 기다림)
+  결과 확인 실패(71회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1454초 경과, 최대 1800초 기다림)
+  결과 확인 실패(72회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1475초 경과, 최대 1800초 기다림)
+  결과 확인 실패(73회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(1496초 경과, 최대 1800초 기다림)

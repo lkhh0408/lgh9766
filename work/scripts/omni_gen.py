@@ -259,17 +259,22 @@ def status_of(it):
 def poll_interaction(pc, iid, it=None, wait=0.0, interval=20.0):
     """interaction을 get(무료, 다시 해도 안전)으로 확인한다. 아직 안 끝났으면(in_progress 등) wait초 동안 기다린다.
     (마지막으로 받은 interaction, 상태). 한 번도 못 받았고 생성 응답도 없으면 상태는 None."""
-    t0, n, errs = time.time(), 0, 0
+    t0, n, errs, rejected = time.time(), 0, 0, 0
     while True:
         n += 1
         try:
             got = pc.interactions.get(iid)
-            errs = 0
+            errs, rejected = 0, 0
             if got is not None:
                 it = got
         except Exception as e:
             errs += 1
+            # 서버가 생성을 실패 처리하면 get이 '청구되지 않음' 400을 돌려준다. 3번 연속이면 더 기다리지 않는다
+            # (장부는 settle에서 예상액 그대로 unresolved로 남김)
+            rejected = rejected + 1 if 'will not be charged' in str(e) else 0
             print(f'  결과 확인 실패({n}회): {G.scrub(e)[:150]}', flush=True)
+            if rejected >= 3:
+                return it, 'server_rejected'
         st = status_of(it)
         if st is not None and st not in WAITING:
             return it, st
