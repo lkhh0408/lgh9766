@@ -1,0 +1,19 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChZNcnpVYXA5dXA1Mmo5UV9LX29MaERBEhZNcnpVYXA5dXA1Mmo5UV9LX29MaERB",
+ "extendable": true,
+ "prompt": "[# Sources <VIDEO_0>@Video1] Extend this video in the same single, unbroken, continuous shot with absolutely no cuts, no dissolves, no cross-fades and no change of shot: every frame follows smoothly from the previous one, and the same tower, hill and city stay continuously visible in every frame.\nThe camera keeps circling in exactly the same direction and at the same gentle speed as at the end of the input video for the first 3 seconds, so the nearby rides and trees keep sliding to the left and the distant city keeps sliding to the right; then, without slowing down or pausing, the circling gradually turns into a gentle forward glide while the camera rises slowly, with the tower near the center of the frame, so the forested hill and the amusement park rides slowly slide down toward the bottom edge of the frame and the wide city behind the tower spreads out, with real depth parallax.\nThe warm early-morning light stays almost exactly the same through the whole shot: the same soft golden sunlight, the same pale sky and the same clouds. The scene itself never changes; there is no cross-fade, no second tower and no change of shot.\nThe tower keeps exactly the same design throughout: a red and white lattice antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The observation deck has no external cranes, arms, gondolas, lifts or scaffolding. The tower, buildings, roads, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon.\nPhotorealistic aerial footage of a real place: natural, true-to-life trees with individual leaves and varied shapes, sizes and shades of green; real building facades with real windows, balconies and rooftop details; real thin steel structures, rails and supports on the amusement park rides. Natural, unsharpened detail with soft, realistic edges and natural contrast; no painterly, oil-painting, illustrated or cartoon look, no outline halos, no over-sharpening, no HDR look. Clear, clean air with good visibility. No text, no logos, no aircraft or birds in the frame.",
+ "request_start_utc": "2026-10-18T12:31:45+00:00",
+ "call_token": "97d676952a1c",
+ "resolution": "4k",
+ "duration": 6,
+ "first": null,
+ "last": null,
+ "extend_from": null,
+ "extend_video": "work/final/B/keyframes/A_last2s_1080p.mp4",
+ "mode": "background",
+ "expected_seconds": 8.0,
+ "downloaded": false,
+ "status": "in_progress",
+ "ledger": "pending"
+}
