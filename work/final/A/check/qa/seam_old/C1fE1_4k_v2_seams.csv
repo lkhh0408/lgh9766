@@ -1,0 +1,2 @@
+﻿seam,frame,time_s,verdict,speed_before,speed_after,speed_ratio,speed_ratio_025s,direction_deg,seam_pair_speed,seam_pair_vs_near,stop_go_min,pop_ratio,continuity_seam,continuity_near,luma_step,fails,warns,cadence_flags
+seam1,192,8.0,합격,0.0599,0.0615,1.028,0.984,6.2,0.0683,1.123,0.974,1.055,0.758,0.7791,0.22,,,0

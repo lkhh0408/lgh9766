@@ -1,0 +1,10 @@
+C1fE1_4k_v2: 384프레임 @ 24.00fps, 이음새 1개 (앞뒤 1.0초 비교)
+- seam1 f192 (8.000초): 합격
+    속도 앞 0.060 → 뒤 0.062 %/f, 비율 1.03 (0.25초 기준 0.98), 방향 차 6°, 이음새 쌍 0.068 (주변의 1.12배)
+    팝 비율 1.06 (잔차 3.91 / 주변 3.70), 장면 정합 0.758 / 주변 0.779, 밝기 차 0.22, 0.5초 최저 속도 0.97배
+프레임 간격 검사: 창 1개(이음새 뒤 2초 1개, 빨리 감기 0개), 기준 앞뒤 3쌍 중앙값의 1.6배·차이 0.03 %W
+저장: work/final/A/check/qa/seam_old/C1fE1_4k_v2_cadence.csv
+저장: work/final/A/check/qa/seam_old/C1fE1_4k_v2_seams.csv
+      work/final/A/check/qa/seam_old/C1fE1_4k_v2_seam_pairs.csv
+      work/final/A/check/qa/seam_old/C1fE1_4k_v2_seams.jpg
+결과: 합격 1, 확인 필요 0, 불합격 0
