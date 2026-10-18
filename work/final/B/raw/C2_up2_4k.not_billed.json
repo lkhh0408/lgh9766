@@ -13,7 +13,16 @@
  "extend_video": "work/final/B/keyframes/A_last1s_1080p.mp4",
  "mode": "background",
  "expected_seconds": 5.0,
+ "create_seconds": 1,
+ "status": "server_rejected",
+ "usage": null,
+ "cost": {
+  "estimate_usd": 1.336,
+  "actual_usd": null,
+  "used_usd": 1.336,
+  "tokens": {},
+  "basis": "사전 추정(토큰 정보 없음)"
+ },
  "downloaded": false,
- "status": "in_progress",
- "ledger": "pending"
+ "ledger": "unresolved"
 }
