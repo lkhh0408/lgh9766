@@ -1,0 +1,19 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChduVjNVYXRTRUo5X2h5dE1QajU2UzBROBIXblYzVWF0U0VKOV9oeXRNUGo1NlMwUTg",
+ "extendable": true,
+ "prompt": "<FIRST_FRAME> Continuous, unbroken single shot from a flying camera, with absolutely no scene cuts, no dissolves and no change of shot. Aerial view of Daegu's 83 Tower standing on a forested hill with amusement park rides, above a wide city, with mountains on the horizon.\nThe camera is already moving in the very first frame and keeps one constant, gentle speed for the whole shot, with no pause, no slow start and no sudden move: it slowly circles to the left around the tower while drifting slightly forward, keeping the tower near the center of the frame, so the nearby amusement park rides and trees slide steadily to the right and the distant city and mountains slide slowly to the left. Real depth parallax.\nTime of day changes gradually and continuously during the shot: the pre-dawn violet and pink sky slowly warms into golden sunrise light coming from the left, the clouds turn from lavender to golden orange, and by the end of the shot the hill, the trees and the tower are lit by warm golden sunrise light.\nThe tower keeps exactly the same design and size: a red and white antenna on top, an upper observation ring and a main observation deck with bands of windows; the deck has no external cranes, arms, gondolas or scaffolding. The tower, buildings, roads, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon.\nPhotorealistic aerial drone footage of a real place: natural, true-to-life trees with individual leaves and varied shapes, sizes and shades of green; real building facades with real windows, balconies and rooftop details; real thin steel structures, rails and supports on the amusement park rides. Natural, unsharpened detail with soft, realistic edges and natural contrast; no painterly, oil-painting, illustrated or cartoon look, no outline halos, no over-sharpening, no HDR look. Clear, clean air with good visibility. No text, no logos, no aircraft or birds in the frame.",
+ "request_start_utc": "2026-10-18T05:48:12+00:00",
+ "call_token": "d7ca257131ce",
+ "resolution": "360p",
+ "duration": 8,
+ "first": "work/final/k0/K0_A.png",
+ "last": null,
+ "extend_from": null,
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 8.0,
+ "downloaded": false,
+ "status": "in_progress",
+ "ledger": "pending"
+}
