@@ -269,9 +269,9 @@ def poll_interaction(pc, iid, it=None, wait=0.0, interval=20.0):
                 it = got
         except Exception as e:
             errs += 1
-            # 서버가 생성을 실패 처리하면 get이 '청구되지 않음' 400을 돌려준다. 3번 연속이면 더 기다리지 않는다
+            # 서버가 생성을 실패 처리하면 get이 '청구되지 않음'·'입력 차단' 400을 돌려준다. 3번 연속이면 더 기다리지 않는다
             # (장부는 settle에서 예상액 그대로 unresolved로 남김)
-            rejected = rejected + 1 if 'will not be charged' in str(e) else 0
+            rejected = rejected + 1 if ('will not be charged' in str(e) or 'Input blocked' in str(e)) else 0
             print(f'  결과 확인 실패({n}회): {G.scrub(e)[:150]}', flush=True)
             if rejected >= 3:
                 return it, 'server_rejected'

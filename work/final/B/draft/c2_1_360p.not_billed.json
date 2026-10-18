@@ -13,7 +13,16 @@
  "extend_video": null,
  "mode": "background",
  "expected_seconds": 9.0,
- "downloaded": false,
+ "create_seconds": 1,
  "status": "in_progress",
- "ledger": "pending"
+ "usage": null,
+ "cost": {
+  "estimate_usd": 0.324,
+  "actual_usd": null,
+  "used_usd": 0.324,
+  "tokens": {},
+  "basis": "사전 추정(토큰 정보 없음)"
+ },
+ "downloaded": false,
+ "ledger": "unresolved"
 }

@@ -2,3 +2,93 @@
 요청 시작 2026-10-18T07:44:31+00:00 (UTC), 예상 $0.324, 장부 표식 852d68a1c081
 background 요청 접수: interaction v1_ChY0SGpVYXZTVENzTGh5dE1QaE51ZU1REhY0SGpVYXZTVENzTGh5dE1QaE51ZU1R. 끝날 때까지 20초마다 확인합니다(무료, 최대 900초)
   아직 in_progress(0초 경과, 최대 900초 기다림)
+  결과 확인 실패(2회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(21초 경과, 최대 900초 기다림)
+  결과 확인 실패(3회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(42초 경과, 최대 900초 기다림)
+  결과 확인 실패(4회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(63초 경과, 최대 900초 기다림)
+  결과 확인 실패(5회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(83초 경과, 최대 900초 기다림)
+  결과 확인 실패(6회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(104초 경과, 최대 900초 기다림)
+  결과 확인 실패(7회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(125초 경과, 최대 900초 기다림)
+  결과 확인 실패(8회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(145초 경과, 최대 900초 기다림)
+  결과 확인 실패(9회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(166초 경과, 최대 900초 기다림)
+  결과 확인 실패(10회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(187초 경과, 최대 900초 기다림)
+  결과 확인 실패(11회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(208초 경과, 최대 900초 기다림)
+  결과 확인 실패(12회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(228초 경과, 최대 900초 기다림)
+  결과 확인 실패(13회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(249초 경과, 최대 900초 기다림)
+  결과 확인 실패(14회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(270초 경과, 최대 900초 기다림)
+  결과 확인 실패(15회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(290초 경과, 최대 900초 기다림)
+  결과 확인 실패(16회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(311초 경과, 최대 900초 기다림)
+  결과 확인 실패(17회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(332초 경과, 최대 900초 기다림)
+  결과 확인 실패(18회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(352초 경과, 최대 900초 기다림)
+  결과 확인 실패(19회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(373초 경과, 최대 900초 기다림)
+  결과 확인 실패(20회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(394초 경과, 최대 900초 기다림)
+  결과 확인 실패(21회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(414초 경과, 최대 900초 기다림)
+  결과 확인 실패(22회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(435초 경과, 최대 900초 기다림)
+  결과 확인 실패(23회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(456초 경과, 최대 900초 기다림)
+  결과 확인 실패(24회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(477초 경과, 최대 900초 기다림)
+  결과 확인 실패(25회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(497초 경과, 최대 900초 기다림)
+  결과 확인 실패(26회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(518초 경과, 최대 900초 기다림)
+  결과 확인 실패(27회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(539초 경과, 최대 900초 기다림)
+  결과 확인 실패(28회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(559초 경과, 최대 900초 기다림)
+  결과 확인 실패(29회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(580초 경과, 최대 900초 기다림)
+  결과 확인 실패(30회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(601초 경과, 최대 900초 기다림)
+  결과 확인 실패(31회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(622초 경과, 최대 900초 기다림)
+  결과 확인 실패(32회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(642초 경과, 최대 900초 기다림)
+  결과 확인 실패(33회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(663초 경과, 최대 900초 기다림)
+  결과 확인 실패(34회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(684초 경과, 최대 900초 기다림)
+  결과 확인 실패(35회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(704초 경과, 최대 900초 기다림)
+  결과 확인 실패(36회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(725초 경과, 최대 900초 기다림)
+  결과 확인 실패(37회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(746초 경과, 최대 900초 기다림)
+  결과 확인 실패(38회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(767초 경과, 최대 900초 기다림)
+  결과 확인 실패(39회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(787초 경과, 최대 900초 기다림)
+  결과 확인 실패(40회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(808초 경과, 최대 900초 기다림)
+  결과 확인 실패(41회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(829초 경과, 최대 900초 기다림)
+  결과 확인 실패(42회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(850초 경과, 최대 900초 기다림)
+  결과 확인 실패(43회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(870초 경과, 최대 900초 기다림)
+  결과 확인 실패(44회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(891초 경과, 최대 900초 기다림)
+  결과 확인 실패(45회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+경고: interaction v1_ChY0SGpVYXZTVENzTGh5dE1QaE51ZU1REhY0SGpVYXZTVENzTGh5dE1QaE51ZU1R: 아직 in_progress. 서버는 계속 만들고 청구할 수 있습니다(예상 $0.32, 장부 unresolved).
+  다시 보내지 말고, 나중에 무료로 다시 확인하세요:
+  python3 work/scripts/omni_gen.py --out work/final/B/draft/c2_1_360p.mp4 --recover-only
