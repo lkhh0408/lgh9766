@@ -18,11 +18,14 @@
    겹침 재시작 묶음도 이 방식이 맞다(프롬프트 내용은 그 원본 0초부터 계획대로 나오므로).
 위 셋 다 없으면 그 조각은 대응에서 빠진다(주의로 알림).
 
-상태
+상태(시작 키프레임·내용 참조 이미지: 그 이미지의 내용이 영상에 나오는지)
 - 전부 나옴: 그 이미지의 계획 시간이 영상에 95% 이상 남음
 - 일부 잘림: 일부만 남음(겹침·끝 자르기)
 - 잘려서 없음: 만든 원본에는 있었지만 편집에서 모두 잘림(가장 가까운 영상 시각을 적음)
 - 원본 없음: 아직 그 시간의 원본 영상이 없음(생성 전)
+상태(화면에 나오지 않는 이미지: 영상 시각 칸은 비움, 따로 셈)
+- 색만 참고: '색 참조' 이미지. 그 색(시간대)만 프롬프트에 옮김. 그 색이 쓰인 영상 시각을 상태 칸에 참고로 적음
+- 영상에 안 씀(제외): '제외' 이미지(중복·역방향·배치 차이 등)
 
 사용(저장소 루트)
   python3 work/scripts/mapping_table.py --edit work/final/edit/최종_1080p.edit.json
@@ -46,6 +49,10 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 PLAN = os.path.join(ROOT, 'work', 'final', 'plan', 'plan.csv')
 IMAGES = os.path.join(ROOT, 'work', 'final', 'plan', '이미지_시간_대응표.csv')
 FULL = 0.95  # 이만큼 이상 남으면 '전부 나옴'
+# 화면에 나오지 않는 분류 → 상태. 이 이미지들에는 영상 시각을 주지 않는다(따로 셈)
+NOT_SHOWN = {'색 참조': '색만 참고', '제외': '영상에 안 씀(제외)'}
+SHOWN_STATES = ['전부 나옴', '일부 잘림', '잘려서 없음', '원본 없음']
+STATES = SHOWN_STATES + list(NOT_SHOWN.values())
 
 
 # ---------------------------------------------------------------- 읽기
@@ -224,7 +231,12 @@ def build(plan, images, segs, total):
         a, b = im['a'], im['b']
         F = [f for f in range(total) if fp[f] and a <= fp[f][0] < b]
         r = dict(im)
-        if F:
+        if r['kind'] in NOT_SHOWN:
+            # 화면에 나오지 않는 이미지: 영상 시각을 주지 않는다. 색 참조는 그 색이 쓰인 영상 시각만 참고로 남김
+            r.update(f0=None, f1=None, n=0, ratio=0.0, state=NOT_SHOWN[r['kind']], split=False, pieces=[],
+                     raw_t=None, near=None,
+                     ref=(min(F), max(F) + 1) if F and r['kind'] == '색 참조' else None)
+        elif F:
             ps_ = [fp[f][0] for f in F]
             span = max(ps_) - min(ps_) + fp[F[0]][2]
             ratio = min(1.0, span / (b - a)) if b > a else 1.0
@@ -277,8 +289,10 @@ def write_csv(path, rows, segs):
                             r['use']])
             else:
                 near = f' (가장 가까운 영상 시각 {r["near"] / FPS:.3f}초)' if r.get('near') is not None else ''
-                w.writerow([r['img'], r['seg'], r['kind'], f'{r["a"]:.2f}', f'{r["b"]:.2f}', '', '', '', '0',
-                            '0.00', r['state'] + near, '', '', '', '', r['use']])
+                if r.get('ref'):
+                    near = f' (이 색이 쓰인 영상 시각 약 {r["ref"][0] / FPS:.2f}~{r["ref"][1] / FPS:.2f}초)'
+                w.writerow([r['img'], r['seg'], r['kind'], f'{r["a"]:.2f}', f'{r["b"]:.2f}', '', '', '', '',
+                            '', r['state'] + near, '', '', '', '', r['use']])
 
 
 def md_escape(s):
@@ -300,10 +314,16 @@ def write_md(path, rows, seg_rows, seg_info, notes, total, src, img_src, plan_pa
     L.append('')
     L.append('- **계획 시간**은 생성 기준(0~96초) 시간입니다. **영상 시간**은 편집을 마친 최종 영상에서의 시간입니다.')
     L.append('- 편집에서 앞뒤를 자르거나 겹친 부분을 잘라 내면, 그 뒤의 이미지는 영상 시간이 그만큼 앞당겨집니다.')
-    L.append('- 원본 이미지는 모델에 직접 넣지 않고(008번만 시작 장면으로 씀), 장면 내용을 프롬프트로 옮기는 참조로 썼습니다.'
-             ' 그래서 "그 이미지가 그 시각에 그대로 나온다"가 아니라 "그 이미지의 내용이 그 시각쯤에 나온다"는 뜻입니다.')
+    L.append('- 008번은 영상 0초의 첫 장면입니다. 정비 팔을 지우고 새벽색으로 고친 판(새 1단계는 그것을 실사화한 판)을'
+             ' 첫 장면으로 넣었습니다. 모델에 직접 넣은 원본은 이것 하나뿐입니다.')
+    L.append('- 나머지 원본은 모델에 직접 넣지 않고, 장면 내용을 프롬프트로 옮기는 참조로 썼습니다.'
+             ' 그래서 \'내용 참조\' 이미지의 영상 시간은 "그 이미지가 그 시각에 그대로 나온다"가 아니라'
+             ' "그 이미지의 내용(위치·구도·시간대)이 그 시각쯤에 나온다"는 뜻입니다.')
+    L.append('- **\'색 참조\'와 \'제외\' 이미지는 화면에 나오지 않습니다.** 영상 시간 칸을 비우고 따로 셉니다.'
+             ' 색 참조는 그 색(새벽빛·노을빛 등)만 프롬프트에 옮겼고, 그 색이 쓰인 영상 시각을 참고로 적었습니다.'
+             ' 제외는 중복·역방향·배치 차이 등으로 쓰지 않은 이미지입니다(이유는 \'쓰임\' 칸).')
     L.append(f'- 상태: 전부 나옴(계획 시간의 {int(FULL * 100)}% 이상 남음) / 일부 잘림 / 잘려서 없음(만들었지만 편집에서 잘림) /'
-             ' 원본 없음(아직 만들지 않음).')
+             ' 원본 없음(아직 만들지 않음) / 색만 참고 / 영상에 안 씀(제외).')
     L.append('')
     L.append('## 편집 조각(자르기 목록)')
     L.append('')
@@ -343,6 +363,8 @@ def write_md(path, rows, seg_rows, seg_info, notes, total, src, img_src, plan_pa
         else:
             film, t = '-', ''
             st = r['state'] + (f' (가장 가까운 {r["near"] / FPS:.2f}초)' if r.get('near') is not None else '')
+            if r.get('ref'):
+                st += f' (색이 쓰인 때 약 {r["ref"][0] / FPS:.1f}~{r["ref"][1] / FPS:.1f}초)'
         use = (r['use'].split(':', 1)[1].strip() if ':' in r['use'] else r['use'])
         L.append(f'| {r["img"]} | {r["seg"]} | {r["kind"]} | {r["a"]:.1f}~{r["b"]:.1f} | {film} | {t} | {st} | '
                  f'{md_escape(use)} |')
@@ -351,7 +373,9 @@ def write_md(path, rows, seg_rows, seg_info, notes, total, src, img_src, plan_pa
     L.append('')
     kinds = [k for k in ('시작 키프레임', '내용 참조', '색 참조', '제외') if any(r['kind'] == k for r in rows)]
     kinds += sorted({r['kind'] for r in rows} - set(kinds))
-    states = ['전부 나옴', '일부 잘림', '잘려서 없음', '원본 없음']
+    states = STATES
+    L.append('화면에 나오는 이미지(시작 키프레임·내용 참조)와 나오지 않는 이미지(색 참조·제외)를 따로 셉니다.')
+    L.append('')
     L.append('| 분류 | ' + ' | '.join(states) + ' | 합계 |')
     L.append('|---|' + '---|' * (len(states) + 1))
     for k in kinds:
@@ -359,6 +383,12 @@ def write_md(path, rows, seg_rows, seg_info, notes, total, src, img_src, plan_pa
         L.append(f'| {k} | ' + ' | '.join(map(str, c)) + f' | {sum(c)} |')
     c = [sum(r['state'] == s for r in rows) for s in states]
     L.append('| 합계 | ' + ' | '.join(map(str, c)) + f' | {len(rows)} |')
+    L.append('')
+    shown = sum(r['kind'] not in NOT_SHOWN for r in rows)
+    L.append(f'- 화면에 나오는 이미지(시작 키프레임·내용 참조): {shown}장, '
+             f'그중 전부 나옴 {sum(r["state"] == "전부 나옴" for r in rows)}장')
+    L.append(f'- 화면에 나오지 않는 이미지: 색 참조 {sum(r["kind"] == "색 참조" for r in rows)}장, '
+             f'제외 {sum(r["kind"] == "제외" for r in rows)}장')
     L.append('')
     if notes:
         L.append('## 주의')
@@ -397,8 +427,10 @@ def main():
     for r in seg_rows:
         film = f'영상 {r["f0"] / FPS:.2f}~{r["f1"] / FPS:.2f}초' if r['n'] else '영상에 없음'
         print(f'  {r["p"]["seg_id"]} (계획 {r["p"]["t_start"]:g}~{r["p"]["t_end"]:g}초): {film}, {r["state"]}')
-    cnt = {s: sum(r['state'] == s for r in rows) for s in ('전부 나옴', '일부 잘림', '잘려서 없음', '원본 없음')}
-    print('  이미지 상태: ' + ', '.join(f'{k} {v}' for k, v in cnt.items()))
+    cnt = {s: sum(r['state'] == s for r in rows) for s in SHOWN_STATES}
+    print('  화면에 나오는 이미지 상태: ' + ', '.join(f'{k} {v}' for k, v in cnt.items()))
+    cnt = {s: sum(r['state'] == s for r in rows) for s in NOT_SHOWN.values()}
+    print('  화면에 나오지 않는 이미지: ' + ', '.join(f'{k} {v}' for k, v in cnt.items()))
     for n in notes:
         print('  주의:', n)
     print(f'저장: {stem}.csv\n      {stem}.md')
