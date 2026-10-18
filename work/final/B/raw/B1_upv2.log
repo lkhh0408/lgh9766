@@ -2,3 +2,5 @@
 요청 시작 2026-10-18T12:31:45+00:00 (UTC), 예상 $1.944, 장부 표식 97d676952a1c
 background 요청 접수: interaction v1_ChZNcnpVYXA5dXA1Mmo5UV9LX29MaERBEhZNcnpVYXA5dXA1Mmo5UV9LX29MaERB. 끝날 때까지 20초마다 확인합니다(무료, 최대 3000초)
   아직 in_progress(0초 경과, 최대 3000초 기다림)
+  결과 확인 실패(2회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(21초 경과, 최대 3000초 기다림)
