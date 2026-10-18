@@ -1,0 +1,63 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChdZRnpVYW8yUkxQNnB5dE1QOWN6QW1RcxIXZjF6VWFxMmNLb0Q3eXRNUDA4SHZpQXM",
+ "extendable": true,
+ "prompt": "Extend this video in the same single, unbroken, continuous shot with absolutely no cuts, no dissolves and no change of shot: every frame follows smoothly from the previous one. This step is 4 seconds long and shows only the part of the flight described below. The camera keeps the same speed to the very last frame and does not slow down at the end of the step.\nThe camera keeps circling slowly to the left around the tower at exactly the same gentle speed as at the end of the video, keeping the tower near the center of the frame, so the nearby amusement park rides keep sliding to the right. During the last second of these 4 seconds it begins, very gently and without slowing down, to ease out of the orbit and turn toward the tower.\nTime of day changes slowly and evenly across these 4 seconds, never in a sudden step: the warm golden sunrise light starts to fade, and by the end of these 4 seconds it is about halfway between golden sunrise light and bright, clear early-morning sunlight.\nThe tower keeps exactly the same design and size: a red and white antenna on top, an upper observation ring and a main observation deck with bands of windows; the deck has no external cranes, arms, gondolas or scaffolding. The tower, buildings, roads, rides and trees stay rigid and never appear, disappear or change shape. Stable level horizon.\nPhotorealistic aerial drone footage of a real place: natural, true-to-life trees with individual leaves and varied shapes, sizes and shades of green; real building facades with real windows, balconies and rooftop details; real thin steel structures, rails and supports on the amusement park rides. Natural, unsharpened detail with soft, realistic edges and natural contrast; no painterly, oil-painting, illustrated or cartoon look, no outline halos, no over-sharpening, no HDR look. Clear, clean air with good visibility. No text, no logos, no aircraft or birds in the frame.",
+ "request_start_utc": "2026-10-18T05:43:26+00:00",
+ "call_token": "3e89e5ec7465",
+ "resolution": "360p",
+ "duration": 4,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/test/T1_bg_360p.json",
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 8.01,
+ "create_seconds": 2,
+ "status": "completed",
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 1100
+   },
+   {
+    "modality": "text",
+    "tokens": 406
+   },
+   {
+    "modality": "video",
+    "tokens": 6805
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 7724
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 8311,
+  "total_output_tokens": 8398,
+  "total_thought_tokens": 310,
+  "total_tokens": 17019,
+  "total_tool_use_tokens": 0
+ },
+ "cost": {
+  "estimate_usd": 0.195,
+  "actual_usd": 0.169,
+  "used_usd": 0.169,
+  "tokens": {
+   "video_output_tokens": 7724,
+   "other_output_tokens": 984,
+   "input_tokens": 8311
+  },
+  "basis": "응답 토큰 x 단가"
+ },
+ "output_file": "files/zfk1bf78izuj",
+ "download_seconds": 1,
+ "seconds_taken": 46,
+ "output_path": "work/final/test/T2_bg_360p.mp4",
+ "ledger": "ok",
+ "chain_seconds": 8.0
+}

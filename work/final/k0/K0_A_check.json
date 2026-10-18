@@ -1,0 +1,361 @@
+{
+ "candidate": "work/final/k0/K0_A_raw.png",
+ "reference": "work/final/s1/keyframes/008c_clean.png",
+ "verdict": "FAIL (no texture gain): foliage_gain, foliage_flat_pct",
+ "geometry": {
+  "inliers": 1104,
+  "scale": 0.9995,
+  "rot_deg": 0.071,
+  "tower_center_shift_px": 3.24,
+  "border_fill_px": 4.45
+ },
+ "layout": {
+  "scene_matches": 1549,
+  "scene_inliers": 1472,
+  "scene_ratio": 0.299,
+  "tower_scale_kc": 1.001,
+  "struct_flow_median": 0.19,
+  "struct_flow_p95": 0.56
+ },
+ "tower": [
+  {
+   "box": [
+    700,
+    128,
+    166,
+    402
+   ],
+   "name": "tower",
+   "blob": {
+    "max_blob": 0,
+    "changed_pct": 0.0
+   },
+   "edge_flow_p95": 0.34,
+   "ssim_lowpass": 0.9969,
+   "local": {
+    "n": 19,
+    "scale": 1.0024,
+    "shift": 0.12
+   },
+   "chamfer": {
+    "ref_to_cand": 0.536,
+    "cand_to_ref": 0.213,
+    "p90": 0.955
+   }
+  },
+  {
+   "box": [
+    700,
+    518,
+    198,
+    80
+   ],
+   "name": "base",
+   "blob": {
+    "max_blob": 0,
+    "changed_pct": 0.0
+   },
+   "edge_flow_p95": 0.34,
+   "ssim_lowpass": 0.991,
+   "local": {
+    "n": 11,
+    "scale": 0.9997,
+    "shift": 0.3
+   },
+   "chamfer": {
+    "ref_to_cand": 0.202,
+    "cand_to_ref": 0.37,
+    "p90": 0.955
+   }
+  },
+  {
+   "box": [
+    945,
+    322,
+    52,
+    243
+   ],
+   "name": "mast",
+   "blob": {
+    "max_blob": 0,
+    "changed_pct": 0.0
+   },
+   "edge_flow_p95": 0.33,
+   "ssim_lowpass": 0.9956,
+   "local": null,
+   "chamfer": {
+    "ref_to_cand": 0.225,
+    "cand_to_ref": 0.174,
+    "p90": 0.955
+   }
+  }
+ ],
+ "color": {
+  "dE_sky": 2.52,
+  "dE_tower": 4.01,
+  "dL_ground": 0.59
+ },
+ "texture": {
+  "ref": {
+   "halo_ground": {
+    "n": 14077,
+    "mean": 0.2907,
+    "p75": 0.3767,
+    "strong_pct": 43.36
+   },
+   "halo_tower": {
+    "n": 2254,
+    "mean": 0.171,
+    "p75": 0.2242,
+    "strong_pct": 29.81
+   },
+   "foliage_fine": 7.899,
+   "foliage_flat_pct": 11.01,
+   "sky_noise": 0.199,
+   "lap_var": 662.8,
+   "hf_pct": 2.64
+  },
+  "cand": {
+   "halo_ground": {
+    "n": 14271,
+    "mean": 0.2868,
+    "p75": 0.3734,
+    "strong_pct": 43.16
+   },
+   "halo_tower": {
+    "n": 2398,
+    "mean": 0.1323,
+    "p75": 0.1516,
+    "strong_pct": 18.35
+   },
+   "foliage_fine": 7.849,
+   "foliage_flat_pct": 12.2,
+   "sky_noise": 0.235,
+   "lap_var": 681.6,
+   "hf_pct": 2.55
+  },
+  "foliage_gain": 0.994
+ },
+ "checks": [
+  {
+   "name": "align_inliers",
+   "ok": true,
+   "value": 1104,
+   "limit": ">=60",
+   "kind": "keep"
+  },
+  {
+   "name": "scale",
+   "ok": true,
+   "value": 0.9995,
+   "limit": "1±0.02",
+   "kind": "keep"
+  },
+  {
+   "name": "rotation_deg",
+   "ok": true,
+   "value": 0.071,
+   "limit": "<=0.5",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_center_shift",
+   "ok": true,
+   "value": 3.24,
+   "limit": "<=20.0",
+   "kind": "keep"
+  },
+  {
+   "name": "border_fill",
+   "ok": true,
+   "value": 4.45,
+   "limit": "<=6.0",
+   "kind": "keep"
+  },
+  {
+   "name": "scene_ratio",
+   "ok": true,
+   "value": 0.299,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "layout_flow_p95",
+   "ok": true,
+   "value": 0.56,
+   "limit": "<=4.0",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_changed_blob",
+   "ok": true,
+   "value": 0,
+   "limit": "<=100",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_edge_flow_p95",
+   "ok": true,
+   "value": 0.34,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_ssim_lowpass",
+   "ok": true,
+   "value": 0.9969,
+   "limit": ">=0.85",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_local_scale",
+   "ok": true,
+   "value": 1.0024,
+   "limit": "1±0.015",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_local_shift",
+   "ok": true,
+   "value": 0.12,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_chamfer",
+   "ok": true,
+   "value": 0.536,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "base_changed_blob",
+   "ok": true,
+   "value": 0,
+   "limit": "<=100",
+   "kind": "keep"
+  },
+  {
+   "name": "base_edge_flow_p95",
+   "ok": true,
+   "value": 0.34,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "base_ssim_lowpass",
+   "ok": true,
+   "value": 0.991,
+   "limit": ">=0.85",
+   "kind": "keep"
+  },
+  {
+   "name": "base_local_scale",
+   "ok": true,
+   "value": 0.9997,
+   "limit": "1±0.015",
+   "kind": "keep"
+  },
+  {
+   "name": "base_local_shift",
+   "ok": true,
+   "value": 0.3,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "base_chamfer",
+   "ok": true,
+   "value": 0.37,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "mast_changed_blob",
+   "ok": true,
+   "value": 0,
+   "limit": "<=100",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_edge_flow_p95",
+   "ok": true,
+   "value": 0.33,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_ssim_lowpass",
+   "ok": true,
+   "value": 0.9956,
+   "limit": ">=0.85",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_chamfer",
+   "ok": true,
+   "value": 0.225,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "dE_sky",
+   "ok": true,
+   "value": 2.52,
+   "limit": "<=6.0",
+   "kind": "keep"
+  },
+  {
+   "name": "dE_tower",
+   "ok": true,
+   "value": 4.01,
+   "limit": "<=8.0",
+   "kind": "keep"
+  },
+  {
+   "name": "dL_ground",
+   "ok": true,
+   "value": 0.59,
+   "limit": "<=8.0",
+   "kind": "keep"
+  },
+  {
+   "name": "halo_ground",
+   "ok": true,
+   "value": 0.2868,
+   "limit": "<=0.378 (ref 0.2907)",
+   "kind": "keep"
+  },
+  {
+   "name": "halo_tower",
+   "ok": true,
+   "value": 0.1323,
+   "limit": "<=0.222 (ref 0.171)",
+   "kind": "keep"
+  },
+  {
+   "name": "sky_noise",
+   "ok": true,
+   "value": 0.235,
+   "limit": "<=0.358",
+   "kind": "keep"
+  },
+  {
+   "name": "foliage_gain",
+   "ok": false,
+   "value": 0.994,
+   "limit": ">=1.1",
+   "kind": "gain"
+  },
+  {
+   "name": "foliage_flat_pct",
+   "ok": false,
+   "value": 12.2,
+   "limit": "<=11.01",
+   "kind": "gain"
+  }
+ ],
+ "keep_ok": true,
+ "gain_ok": false,
+ "pass": false
+}

@@ -1,0 +1,379 @@
+{
+ "candidate": "work/final/k0/K0_B_raw.png",
+ "reference": "work/final/s1/keyframes/008c_clean.png",
+ "verdict": "FAIL (no texture gain): foliage_gain, foliage_flat_pct",
+ "geometry": {
+  "inliers": 1120,
+  "scale": 0.9995,
+  "rot_deg": 0.068,
+  "tower_center_shift_px": 3.19,
+  "border_fill_px": 4.37
+ },
+ "layout": {
+  "scene_matches": 1574,
+  "scene_inliers": 1496,
+  "scene_ratio": 0.304,
+  "tower_scale_kc": 1.001,
+  "struct_flow_median": 0.18,
+  "struct_flow_p95": 0.5
+ },
+ "tower": [
+  {
+   "box": [
+    700,
+    128,
+    166,
+    402
+   ],
+   "name": "tower",
+   "blob": {
+    "max_blob": 0,
+    "changed_pct": 0.0
+   },
+   "edge_flow_p95": 0.37,
+   "ssim_lowpass": 0.9968,
+   "local": {
+    "n": 17,
+    "scale": 1.0017,
+    "shift": 0.07
+   },
+   "chamfer": {
+    "ref_to_cand": 0.387,
+    "cand_to_ref": 0.304,
+    "p90": 0.955
+   }
+  },
+  {
+   "box": [
+    700,
+    518,
+    198,
+    80
+   ],
+   "name": "base",
+   "blob": {
+    "max_blob": 0,
+    "changed_pct": 0.0
+   },
+   "edge_flow_p95": 0.31,
+   "ssim_lowpass": 0.9903,
+   "local": {
+    "n": 17,
+    "scale": 1.0,
+    "shift": 0.22
+   },
+   "chamfer": {
+    "ref_to_cand": 0.203,
+    "cand_to_ref": 0.484,
+    "p90": 0.955
+   }
+  },
+  {
+   "box": [
+    945,
+    322,
+    52,
+    243
+   ],
+   "name": "mast",
+   "blob": {
+    "max_blob": 0,
+    "changed_pct": 0.0
+   },
+   "edge_flow_p95": 0.35,
+   "ssim_lowpass": 0.9947,
+   "local": {
+    "n": 8,
+    "scale": 1.0128,
+    "shift": 1.52
+   },
+   "chamfer": {
+    "ref_to_cand": 0.256,
+    "cand_to_ref": 0.206,
+    "p90": 0.955
+   }
+  }
+ ],
+ "color": {
+  "dE_sky": 2.28,
+  "dE_tower": 3.76,
+  "dL_ground": 0.43
+ },
+ "texture": {
+  "ref": {
+   "halo_ground": {
+    "n": 14077,
+    "mean": 0.2907,
+    "p75": 0.3767,
+    "strong_pct": 43.36
+   },
+   "halo_tower": {
+    "n": 2254,
+    "mean": 0.171,
+    "p75": 0.2242,
+    "strong_pct": 29.81
+   },
+   "foliage_fine": 7.899,
+   "foliage_flat_pct": 11.01,
+   "sky_noise": 0.199,
+   "lap_var": 662.8,
+   "hf_pct": 2.64
+  },
+  "cand": {
+   "halo_ground": {
+    "n": 14179,
+    "mean": 0.2948,
+    "p75": 0.3778,
+    "strong_pct": 43.38
+   },
+   "halo_tower": {
+    "n": 2267,
+    "mean": 0.1243,
+    "p75": 0.1418,
+    "strong_pct": 15.35
+   },
+   "foliage_fine": 7.969,
+   "foliage_flat_pct": 11.22,
+   "sky_noise": 0.241,
+   "lap_var": 663.1,
+   "hf_pct": 2.51
+  },
+  "foliage_gain": 1.009
+ },
+ "checks": [
+  {
+   "name": "align_inliers",
+   "ok": true,
+   "value": 1120,
+   "limit": ">=60",
+   "kind": "keep"
+  },
+  {
+   "name": "scale",
+   "ok": true,
+   "value": 0.9995,
+   "limit": "1±0.02",
+   "kind": "keep"
+  },
+  {
+   "name": "rotation_deg",
+   "ok": true,
+   "value": 0.068,
+   "limit": "<=0.5",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_center_shift",
+   "ok": true,
+   "value": 3.19,
+   "limit": "<=20.0",
+   "kind": "keep"
+  },
+  {
+   "name": "border_fill",
+   "ok": true,
+   "value": 4.37,
+   "limit": "<=6.0",
+   "kind": "keep"
+  },
+  {
+   "name": "scene_ratio",
+   "ok": true,
+   "value": 0.304,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "layout_flow_p95",
+   "ok": true,
+   "value": 0.5,
+   "limit": "<=4.0",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_changed_blob",
+   "ok": true,
+   "value": 0,
+   "limit": "<=100",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_edge_flow_p95",
+   "ok": true,
+   "value": 0.37,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_ssim_lowpass",
+   "ok": true,
+   "value": 0.9968,
+   "limit": ">=0.85",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_local_scale",
+   "ok": true,
+   "value": 1.0017,
+   "limit": "1±0.015",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_local_shift",
+   "ok": true,
+   "value": 0.07,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "tower_chamfer",
+   "ok": true,
+   "value": 0.387,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "base_changed_blob",
+   "ok": true,
+   "value": 0,
+   "limit": "<=100",
+   "kind": "keep"
+  },
+  {
+   "name": "base_edge_flow_p95",
+   "ok": true,
+   "value": 0.31,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "base_ssim_lowpass",
+   "ok": true,
+   "value": 0.9903,
+   "limit": ">=0.85",
+   "kind": "keep"
+  },
+  {
+   "name": "base_local_scale",
+   "ok": true,
+   "value": 1.0,
+   "limit": "1±0.015",
+   "kind": "keep"
+  },
+  {
+   "name": "base_local_shift",
+   "ok": true,
+   "value": 0.22,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "base_chamfer",
+   "ok": true,
+   "value": 0.484,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "mast_changed_blob",
+   "ok": true,
+   "value": 0,
+   "limit": "<=100",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_edge_flow_p95",
+   "ok": true,
+   "value": 0.35,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_ssim_lowpass",
+   "ok": true,
+   "value": 0.9947,
+   "limit": ">=0.85",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_local_scale",
+   "ok": true,
+   "value": 1.0128,
+   "limit": "1±0.015",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_local_shift",
+   "ok": true,
+   "value": 1.52,
+   "limit": "<=2.0",
+   "kind": "keep"
+  },
+  {
+   "name": "mast_chamfer",
+   "ok": true,
+   "value": 0.256,
+   "limit": "info",
+   "kind": "info"
+  },
+  {
+   "name": "dE_sky",
+   "ok": true,
+   "value": 2.28,
+   "limit": "<=6.0",
+   "kind": "keep"
+  },
+  {
+   "name": "dE_tower",
+   "ok": true,
+   "value": 3.76,
+   "limit": "<=8.0",
+   "kind": "keep"
+  },
+  {
+   "name": "dL_ground",
+   "ok": true,
+   "value": 0.43,
+   "limit": "<=8.0",
+   "kind": "keep"
+  },
+  {
+   "name": "halo_ground",
+   "ok": true,
+   "value": 0.2948,
+   "limit": "<=0.378 (ref 0.2907)",
+   "kind": "keep"
+  },
+  {
+   "name": "halo_tower",
+   "ok": true,
+   "value": 0.1243,
+   "limit": "<=0.222 (ref 0.171)",
+   "kind": "keep"
+  },
+  {
+   "name": "sky_noise",
+   "ok": true,
+   "value": 0.241,
+   "limit": "<=0.358",
+   "kind": "keep"
+  },
+  {
+   "name": "foliage_gain",
+   "ok": false,
+   "value": 1.009,
+   "limit": ">=1.1",
+   "kind": "gain"
+  },
+  {
+   "name": "foliage_flat_pct",
+   "ok": false,
+   "value": 11.22,
+   "limit": "<=11.01",
+   "kind": "gain"
+  }
+ ],
+ "keep_ok": true,
+ "gain_ok": false,
+ "pass": false
+}
