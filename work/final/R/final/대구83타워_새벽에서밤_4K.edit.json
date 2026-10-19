@@ -1,0 +1,47 @@
+{
+ "film": "work/final/R/final/대구83타워_새벽에서밤_4K.mp4",
+ "frames": 2340,
+ "seconds": 97.5,
+ "size": "3840x2160",
+ "clamp_sigma": 1.6,
+ "crf": 18,
+ "maxrate_mbps": 41,
+ "trims": "work/final/R/trims_final.csv",
+ "checks": [
+  {
+   "name": "해상도 3840×2160",
+   "ok": true,
+   "detail": "3840×2160"
+  },
+  {
+   "name": "24fps",
+   "ok": true,
+   "detail": "24/1"
+  },
+  {
+   "name": "yuv420p",
+   "ok": true,
+   "detail": "yuv420p"
+  },
+  {
+   "name": "오디오 없음",
+   "ok": true,
+   "detail": "없음"
+  },
+  {
+   "name": "프레임 수 = 조각 합",
+   "ok": true,
+   "detail": "2340 / 2340"
+  },
+  {
+   "name": "색 표시 정보 = 원본",
+   "ok": true,
+   "detail": "tv/smpte170m/iec61966-2-1/bt709"
+  },
+  {
+   "name": "1080p판과 프레임 대조(이음새 앞뒤)",
+   "ok": true,
+   "detail": "48/48 일치"
+  }
+ ]
+}
