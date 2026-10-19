@@ -35,6 +35,7 @@
   python3 work/scripts/finish.py --trims 자르기.csv --out 완화판.mp4 --clamp 0.8      # 윤곽 넘침 자르기(권장 완화판)
   python3 work/scripts/finish.py --trims 자르기.csv --out 완화판.mp4 --dehalo 0.2     # unsharp=5:5:-0.2:5:5:0
   선택: --crf 16 --preset slow --no-segments(조각별 파일 생략) --no-seam-clips --no-verify(원본 대조 생략)
+        --size 3840x2160(4K판: 원본 크기 그대로) --maxrate 45(최대 Mbps, 파일 크기 제한)
 
 결과
   <출력>.mp4                 최종 편집본
@@ -255,8 +256,9 @@ def build_graph(segs, dehalo, clamp):
     return ';\n'.join(parts)
 
 
-def enc_args(crf, preset):
-    return ['-an', '-c:v', 'libx264', '-preset', preset, '-crf', str(crf), '-pix_fmt', 'yuv420p',
+def enc_args(crf, preset, maxrate=None):
+    cap = ['-maxrate', f'{maxrate}M', '-bufsize', f'{2 * maxrate}M'] if maxrate else []
+    return ['-an', '-c:v', 'libx264', '-preset', preset, '-crf', str(crf), *cap, '-pix_fmt', 'yuv420p',
             '-r', str(FPS), '-movflags', '+faststart']
 
 
@@ -322,11 +324,15 @@ def main():
     g.add_argument('--dehalo', type=float, default=0.0, help='unsharp=5:5:-값:5:5:0 (예: 0.2, 0.35)')
     g.add_argument('--clamp', type=float, default=0.0, help='윤곽 넘침 자르기 흐림 σ (권장 0.8)')
     ap.add_argument('--crf', type=int, default=16)
+    ap.add_argument('--size', default='1920x1080', help='출력 크기(예: 3840x2160 = 4K판, 원본 그대로·줄이지 않음)')
+    ap.add_argument('--maxrate', type=int, help='최대 비트레이트 Mbps(4K판 파일 크기 제한용, 예: 45)')
     ap.add_argument('--preset', default='slow')
     ap.add_argument('--no-segments', action='store_true', help='조각별 파일을 만들지 않음')
     ap.add_argument('--no-seam-clips', action='store_true', help='이음새 4배 느린 영상을 만들지 않음')
     ap.add_argument('--no-verify', action='store_true', help='원본 프레임 대조 검사 생략')
     a = ap.parse_args()
+    global OUT_W, OUT_H
+    OUT_W, OUT_H = (int(v) for v in a.size.lower().split('x'))
 
     t_start = time.time()
     segs = load_trims(a.trims)
@@ -350,7 +356,7 @@ def main():
     seams = [s['film_start_frame'] for s in segs[1:]]
     kf = ['-force_key_frames', ','.join(f'{(f - 0.25) / FPS:.6f}' for f in seams)] if seams else []
     cmd = ['ffmpeg', '-y', '-v', 'error', *inputs, '-filter_complex', graph, '-map', '[out]',
-           *enc_args(a.crf, a.preset), *kf, a.out]
+           *enc_args(a.crf, a.preset, a.maxrate), *kf, a.out]
     t0 = time.time()
     subprocess.run(cmd, check=True)
     print(f'인코딩 완료: {a.out} ({time.time() - t0:.0f}초)')
@@ -359,7 +365,7 @@ def main():
     checks = []
     info = probe(a.out)
     md5 = frame_md5s(a.out)
-    checks.append(('해상도 1920×1080', (info['width'], info['height']) == (OUT_W, OUT_H), f'{info["width"]}×{info["height"]}'))
+    checks.append((f'해상도 {OUT_W}×{OUT_H}', (info['width'], info['height']) == (OUT_W, OUT_H), f'{info["width"]}×{info["height"]}'))
     checks.append(('24fps', info['fps_str'] == f'{FPS}/1', info['fps_str']))
     checks.append(('yuv420p', info['pix_fmt'] == 'yuv420p', info['pix_fmt']))
     checks.append(('오디오 없음', not info['has_audio'], '오디오 있음' if info['has_audio'] else '없음'))
@@ -429,7 +435,7 @@ def main():
 
     doc = dict(film=a.out, frames=total, seconds=round(total / FPS, 4), fps=FPS, trims=a.trims,
                color=info['color'],
-               settings=dict(scale='1920:1080 lanczos', dehalo_unsharp=a.dehalo or None, clamp_sigma=a.clamp or None,
+               settings=dict(scale=f'{OUT_W}:{OUT_H} lanczos', maxrate_mbps=a.maxrate, dehalo_unsharp=a.dehalo or None, clamp_sigma=a.clamp or None,
                              crf=a.crf, preset=a.preset, audio=False, crossfade=False),
                segments=[dict(index=s['index'], label=s['label'], raw=s['raw'], raw_frames=s['raw_frames'],
                               in_frame=s['in_frame'], out_frame=s['out_frame'], frames=len(s['kept']),
