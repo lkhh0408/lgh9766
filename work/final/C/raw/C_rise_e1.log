@@ -4,3 +4,5 @@ background 요청 접수: interaction v1_ChdOSHJWYXJYMEJhWGd5dE1QM1p6RWtBaxIXTG9
   아직 in_progress(0초 경과, 최대 3000초 기다림)
   결과 확인 실패(2회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
   아직 in_progress(22초 경과, 최대 3000초 기다림)
+  결과 확인 실패(3회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(43초 경과, 최대 3000초 기다림)
