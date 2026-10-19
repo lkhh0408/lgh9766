@@ -13,7 +13,51 @@
  "extend_video": null,
  "mode": "background",
  "expected_seconds": 16.0,
- "downloaded": false,
- "status": "in_progress",
- "ledger": "pending"
+ "create_seconds": 4,
+ "status": "completed",
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 45849
+   },
+   {
+    "modality": "text",
+    "tokens": 409
+   },
+   {
+    "modality": "image",
+    "tokens": 1100
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 139008
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 47358,
+  "total_output_tokens": 140033,
+  "total_thought_tokens": 373,
+  "total_tokens": 187764,
+  "total_tool_use_tokens": 0
+ },
+ "cost": {
+  "estimate_usd": 2.553,
+  "actual_usd": 2.5518,
+  "used_usd": 2.5518,
+  "tokens": {
+   "video_output_tokens": 139008,
+   "other_output_tokens": 1398,
+   "input_tokens": 47358
+  },
+  "basis": "응답 토큰 x 단가"
+ },
+ "output_file": "files/miu06gk4094w",
+ "download_seconds": 4,
+ "seconds_taken": 367,
+ "output_path": "work/final/C/raw/C2n_2e_4k.mp4",
+ "ledger": "ok",
+ "chain_seconds": 16.0
 }
