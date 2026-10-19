@@ -70,7 +70,7 @@ polish --ref $R/edit/X2r_match_4k.mp4 --ref-frame -1 --clip $P/D_Y1.mp4 --start 
 [ -f $P/D_Y12b.mp4 ] || { cut $R/raw/Y12_4k.mp4 192 383 $P/C_Y12b.mp4
   (cd $S && python3 dejudder.py ../../$P/C_Y12b.mp4 ../../$P/D_Y12b.mp4 --window 9); rm $P/C_Y12b.mp4; }
 
-# Z1: 0~119(0번은 Y12 끝을 다시 그린 프레임). 프레임 간격 고르기 + 출발 속도를 Y12 끝(0.51)에 맞춤
-[ -f $P/D_Z.mp4 ] || (cd $S && python3 dejudder.py ../../$R/raw/Z1_4k.mp4 ../../$P/D_Z.mp4 --window 9 --start-speed 0.51 --ramp 24)
+# Z1: 0~119(0번은 Y12 끝을 다시 그린 프레임). 프레임 간격 고르기(15프레임) + 출발 속도를 Y12 마지막 0.5초(0.30)에 맞춰 2초에 걸쳐 올림
+[ -f $P/D_Z.mp4 ] || (cd $S && python3 dejudder.py ../../$R/raw/Z1_4k.mp4 ../../$P/D_Z.mp4 --window 15 --start-speed 0.30 --ramp 48)
 polish --ref $P/D_Y12b.mp4 --ref-frame -1 --clip $P/D_Z.mp4 --start 1 --out $P/H_Z.mp4
 echo 끝
