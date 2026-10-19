@@ -1,0 +1,27 @@
+장부 누적 $119.39(미확정 포함) + 이번 예상 $2.55 = $121.95 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+요청 시작 2026-10-19T07:21:15+00:00 (UTC), 예상 $2.553, 장부 표식 a838284a54a8
+background 요청 접수: interaction v1_ChdOTUxWYXFxWEVNdU15dE1QdlBmTTJRbxIXOE1UVmFwLXFIYy1HeXRNUF91RE8yUU0. 끝날 때까지 20초마다 확인합니다(무료, 최대 3000초)
+  아직 in_progress(1초 경과, 최대 3000초 기다림)
+  아직 in_progress(22초 경과, 최대 3000초 기다림)
+  아직 in_progress(42초 경과, 최대 3000초 기다림)
+  아직 in_progress(63초 경과, 최대 3000초 기다림)
+  아직 in_progress(84초 경과, 최대 3000초 기다림)
+  아직 in_progress(105초 경과, 최대 3000초 기다림)
+  아직 in_progress(125초 경과, 최대 3000초 기다림)
+  아직 in_progress(146초 경과, 최대 3000초 기다림)
+  아직 in_progress(167초 경과, 최대 3000초 기다림)
+  아직 in_progress(188초 경과, 최대 3000초 기다림)
+  아직 in_progress(209초 경과, 최대 3000초 기다림)
+  아직 in_progress(230초 경과, 최대 3000초 기다림)
+  아직 in_progress(250초 경과, 최대 3000초 기다림)
+  아직 in_progress(271초 경과, 최대 3000초 기다림)
+  아직 in_progress(292초 경과, 최대 3000초 기다림)
+  아직 in_progress(313초 경과, 최대 3000초 기다림)
+  아직 in_progress(333초 경과, 최대 3000초 기다림)
+  결과 확인 실패(18회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(354초 경과, 최대 3000초 기다림)
+  결과 확인 실패(19회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+  아직 in_progress(375초 경과, 최대 3000초 기다림)
+  결과 확인 실패(20회): Error code: 400 - {'error': {'message': 'There was a problem processing your request. You will not be charged.', 'code': 'invalid_request'}}
+생성 실패: status=server_rejected (청구 여부 모름: 장부 unresolved, 결제 화면 확인 필요)

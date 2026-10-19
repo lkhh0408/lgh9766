@@ -1,0 +1,59 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChdRczNWYXBuSkg4X2d5dE1QNFlMdjJBOBIXUXMzVmFwbkpIOF9neXRNUDRZTHYyQTg",
+ "extendable": true,
+ "prompt": "<FIRST_FRAME> Continuous, unbroken single shot from a flying camera, no scene cuts, no change of shot. Wide aerial view of Daegu's 83 Tower, lit in warm white, standing on a dark forested hill in the middle of a wide city at dusk, with mountains on the horizon.\nThe camera is already moving in the very first frame, exactly continuing the motion of the first frame: it keeps pulling back away from the tower and rising slowly at one calm, steady speed for the whole shot, keeping the tower in the center of the frame, so the lit tower slowly becomes smaller in the middle of the wide city of lights, with real depth parallax. The motion never pauses and never jerks.\nNight falls slowly and evenly during the shot, never in a sudden step: the blue sky darkens to a deep navy blue, only a thin dim orange-red glow remains along the far left horizon, the mountains become dark silhouettes, and more and more city lights are on, so the roads become glowing lines and the city becomes a wide field of small warm lights. The tower stays lit in warm white with red aviation lights. No light flickers.\nThe tower keeps exactly the same design throughout. The tower, buildings and roads stay rigid and never appear, disappear or change shape. Stable level horizon. Photorealistic aerial night footage shot on a high-end cinema camera: clean dark sky, natural dark trees on the hill, small natural points of warm light with a gentle glow, clean shadows. No text, no aircraft in the frame. Quiet ambient wind sound only, no music, no dialogue.",
+ "request_start_utc": "2026-10-19T07:56:49+00:00",
+ "call_token": "cac83bca8e58",
+ "resolution": "4k",
+ "duration": 5,
+ "first": "work/final/R/keyframes/Y12_end_4k.png",
+ "last": null,
+ "extend_from": null,
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 5.0,
+ "create_seconds": 1,
+ "status": "completed",
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "text",
+    "tokens": 332
+   },
+   {
+    "modality": "image",
+    "tokens": 1100
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 86880
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 1432,
+  "total_output_tokens": 87674,
+  "total_thought_tokens": 405,
+  "total_tokens": 89511,
+  "total_tool_use_tokens": 0
+ },
+ "cost": {
+  "estimate_usd": 1.54,
+  "actual_usd": 1.5442,
+  "used_usd": 1.5442,
+  "tokens": {
+   "video_output_tokens": 86880,
+   "other_output_tokens": 1199,
+   "input_tokens": 1432
+  },
+  "basis": "응답 토큰 x 단가"
+ },
+ "output_file": "files/4aasaytsi3hr",
+ "download_seconds": 1,
+ "seconds_taken": 135,
+ "output_path": "work/final/R/raw/Z1_4k.mp4",
+ "ledger": "ok",
+ "chain_seconds": 5.013
+}

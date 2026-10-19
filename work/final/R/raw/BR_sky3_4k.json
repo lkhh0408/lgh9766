@@ -1,0 +1,59 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChdfNzdWYW95R0o5Q0h5dE1Qc196eXdRTRIXXzc3VmFveUdKOUNIeXRNUHNfenl3UU0",
+ "extendable": true,
+ "prompt": "<FIRST_FRAME> Continuous, unbroken single shot from a flying camera, no scene cuts, no change of shot. Looking up at an open blue sky with soft white clouds, with the red and white antenna of a tower at the bottom center of the frame.\nThe camera is already moving in the very first frame, exactly continuing the motion of the first frame: it keeps tilting up smoothly and a little faster, so the antenna slides straight down and completely out of the bottom of the frame within about two seconds. After that only open blue sky with soft white clouds fills the frame, and the upward tilt slows down gently while the clouds keep drifting slowly. No pause and no jump.\nClear, bright daylight with a clean blue sky and white clouds.\nThe antenna never changes shape, size or position by itself; it only moves down out of the frame because the camera tilts up. Photorealistic aerial footage shot on a high-end cinema camera: crisp, clear, transparent air with high visibility and no haze, natural contrast. No text, no aircraft or birds in the frame. Quiet ambient wind sound only, no music, no dialogue.",
+ "request_start_utc": "2026-10-19T06:55:58+00:00",
+ "call_token": "74dfa8a5aee9",
+ "resolution": "4k",
+ "duration": 4,
+ "first": "work/final/R/keyframes/BR_sky2_f60_4k.png",
+ "last": null,
+ "extend_from": null,
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 4.0,
+ "create_seconds": 1,
+ "status": "completed",
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "image",
+    "tokens": 1100
+   },
+   {
+    "modality": "text",
+    "tokens": 232
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 69504
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 1332,
+  "total_output_tokens": 70001,
+  "total_thought_tokens": 366,
+  "total_tokens": 71699,
+  "total_tool_use_tokens": 0
+ },
+ "cost": {
+  "estimate_usd": 1.236,
+  "actual_usd": 1.2341,
+  "used_usd": 1.2341,
+  "tokens": {
+   "video_output_tokens": 69504,
+   "other_output_tokens": 863,
+   "input_tokens": 1332
+  },
+  "basis": "응답 토큰 x 단가"
+ },
+ "output_file": "files/4z2rwn1au49x",
+ "download_seconds": 1,
+ "seconds_taken": 131,
+ "output_path": "work/final/R/raw/BR_sky3_4k.mp4",
+ "ledger": "ok",
+ "chain_seconds": 4.01
+}

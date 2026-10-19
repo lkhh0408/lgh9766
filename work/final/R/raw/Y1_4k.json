@@ -1,0 +1,59 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChZHTWpWYXZqWkxiMkIxc2dQeDg3ZVlBEhZHTWpWYXZqWkxiMkIxc2dQeDg3ZVlB",
+ "extendable": true,
+ "prompt": "<FIRST_FRAME> Continuous, unbroken single shot from a flying camera, no scene cuts, no change of shot. Wide aerial view of Daegu's 83 Tower standing on a forested hill in the middle of a wide, dense city of apartment blocks, with mountains on the horizon.\nThe camera is already moving in the very first frame, exactly continuing the motion of the first frame: it keeps pulling straight back away from the tower and rising slowly at one calm, steady speed for the whole shot, keeping the tower in the center of the frame, so the tower slowly becomes smaller and more of the city around the hill comes into view, with real depth parallax. The motion never pauses and never jerks.\nTime of day moves on slowly and evenly across the whole shot, never in a sudden step: the late-afternoon sunlight becomes warm golden light coming low from the left with long shadows, and in the second half the sun sinks to the horizon on the left, the sky near the left horizon glows orange and pink, the upper sky turns a deeper blue, and the clouds glow golden pink. The same clouds stay in the sky; only the light on them changes.\nThe tower keeps exactly the same design throughout: a red and white lattice antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The tower, buildings and roads stay rigid and never appear, disappear or change shape. Stable level horizon. Photorealistic aerial footage shot on a high-end cinema camera: crisp, clear, transparent air with high visibility, natural contrast. No text, no aircraft in the frame. Quiet ambient wind sound only, no music, no dialogue.",
+ "request_start_utc": "2026-10-19T07:34:47+00:00",
+ "call_token": "f355dbb57717",
+ "resolution": "4k",
+ "duration": 8,
+ "first": "work/final/R/keyframes/X2r_end_4k.png",
+ "last": null,
+ "extend_from": null,
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 8.0,
+ "create_seconds": 2,
+ "status": "completed",
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "text",
+    "tokens": 353
+   },
+   {
+    "modality": "image",
+    "tokens": 1100
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "video",
+    "tokens": 139008
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 1453,
+  "total_output_tokens": 139983,
+  "total_thought_tokens": 370,
+  "total_tokens": 141806,
+  "total_tool_use_tokens": 0
+ },
+ "cost": {
+  "estimate_usd": 2.453,
+  "actual_usd": 2.4591,
+  "used_usd": 2.4591,
+  "tokens": {
+   "video_output_tokens": 139008,
+   "other_output_tokens": 1345,
+   "input_tokens": 1453
+  },
+  "basis": "응답 토큰 x 단가"
+ },
+ "output_file": "files/0ya9dnqiry8a",
+ "download_seconds": 3,
+ "seconds_taken": 206,
+ "output_path": "work/final/R/raw/Y1_4k.mp4",
+ "ledger": "ok",
+ "chain_seconds": 8.0
+}

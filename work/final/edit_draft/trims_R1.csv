@@ -1,0 +1,15 @@
+raw,in_s,out_s,label
+work/final/s1/raw/C1fE1_4k_v2.mp4,0,,S1
+work/final/R/raw/BR_up_4k.mp4,f1,f139,BR_up
+work/final/R/raw/BR_sky_4k.mp4,0,f143,BR_sky
+work/final/R/raw/BR_sky2_4k.mp4,0,f60,BR_sky2
+work/final/R/raw/BR_sky3_4k.mp4,0,f21,BR_sky3a
+work/final/R/raw/BR_sky3_4k.mp4,f22,f95,BR_sky3b
+work/final/R/raw/BR_down3_4k.mp4,0,f191,BR_down
+work/final/mid/raw/E12_4k_b_recovered.mp4,0,f324,MID
+work/final/R/edit/mid_tail_ease_4k.mp4,0,,MID-ease
+work/final/R/raw/X1b_4k.mp4,f1,,X1
+work/final/R/edit/X2r_match_4k.mp4,f1,,X2
+work/final/R/raw/Y1_4k.mp4,f1,f192,Y1
+work/final/R/raw/Y12_4k.mp4,f192,,Y2
+work/final/R/edit/Z1_dejudder_4k.mp4,f1,,Z

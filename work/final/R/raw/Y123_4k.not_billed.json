@@ -1,0 +1,28 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChZHTWpWYXZqWkxiMkIxc2dQeDg3ZVlBEhdVY3ZWYXBMUEphRGh5dE1QbUszQW1RNA",
+ "extendable": true,
+ "prompt": "Extend this video in the same single, unbroken, continuous shot with no scene cuts and no change of shot: every frame follows smoothly from the previous one.\nThe camera keeps pulling back away from the tower and rising slowly at the same calm, steady speed as at the end of the video, keeping the tower in the center of the frame, so the lit tower slowly becomes smaller in the middle of the wide city of lights, with real depth parallax. The motion never pauses and never jerks.\nNight falls slowly and evenly across these 4 seconds, never in a sudden step: the sky turns a dark navy blue, only a thin dim red glow remains along the far left horizon, the mountains become dark silhouettes, and more and more city lights are on, so the roads become glowing lines and the city becomes a wide field of small warm lights. The tower stays lit in warm white with red aviation lights. No light flickers.\nThe tower keeps exactly the same design throughout. The tower, buildings and roads stay rigid and never appear, disappear or change shape. Stable level horizon. Photorealistic aerial night footage shot on a high-end cinema camera: clean dark sky, natural dark trees on the hill, small natural points of warm light with a gentle glow, clean shadows. No text, no aircraft in the frame. Quiet ambient wind sound only, no music, no dialogue.",
+ "request_start_utc": "2026-10-19T07:48:18+00:00",
+ "call_token": "228b1583a898",
+ "resolution": "4k",
+ "duration": 4,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/R/raw/Y12_4k.json",
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 20.0,
+ "create_seconds": 16,
+ "status": "server_rejected",
+ "usage": null,
+ "cost": {
+  "estimate_usd": 1.336,
+  "actual_usd": null,
+  "used_usd": 1.336,
+  "tokens": {},
+  "basis": "사전 추정(토큰 정보 없음)"
+ },
+ "downloaded": false,
+ "ledger": "unresolved"
+}

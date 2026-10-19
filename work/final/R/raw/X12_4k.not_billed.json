@@ -1,0 +1,28 @@
+{
+ "model": "gemini-omni-1.1-flash",
+ "interaction_id": "v1_ChdOTUxWYXFxWEVNdU15dE1QdlBmTTJRbxIXU2NQVmF1UHBJOFdLeXRNUHU3LVBtQXM",
+ "extendable": true,
+ "prompt": "Extend this video in the same single, unbroken, continuous shot with no scene cuts and no change of shot: every frame follows smoothly from the previous one.\nThe camera keeps pulling back away from the tower and rising at the same calm, steady speed as at the end of the video, keeping the tower in the center of the frame, so the tower slowly becomes smaller and the view widens to the tower standing on its forested hill in the middle of the wide city, with mountains on the horizon and real depth parallax. The motion never pauses and never jerks.\nTime of day changes slowly and evenly across these 8 seconds, never in a sudden step: the bright daylight gradually becomes warm late-afternoon sunlight coming low from the left, the shadows of the buildings grow longer, and the tower, the buildings and the hill take on a soft golden tint. The same scattered white clouds stay in the sky; only the light on them becomes slightly warmer.\nThe tower keeps exactly the same design throughout: a red and white lattice antenna on top, a small cap, an upper observation ring, angled support struts and a large main observation deck with horizontal bands of windows. The tower, buildings and roads stay rigid and never appear, disappear or change shape. Stable level horizon. Photorealistic aerial footage shot on a high-end cinema camera: crisp, clear, transparent air with high visibility and no haze, sharp fine detail in the trees and buildings, natural contrast. No text, no aircraft in the frame. Quiet ambient wind sound only, no music, no dialogue.",
+ "request_start_utc": "2026-10-19T07:14:10+00:00",
+ "call_token": "effe2bd0ca63",
+ "resolution": "4k",
+ "duration": 8,
+ "first": null,
+ "last": null,
+ "extend_from": "work/final/R/raw/X1b_4k.json",
+ "extend_video": null,
+ "mode": "background",
+ "expected_seconds": 16.0,
+ "create_seconds": 8,
+ "status": "server_rejected",
+ "usage": null,
+ "cost": {
+  "estimate_usd": 2.553,
+  "actual_usd": null,
+  "used_usd": 2.553,
+  "tokens": {},
+  "basis": "사전 추정(토큰 정보 없음)"
+ },
+ "downloaded": false,
+ "ledger": "unresolved"
+}
