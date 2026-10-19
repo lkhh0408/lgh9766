@@ -1,0 +1,48 @@
+{
+ "source": "work/final/C/raw/C2n_1_4k.mp4",
+ "source_md5": "ec90ed2a89c5cae9914875f71892cfe9",
+ "source_frames_decoded": 192,
+ "source_packets": 192,
+ "source_header_frames": 192,
+ "source_size": [
+  3840,
+  2160
+ ],
+ "source_color": {
+  "color_range": "tv",
+  "color_space": "smpte170m",
+  "color_transfer": "iec61966-2-1",
+  "color_primaries": "bt709"
+ },
+ "source_interaction_id": "v1_ChdrWlBWYXFpR0wtV3V5dE1QNmVPVzZBOBIXa1pQVmFxaUdMLVd1eXRNUDZlT1c2QTg",
+ "source_extendable": true,
+ "at": "3.5",
+ "frame": 84,
+ "time_s": 3.5,
+ "frames_before_end": 107,
+ "seconds_before_end": 4.4583,
+ "png": "work/final/C/keyframes/C2n_3.5.png",
+ "png_md5": "f6309ca161fd9a5c19903f0fbbd0f545",
+ "pixel_md5": "8cc59108b925c076ba15406a67ac93ac",
+ "png_size": [
+  3840,
+  2160
+ ],
+ "color_conversion": {
+  "matrix": "bt601",
+  "in_range": "tv",
+  "out": "rgb24 full range",
+  "filter": "scale=in_color_matrix=bt601:in_range=tv:out_range=pc:flags=accurate_rnd+full_chroma_int+bitexact"
+ },
+ "pixel_exact": true,
+ "neighbor_mean_abs_diff": {
+  "83": 6.525,
+  "85": 6.696
+ },
+ "png_1080": null,
+ "png_1080_md5": null,
+ "longer_chain_files": null,
+ "warnings": null,
+ "ok": true,
+ "created_utc": "2026-10-19T04:18:55+00:00"
+}
