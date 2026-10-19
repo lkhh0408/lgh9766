@@ -20,3 +20,5 @@ work/final/C/raw/C2n_2e_4k.mp4
 work/final/D/raw/D_orb_1e_4k.mp4
 work/final/edit_draft/*.mp4
 work/final/R/raw/Y12_4k.mp4
+# 이음새 다듬기 중간 조각(work/final/R/build_edit.sh로 다시 만들 수 있음)
+work/final/R/polish/*.mp4

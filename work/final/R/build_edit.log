@@ -1,0 +1,12 @@
+work/final/R/edit/mid_tail_ease_4k.mp4: 원본 60프레임 → 출력 105프레임(보간 95프레임)
+../../work/final/R/edit/X2r_match_4k.mp4: 192프레임 → 167프레임(보간 164), 움직임 들쭉날쭉 0.27
+../../work/final/R/polish/D_BRup.mp4: 139프레임 → 132프레임(보간 35), 움직임 들쭉날쭉 0.11
+work/final/R/polish/H_BRup.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+../../work/final/R/polish/D_BRsky.mp4: 143프레임 → 139프레임(보간 23), 움직임 들쭉날쭉 0.09
+work/final/R/polish/H_BRsky.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+work/final/R/polish/H_BRsky2.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+../../work/final/R/polish/J_BRsky3.mp4: 96프레임 → 96프레임(보간 93), 움직임 들쭉날쭉 0.15
+work/final/R/polish/D_BRsky3.mp4: 원본 96프레임 → 출력 107프레임(보간 22프레임)
+work/final/R/polish/H_BRsky3.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+work/final/R/polish/D_BRdown.mp4: 원본 191프레임 → 출력 200프레임(보간 23프레임)
+work/final/R/polish/H_BRdown.mp4: 앞 36프레임 다듬음(색 36, 질감 10)

@@ -17,12 +17,12 @@
       python3 work/scripts/dejudder.py --measure <영상.mp4> [--last 24]   # 끝 N프레임의 같은 방식 움직임 평균
 """
 import argparse
-import subprocess
 
 import cv2
 import numpy as np
 
 from retime import interp, read
+from vio import writer
 
 
 def norm_gray(f):
@@ -106,11 +106,7 @@ def main():
         times = source_times(d, a.window, a.start_speed, a.ramp)
     dis = cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM)
     h, w = frames[0].shape[:2]
-    enc = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'bgr24',
-                            '-s', f'{w}x{h}', '-r', '24', '-i', '-', '-c:v', 'libx264', '-preset', 'slow',
-                            '-crf', '16', '-pix_fmt', 'yuv420p', '-color_primaries', 'bt709',
-                            '-color_trc', 'iec61966-2-1', '-colorspace', 'smpte170m', '-color_range', 'tv', a.dst],
-                           stdin=subprocess.PIPE)
+    enc = writer(a.dst, w, h)
     made = 0
     for t in times:
         i = int(np.floor(t + 1e-9))

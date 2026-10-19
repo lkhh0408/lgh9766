@@ -1,0 +1,30 @@
+raw,in_s,out_s,label
+# 0~16초: 승인본 1단계(그대로)
+work/final/s1/raw/C1fE1_4k_v2.mp4,0,,S1
+# 잇는 조각(하늘로 들었다가 내려와 중간 시험으로): H_=앞부분 색·질감 다듬기, D_=속도 맞춤, T_=끝을 다음 조각 쪽으로 맞춤
+work/final/R/polish/H_BRup.mp4,0,,BR_up
+work/final/R/polish/D_BRup.mp4,f37,,BR_up
+work/final/R/polish/H_BRsky.mp4,0,,BR_sky
+work/final/R/polish/D_BRsky.mp4,f36,,BR_sky
+work/final/R/polish/H_BRsky2.mp4,0,,BR_sky2
+work/final/R/polish/C_BRsky2.mp4,f36,,BR_sky2
+work/final/R/polish/H_BRsky3.mp4,0,,BR_sky3
+work/final/R/polish/D_BRsky3.mp4,f36,,BR_sky3
+work/final/R/polish/H_BRdown.mp4,0,,BR_down
+work/final/R/polish/D_BRdown.mp4,f37,f164,BR_down
+work/final/R/polish/T_BRdown.mp4,0,,BR_down
+# 승인 중간 시험(그대로) + 끝 선회 4초 감속
+work/final/mid/raw/E12_4k_b_recovered.mp4,0,f324,MID
+work/final/R/edit/mid_tail_ease_4k.mp4,0,,MID
+# 오후: 물러나며 상승
+work/final/R/polish/H_X1.mp4,0,,X1
+work/final/R/polish/D_X1.mp4,f37,,X1
+work/final/R/polish/H_X2.mp4,0,,X2
+work/final/R/edit/X2r_match_4k.mp4,f37,,X2
+# 노을: 앞 8초는 첫 조각, 뒤 8초는 연장으로 새로 만든 부분
+work/final/R/polish/H_Y1.mp4,0,,Y1
+work/final/R/polish/D_Y1.mp4,f49,,Y1
+work/final/R/polish/D_Y12b.mp4,0,,Y2
+# 밤
+work/final/R/polish/H_Z.mp4,0,,Z
+work/final/R/polish/D_Z.mp4,f37,,Z

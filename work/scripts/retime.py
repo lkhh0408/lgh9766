@@ -8,21 +8,15 @@
       --tail 0.48 24 : 마지막 24프레임(1초) 동안 1배에서 0.48배로 내려가 원본 마지막 프레임에서 끝남
 """
 import argparse
-import subprocess
 
 import cv2
 import numpy as np
 
+from vio import read_frames, writer
+
 
 def read(path):
-    cap = cv2.VideoCapture(path)
-    out = []
-    while True:
-        ok, f = cap.read()
-        if not ok:
-            break
-        out.append(f)
-    return out
+    return read_frames(path)  # ffmpeg로 정확한 색 변환(OpenCV로 읽으면 다시 저장할 때 밝기가 1.5~2 어두워짐)
 
 
 def source_times(n, head=None, tail=None):
@@ -85,9 +79,7 @@ def main():
     assert abs(times[-1] - (n - 1)) < 1e-6 and all(t2 > t1 for t1, t2 in zip(times, times[1:]))
     dis = cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM)
     h, w = frames[0].shape[:2]
-    enc = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'bgr24',
-                            '-s', f'{w}x{h}', '-r', '24', '-i', '-', '-c:v', 'libx264', '-preset', 'slow',
-                            '-crf', '16', '-pix_fmt', 'yuv420p', a.dst], stdin=subprocess.PIPE)
+    enc = writer(a.dst, w, h)
     made = 0
     for t in times:
         t = float(t)
