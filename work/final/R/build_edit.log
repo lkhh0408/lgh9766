@@ -10,3 +10,13 @@ work/final/R/polish/D_BRsky3.mp4: 원본 96프레임 → 출력 107프레임(보
 work/final/R/polish/H_BRsky3.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
 work/final/R/polish/D_BRdown.mp4: 원본 191프레임 → 출력 200프레임(보간 23프레임)
 work/final/R/polish/H_BRdown.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+work/final/R/polish/T_BRdown.mp4: 뒤 36프레임 다듬음(색 36, 질감 12)
+../../work/final/R/polish/D_X1.mp4: 192프레임 → 187프레임(보간 35), 움직임 들쭉날쭉 0.20
+work/final/R/polish/H_X1.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+work/final/R/polish/H_X2.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+../../work/final/R/polish/D_Y1.mp4: 192프레임 → 217프레임(보간 71), 움직임 들쭉날쭉 0.09
+work/final/R/polish/H_Y1.mp4: 앞 48프레임 다듬음(색 48, 질감 10)
+../../work/final/R/polish/D_Y12b.mp4: 192프레임 → 192프레임(보간 189), 움직임 들쭉날쭉 0.12
+../../work/final/R/polish/D_Z.mp4: 120프레임 → 121프레임(보간 119), 움직임 들쭉날쭉 0.21
+work/final/R/polish/H_Z.mp4: 앞 36프레임 다듬음(색 36, 질감 10)
+끝
