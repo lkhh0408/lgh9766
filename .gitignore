@@ -22,3 +22,7 @@ work/final/edit_draft/*.mp4
 work/final/R/raw/Y12_4k.mp4
 # 이음새 다듬기 중간 조각(work/final/R/build_edit.sh로 다시 만들 수 있음)
 work/final/R/polish/*.mp4
+# 최종본의 조각별 파일·이음새 4배 느린 재생(finish.py로 다시 만들 수 있음)
+work/final/R/final/*_segments/
+work/final/R/final/*_seams/
+work/final/R/final/대구83타워_새벽에서밤_1080p.mp4
