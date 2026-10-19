@@ -70,7 +70,14 @@ polish --ref $R/edit/X2r_match_4k.mp4 --ref-frame -1 --clip $P/D_Y1.mp4 --start 
 [ -f $P/D_Y12b.mp4 ] || { cut $R/raw/Y12_4k.mp4 192 383 $P/C_Y12b.mp4
   (cd $S && python3 dejudder.py ../../$P/C_Y12b.mp4 ../../$P/D_Y12b.mp4 --window 9); rm $P/C_Y12b.mp4; }
 
+# Y12 뒷부분 선명도 맞추기: 연장으로 새로 만든 부분이 앞 조각(Y1)보다 날카로워(선명도 지수 118.8 대 77.7) 이음새에서 화면 전체가 튐.
+# 흐림 σ를 0.94(Y1 끝과 같아짐)에서 0.58(밤 조각 시작 61.0과 같아짐)로 고르게 줄임
+[ -f $P/D_Y12b_soft.mp4 ] || python3 $S/soften.py $P/D_Y12b.mp4 $P/D_Y12b_soft.mp4 --start 0.94 --end 0.58
+
+# 노을 첫 조각 끝 2초(D_Y1 169~216 = 원본 Y1 144~191) 동안 같은 순간을 다시 그린 연장본(Y12 144~191, 흐림 0.94)으로 서서히 넘어감
+[ -f $P/RB_Y1.mp4 ] || python3 $S/render_blend.py --a $P/D_Y1.mp4 --a-end 216 --b $R/raw/Y12_4k.mp4 --b-end 191 --frames 48 --b-blur 0.94 --out $P/RB_Y1.mp4
+
 # Z1: 0~119(0번은 Y12 끝을 다시 그린 프레임). 프레임 간격 고르기(15프레임) + 출발 속도를 Y12 마지막 0.5초(0.30)에 맞춰 2초에 걸쳐 올림
 [ -f $P/D_Z.mp4 ] || (cd $S && python3 dejudder.py ../../$R/raw/Z1_4k.mp4 ../../$P/D_Z.mp4 --window 15 --start-speed 0.30 --ramp 48)
-polish --ref $P/D_Y12b.mp4 --ref-frame -1 --clip $P/D_Z.mp4 --start 1 --out $P/H_Z.mp4
+polish --ref $P/D_Y12b_soft.mp4 --ref-frame -1 --clip $P/D_Z.mp4 --start 1 --out $P/H_Z.mp4
 echo 끝

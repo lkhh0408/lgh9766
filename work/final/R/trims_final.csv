@@ -21,10 +21,11 @@ work/final/R/polish/H_X1.mp4,0,,X1
 work/final/R/polish/D_X1.mp4,f37,,X1
 work/final/R/polish/H_X2.mp4,0,,X2
 work/final/R/edit/X2r_match_4k.mp4,f37,,X2
-# 노을: 앞 8초는 첫 조각, 뒤 8초는 연장으로 새로 만든 부분
+# 노을: 앞 8초는 첫 조각, 뒤 8초는 연장으로 새로 만든 부분(마지막 2초 RB_Y1에서 같은 순간의 연장본 그림으로 서서히 넘어감, 연장 부분은 선명도를 앞 조각에 맞춤)
 work/final/R/polish/H_Y1.mp4,0,,Y1
-work/final/R/polish/D_Y1.mp4,f49,,Y1
-work/final/R/polish/D_Y12b.mp4,0,,Y2
+work/final/R/polish/D_Y1.mp4,f49,f169,Y1
+work/final/R/polish/RB_Y1.mp4,0,,Y1
+work/final/R/polish/D_Y12b_soft.mp4,0,,Y2
 # 밤
 work/final/R/polish/H_Z.mp4,0,,Z
 work/final/R/polish/D_Z.mp4,f37,,Z
