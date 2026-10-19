@@ -1,0 +1,113 @@
+{
+ "film": "work/final/preview/1_새1단계_0-20초_1080p.mp4",
+ "frames": 480,
+ "seconds": 20.0,
+ "fps": 24,
+ "trims": "work/final/preview/trims_A.csv",
+ "color": {
+  "color_range": "tv",
+  "color_space": "smpte170m",
+  "color_transfer": "iec61966-2-1",
+  "color_primaries": "bt709"
+ },
+ "settings": {
+  "scale": "1920:1080 lanczos",
+  "dehalo_unsharp": null,
+  "clamp_sigma": null,
+  "crf": 16,
+  "preset": "slow",
+  "audio": false,
+  "crossfade": false
+ },
+ "segments": [
+  {
+   "index": 1,
+   "label": "A",
+   "raw": "work/final/A/raw/A12b_4k.mp4",
+   "raw_frames": 480,
+   "in_frame": 0,
+   "out_frame": 480,
+   "frames": 480,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 0,
+   "film_end_frame": 480,
+   "film_start_s": 0.0,
+   "film_end_s": 20.0,
+   "file": null,
+   "extra": null,
+   "notes": []
+  }
+ ],
+ "seams": [],
+ "verify": [
+  {
+   "label": "A",
+   "where": "첫",
+   "film_frame": 0,
+   "raw_frame": 0,
+   "mse": 5.49,
+   "neighbor_mse": 957.92,
+   "margin": 174.58,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "A",
+   "where": "끝",
+   "film_frame": 479,
+   "raw_frame": 479,
+   "mse": 4.71,
+   "neighbor_mse": 141.72,
+   "margin": 30.09,
+   "ok": true,
+   "weak": false
+  }
+ ],
+ "checks": [
+  {
+   "name": "해상도 1920×1080",
+   "ok": true,
+   "detail": "1920×1080"
+  },
+  {
+   "name": "24fps",
+   "ok": true,
+   "detail": "24/1"
+  },
+  {
+   "name": "yuv420p",
+   "ok": true,
+   "detail": "yuv420p"
+  },
+  {
+   "name": "오디오 없음",
+   "ok": true,
+   "detail": "없음"
+  },
+  {
+   "name": "프레임 수 = 조각 합",
+   "ok": true,
+   "detail": "디코드 480 / 조각 합 480"
+  },
+  {
+   "name": "길이",
+   "ok": true,
+   "detail": "20.0000초"
+  },
+  {
+   "name": "색 표시 정보 = 원본",
+   "ok": true,
+   "detail": "tv/smpte170m/iec61966-2-1/bt709"
+  },
+  {
+   "name": "조각 첫·끝 프레임 = 원본의 그 프레임",
+   "ok": true,
+   "detail": "2/2 일치 (15초)"
+  }
+ ],
+ "all_ok": true,
+ "seconds_taken": 81.0
+}
