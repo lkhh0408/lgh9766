@@ -1,0 +1,5 @@
+raw,in_s,out_s,label
+work/final/D/raw/D_orb_1_4k.mp4,f96,f192,D1o
+work/final/D/raw/D_orb_1e_4k.mp4,f192,f288,D1e
+work/final/C/raw/C2n_2_4k.mp4,f96,f192,C2o
+work/final/C/raw/C2n_2e_4k.mp4,f192,f288,C2e

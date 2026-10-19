@@ -1,0 +1,261 @@
+{
+ "film": "work/final/edit_draft/switchtest_1080p.mp4",
+ "frames": 384,
+ "seconds": 16.0,
+ "fps": 24,
+ "trims": "work/final/edit_draft/trims_switchtest.csv",
+ "color": {
+  "color_range": "tv",
+  "color_space": "smpte170m",
+  "color_transfer": "iec61966-2-1",
+  "color_primaries": "bt709"
+ },
+ "settings": {
+  "scale": "1920:1080 lanczos",
+  "dehalo_unsharp": null,
+  "clamp_sigma": 0.8,
+  "crf": 16,
+  "preset": "slow",
+  "audio": false,
+  "crossfade": false
+ },
+ "segments": [
+  {
+   "index": 1,
+   "label": "D1o",
+   "raw": "work/final/D/raw/D_orb_1_4k.mp4",
+   "raw_frames": 192,
+   "in_frame": 96,
+   "out_frame": 192,
+   "frames": 96,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 0,
+   "film_end_frame": 96,
+   "film_start_s": 0.0,
+   "film_end_s": 4.0,
+   "file": null,
+   "extra": null,
+   "notes": []
+  },
+  {
+   "index": 2,
+   "label": "D1e",
+   "raw": "work/final/D/raw/D_orb_1e_4k.mp4",
+   "raw_frames": 384,
+   "in_frame": 192,
+   "out_frame": 288,
+   "frames": 96,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 96,
+   "film_end_frame": 192,
+   "film_start_s": 4.0,
+   "film_end_s": 8.0,
+   "file": null,
+   "extra": null,
+   "notes": []
+  },
+  {
+   "index": 3,
+   "label": "C2o",
+   "raw": "work/final/C/raw/C2n_2_4k.mp4",
+   "raw_frames": 192,
+   "in_frame": 96,
+   "out_frame": 192,
+   "frames": 96,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 192,
+   "film_end_frame": 288,
+   "film_start_s": 8.0,
+   "film_end_s": 12.0,
+   "file": null,
+   "extra": null,
+   "notes": []
+  },
+  {
+   "index": 4,
+   "label": "C2e",
+   "raw": "work/final/C/raw/C2n_2e_4k.mp4",
+   "raw_frames": 384,
+   "in_frame": 192,
+   "out_frame": 288,
+   "frames": 96,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 288,
+   "film_end_frame": 384,
+   "film_start_s": 12.0,
+   "film_end_s": 16.0,
+   "file": null,
+   "extra": null,
+   "notes": []
+  }
+ ],
+ "seams": [
+  {
+   "index": 1,
+   "frame": 96,
+   "time_s": 4.0,
+   "before": "D1o",
+   "after": "D1e"
+  },
+  {
+   "index": 2,
+   "frame": 192,
+   "time_s": 8.0,
+   "before": "D1e",
+   "after": "C2o"
+  },
+  {
+   "index": 3,
+   "frame": 288,
+   "time_s": 12.0,
+   "before": "C2o",
+   "after": "C2e"
+  }
+ ],
+ "verify": [
+  {
+   "label": "D1o",
+   "where": "첫",
+   "film_frame": 0,
+   "raw_frame": 96,
+   "mse": 7.38,
+   "neighbor_mse": 711.88,
+   "margin": 96.43,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "D1o",
+   "where": "끝",
+   "film_frame": 95,
+   "raw_frame": 191,
+   "mse": 10.05,
+   "neighbor_mse": 848.98,
+   "margin": 84.45,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "D1e",
+   "where": "첫",
+   "film_frame": 96,
+   "raw_frame": 192,
+   "mse": 15.62,
+   "neighbor_mse": 1214.06,
+   "margin": 77.74,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "D1e",
+   "where": "끝",
+   "film_frame": 191,
+   "raw_frame": 287,
+   "mse": 14.69,
+   "neighbor_mse": 790.67,
+   "margin": 53.81,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "C2o",
+   "where": "첫",
+   "film_frame": 192,
+   "raw_frame": 96,
+   "mse": 6.6,
+   "neighbor_mse": 123.81,
+   "margin": 18.76,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "C2o",
+   "where": "끝",
+   "film_frame": 287,
+   "raw_frame": 191,
+   "mse": 9.66,
+   "neighbor_mse": 147.04,
+   "margin": 15.22,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "C2e",
+   "where": "첫",
+   "film_frame": 288,
+   "raw_frame": 192,
+   "mse": 22.79,
+   "neighbor_mse": 304.15,
+   "margin": 13.35,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "C2e",
+   "where": "끝",
+   "film_frame": 383,
+   "raw_frame": 287,
+   "mse": 20.91,
+   "neighbor_mse": 144.76,
+   "margin": 6.92,
+   "ok": true,
+   "weak": false
+  }
+ ],
+ "checks": [
+  {
+   "name": "해상도 1920×1080",
+   "ok": true,
+   "detail": "1920×1080"
+  },
+  {
+   "name": "24fps",
+   "ok": true,
+   "detail": "24/1"
+  },
+  {
+   "name": "yuv420p",
+   "ok": true,
+   "detail": "yuv420p"
+  },
+  {
+   "name": "오디오 없음",
+   "ok": true,
+   "detail": "없음"
+  },
+  {
+   "name": "프레임 수 = 조각 합",
+   "ok": true,
+   "detail": "디코드 384 / 조각 합 384"
+  },
+  {
+   "name": "길이",
+   "ok": true,
+   "detail": "16.0000초"
+  },
+  {
+   "name": "색 표시 정보 = 원본",
+   "ok": true,
+   "detail": "tv/smpte170m/iec61966-2-1/bt709"
+  },
+  {
+   "name": "조각 첫·끝 프레임 = 원본의 그 프레임",
+   "ok": true,
+   "detail": "8/8 일치 (29초)"
+  }
+ ],
+ "all_ok": true,
+ "seconds_taken": 132.4
+}

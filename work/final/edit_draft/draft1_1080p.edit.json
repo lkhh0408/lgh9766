@@ -1,0 +1,310 @@
+{
+ "film": "work/final/edit_draft/draft1_1080p.mp4",
+ "frames": 1065,
+ "seconds": 44.375,
+ "fps": 24,
+ "trims": "work/final/edit_draft/trims_draft1.csv",
+ "color": {
+  "color_range": "tv",
+  "color_space": "smpte170m",
+  "color_transfer": "iec61966-2-1",
+  "color_primaries": "bt709"
+ },
+ "settings": {
+  "scale": "1920:1080 lanczos",
+  "dehalo_unsharp": null,
+  "clamp_sigma": 0.8,
+  "crf": 16,
+  "preset": "slow",
+  "audio": false,
+  "crossfade": false
+ },
+ "segments": [
+  {
+   "index": 1,
+   "label": "A",
+   "raw": "work/final/A/raw/A12_4k.mp4",
+   "raw_frames": 384,
+   "in_frame": 0,
+   "out_frame": 336,
+   "frames": 336,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 0,
+   "film_end_frame": 336,
+   "film_start_s": 0.0,
+   "film_end_s": 14.0,
+   "file": null,
+   "extra": null,
+   "notes": []
+  },
+  {
+   "index": 2,
+   "label": "A-ease",
+   "raw": "work/final/C/edit/A12_tail_ease_4k.mp4",
+   "raw_frames": 71,
+   "in_frame": 0,
+   "out_frame": 71,
+   "frames": 71,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 336,
+   "film_end_frame": 407,
+   "film_start_s": 14.0,
+   "film_end_s": 16.9583,
+   "file": null,
+   "extra": null,
+   "notes": []
+  },
+  {
+   "index": 3,
+   "label": "C1",
+   "raw": "work/final/C/raw/C2n_1_4k.mp4",
+   "raw_frames": 192,
+   "in_frame": 1,
+   "out_frame": 84,
+   "frames": 83,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 407,
+   "film_end_frame": 490,
+   "film_start_s": 16.9583,
+   "film_end_s": 20.4167,
+   "file": null,
+   "extra": null,
+   "notes": []
+  },
+  {
+   "index": 4,
+   "label": "C2",
+   "raw": "work/final/C/raw/C2n_2e_4k.mp4",
+   "raw_frames": 384,
+   "in_frame": 0,
+   "out_frame": 383,
+   "frames": 383,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 490,
+   "film_end_frame": 873,
+   "film_start_s": 20.4167,
+   "film_end_s": 36.375,
+   "file": null,
+   "extra": null,
+   "notes": []
+  },
+  {
+   "index": 5,
+   "label": "D1",
+   "raw": "work/final/D/raw/D_orb_1_4k.mp4",
+   "raw_frames": 192,
+   "in_frame": 0,
+   "out_frame": 192,
+   "frames": 192,
+   "ff_s": null,
+   "ff_x": null,
+   "kept": null,
+   "plan_t0": null,
+   "film_start_frame": 873,
+   "film_end_frame": 1065,
+   "film_start_s": 36.375,
+   "film_end_s": 44.375,
+   "file": null,
+   "extra": null,
+   "notes": []
+  }
+ ],
+ "seams": [
+  {
+   "index": 1,
+   "frame": 336,
+   "time_s": 14.0,
+   "before": "A",
+   "after": "A-ease"
+  },
+  {
+   "index": 2,
+   "frame": 407,
+   "time_s": 16.9583,
+   "before": "A-ease",
+   "after": "C1"
+  },
+  {
+   "index": 3,
+   "frame": 490,
+   "time_s": 20.4167,
+   "before": "C1",
+   "after": "C2"
+  },
+  {
+   "index": 4,
+   "frame": 873,
+   "time_s": 36.375,
+   "before": "C2",
+   "after": "D1"
+  }
+ ],
+ "verify": [
+  {
+   "label": "A",
+   "where": "첫",
+   "film_frame": 0,
+   "raw_frame": 0,
+   "mse": 17.09,
+   "neighbor_mse": 552.19,
+   "margin": 32.31,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "A",
+   "where": "끝",
+   "film_frame": 335,
+   "raw_frame": 335,
+   "mse": 8.54,
+   "neighbor_mse": 116.97,
+   "margin": 13.7,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "A-ease",
+   "where": "첫",
+   "film_frame": 336,
+   "raw_frame": 0,
+   "mse": 7.9,
+   "neighbor_mse": 119.28,
+   "margin": 15.09,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "A-ease",
+   "where": "끝",
+   "film_frame": 406,
+   "raw_frame": 70,
+   "mse": 7.14,
+   "neighbor_mse": 7.08,
+   "margin": 0.99,
+   "ok": false,
+   "weak": false
+  },
+  {
+   "label": "C1",
+   "where": "첫",
+   "film_frame": 407,
+   "raw_frame": 1,
+   "mse": 5.44,
+   "neighbor_mse": 26.93,
+   "margin": 4.95,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "C1",
+   "where": "끝",
+   "film_frame": 489,
+   "raw_frame": 83,
+   "mse": 5.56,
+   "neighbor_mse": 91.63,
+   "margin": 16.48,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "C2",
+   "where": "첫",
+   "film_frame": 490,
+   "raw_frame": 0,
+   "mse": 16.4,
+   "neighbor_mse": 134.76,
+   "margin": 8.21,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "C2",
+   "where": "끝",
+   "film_frame": 872,
+   "raw_frame": 382,
+   "mse": 19.08,
+   "neighbor_mse": 160.59,
+   "margin": 8.42,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "D1",
+   "where": "첫",
+   "film_frame": 873,
+   "raw_frame": 0,
+   "mse": 16.79,
+   "neighbor_mse": 63.96,
+   "margin": 3.81,
+   "ok": true,
+   "weak": false
+  },
+  {
+   "label": "D1",
+   "where": "끝",
+   "film_frame": 1064,
+   "raw_frame": 191,
+   "mse": 11.02,
+   "neighbor_mse": 850.88,
+   "margin": 77.24,
+   "ok": true,
+   "weak": false
+  }
+ ],
+ "checks": [
+  {
+   "name": "해상도 1920×1080",
+   "ok": true,
+   "detail": "1920×1080"
+  },
+  {
+   "name": "24fps",
+   "ok": true,
+   "detail": "24/1"
+  },
+  {
+   "name": "yuv420p",
+   "ok": true,
+   "detail": "yuv420p"
+  },
+  {
+   "name": "오디오 없음",
+   "ok": true,
+   "detail": "없음"
+  },
+  {
+   "name": "프레임 수 = 조각 합",
+   "ok": true,
+   "detail": "디코드 1065 / 조각 합 1065"
+  },
+  {
+   "name": "길이",
+   "ok": true,
+   "detail": "44.3750초"
+  },
+  {
+   "name": "색 표시 정보 = 원본",
+   "ok": false,
+   "detail": "tv/smpte170m/iec61966-2-1/bt709 (원본끼리 다름: 2가지)"
+  },
+  {
+   "name": "조각 첫·끝 프레임 = 원본의 그 프레임",
+   "ok": false,
+   "detail": "9/10 일치 (34초)"
+  }
+ ],
+ "all_ok": false,
+ "seconds_taken": 240.3
+}
