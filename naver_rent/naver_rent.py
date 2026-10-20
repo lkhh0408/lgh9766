@@ -12,9 +12,12 @@ import math
 import random
 import re
 import sys
+import json
 import time
 from datetime import datetime
 from pathlib import Path
+
+from browser_util import connect, launch_browser
 
 # ===== 조건 설정 (필요하면 숫자만 바꾸세요) =====
 STATION_NAME = "운정중앙역"
@@ -24,6 +27,8 @@ RADIUS_KM = 2.0            # 반경 (km)
 MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
 MAX_RENT = 90              # 월세 상한 (만원) = 90만원
 PAJU_CORTAR_NO = "4148000000"  # 네이버 지역코드: 경기도 파주시
+# 접속 인증용 시작 화면 (운정 아파트 단지 화면)
+START_URL = "https://new.land.naver.com/complexes/113942?a=APT:ABYG:JGC&e=RETAIL"
 # =============================================
 
 BASE = "https://new.land.naver.com"
@@ -102,9 +107,21 @@ def first(d, *keys, default=""):
 
 
 class Naver:
-    def __init__(self, page):
+    def __init__(self, page, debug_path):
         self.page = page
         self.token = None
+        self.debug = open(debug_path, "w", encoding="utf-8")
+        self.logged_paths = {}
+
+    def write_debug(self, path, params, status, text):
+        # 같은 종류의 요청은 처음 3번만 기록 (파일이 너무 커지지 않게)
+        key = re.sub(r"\d{5,}", "N", path)
+        self.logged_paths[key] = self.logged_paths.get(key, 0) + 1
+        if self.logged_paths[key] > 3:
+            return
+        self.debug.write(json.dumps({"path": path, "params": params, "status": status,
+                                     "response": text[:4000]}, ensure_ascii=False) + "\n")
+        self.debug.flush()
 
     def capture_token(self):
         def on_request(req):
@@ -113,10 +130,9 @@ class Naver:
                 self.token = auth
 
         self.page.on("request", on_request)
-        url = (f"{BASE}/complexes?ms={STATION_LAT},{STATION_LON},15"
-               f"&a=APT&b=B1:B2&e=RETAIL")
         log("네이버 부동산 접속 중...")
-        self.page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        if "new.land.naver.com/complexes" not in self.page.url:
+            self.page.goto(START_URL, wait_until="domcontentloaded", timeout=60000)
         for _ in range(60):
             if self.token:
                 break
@@ -137,9 +153,18 @@ class Naver:
                    "Accept": "application/json"}
         for attempt in range(retries):
             resp = self.page.request.get(url, params=params, headers=headers, timeout=30000)
+            try:
+                text = resp.text()
+            except Exception:
+                text = ""
+            self.write_debug(path, params, resp.status, text)
             if resp.status == 200:
                 pause()
-                return resp.json()
+                try:
+                    return json.loads(text)
+                except ValueError:
+                    log(f"  (응답 형식이 예상과 다름: {path})")
+                    return None
             if resp.status in (401, 403, 429) or resp.status >= 500:
                 wait = 10 * (attempt + 1)
                 log(f"  (네이버 응답 {resp.status}, {wait}초 쉬었다가 다시 시도)")
@@ -274,15 +299,18 @@ def main():
     out_dir = Path(__file__).resolve().parent
     out_path = out_dir / f"{STATION_NAME}_전월세_{datetime.now():%Y%m%d_%H%M}.xlsx"
 
+    proc = launch_browser(out_dir, START_URL)
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        context = browser.new_context(locale="ko-KR", viewport={"width": 1280, "height": 900})
-        page = context.new_page()
-        nv = Naver(page)
+        browser = connect(p)
+        context = browser.contexts[0]
+        page = context.pages[0] if context.pages else context.new_page()
+        nv = Naver(page, out_dir / "debug_log.txt")
         nv.capture_token()
 
         complexes = nv.find_complexes()
         log(f"반경 {RADIUS_KM:g}km 안 아파트 단지: {len(complexes)}곳")
+        if not complexes:
+            log("단지를 하나도 찾지 못했습니다. 같은 폴더의 debug_log.txt 를 보내주세요.")
 
         rows, seen = [], set()
         for ci, c in enumerate(complexes, 1):
@@ -333,10 +361,16 @@ def main():
             log(f"    조건에 맞는 매물 {kept}건")
 
         browser.close()
+    try:
+        proc.terminate()
+    except Exception:
+        pass
 
     save_excel(rows, out_path)
     log("")
     log(f"완료! 총 {len(rows)}건 저장: {out_path}")
+    if not rows:
+        log("매물이 0건입니다. 같은 폴더의 debug_log.txt 를 보내주세요.")
     return 0
 
 

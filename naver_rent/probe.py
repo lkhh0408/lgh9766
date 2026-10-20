@@ -7,59 +7,14 @@ PC에 설치된 크롬(없으면 엣지)을 일반 창으로 띄우고 그 창�
 사이트가 주고받는 데이터를 api_log.txt 에 기록합니다.
 """
 import json
-import os
-import subprocess
 import sys
-import time
 from pathlib import Path
 
+from browser_util import connect, launch_browser
+
 START_URL = "https://land.naver.com/"
-DEBUG_PORT = 9222
 MAX_BODY = 6000
 SKIP_HEADERS = {"cookie", "set-cookie"}
-
-
-def find_browser():
-    env = os.environ
-    candidates = []
-    for base in (env.get("ProgramFiles"), env.get("ProgramFiles(x86)"), env.get("LocalAppData")):
-        if base:
-            candidates.append(Path(base) / "Google/Chrome/Application/chrome.exe")
-    for base in (env.get("ProgramFiles(x86)"), env.get("ProgramFiles")):
-        if base:
-            candidates.append(Path(base) / "Microsoft/Edge/Application/msedge.exe")
-    for c in candidates:
-        if c.exists():
-            return c
-    return None
-
-
-def launch_browser(here):
-    exe = find_browser()
-    if not exe:
-        raise RuntimeError("크롬이나 엣지를 찾지 못했습니다.")
-    profile = here / "browser_profile"
-    profile.mkdir(exist_ok=True)
-    print(f"브라우저 실행: {exe}", flush=True)
-    return subprocess.Popen([
-        str(exe),
-        f"--remote-debugging-port={DEBUG_PORT}",
-        f"--user-data-dir={profile}",
-        "--no-first-run",
-        "--no-default-browser-check",
-        START_URL,
-    ])
-
-
-def connect(p):
-    last = None
-    for _ in range(30):
-        try:
-            return p.chromium.connect_over_cdp(f"http://127.0.0.1:{DEBUG_PORT}")
-        except Exception as e:
-            last = e
-            time.sleep(1)
-    raise RuntimeError(f"브라우저에 연결하지 못했습니다: {last}")
 
 
 def main():
@@ -99,7 +54,7 @@ def main():
                 lambda f: f == page.main_frame and out.write(
                     json.dumps({"page": f.url}, ensure_ascii=False) + "\n"))
 
-    proc = launch_browser(here)
+    proc = launch_browser(here, START_URL)
     with sync_playwright() as p:
         browser = connect(p)
         context = browser.contexts[0]

@@ -27,16 +27,14 @@ if not defined PYEXE (
 )
 echo Python: %PYEXE%
 
-echo [1/3] Installing packages...
+echo [1/2] Installing packages...
 "%PYEXE%" -m pip install --quiet --upgrade playwright openpyxl
 if errorlevel 1 (
   echo Package install failed. Please send a screenshot of this window.
   pause
   exit /b 1
 )
-echo [2/3] Installing browser (first run only, may take a few minutes)...
-"%PYEXE%" -m playwright install chromium
-echo [3/3] Collecting listings...
+echo [2/2] Collecting listings...
 "%PYEXE%" naver_rent.py
 echo.
 pause
