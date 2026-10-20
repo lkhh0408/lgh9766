@@ -42,7 +42,7 @@ FETCH_JS = """async ([url, auth]) => {
   return [r.status, await r.text()];
 }"""
 HEADERS_COLUMNS = ["번호", "아파트 명", "세대 수", "주차 대 수", "평 수", "층 수", "방향",
-                   "보증금", "월세", "중개사 이름", "휴대폰", "부동산 명"]
+                   "보증금", "월세", "중개사 이름", "휴대폰", "부동산 명", "링크"]
 
 
 def log(msg):
@@ -276,7 +276,15 @@ def save_excel(rows, path, complex_rows=()):
             if cell.row > 1:
                 cell.alignment = Alignment(vertical="center",
                                            horizontal="left" if cell.column in (2, 5, 10, 12) else "center")
-    widths = [6, 26, 9, 10, 30, 9, 9, 13, 9, 12, 15, 24]
+    # 링크 열: 클릭하면 네이버 부동산 매물 화면이 열리도록
+    link_col = len(HEADERS_COLUMNS)
+    for row in ws.iter_rows(min_row=2, min_col=link_col, max_col=link_col):
+        cell = row[0]
+        if cell.value:
+            cell.hyperlink = cell.value
+            cell.value = "매물 보기"
+            cell.font = Font(color="0563C1", underline="single")
+    widths = [6, 26, 9, 10, 30, 9, 9, 13, 9, 12, 15, 24, 11]
     for idx, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(idx)].width = w
     ws.freeze_panes = "A2"
@@ -384,6 +392,7 @@ def main():
                     first(realtor, "representativeName"),
                     phone,
                     first(realtor, "realtorName", default=a.get("realtorName", "")),
+                    f"{BASE}/complexes/{cno}?a=APT:ABYG:JGC&e=RETAIL&articleNo={a.get('articleNo')}",
                 ])
                 kept += 1
             log(f"    조건에 맞는 매물 {kept}건" + ("" if ok else " (조회 실패)"))
