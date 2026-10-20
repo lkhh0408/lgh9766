@@ -22,8 +22,8 @@ from browser_util import connect, launch_browser
 
 # ===== 조건 설정 (필요하면 숫자만 바꾸세요) =====
 STATION_NAME = "운정중앙역"
-STATION_LAT = 37.7170      # 운정중앙역 위도
-STATION_LON = 126.7613     # 운정중앙역 경도
+STATION_LAT = 37.71661     # 운정중앙역 위도
+STATION_LON = 126.72835    # 운정중앙역 경도
 RADIUS_KM = 2.0            # 반경 (km)
 MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
 MAX_RENT = 90              # 월세 상한 (만원) = 90만원
