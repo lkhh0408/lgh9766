@@ -42,7 +42,7 @@ FETCH_JS = """async ([url, auth]) => {
   return [r.status, await r.text()];
 }"""
 HEADERS_COLUMNS = ["번호", "아파트 명", "세대 수", "주차 대 수", "평 수", "층 수", "방향",
-                   "보증금", "월세", "중개사 이름", "휴대폰", "부동산 명", "링크"]
+                   "보증금", "월세", "입주가능일", "중개사 이름", "휴대폰", "부동산 명", "링크"]
 
 
 def log(msg):
@@ -105,6 +105,22 @@ def to_pyeong(area1, area2):
         text += f" / 전용 {float(area2):g}㎡)"
     except (TypeError, ValueError):
         text += ")"
+    return text
+
+
+def move_in_text(detail):
+    """입주가능일: 'NOW' -> '즉시입주', '20270301' -> '2027.03.01'"""
+    ymd = str(detail.get("moveInPossibleYmd") or "")
+    if ymd.upper() == "NOW":
+        text = "즉시입주"
+    elif re.fullmatch(r"\d{8}", ymd):
+        text = f"{ymd[:4]}.{ymd[4:6]}.{ymd[6:]}"
+    elif re.fullmatch(r"\d{6}", ymd):
+        text = f"{ymd[:4]}.{ymd[4:6]}"
+    else:
+        text = detail.get("moveInTypeName") or ""
+    if detail.get("moveInDiscussionPossibleYN") == "Y" and "협의" not in text:
+        text = (text + " (협의가능)").strip()
     return text
 
 
@@ -241,9 +257,10 @@ class Naver:
             page_no += 1
         return out, ok
 
-    def article_realtor(self, article_no, complex_no):
+    def article_info(self, article_no, complex_no):
+        """(매물 상세, 중개사 정보)"""
         data = self.get(f"/api/articles/{article_no}", {"complexNo": complex_no}) or {}
-        return data.get("articleRealtor", {}) or {}
+        return data.get("articleDetail", {}) or {}, data.get("articleRealtor", {}) or {}
 
 
 def dedupe_key(a):
@@ -275,7 +292,7 @@ def save_excel(rows, path, complex_rows=()):
             cell.border = Border(top=thin, bottom=thin, left=thin, right=thin)
             if cell.row > 1:
                 cell.alignment = Alignment(vertical="center",
-                                           horizontal="left" if cell.column in (2, 5, 10, 12) else "center")
+                                           horizontal="left" if cell.column in (2, 5, 11, 13) else "center")
     # 링크 열: 클릭하면 네이버 부동산 매물 화면이 열리도록
     link_col = len(HEADERS_COLUMNS)
     for row in ws.iter_rows(min_row=2, min_col=link_col, max_col=link_col):
@@ -284,7 +301,7 @@ def save_excel(rows, path, complex_rows=()):
             cell.hyperlink = cell.value
             cell.value = "매물 보기"
             cell.font = Font(color="0563C1", underline="single")
-    widths = [6, 26, 9, 10, 30, 9, 9, 13, 9, 12, 15, 24, 11]
+    widths = [6, 26, 9, 10, 30, 9, 9, 13, 9, 16, 12, 15, 24, 11]
     for idx, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(idx)].width = w
     ws.freeze_panes = "A2"
@@ -378,7 +395,7 @@ def main():
                     continue
                 seen.add(key)
 
-                realtor = nv.article_realtor(a.get("articleNo"), cno)
+                detail, realtor = nv.article_info(a.get("articleNo"), cno)
                 phone = first(realtor, "cellPhoneNo", "representativeTelNo")
                 rows.append([
                     name,
@@ -389,6 +406,7 @@ def main():
                     a.get("direction", ""),
                     format_price(deposit),
                     "전세" if is_jeonse else rent,
+                    move_in_text(detail),
                     first(realtor, "representativeName"),
                     phone,
                     first(realtor, "realtorName", default=a.get("realtorName", "")),
