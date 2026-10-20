@@ -16,6 +16,7 @@ import json
 import time
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlencode
 
 from browser_util import connect, launch_browser
 
@@ -32,6 +33,12 @@ START_URL = "https://new.land.naver.com/complexes/113942?a=APT:ABYG:JGC&e=RETAIL
 # =============================================
 
 BASE = "https://new.land.naver.com"
+# 열린 크롬 창 안에서 직접 요청 (브라우저 밖에서 따로 요청하면 네이버가 429로 거절함)
+FETCH_JS = """async ([url, auth]) => {
+  const r = await fetch(url, {headers: {"authorization": auth, "accept": "application/json"},
+                              credentials: "include"});
+  return [r.status, await r.text()];
+}"""
 HEADERS_COLUMNS = ["번호", "아파트 명", "세대 수", "주차 대 수", "평 수", "층 수", "방향",
                    "보증금", "월세", "중개사 이름", "휴대폰", "부동산 명"]
 
@@ -40,7 +47,7 @@ def log(msg):
     print(msg, flush=True)
 
 
-def pause(a=0.8, b=1.6):
+def pause(a=1.5, b=3.0):
     time.sleep(random.uniform(a, b))
 
 
@@ -147,34 +154,29 @@ class Naver:
         log("접속 완료")
 
     def get(self, path, params=None, retries=4):
-        url = BASE + path
-        headers = {"Authorization": self.token,
-                   "Referer": f"{BASE}/complexes",
-                   "Accept": "application/json"}
+        url = BASE + path + ("?" + urlencode(params) if params else "")
         for attempt in range(retries):
-            resp = self.page.request.get(url, params=params, headers=headers, timeout=30000)
             try:
-                text = resp.text()
-            except Exception:
-                text = ""
-            self.write_debug(path, params, resp.status, text)
-            if resp.status == 200:
+                status, text = self.page.evaluate(FETCH_JS, [url, self.token])
+            except Exception as e:
+                status, text = 0, f"(요청 오류: {e})"
+            self.write_debug(path, params, status, text)
+            if status == 200:
                 pause()
                 try:
                     return json.loads(text)
                 except ValueError:
                     log(f"  (응답 형식이 예상과 다름: {path})")
                     return None
-            if resp.status in (401, 403, 429) or resp.status >= 500:
-                wait = 10 * (attempt + 1)
-                log(f"  (네이버 응답 {resp.status}, {wait}초 쉬었다가 다시 시도)")
+            if status in (0, 401, 403, 429) or status >= 500:
+                wait = 30 * (attempt + 1)
+                log(f"  (네이버 응답 {status}, {wait}초 쉬었다가 다시 시도)")
                 time.sleep(wait)
-                if resp.status == 401:
+                if status == 401:
                     self.token = None
                     self.capture_token()
-                    headers["Authorization"] = self.token
                 continue
-            log(f"  (요청 실패 {resp.status}: {path})")
+            log(f"  (요청 실패 {status}: {path})")
             return None
         return None
 
