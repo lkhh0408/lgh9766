@@ -28,6 +28,8 @@ RADIUS_KM = 2.0            # 반경 (km)
 MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
 MAX_RENT = 90              # 월세 상한 (만원) = 90만원
 PAJU_CORTAR_NO = "4148000000"  # 네이버 지역코드: 경기도 파주시
+ESTATE_TYPES = ["APT", "JGC"]   # 아파트, 재건축
+NEARBY_EXTRA_KM = 1.5          # "단지목록" 시트에 반경 밖 단지도 이만큼 더 보여줌
 # 접속 인증용 시작 화면 (운정 아파트 단지 화면)
 START_URL = "https://new.land.naver.com/complexes/113942?a=APT:ABYG:JGC&e=RETAIL"
 # =============================================
@@ -190,16 +192,19 @@ class Naver:
             # 동 중심이 역에서 너무 먼 곳(읍·면 등)은 건너뜀
             if dlat and dlon and distance_km(STATION_LAT, STATION_LON, dlat, dlon) > RADIUS_KM + 4:
                 continue
-            data = self.get("/api/regions/complexes",
-                            {"cortarNo": dong["cortarNo"], "realEstateType": "APT", "order": ""}) or {}
-            for c in data.get("complexList", []):
-                lat, lon = c.get("latitude"), c.get("longitude")
-                if lat is None or lon is None:
-                    continue
-                d = distance_km(STATION_LAT, STATION_LON, float(lat), float(lon))
-                if d <= RADIUS_KM:
-                    c["_distance"] = d
-                    found[str(c["complexNo"])] = c
+            for etype in ESTATE_TYPES:
+                data = self.get("/api/regions/complexes",
+                                {"cortarNo": dong["cortarNo"], "realEstateType": etype, "order": ""}) or {}
+                for c in data.get("complexList", []):
+                    lat, lon = c.get("latitude"), c.get("longitude")
+                    if lat is None or lon is None:
+                        continue
+                    d = distance_km(STATION_LAT, STATION_LON, float(lat), float(lon))
+                    if d <= RADIUS_KM + NEARBY_EXTRA_KM:
+                        c["_distance"] = d
+                        c["_inside"] = d <= RADIUS_KM
+                        c["_dong"] = dong.get("cortarName", "")
+                        found[str(c["complexNo"])] = c
         return sorted(found.values(), key=lambda c: c["_distance"])
 
     def complex_detail(self, complex_no):
@@ -208,10 +213,11 @@ class Naver:
 
     # --- 매물 ---
     def articles(self, complex_no):
-        out, page_no = [], 1
+        """(매물 목록, 조회 성공 여부)"""
+        out, page_no, ok = [], 1, True
         while True:
             params = {
-                "realEstateType": "APT",
+                "realEstateType": ":".join(ESTATE_TYPES),
                 "tradeType": "B1:B2",          # B1=전세, B2=월세
                 "tag": "::::::::",
                 "rentPriceMin": 0, "rentPriceMax": MAX_RENT,
@@ -225,12 +231,15 @@ class Naver:
                 "type": "list",
                 "order": "rank",
             }
-            data = self.get(f"/api/articles/complex/{complex_no}", params) or {}
+            data = self.get(f"/api/articles/complex/{complex_no}", params)
+            if data is None:
+                ok = False
+                break
             out.extend(data.get("articleList", []))
             if not data.get("isMoreData") or page_no >= 30:
                 break
             page_no += 1
-        return out
+        return out, ok
 
     def article_realtor(self, article_no, complex_no):
         data = self.get(f"/api/articles/{article_no}", {"complexNo": complex_no}) or {}
@@ -238,13 +247,12 @@ class Naver:
 
 
 def dedupe_key(a):
-    # sameAddressGroup 으로 대부분 묶이지만, 남은 중복을 한 번 더 정리
-    return (a.get("_complexNo"), a.get("tradeTypeCode") or a.get("tradeTypeName"),
-            a.get("buildingName"), a.get("floorInfo"), a.get("area1"),
-            a.get("dealOrWarrantPrc"), a.get("rentPrc"), a.get("direction"))
+    # 같은 매물 합치기는 네이버의 sameAddressGroup 이 처리하므로,
+    # 여기서는 같은 매물번호가 두 번 나오는 경우만 거름
+    return a.get("articleNo")
 
 
-def save_excel(rows, path):
+def save_excel(rows, path, complex_rows=()):
     from openpyxl import Workbook
     from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
     from openpyxl.utils import get_column_letter
@@ -274,6 +282,18 @@ def save_excel(rows, path):
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = ws.dimensions
 
+    cs = wb.create_sheet("단지목록")
+    cs.append(["아파트 명", "동", "역까지 거리(km)", "포함 여부", "세대 수", "조건 맞는 매물", "조회 결과"])
+    for r in complex_rows:
+        cs.append(r)
+    for cell in cs[1]:
+        cell.font = Font(bold=True, color="FFFFFF")
+        cell.fill = head_fill
+    for idx, w in enumerate([28, 10, 15, 12, 9, 15, 12], 1):
+        cs.column_dimensions[get_column_letter(idx)].width = w
+    cs.freeze_panes = "A2"
+    cs.auto_filter.ref = cs.dimensions
+
     info = wb.create_sheet("조건")
     for line in [
         ("기준", f"{STATION_NAME} 반경 {RADIUS_KM:g}km"),
@@ -281,6 +301,7 @@ def save_excel(rows, path):
         ("월세", f"{MAX_RENT}만원 이하 (전세 포함)"),
         ("중복", "같은 매물은 하나로 합침"),
         ("평 수", "공급면적 ÷ 3.3058"),
+        ("역 좌표", f"{STATION_LAT}, {STATION_LON}"),
         ("출처", "네이버 부동산"),
         ("수집 시각", datetime.now().strftime("%Y-%m-%d %H:%M")),
         ("매물 수", len(rows)),
@@ -309,12 +330,17 @@ def main():
         nv = Naver(page, out_dir / "debug_log.txt")
         nv.capture_token()
 
-        complexes = nv.find_complexes()
+        all_complexes = nv.find_complexes()
+        complexes = [c for c in all_complexes if c["_inside"]]
         log(f"반경 {RADIUS_KM:g}km 안 아파트 단지: {len(complexes)}곳")
         if not complexes:
             log("단지를 하나도 찾지 못했습니다. 같은 폴더의 debug_log.txt 를 보내주세요.")
 
-        rows, seen = [], set()
+        rows, seen, complex_rows = [], set(), []
+        for c in all_complexes:
+            if not c["_inside"]:
+                complex_rows.append([c.get("complexName", ""), c["_dong"], round(c["_distance"], 2),
+                                     "반경 밖", first(c, "totalHouseholdCount", "totalHouseHoldCount"), "", ""])
         for ci, c in enumerate(complexes, 1):
             cno = str(c["complexNo"])
             name = c.get("complexName", "")
@@ -330,7 +356,7 @@ def main():
                 except (TypeError, ValueError):
                     parking = ""
 
-            arts = nv.articles(cno)
+            arts, ok = nv.articles(cno)
             kept = 0
             for a in arts:
                 a["_complexNo"] = cno
@@ -360,7 +386,9 @@ def main():
                     first(realtor, "realtorName", default=a.get("realtorName", "")),
                 ])
                 kept += 1
-            log(f"    조건에 맞는 매물 {kept}건")
+            log(f"    조건에 맞는 매물 {kept}건" + ("" if ok else " (조회 실패)"))
+            complex_rows.append([name, c["_dong"], round(c["_distance"], 2), "포함",
+                                 households, kept, "성공" if ok else "실패"])
 
         browser.close()
     try:
@@ -368,7 +396,8 @@ def main():
     except Exception:
         pass
 
-    save_excel(rows, out_path)
+    complex_rows.sort(key=lambda r: r[2])
+    save_excel(rows, out_path, complex_rows)
     log("")
     log(f"완료! 총 {len(rows)}건 저장: {out_path}")
     if not rows:
