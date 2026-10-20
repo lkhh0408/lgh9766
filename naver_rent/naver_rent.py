@@ -24,7 +24,7 @@ from browser_util import connect, launch_browser
 STATION_NAME = "운정중앙역"
 STATION_LAT = 37.71661     # 운정중앙역 위도
 STATION_LON = 126.72835    # 운정중앙역 경도
-RADIUS_KM = 2.0            # 반경 (km)
+RADIUS_KM = 3.0            # 반경 (km)
 MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
 MAX_RENT = 90              # 월세 상한 (만원) = 90만원
 PAJU_CORTAR_NO = "4148000000"  # 네이버 지역코드: 경기도 파주시
@@ -41,7 +41,7 @@ FETCH_JS = """async ([url, auth]) => {
                               credentials: "include"});
   return [r.status, await r.text()];
 }"""
-HEADERS_COLUMNS = ["번호", "아파트 명", "세대 수", "주차 대 수", "평 수", "층 수", "방향",
+HEADERS_COLUMNS = ["번호", "아파트 명", "거리(km)", "세대 수", "주차 대 수", "평 수", "층 수", "방향",
                    "보증금", "월세", "입주가능일", "중개사 이름", "휴대폰", "부동산 명", "링크"]
 
 
@@ -292,7 +292,7 @@ def save_excel(rows, path, complex_rows=()):
             cell.border = Border(top=thin, bottom=thin, left=thin, right=thin)
             if cell.row > 1:
                 cell.alignment = Alignment(vertical="center",
-                                           horizontal="left" if cell.column in (2, 5, 11, 13) else "center")
+                                           horizontal="left" if cell.column in (2, 6, 12, 14) else "center")
     # 링크 열: 클릭하면 네이버 부동산 매물 화면이 열리도록
     link_col = len(HEADERS_COLUMNS)
     for row in ws.iter_rows(min_row=2, min_col=link_col, max_col=link_col):
@@ -301,7 +301,7 @@ def save_excel(rows, path, complex_rows=()):
             cell.hyperlink = cell.value
             cell.value = "매물 보기"
             cell.font = Font(color="0563C1", underline="single")
-    widths = [6, 26, 9, 10, 30, 9, 9, 13, 9, 16, 12, 15, 24, 11]
+    widths = [6, 26, 9, 9, 10, 30, 9, 9, 13, 9, 16, 12, 15, 24, 11]
     for idx, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(idx)].width = w
     ws.freeze_panes = "A2"
@@ -399,6 +399,7 @@ def main():
                 phone = first(realtor, "cellPhoneNo", "representativeTelNo")
                 rows.append([
                     name,
+                    round(c["_distance"], 2),
                     households,
                     parking,
                     to_pyeong(a.get("area1"), a.get("area2")),
