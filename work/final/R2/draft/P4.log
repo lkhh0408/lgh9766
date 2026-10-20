@@ -1,0 +1,11 @@
+장부 누적 $129.55(미확정 포함) + 이번 예상 $0.29 = $129.84 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+요청 시작 2026-10-20T01:10:39+00:00 (UTC), 예상 $0.290, 장부 표식 f27c47fd9329
+background 요청 접수: interaction v1_ChdrTF9XYXJPd0hkT3N1TVlQZ0pMRzJRNBIXa0xfV2FyT3dIZE9zdU1ZUGdKTEcyUTQ. 끝날 때까지 20초마다 확인합니다(무료, 최대 1800초)
+  아직 in_progress(1초 경과, 최대 1800초 기다림)
+  결과 확인 실패(2회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(22초 경과, 최대 1800초 기다림)
+  결과 확인 실패(3회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+  아직 in_progress(42초 경과, 최대 1800초 기다림)
+  결과 확인 실패(4회): Error code: 400 - {'error': {'message': 'Input blocked: The prompt could not be processed. Please try rephrasing the prompt or using different input.'
+생성 실패: status=server_rejected (청구 여부 모름: 장부 unresolved, 결제 화면 확인 필요)
