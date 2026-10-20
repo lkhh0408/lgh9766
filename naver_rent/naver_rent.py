@@ -1,0 +1,351 @@
+# -*- coding: utf-8 -*-
+"""
+운정중앙역 주변 아파트 전·월세 매물 수집기 (네이버 부동산 기준)
+
+- 운정중앙역 반경 RADIUS_KM 안의 아파트 단지를 찾고
+- 전세/월세 매물 중 보증금 MAX_DEPOSIT 이하, 월세 MAX_RENT 이하만 골라
+- 같은 매물(여러 중개사가 올린 동일 매물)은 하나로 합쳐 엑셀로 저장합니다.
+
+실행: run.bat 더블클릭 (또는 python naver_rent.py)
+"""
+import math
+import random
+import re
+import sys
+import time
+from datetime import datetime
+from pathlib import Path
+
+# ===== 조건 설정 (필요하면 숫자만 바꾸세요) =====
+STATION_NAME = "운정중앙역"
+STATION_LAT = 37.7170      # 운정중앙역 위도
+STATION_LON = 126.7613     # 운정중앙역 경도
+RADIUS_KM = 2.0            # 반경 (km)
+MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
+MAX_RENT = 90              # 월세 상한 (만원) = 90만원
+PAJU_CORTAR_NO = "4148000000"  # 네이버 지역코드: 경기도 파주시
+# =============================================
+
+BASE = "https://new.land.naver.com"
+HEADERS_COLUMNS = ["번호", "아파트 명", "세대 수", "주차 대 수", "평 수", "층 수", "방향",
+                   "보증금", "월세", "중개사 이름", "휴대폰", "부동산 명"]
+
+
+def log(msg):
+    print(msg, flush=True)
+
+
+def pause(a=0.8, b=1.6):
+    time.sleep(random.uniform(a, b))
+
+
+def distance_km(lat1, lon1, lat2, lon2):
+    r = 6371.0
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    dp = p2 - p1
+    dl = math.radians(lon2 - lon1)
+    h = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 2 * r * math.asin(math.sqrt(h))
+
+
+def parse_price(text):
+    """'2억 5,000' -> 25000, '3억' -> 30000, '9,000' -> 9000 (단위: 만원)"""
+    if text is None:
+        return None
+    if isinstance(text, (int, float)):
+        return int(text)
+    s = str(text).replace(",", "").replace(" ", "")
+    if not s:
+        return None
+    total = 0
+    m = re.search(r"(\d+)억", s)
+    if m:
+        total += int(m.group(1)) * 10000
+        s = s[m.end():]
+    m = re.search(r"(\d+)", s)
+    if m:
+        total += int(m.group(1))
+    return total
+
+
+def format_price(manwon):
+    """25000 -> '2억 5,000', 30000 -> '3억', 9000 -> '9,000'"""
+    if manwon is None:
+        return ""
+    eok, rest = divmod(int(manwon), 10000)
+    if eok and rest:
+        return f"{eok}억 {rest:,}"
+    if eok:
+        return f"{eok}억"
+    return f"{rest:,}"
+
+
+def to_pyeong(area1, area2):
+    """공급면적(㎡)을 평으로 환산. 예: '33.0평 (공급 109㎡ / 전용 84㎡)'"""
+    try:
+        a1 = float(area1)
+    except (TypeError, ValueError):
+        return ""
+    text = f"{a1 / 3.3058:.1f}평 (공급 {a1:g}㎡"
+    try:
+        text += f" / 전용 {float(area2):g}㎡)"
+    except (TypeError, ValueError):
+        text += ")"
+    return text
+
+
+def first(d, *keys, default=""):
+    for k in keys:
+        if isinstance(d, dict) and d.get(k) not in (None, ""):
+            return d[k]
+    return default
+
+
+class Naver:
+    def __init__(self, page):
+        self.page = page
+        self.token = None
+
+    def capture_token(self):
+        def on_request(req):
+            auth = req.headers.get("authorization", "")
+            if auth.startswith("Bearer ") and not self.token:
+                self.token = auth
+
+        self.page.on("request", on_request)
+        url = (f"{BASE}/complexes?ms={STATION_LAT},{STATION_LON},15"
+               f"&a=APT&b=B1:B2&e=RETAIL")
+        log("네이버 부동산 접속 중...")
+        self.page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        for _ in range(60):
+            if self.token:
+                break
+            self.page.wait_for_timeout(500)
+        if not self.token:
+            # 페이지 소스에 토큰이 들어있는 경우 대비
+            m = re.search(r'"token"\s*:\s*"([^"]+)"', self.page.content())
+            if m:
+                self.token = "Bearer " + m.group(1)
+        if not self.token:
+            raise RuntimeError("네이버 부동산 인증 토큰을 얻지 못했습니다. 잠시 후 다시 실행해 주세요.")
+        log("접속 완료")
+
+    def get(self, path, params=None, retries=4):
+        url = BASE + path
+        headers = {"Authorization": self.token,
+                   "Referer": f"{BASE}/complexes",
+                   "Accept": "application/json"}
+        for attempt in range(retries):
+            resp = self.page.request.get(url, params=params, headers=headers, timeout=30000)
+            if resp.status == 200:
+                pause()
+                return resp.json()
+            if resp.status in (401, 403, 429) or resp.status >= 500:
+                wait = 10 * (attempt + 1)
+                log(f"  (네이버 응답 {resp.status}, {wait}초 쉬었다가 다시 시도)")
+                time.sleep(wait)
+                if resp.status == 401:
+                    self.token = None
+                    self.capture_token()
+                    headers["Authorization"] = self.token
+                continue
+            log(f"  (요청 실패 {resp.status}: {path})")
+            return None
+        return None
+
+    # --- 단지 찾기 ---
+    def find_complexes(self):
+        regions = self.get("/api/regions/list", {"cortarNo": PAJU_CORTAR_NO}) or {}
+        dongs = regions.get("regionList", [])
+        found = {}
+        for dong in dongs:
+            dlat, dlon = dong.get("centerLat"), dong.get("centerLon")
+            # 동 중심이 역에서 너무 먼 곳(읍·면 등)은 건너뜀
+            if dlat and dlon and distance_km(STATION_LAT, STATION_LON, dlat, dlon) > RADIUS_KM + 4:
+                continue
+            data = self.get("/api/regions/complexes",
+                            {"cortarNo": dong["cortarNo"], "realEstateType": "APT", "order": ""}) or {}
+            for c in data.get("complexList", []):
+                lat, lon = c.get("latitude"), c.get("longitude")
+                if lat is None or lon is None:
+                    continue
+                d = distance_km(STATION_LAT, STATION_LON, float(lat), float(lon))
+                if d <= RADIUS_KM:
+                    c["_distance"] = d
+                    found[str(c["complexNo"])] = c
+        return sorted(found.values(), key=lambda c: c["_distance"])
+
+    def complex_detail(self, complex_no):
+        data = self.get(f"/api/complexes/{complex_no}", {"sameAddressGroup": "true"}) or {}
+        return data.get("complexDetail", data)
+
+    # --- 매물 ---
+    def articles(self, complex_no):
+        out, page_no = [], 1
+        while True:
+            params = {
+                "realEstateType": "APT",
+                "tradeType": "B1:B2",          # B1=전세, B2=월세
+                "tag": "::::::::",
+                "rentPriceMin": 0, "rentPriceMax": MAX_RENT,
+                "priceMin": 0, "priceMax": MAX_DEPOSIT,
+                "areaMin": 0, "areaMax": 900000000,
+                "showArticle": "false",
+                "sameAddressGroup": "true",     # 같은 매물 하나로 묶기
+                "priceType": "RETAIL",
+                "page": page_no,
+                "complexNo": complex_no,
+                "type": "list",
+                "order": "rank",
+            }
+            data = self.get(f"/api/articles/complex/{complex_no}", params) or {}
+            out.extend(data.get("articleList", []))
+            if not data.get("isMoreData") or page_no >= 30:
+                break
+            page_no += 1
+        return out
+
+    def article_realtor(self, article_no, complex_no):
+        data = self.get(f"/api/articles/{article_no}", {"complexNo": complex_no}) or {}
+        return data.get("articleRealtor", {}) or {}
+
+
+def dedupe_key(a):
+    # sameAddressGroup 으로 대부분 묶이지만, 남은 중복을 한 번 더 정리
+    return (a.get("_complexNo"), a.get("tradeTypeCode") or a.get("tradeTypeName"),
+            a.get("buildingName"), a.get("floorInfo"), a.get("area1"),
+            a.get("dealOrWarrantPrc"), a.get("rentPrc"), a.get("direction"))
+
+
+def save_excel(rows, path):
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+    from openpyxl.utils import get_column_letter
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "전월세"
+    ws.append(HEADERS_COLUMNS)
+    for i, r in enumerate(rows, 1):
+        ws.append([i] + r)
+
+    thin = Side(style="thin", color="BFBFBF")
+    head_fill = PatternFill("solid", fgColor="1F4E78")
+    for cell in ws[1]:
+        cell.font = Font(bold=True, color="FFFFFF")
+        cell.fill = head_fill
+        cell.alignment = Alignment(horizontal="center", vertical="center")
+    for row in ws.iter_rows(min_row=1, max_row=ws.max_row):
+        for cell in row:
+            cell.border = Border(top=thin, bottom=thin, left=thin, right=thin)
+            if cell.row > 1:
+                cell.alignment = Alignment(vertical="center",
+                                           horizontal="left" if cell.column in (2, 5, 10, 12) else "center")
+    widths = [6, 26, 9, 10, 30, 9, 9, 13, 9, 12, 15, 24]
+    for idx, w in enumerate(widths, 1):
+        ws.column_dimensions[get_column_letter(idx)].width = w
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = ws.dimensions
+
+    info = wb.create_sheet("조건")
+    for line in [
+        ("기준", f"{STATION_NAME} 반경 {RADIUS_KM:g}km"),
+        ("보증금", f"{format_price(MAX_DEPOSIT)} 이하"),
+        ("월세", f"{MAX_RENT}만원 이하 (전세 포함)"),
+        ("중복", "같은 매물은 하나로 합침"),
+        ("평 수", "공급면적 ÷ 3.3058"),
+        ("출처", "네이버 부동산"),
+        ("수집 시각", datetime.now().strftime("%Y-%m-%d %H:%M")),
+        ("매물 수", len(rows)),
+    ]:
+        info.append(line)
+    info.column_dimensions["A"].width = 12
+    info.column_dimensions["B"].width = 40
+    wb.save(path)
+
+
+def main():
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        log("playwright 가 설치되지 않았습니다. run.bat 으로 실행해 주세요.")
+        return 1
+
+    out_dir = Path(__file__).resolve().parent
+    out_path = out_dir / f"{STATION_NAME}_전월세_{datetime.now():%Y%m%d_%H%M}.xlsx"
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        context = browser.new_context(locale="ko-KR", viewport={"width": 1280, "height": 900})
+        page = context.new_page()
+        nv = Naver(page)
+        nv.capture_token()
+
+        complexes = nv.find_complexes()
+        log(f"반경 {RADIUS_KM:g}km 안 아파트 단지: {len(complexes)}곳")
+
+        rows, seen = [], set()
+        for ci, c in enumerate(complexes, 1):
+            cno = str(c["complexNo"])
+            name = c.get("complexName", "")
+            log(f"[{ci}/{len(complexes)}] {name} ({c['_distance']:.2f}km)")
+            detail = nv.complex_detail(cno)
+            households = first(detail, "totalHouseHoldCount", "totalHouseholdCount",
+                               default=first(c, "totalHouseholdCount", "totalHouseHoldCount"))
+            parking = first(detail, "parkingPossibleCount", "parkingCount")
+            if parking == "":
+                per = first(detail, "parkingCountByHousehold")
+                try:
+                    parking = round(float(per) * float(households))
+                except (TypeError, ValueError):
+                    parking = ""
+
+            arts = nv.articles(cno)
+            kept = 0
+            for a in arts:
+                a["_complexNo"] = cno
+                deposit = parse_price(a.get("dealOrWarrantPrc"))
+                rent = parse_price(a.get("rentPrc")) or 0
+                is_jeonse = (a.get("tradeTypeCode") == "B1") or (a.get("tradeTypeName") == "전세")
+                if deposit is None or deposit > MAX_DEPOSIT or rent > MAX_RENT:
+                    continue
+                key = dedupe_key(a)
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                realtor = nv.article_realtor(a.get("articleNo"), cno)
+                phone = first(realtor, "cellPhoneNo", "representativeTelNo")
+                rows.append([
+                    name,
+                    households,
+                    parking,
+                    to_pyeong(a.get("area1"), a.get("area2")),
+                    a.get("floorInfo", ""),
+                    a.get("direction", ""),
+                    format_price(deposit),
+                    "전세" if is_jeonse else rent,
+                    first(realtor, "representativeName"),
+                    phone,
+                    first(realtor, "realtorName", default=a.get("realtorName", "")),
+                ])
+                kept += 1
+            log(f"    조건에 맞는 매물 {kept}건")
+
+        browser.close()
+
+    save_excel(rows, out_path)
+    log("")
+    log(f"완료! 총 {len(rows)}건 저장: {out_path}")
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except Exception as e:  # 사용자에게 오류 내용을 그대로 보여주기
+        import traceback
+        traceback.print_exc()
+        log("")
+        log("오류가 발생했습니다. 위 내용을 복사해서 보내주세요.")
+        sys.exit(1)
