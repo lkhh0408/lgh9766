@@ -21,16 +21,27 @@ from urllib.parse import urlencode
 from browser_util import connect, launch_browser
 
 # ===== 조건 설정 (필요하면 숫자만 바꾸세요) =====
-STATION_NAME = "운정중앙역"
-STATION_LAT = 37.71661     # 운정중앙역 위도
-STATION_LON = 126.72835    # 운정중앙역 경도
-RADIUS_KM = 3.0            # 반경 (km)
+STATION_NAME = "단대오거리역"
+STATION_LAT = 37.445057    # 위도
+STATION_LON = 127.156735   # 경도
+RADIUS_KM = 5.0            # 반경 (km)
 MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
 MAX_RENT = 90              # 월세 상한 (만원) = 90만원
-PAJU_CORTAR_NO = "4148000000"  # 네이버 지역코드: 경기도 파주시
+# 조회할 시·구는 좌표 주변에서 자동으로 찾습니다.
+# 자동으로 못 찾는 경우를 대비해 꼭 넣을 지역코드를 여기에 적어 둘 수 있습니다 (비워도 됨).
+EXTRA_REGION_CODES = [
+    "4113100000",  # 성남시 수정구
+    "4113300000",  # 성남시 중원구
+    "4113500000",  # 성남시 분당구
+    "1171000000",  # 서울 송파구
+    "1168000000",  # 서울 강남구
+    "1165000000",  # 서울 서초구
+    "4145000000",  # 하남시
+    "4161000000",  # 광주시
+]
 ESTATE_TYPES = ["APT", "JGC"]   # 아파트, 재건축
 NEARBY_EXTRA_KM = 1.5          # "단지목록" 시트에 반경 밖 단지도 이만큼 더 보여줌
-# 접속 인증용 시작 화면 (운정 아파트 단지 화면)
+# 접속 인증용 시작 화면 (아무 아파트 단지 화면이면 됨)
 START_URL = "https://new.land.naver.com/complexes/113942?a=APT:ABYG:JGC&e=RETAIL"
 # =============================================
 
@@ -199,14 +210,35 @@ class Naver:
         return None
 
     # --- 단지 찾기 ---
+    def collect_dongs(self, cortar_no, dongs, visited, depth=0):
+        """지역 코드 아래로 내려가며 좌표 근처의 동(법정동) 목록을 모음"""
+        if cortar_no in visited or depth > 3:
+            return
+        visited.add(cortar_no)
+        data = self.get("/api/regions/list", {"cortarNo": cortar_no}) or {}
+        for r in data.get("regionList", []):
+            if r.get("cortarType") == "sec":
+                dongs[r["cortarNo"]] = r
+                continue
+            lat, lon = r.get("centerLat"), r.get("centerLon")
+            # 시·도는 넓게, 시·군·구는 반경 + 15km 안만 내려감
+            limit = 80 if depth == 0 else RADIUS_KM + 15
+            if lat and lon and distance_km(STATION_LAT, STATION_LON, float(lat), float(lon)) > limit:
+                continue
+            self.collect_dongs(r["cortarNo"], dongs, visited, depth + 1)
+
     def find_complexes(self):
-        regions = self.get("/api/regions/list", {"cortarNo": PAJU_CORTAR_NO}) or {}
-        dongs = regions.get("regionList", [])
+        dongs, visited = {}, set()
+        log("주변 시·구를 찾는 중...")
+        self.collect_dongs("0000000000", dongs, visited)        # 전국 → 시·도 → 시·군·구 → 동
+        for code in EXTRA_REGION_CODES:
+            self.collect_dongs(code, dongs, visited, depth=1)
+        log(f"조회할 동: {len(dongs)}곳")
         found = {}
-        for dong in dongs:
+        for dong in dongs.values():
             dlat, dlon = dong.get("centerLat"), dong.get("centerLon")
             # 동 중심이 역에서 너무 먼 곳(읍·면 등)은 건너뜀
-            if dlat and dlon and distance_km(STATION_LAT, STATION_LON, dlat, dlon) > RADIUS_KM + 4:
+            if dlat and dlon and distance_km(STATION_LAT, STATION_LON, float(dlat), float(dlon)) > RADIUS_KM + 4:
                 continue
             for etype in ESTATE_TYPES:
                 data = self.get("/api/regions/complexes",
