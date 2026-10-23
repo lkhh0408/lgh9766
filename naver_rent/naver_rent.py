@@ -21,23 +21,16 @@ from urllib.parse import urlencode
 from browser_util import connect, launch_browser
 
 # ===== 조건 설정 (필요하면 숫자만 바꾸세요) =====
-STATION_NAME = "단대오거리역"
-STATION_LAT = 37.445057    # 위도
-STATION_LON = 127.156735   # 경도
-RADIUS_KM = 5.0            # 반경 (km)
+STATION_NAME = "운정중앙역"
+STATION_LAT = 37.71661     # 위도
+STATION_LON = 126.72835    # 경도
+RADIUS_KM = 3.0            # 반경 (km)
 MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
 MAX_RENT = 90              # 월세 상한 (만원) = 90만원
 # 조회할 시·구는 좌표 주변에서 자동으로 찾습니다.
 # 자동으로 못 찾는 경우를 대비해 꼭 넣을 지역코드를 여기에 적어 둘 수 있습니다 (비워도 됨).
 EXTRA_REGION_CODES = [
-    "4113100000",  # 성남시 수정구
-    "4113300000",  # 성남시 중원구
-    "4113500000",  # 성남시 분당구
-    "1171000000",  # 서울 송파구
-    "1168000000",  # 서울 강남구
-    "1165000000",  # 서울 서초구
-    "4145000000",  # 하남시
-    "4161000000",  # 광주시
+    "4148000000",  # 파주시
 ]
 ESTATE_TYPES = ["APT", "JGC"]   # 아파트, 재건축
 NEARBY_EXTRA_KM = 1.5          # "단지목록" 시트에 반경 밖 단지도 이만큼 더 보여줌
