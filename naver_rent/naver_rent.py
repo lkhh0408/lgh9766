@@ -24,7 +24,7 @@ from browser_util import connect, launch_browser
 STATION_NAME = "운정중앙역"
 STATION_LAT = 37.71661     # 위도
 STATION_LON = 126.72835    # 경도
-RADIUS_KM = 3.0            # 반경 (km)
+RADIUS_KM = 4.0            # 반경 (km)
 MAX_DEPOSIT = 32000        # 보증금 상한 (만원) = 3억 2천
 INCLUDE_MONTHLY = False    # 월세 매물도 넣으려면 True
 MAX_RENT = 90              # 월세 상한 (만원), INCLUDE_MONTHLY=True 일 때만 사용
@@ -32,6 +32,7 @@ MAX_RENT = 90              # 월세 상한 (만원), INCLUDE_MONTHLY=True 일 �
 # 자동으로 못 찾는 경우를 대비해 꼭 넣을 지역코드를 여기에 적어 둘 수 있습니다 (비워도 됨).
 EXTRA_REGION_CODES = [
     "4148000000",  # 파주시
+    "4128700000",  # 고양시 일산서구 (반경이 넓으면 걸칠 수 있음)
 ]
 ESTATE_TYPES = ["APT", "JGC"]   # 아파트, 재건축
 NEARBY_EXTRA_KM = 1.5          # "단지목록" 시트에 반경 밖 단지도 이만큼 더 보여줌
