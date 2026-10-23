@@ -3,7 +3,7 @@
 운정중앙역 주변 아파트 전·월세 매물 수집기 (네이버 부동산 기준)
 
 - 운정중앙역 반경 RADIUS_KM 안의 아파트 단지를 찾고
-- 전세/월세 매물 중 보증금 MAX_DEPOSIT 이하, 월세 MAX_RENT 이하만 골라
+- 전세(INCLUDE_MONTHLY=True 면 월세도) 매물 중 보증금 MAX_DEPOSIT 이하, 월세 MAX_RENT 이하만 골라
 - 같은 매물(여러 중개사가 올린 동일 매물)은 하나로 합쳐 엑셀로 저장합니다.
 
 실행: run.bat 더블클릭 (또는 python naver_rent.py)
@@ -25,8 +25,9 @@ STATION_NAME = "운정중앙역"
 STATION_LAT = 37.71661     # 위도
 STATION_LON = 126.72835    # 경도
 RADIUS_KM = 3.0            # 반경 (km)
-MAX_DEPOSIT = 30000        # 보증금 상한 (만원) = 3억
-MAX_RENT = 90              # 월세 상한 (만원) = 90만원
+MAX_DEPOSIT = 32000        # 보증금 상한 (만원) = 3억 2천
+INCLUDE_MONTHLY = False    # 월세 매물도 넣으려면 True
+MAX_RENT = 90              # 월세 상한 (만원), INCLUDE_MONTHLY=True 일 때만 사용
 # 조회할 시·구는 좌표 주변에서 자동으로 찾습니다.
 # 자동으로 못 찾는 경우를 대비해 꼭 넣을 지역코드를 여기에 적어 둘 수 있습니다 (비워도 됨).
 EXTRA_REGION_CODES = [
@@ -259,7 +260,7 @@ class Naver:
         while True:
             params = {
                 "realEstateType": ":".join(ESTATE_TYPES),
-                "tradeType": "B1:B2",          # B1=전세, B2=월세
+                "tradeType": "B1:B2" if INCLUDE_MONTHLY else "B1",   # B1=전세, B2=월세
                 "tag": "::::::::",
                 "rentPriceMin": 0, "rentPriceMax": MAX_RENT,
                 "priceMin": 0, "priceMax": MAX_DEPOSIT,
@@ -348,7 +349,7 @@ def save_excel(rows, path, complex_rows=()):
     for line in [
         ("기준", f"{STATION_NAME} 반경 {RADIUS_KM:g}km"),
         ("보증금", f"{format_price(MAX_DEPOSIT)} 이하"),
-        ("월세", f"{MAX_RENT}만원 이하 (전세 포함)"),
+        ("월세", f"{MAX_RENT}만원 이하 (전세 포함)" if INCLUDE_MONTHLY else "제외 (전세만)"),
         ("중복", "같은 매물은 하나로 합침"),
         ("평 수", "공급면적 ÷ 3.3058"),
         ("역 좌표", f"{STATION_LAT}, {STATION_LON}"),
@@ -414,6 +415,8 @@ def main():
                 rent = parse_price(a.get("rentPrc")) or 0
                 is_jeonse = (a.get("tradeTypeCode") == "B1") or (a.get("tradeTypeName") == "전세")
                 if deposit is None or deposit > MAX_DEPOSIT or rent > MAX_RENT:
+                    continue
+                if not is_jeonse and not INCLUDE_MONTHLY:
                     continue
                 key = dedupe_key(a)
                 if key in seen:
