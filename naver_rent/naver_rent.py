@@ -24,7 +24,7 @@ from browser_util import connect, launch_browser
 STATION_NAME = "운정중앙역"
 STATION_LAT = 37.71661     # 위도
 STATION_LON = 126.72835    # 경도
-RADIUS_KM = 4.0            # 반경 (km)
+RADIUS_KM = 3.0            # 반경 (km)
 MAX_DEPOSIT = 32000        # 보증금 상한 (만원) = 3억 2천
 INCLUDE_MONTHLY = False    # 월세 매물도 넣으려면 True
 MAX_RENT = 90              # 월세 상한 (만원), INCLUDE_MONTHLY=True 일 때만 사용
@@ -41,6 +41,12 @@ START_URL = "https://new.land.naver.com/complexes/113942?a=APT:ABYG:JGC&e=RETAIL
 # =============================================
 
 BASE = "https://new.land.naver.com"
+# 엑셀 링크 후보. 실행할 때 실제로 열어 보고 매물 가격이 보이는 첫 번째 형식을 씀
+LINK_FORMATS = [
+    ("네이버페이 부동산 매물", "https://fin.land.naver.com/articles/{no}"),
+    ("네이버 부동산 모바일 매물", "https://m.land.naver.com/article/info/{no}"),
+    ("네이버 부동산 단지", BASE + "/complexes/{cno}?a=APT:ABYG:JGC&e=RETAIL&articleNo={no}"),
+]
 # 열린 크롬 창 안에서 직접 요청 (브라우저 밖에서 따로 요청하면 네이버가 429로 거절함)
 FETCH_JS = """async ([url, auth]) => {
   const r = await fetch(url, {headers: {"authorization": auth, "accept": "application/json"},
@@ -296,7 +302,51 @@ def dedupe_key(a):
     return a.get("articleNo")
 
 
-def save_excel(rows, path, complex_rows=()):
+def squash(text):
+    return re.sub(r"[\s,]", "", str(text or ""))
+
+
+def check_link(context, url, price_text):
+    """새 탭으로 url 을 열어, 404 가 아니고 매물 가격이 화면에 보이는지 확인"""
+    tab = context.new_page()
+    try:
+        tab.goto(url, wait_until="domcontentloaded", timeout=30000)
+        try:
+            tab.wait_for_load_state("networkidle", timeout=10000)
+        except Exception:
+            pass
+        tab.wait_for_timeout(2000)
+        body = squash(tab.inner_text("body"))
+        final = tab.url
+        ok = ("404" not in final and "찾을수없" not in body
+              and squash(price_text) in body)
+        return ok, final
+    except Exception as e:
+        return False, f"오류: {e}"
+    finally:
+        tab.close()
+
+
+def choose_link_format(context, samples, debug):
+    """매물 몇 개로 링크 형식을 시험해서, 모두 통과한 첫 번째 형식을 고름"""
+    for name, tmpl in LINK_FORMATS:
+        results = []
+        for s in samples:
+            url = tmpl.format(cno=s["cno"], no=s["no"])
+            ok, final = check_link(context, url, s["price"])
+            debug.write(json.dumps({"link_test": name, "url": url, "final": final, "ok": ok},
+                                   ensure_ascii=False) + "\n")
+            debug.flush()
+            results.append(ok)
+            if not ok:
+                break
+        log(f"  링크 확인 - {name}: {'성공' if all(results) else '실패'}")
+        if results and all(results):
+            return name, tmpl
+    return None, None
+
+
+def save_excel(rows, path, complex_rows=(), link_note=""):
     from openpyxl import Workbook
     from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
     from openpyxl.utils import get_column_letter
@@ -355,12 +405,13 @@ def save_excel(rows, path, complex_rows=()):
         ("평 수", "공급면적 ÷ 3.3058"),
         ("역 좌표", f"{STATION_LAT}, {STATION_LON}"),
         ("출처", "네이버 부동산"),
+        ("링크", link_note),
         ("수집 시각", datetime.now().strftime("%Y-%m-%d %H:%M")),
         ("매물 수", len(rows)),
     ]:
         info.append(line)
     info.column_dimensions["A"].width = 12
-    info.column_dimensions["B"].width = 40
+    info.column_dimensions["B"].width = 60
     wb.save(path)
 
 
@@ -440,12 +491,25 @@ def main():
                     first(realtor, "representativeName"),
                     phone,
                     first(realtor, "realtorName", default=a.get("realtorName", "")),
-                    f"{BASE}/complexes/{cno}?a=APT:ABYG:JGC&e=RETAIL&articleNo={a.get('articleNo')}",
+                    {"cno": cno, "no": a.get("articleNo"), "price": format_price(deposit)},  # 링크는 마지막에 만듦
                 ])
                 kept += 1
             log(f"    조건에 맞는 매물 {kept}건" + ("" if ok else " (조회 실패)"))
             complex_rows.append([name, c["_dong"], round(c["_distance"], 2), "포함",
                                  households, kept, "성공" if ok else "실패"])
+
+        # 링크 형식 확인 (매물 2개로 시험)
+        link_note = ""
+        if rows:
+            log("엑셀 링크 확인 중...")
+            name, tmpl = choose_link_format(context, [r[-1] for r in rows[:2]], nv.debug)
+            if not tmpl:
+                name, tmpl = LINK_FORMATS[0]
+                link_note = f"{name} 형식 (자동 확인 실패 - 매물이 안 맞으면 알려주세요)"
+            else:
+                link_note = f"{name} 형식 (실행 시 확인됨)"
+            for r in rows:
+                r[-1] = tmpl.format(cno=r[-1]["cno"], no=r[-1]["no"])
 
         browser.close()
     try:
@@ -454,7 +518,7 @@ def main():
         pass
 
     complex_rows.sort(key=lambda r: r[2])
-    save_excel(rows, out_path, complex_rows)
+    save_excel(rows, out_path, complex_rows, link_note)
     log("")
     log(f"완료! 총 {len(rows)}건 저장: {out_path}")
     if not rows:
