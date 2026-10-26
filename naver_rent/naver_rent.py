@@ -24,7 +24,7 @@ from browser_util import connect, launch_browser
 STATION_NAME = "운정중앙역"
 STATION_LAT = 37.71661     # 위도
 STATION_LON = 126.72835    # 경도
-RADIUS_KM = 3.0            # 반경 (km)
+RADIUS_KM = 3.5            # 반경 (km)
 MAX_DEPOSIT = 32000        # 보증금 상한 (만원) = 3억 2천
 INCLUDE_MONTHLY = False    # 월세 매물도 넣으려면 True
 MAX_RENT = 90              # 월세 상한 (만원), INCLUDE_MONTHLY=True 일 때만 사용
