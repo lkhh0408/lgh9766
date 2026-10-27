@@ -14,7 +14,7 @@ import re
 import sys
 import json
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -28,6 +28,8 @@ RADIUS_KM = 3.5            # 반경 (km)
 MAX_DEPOSIT = 32000        # 보증금 상한 (만원) = 3억 2천
 INCLUDE_MONTHLY = False    # 월세 매물도 넣으려면 True
 MAX_RENT = 90              # 월세 상한 (만원), INCLUDE_MONTHLY=True 일 때만 사용
+NEW_ONLY = True            # True 면 최근 NEW_DAYS 일 안에 새로 올라온 매물만 (False 면 전체)
+NEW_DAYS = 1               # 1 = 오늘 올라온 매물만, 3 = 그저께부터 오늘까지
 # 조회할 시·구는 좌표 주변에서 자동으로 찾습니다.
 # 자동으로 못 찾는 경우를 대비해 꼭 넣을 지역코드를 여기에 적어 둘 수 있습니다 (비워도 됨).
 EXTRA_REGION_CODES = [
@@ -41,6 +43,7 @@ START_URL = "https://new.land.naver.com/complexes/113942?a=APT:ABYG:JGC&e=RETAIL
 # =============================================
 
 BASE = "https://new.land.naver.com"
+new_cutoff = "00000000"   # main() 에서 NEW_DAYS 로 정함 (YYYYMMDD)
 # 엑셀 링크 후보. 실행할 때 실제로 열어 보고 매물 가격이 보이는 첫 번째 형식을 씀
 LINK_FORMATS = [
     ("네이버페이 부동산 매물", "https://fin.land.naver.com/articles/{no}"),
@@ -54,7 +57,7 @@ FETCH_JS = """async ([url, auth]) => {
   return [r.status, await r.text()];
 }"""
 HEADERS_COLUMNS = ["번호", "아파트 명", "거리(km)", "세대 수", "주차 대 수", "평 수", "층 수", "방향",
-                   "보증금", "월세", "입주가능일", "중개사 이름", "휴대폰", "부동산 명", "링크"]
+                   "보증금", "월세", "입주가능일", "중개사 이름", "휴대폰", "부동산 명", "등록일", "링크"]
 
 
 def log(msg):
@@ -134,6 +137,12 @@ def move_in_text(detail):
     if detail.get("moveInDiscussionPossibleYN") == "Y" and "협의" not in text:
         text = (text + " (협의가능)").strip()
     return text
+
+
+def ymd_text(ymd):
+    """'20261027' -> '2026.10.27'"""
+    ymd = str(ymd or "")
+    return f"{ymd[:4]}.{ymd[4:6]}.{ymd[6:8]}" if re.fullmatch(r"\d{8}", ymd) else ymd
 
 
 def first(d, *keys, default=""):
@@ -378,7 +387,7 @@ def save_excel(rows, path, complex_rows=(), link_note=""):
             cell.hyperlink = cell.value
             cell.value = "매물 보기"
             cell.font = Font(color="0563C1", underline="single")
-    widths = [6, 26, 9, 9, 10, 30, 9, 9, 13, 9, 16, 12, 15, 24, 11]
+    widths = [6, 26, 9, 9, 10, 30, 9, 9, 13, 9, 16, 12, 15, 24, 11, 11]
     for idx, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(idx)].width = w
     ws.freeze_panes = "A2"
@@ -402,6 +411,7 @@ def save_excel(rows, path, complex_rows=(), link_note=""):
         ("보증금", f"{format_price(MAX_DEPOSIT)} 이하"),
         ("월세", f"{MAX_RENT}만원 이하 (전세 포함)" if INCLUDE_MONTHLY else "제외 (전세만)"),
         ("중복", "같은 매물은 하나로 합침"),
+        ("새 매물", f"{ymd_text(new_cutoff)} 이후 네이버에 올라온 매물만 (노출 시작일 기준)" if NEW_ONLY else "전체"),
         ("평 수", "공급면적 ÷ 3.3058"),
         ("역 좌표", f"{STATION_LAT}, {STATION_LON}"),
         ("출처", "네이버 부동산"),
@@ -423,7 +433,12 @@ def main():
         return 1
 
     out_dir = Path(__file__).resolve().parent
-    out_path = out_dir / f"{STATION_NAME}_전월세_{datetime.now():%Y%m%d_%H%M}.xlsx"
+    suffix = "_신규" if NEW_ONLY else ""
+    out_path = out_dir / f"{STATION_NAME}_전월세{suffix}_{datetime.now():%Y%m%d_%H%M}.xlsx"
+    global new_cutoff
+    new_cutoff = (datetime.now() - timedelta(days=NEW_DAYS - 1)).strftime("%Y%m%d")
+    if NEW_ONLY:
+        log(f"{ymd_text(new_cutoff)} 이후 새로 올라온 매물만 모읍니다.")
 
     proc = launch_browser(out_dir, START_URL)
     with sync_playwright() as p:
@@ -470,12 +485,19 @@ def main():
                     continue
                 if not is_jeonse and not INCLUDE_MONTHLY:
                     continue
+                # 새 매물만: 목록의 확인일자로 먼저 거르고(조회 시간 절약), 상세의 노출 시작일로 다시 확인
+                if NEW_ONLY and str(a.get("articleConfirmYmd") or "99999999") < new_cutoff:
+                    continue
                 key = dedupe_key(a)
                 if key in seen:
                     continue
                 seen.add(key)
 
                 detail, realtor = nv.article_info(a.get("articleNo"), cno)
+                listed = first(detail, "exposeStartYMD", "exposeStartYmd", "articleConfirmYMD",
+                               "articleConfirmYmd", default=a.get("articleConfirmYmd", ""))
+                if NEW_ONLY and str(listed or "99999999") < new_cutoff:
+                    continue
                 phone = first(realtor, "cellPhoneNo", "representativeTelNo")
                 rows.append([
                     name,
@@ -491,6 +513,7 @@ def main():
                     first(realtor, "representativeName"),
                     phone,
                     first(realtor, "realtorName", default=a.get("realtorName", "")),
+                    ymd_text(listed),
                     {"cno": cno, "no": a.get("articleNo"), "price": format_price(deposit)},  # 링크는 마지막에 만듦
                 ])
                 kept += 1
