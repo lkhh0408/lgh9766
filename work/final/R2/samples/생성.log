@@ -1,0 +1,81 @@
+== 봄1_원경_새벽 (Y12_end)
+장부 누적 $129.84(미확정 포함) + 이번 예상 $0.07 = $129.91 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/봄1_원경_새벽.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/봄1_원경_새벽.jpg) 토큰 {'prompt_token_count': 458, 'candidates_token_count': 1500, 'thoughts_token_count': None, 'total_token_count': 1958}
+== 봄2_접근_해뜸 (mid_start)
+장부 누적 $129.91(미확정 포함) + 이번 예상 $0.07 = $129.97 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/봄2_접근_해뜸.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/봄2_접근_해뜸.jpg) 토큰 {'prompt_token_count': 439, 'candidates_token_count': 1510, 'thoughts_token_count': None, 'total_token_count': 1949}
+== 봄3_중경_아침 (X2r_end)
+장부 누적 $129.97(미확정 포함) + 이번 예상 $0.07 = $130.04 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/봄3_중경_아침.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/봄3_중경_아침.jpg) 토큰 {'prompt_token_count': 440, 'candidates_token_count': 1492, 'thoughts_token_count': None, 'total_token_count': 1932}
+== 봄4_타워_맑은날 (X1b_end)
+장부 누적 $130.04(미확정 포함) + 이번 예상 $0.07 = $130.11 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/봄4_타워_맑은날.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/봄4_타워_맑은날.jpg) 토큰 {'prompt_token_count': 439, 'candidates_token_count': 1456, 'thoughts_token_count': None, 'total_token_count': 1895}
+== 봄5_전망대_꽃잎 (mid_end)
+장부 누적 $130.11(미확정 포함) + 이번 예상 $0.07 = $130.17 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/봄5_전망대_꽃잎.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/봄5_전망대_꽃잎.jpg) 토큰 {'prompt_token_count': 445, 'candidates_token_count': 1443, 'thoughts_token_count': None, 'total_token_count': 1888}
+== 여름1_원경_한낮 (Y12_end)
+장부 누적 $130.17(미확정 포함) + 이번 예상 $0.07 = $130.24 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/여름1_원경_한낮.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/여름1_원경_한낮.jpg) 토큰 {'prompt_token_count': 443, 'candidates_token_count': 1449, 'thoughts_token_count': None, 'total_token_count': 1892}
+== 여름2_접근_늦은아침 (mid_start)
+장부 누적 $130.24(미확정 포함) + 이번 예상 $0.07 = $130.31 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/여름2_접근_늦은아침.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/여름2_접근_늦은아침.jpg) 토큰 {'prompt_token_count': 438, 'candidates_token_count': 1449, 'thoughts_token_count': None, 'total_token_count': 1887}
+== 여름3_중경_한낮 (X2r_end)
+장부 누적 $130.31(미확정 포함) + 이번 예상 $0.07 = $130.37 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/여름3_중경_한낮.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/여름3_중경_한낮.jpg) 토큰 {'prompt_token_count': 439, 'candidates_token_count': 1486, 'thoughts_token_count': None, 'total_token_count': 1925}
+== 여름4_타워_늦은오후 (X1b_end)
+장부 누적 $130.37(미확정 포함) + 이번 예상 $0.07 = $130.44 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/여름4_타워_늦은오후.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/여름4_타워_늦은오후.jpg) 토큰 {'prompt_token_count': 435, 'candidates_token_count': 1430, 'thoughts_token_count': None, 'total_token_count': 1865}
+== 여름5_전망대_정오 (mid_end)
+장부 누적 $130.44(미확정 포함) + 이번 예상 $0.07 = $130.51 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/여름5_전망대_정오.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/여름5_전망대_정오.jpg) 토큰 {'prompt_token_count': 437, 'candidates_token_count': 1458, 'thoughts_token_count': None, 'total_token_count': 1895}
+== 가을1_원경_금빛 (Y12_end)
+장부 누적 $130.51(미확정 포함) + 이번 예상 $0.07 = $130.58 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/가을1_원경_금빛.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/가을1_원경_금빛.jpg) 토큰 {'prompt_token_count': 442, 'candidates_token_count': 1512, 'thoughts_token_count': None, 'total_token_count': 1954}
+== 가을2_접근_늦은오후 (mid_start)
+장부 누적 $130.57(미확정 포함) + 이번 예상 $0.07 = $130.64 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/가을2_접근_늦은오후.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/가을2_접근_늦은오후.jpg) 토큰 {'prompt_token_count': 434, 'candidates_token_count': 1455, 'thoughts_token_count': None, 'total_token_count': 1889}
+== 가을3_중경_노을 (X2r_end)
+장부 누적 $130.64(미확정 포함) + 이번 예상 $0.07 = $130.71 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/가을3_중경_노을.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/가을3_중경_노을.jpg) 토큰 {'prompt_token_count': 443, 'candidates_token_count': 1408, 'thoughts_token_count': None, 'total_token_count': 1851}
+== 가을4_타워_해질녘 (X1b_end)
+장부 누적 $130.71(미확정 포함) + 이번 예상 $0.07 = $130.78 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/가을4_타워_해질녘.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/가을4_타워_해질녘.jpg) 토큰 {'prompt_token_count': 443, 'candidates_token_count': 1494, 'thoughts_token_count': None, 'total_token_count': 1937}
+== 가을5_전망대_역광 (mid_end)
+장부 누적 $130.78(미확정 포함) + 이번 예상 $0.07 = $130.84 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/가을5_전망대_역광.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/가을5_전망대_역광.jpg) 토큰 {'prompt_token_count': 435, 'candidates_token_count': 1507, 'thoughts_token_count': None, 'total_token_count': 1942}
+== 겨울1_원경_블루아워 (Y12_end)
+장부 누적 $130.84(미확정 포함) + 이번 예상 $0.07 = $130.91 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/겨울1_원경_블루아워.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/겨울1_원경_블루아워.jpg) 토큰 {'prompt_token_count': 450, 'candidates_token_count': 1499, 'thoughts_token_count': None, 'total_token_count': 1949}
+== 겨울2_접근_눈오는아침 (mid_start)
+장부 누적 $130.91(미확정 포함) + 이번 예상 $0.07 = $130.98 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/겨울2_접근_눈오는아침.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/겨울2_접근_눈오는아침.jpg) 토큰 {'prompt_token_count': 435, 'candidates_token_count': 1466, 'thoughts_token_count': None, 'total_token_count': 1901}
+== 겨울3_중경_눈오는밤 (X2r_end)
+장부 누적 $130.98(미확정 포함) + 이번 예상 $0.07 = $131.04 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/겨울3_중경_눈오는밤.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/겨울3_중경_눈오는밤.jpg) 토큰 {'prompt_token_count': 439, 'candidates_token_count': 1503, 'thoughts_token_count': None, 'total_token_count': 1942}
+== 겨울4_타워_눈내린해질녘 (X1b_end)
+장부 누적 $131.04(미확정 포함) + 이번 예상 $0.07 = $131.11 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/겨울4_타워_눈내린해질녘.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/겨울4_타워_눈내린해질녘.jpg) 토큰 {'prompt_token_count': 436, 'candidates_token_count': 1470, 'thoughts_token_count': None, 'total_token_count': 1906}
+== 겨울5_전망대_눈오는밤 (mid_end)
+장부 누적 $131.11(미확정 포함) + 이번 예상 $0.07 = $131.18 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+저장: work/final/R2/samples/겨울5_전망대_눈오는밤.png (1376x768, 받은 형식 image/jpeg, 원본 work/final/R2/samples/겨울5_전망대_눈오는밤.jpg) 토큰 {'prompt_token_count': 446, 'candidates_token_count': 1490, 'thoughts_token_count': None, 'total_token_count': 1936}
+끝
