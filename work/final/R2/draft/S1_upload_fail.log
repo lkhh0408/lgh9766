@@ -1,0 +1,64 @@
+장부 누적 $131.18(미확정 포함) + 이번 예상 $0.29 = $131.47 / 예산 상한 $131.72, 80% 보고선 $108.98
+주의: 80% 보고선을 넘는 요청입니다(--allow-over-warn 지정됨).
+Traceback (most recent call last):
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 836, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 410, in main
+    return generate(a, ap)
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 493, in generate
+    uri, mime = upload(pc, a.first)
+                ~~~~~~^^^^^^^^^^^^^
+  File "/home/user/lgh9766/work/scripts/omni_gen.py", line 154, in upload
+    f = client.files.upload(file=path)
+  File "/usr/local/lib/python3.13/dist-packages/google/genai/files.py", line 622, in upload
+    response = self._create(
+        file=file_obj,
+    ...<2 lines>...
+        ),
+    )
+  File "/usr/local/lib/python3.13/dist-packages/google/genai/files.py", line 293, in _create
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "/usr/local/lib/python3.13/dist-packages/google/genai/_api_client.py", line 1824, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "/usr/local/lib/python3.13/dist-packages/google/genai/_api_client.py", line 1621, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/usr/local/lib/python3.13/dist-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "/usr/local/lib/python3.13/dist-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/dist-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/google/genai/_api_client.py", line 1590, in _request_once
+    httpx_request = self._httpx_client.build_request(  # type: ignore[union-attr]
+        method=http_request.method,
+    ...<3 lines>...
+        timeout=http_request.timeout,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/httpx/_client.py", line 367, in build_request
+    headers = self._merge_headers(headers)
+  File "/usr/local/lib/python3.13/dist-packages/httpx/_client.py", line 430, in _merge_headers
+    merged_headers.update(headers)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/httpx/_models.py", line 275, in update
+    headers = Headers(headers)
+  File "/usr/local/lib/python3.13/dist-packages/httpx/_models.py", line 156, in __init__
+    bytes_value = _normalize_header_value(v, encoding)
+  File "/usr/local/lib/python3.13/dist-packages/httpx/_models.py", line 82, in _normalize_header_value
+    return value.encode(encoding or "ascii")
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1: ordinal not in range(128)
