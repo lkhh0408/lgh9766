@@ -11,6 +11,7 @@ YouTube 음악 채널 **Open to Close** (@OpentoClose_day) 작업 저장소예�
 - **후킹 우선**: 제목, 썸네일, 설명은 장르나 시간대(아침 팝송 등)로 한정하지 않고, 클릭하고 싶게 만드는 후킹이 기준이에요.
 
 ## 작업 방식
+- **새 기능이나 방향 변경은 충분히 이야기한 뒤, 사용자가 "확정"하면 그때 만들어요.** 의견을 묻는 질문이나 아이디어 단계에서는 제안과 설명만 하고 구현하지 않아요.
 - 사용자는 MP3를 GitHub에 `번호.제목.mp3`로 올리고, 가사는 채팅에 `번호. 제목` + `[Verse]`/`[Chorus]` 구간 표시와 함께 붙여넣어요. 가사는 `playlists/volXX/lyrics/번호.제목.txt`로 저장해요.
 - 영상: 가사 타이밍(`studio/align_lyrics.py`) → 스토리보드(`playlists/volXX/storyboard.json`, 가사 한 줄마다 장면) → 미리보기(`--stills`) → 렌더링. 자세한 건 `studio/README.md`, `docs/OpenToClose_process_guide.pdf`.
 - 곡 사이 1.5초: 캐릭터가 멈춰 헤드폰을 탭하고 ▶ 말풍선, 화면 표시는 `TRACK 0X`와 곡 제목.
