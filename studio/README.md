@@ -47,9 +47,6 @@ python studio/render_video.py songs/morning-vol1 -o morning-vol1.mp4
                     → 몇 장만 그려서 장면을 빠르게 확인
         ↓
 ⑤ 영상 렌더링       python studio/render_video.py <songs> --scenes <storyboard> -o volXX.mp4
-        ↓
-⑥ (선택) 반복       python studio/loop_video.py volXX.mp4 -n 3 -o volXX_3h.mp4
-                    → 완성 영상을 그대로 N번 이어 붙여요. 다시 그리지 않아서 몇 분이면 끝나요
 ```
 
 ## 스토리보드 (`storyboard.json`)
@@ -88,7 +85,6 @@ python studio/render_video.py songs/morning-vol1 -o morning-vol1.mp4
 
 ## 파일 구성
 - `render_video.py`: 오디오 연결, 장면 그리기, 영상 인코딩
-- `loop_video.py`: 완성된 영상을 N번 반복해서 2시간, 3시간짜리로 만들기
 - `align_lyrics.py`: 가사 타이밍 찾기 (faster-whisper 음성 인식, 처음 실행할 때 모델을 내려받아요)
 - `props.py`: 가사 장면 소품과 동네 사람들
 - `character.py`: 마스코트. 얼굴, 안경, 머리 모양, 비율은 고정이고, `OUTFITS`에 의상(옷 색, 헤드폰 색, 소품)을 추가해서 갈아입혀요.
