@@ -8,6 +8,6 @@
 - [x] 스토리보드 4~20번 작성 (`storyboard.json`, 1~3번은 완료)
 - [x] 새 장면(props) 그리기: 창문 속 장면 10종, 영화관, 트램, 우체통, 이삿짐, 과일 가게, 호수 물수제비, 옷가게, 강아지
 - [x] 미리보기 스틸 확인
-- [ ] 1시간 영상 렌더링 (`--outfit vol01`)
+- [x] 1시간 영상 렌더링 (`--outfit vol01`) — 65:07, 1920x1080, AAC 384k, 전체 -14.0 LUFS, 트루피크 -1.2 dBFS
 - [x] 설명란(타임스탬프 + 곡별 한 줄 소개) 작성: description.txt, 제목 후보 title_options.txt
-- [ ] 영상 + 썸네일(`thumbnails/vol01.png`) + 설명란 전달
+- [x] 영상 + 썸네일(`thumbnails/vol01.png`) + 설명란 전달
