@@ -51,18 +51,27 @@ TRACKS = [(f'{i + 1:02d}', title) for i, (_, title, _) in enumerate(songs)]
 DURS = [probe(p) for _, _, p in songs]
 for (n, t_), d in zip(TRACKS, DURS): print(f'TRACK {n}  {t_}  {int(d // 60)}:{int(d % 60):02d}')
 
-# audio: short fade at each song end, silence gaps, loudness to YouTube's -14 LUFS
+# audio: every song brought to YouTube's -14 LUFS on its own (a fixed gain, so the sound is untouched),
+# a limiter that only catches the few peaks the gain pushes over -1.5 dB, a short fade at each end, silence gaps
+TARGET_LUFS, CEILING = -14.0, 10 ** (-1.5 / 20)
+def loudness(path):
+    out = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', path, '-af', 'ebur128', '-f', 'null', '-'],
+                         capture_output=True, text=True).stderr
+    return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', out)[-1])
 MIX = os.path.splitext(args.out)[0] + '_mix.wav'
 cmd = ['ffmpeg', '-y', '-loglevel', 'error']
 for _, _, p in songs: cmd += ['-i', p]
 for _ in songs[1:]: cmd += ['-f', 'lavfi', '-t', str(GAP), '-i', 'anullsrc=r=48000:cl=stereo']
 fl, seq = [], []
-for i, d in enumerate(DURS):
-    fl.append(f'[{i}]afade=t=out:st={max(0, d - 0.8):.3f}:d=0.8,aresample=48000[a{i}]')
+for i, ((_, _, p), d) in enumerate(zip(songs, DURS)):
+    gain = TARGET_LUFS - loudness(p)
+    fl.append(f'[{i}]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,volume={gain:.2f}dB,'
+              f'alimiter=limit={CEILING:.4f}:attack=5:release=60:level=disabled,afade=t=out:st={max(0, d - 0.8):.3f}:d=0.8[a{i}]')
     seq.append(f'[a{i}]')
-    if i < len(songs) - 1: seq.append(f'[{len(songs) + i}]')
-fl.append(''.join(seq) + f'concat=n={len(seq)}:v=0:a=1,loudnorm=I=-14:TP=-1.5:LRA=11')
-subprocess.run(cmd + ['-filter_complex', ';'.join(fl), '-ar', '48000', '-ac', '2', MIX], check=True)
+    if i < len(songs) - 1:
+        fl.append(f'[{len(songs) + i}]aformat=sample_fmts=fltp:channel_layouts=stereo[g{i}]'); seq.append(f'[g{i}]')
+fl.append(''.join(seq) + f'concat=n={len(seq)}:v=0:a=1')
+subprocess.run(cmd + ['-filter_complex', ';'.join(fl), '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s24le', MIX], check=True)
 
 with wave.open(MIX) as w:
     TOTAL = w.getnframes() / w.getframerate()
@@ -708,7 +717,7 @@ fmt = lambda s: f"{int(s // 60)}:{int(s % 60):02d}"
 STILLS = {int(float(v) * FPS) for v in args.stills.split(',')} if args.stills else None
 ff = None if STILLS else subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
                        '-i', MIX, '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
-                       '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart',
+                       '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '384k', '-aac_coder', 'twoloop', '-ar', '48000', '-shortest', '-movflags', '+faststart',
                        args.out], stdin=subprocess.PIPE)
 nframes = int(TOTAL * FPS)
 scroll = phase = 0.0
@@ -739,5 +748,5 @@ for fi in range(nframes):
     ff.stdin.write(out.tobytes())
     if fi % (FPS * 60) == 0: print(f'  rendered {fi // (FPS * 60)} / {int(TOTAL // 60)} min', flush=True)
 if ff: ff.stdin.close(); ff.wait()
-os.remove(MIX)
+if not STILLS: os.remove(MIX)
 print('done:', args.out)
