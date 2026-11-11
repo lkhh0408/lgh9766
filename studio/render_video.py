@@ -677,7 +677,7 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
     for rt, icon in REACTS:   # the mascot reacts to what it passes
         k = t - rt
         if 0 <= k < 2.2 and ba < 0.05:
-            sc = min(1.1, k / 0.2 * 1.1) if k < 0.2 else 1.0
+            sc = max(0.02, min(1.1, k / 0.2 * 1.1)) if k < 0.2 else 1.0
             al = 1 - sm((k - 1.6) / 0.6)
             bx, by = CX - 34, GY - 86 - 116 - 42 - 40
             ctx.save(); ctx.translate(bx, by); ctx.scale(sc, sc); ctx.push_group()
