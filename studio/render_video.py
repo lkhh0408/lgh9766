@@ -14,6 +14,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import character as ch
+import props
 
 ASSETS = os.path.join(HERE, 'assets')
 LOGO = os.path.join(ASSETS, 'logo_horizontal.png')
@@ -24,7 +25,8 @@ ap.add_argument('-o', '--out', default='output.mp4', help='output video path')
 ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence between songs')
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
-ap.add_argument('--scenes', help='JSON with per-song scenes (default: scenes.json in the songs folder, if present)')
+ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
+                'Lyric timings are read from a timing/ folder next to it (see align_lyrics.py).')
 args = ap.parse_args()
 
 W, H, FPS = 1920, 1080, 24
@@ -124,7 +126,7 @@ def gen_zone(z, x, xe, sign=None):
             elif k < 0.75: objs.append(('bush', x + 40, rnd.randint(32, 50))); x += 120
             else: objs.append(('bench', x + 60)); x += 190
         elif z == 'shops':
-            w_ = rnd.randint(300, 360); objs.append(('shop', x, w_, rnd.choice(['CAFE', 'BAKERY', 'BOOKS', 'RECORDS', 'FLOWERS']), p, a)); x += w_ + 30
+            w_ = rnd.randint(300, 360); objs.append(('shop', x, w_, sign or rnd.choice(['CAFE', 'BAKERY', 'BOOKS', 'RECORDS', 'FLOWERS']), p, a)); x += w_ + 30
             if rnd.random() < 0.6: objs.append(('table', x + 50, a)); x += 150
         elif z == 'houses':
             w_ = rnd.randint(150, 190); objs.append(('house', x, w_, rnd.randint(120, 160), p, a)); x += w_ + 20
@@ -184,23 +186,29 @@ def gen_zone(z, x, xe, sign=None):
 
 zones = []     # (world_x_start, kind, track_index)
 TRACK_FX = [set() for _ in TRACKS]
-scenes_path = args.scenes or os.path.join(args.songs, 'scenes.json')
+scenes_path = args.scenes or next((os.path.join(args.songs, f) for f in ('storyboard.json', 'scenes.json') if os.path.exists(os.path.join(args.songs, f))), '')
+TINTS = [None] * len(TRACKS)
+EVENT_FX, REACTS, CHORUS = [], [], []      # (t0, t1, name) / (t, icon) / (t0, t1)
 if os.path.exists(scenes_path):
     import json
     plan = json.load(open(scenes_path))['tracks']
-    # where will the walker be when each song starts? simulate the walk once
-    pos, scroll_at = 0.0, []
-    nxt = 0
-    for fi in range(int(TOTAL * FPS) + 1):
-        t = fi / FPS
-        while nxt < len(starts) and t >= starts[nxt]: scroll_at.append(pos); nxt += 1
-        pos += SPEED * motion(t)[0] / FPS
+    timing_dir = os.path.join(os.path.dirname(scenes_path), 'timing')
+    # where will the walker be at every moment? simulate the walk once
+    pos, POS = 0.0, []
+    for fi in range(int(TOTAL * FPS) + 2):
+        POS.append(pos); pos += SPEED * motion(fi / FPS)[0] / FPS
+    scroll_at = lambda tt: POS[max(0, min(len(POS) - 1, int(tt * FPS)))]
     world_end = pos + W + 800
     # each song's scenery begins just ahead of the walker, so the tap leads into the new song's street
-    bounds = [0.0] + [scroll_at[i] + CX + 180 for i in range(1, len(TRACKS))] + [world_end]
+    bounds = [0.0] + [scroll_at(starts[i]) + CX + 180 for i in range(1, len(TRACKS))] + [world_end]
     SEG = 1100
+    base_pal = (PASTEL, ACCENT)
+    pieces = []
     for i in range(len(TRACKS)):
         spec = plan.get(str(i + 1), {})
+        if spec.get('palette'): ACCENT = [hexc(c) for c in spec['palette']]
+        else: PASTEL, ACCENT = base_pal
+        TINTS[i] = tuple(hexc(c) for c in spec['sky']) if spec.get('sky') else None
         kinds = spec.get('scenes') or ['houses', 'shops', 'park']
         signs = spec.get('signs', {})
         TRACK_FX[i] = set(spec.get('effects', []))
@@ -208,6 +216,44 @@ if os.path.exists(scenes_path):
         while x < bounds[i + 1]:
             z = kinds[k % len(kinds)]; xe = min(x + SEG, bounds[i + 1])
             zones.append((x, z, i)); gen_zone(z, x, xe, signs.get(z)); x = xe; k += 1
+        # lyric beats: a set piece arrives on screen as its line is sung
+        tfile = os.path.join(timing_dir, f'{i + 1}.json')
+        lines = json.load(open(tfile)) if os.path.exists(tfile) else []
+        def when(beat):
+            hits = [l['start'] for l in lines if beat['line'].lower() in l['line'].lower()]
+            if beat.get('all'): return hits
+            n = beat.get('nth', 1) - 1
+            return hits[n:n + 1]
+        accents = ACCENT
+        for b in spec.get('beats', []):
+            for T in when(b):
+                at = starts[i] + T
+                if b.get('piece'):
+                    opts = {k_: v for k_, v in b.items() if k_ in ('sign', 'text')}
+                    opts['color'] = '#%02x%02x%02x' % tuple(int(c * 255) for c in accents[len(pieces) % len(accents)])
+                    pieces.append([at, b['piece'], opts])
+                if b.get('effect'): EVENT_FX.append((at - 0.5, at + b.get('dur', 8), b['effect']))
+                if b.get('react'): REACTS.append((at + 1.2, b['react']))
+        # chorus blocks: lights over the street, a banner as each chorus begins
+        block = []
+        for l in lines + [{'section': '', 'start': 1e9}]:
+            if 'chorus' in l['section'].lower() and 'pre' not in l['section'].lower(): block.append(l); continue
+            if block:
+                c0, c1 = starts[i] + block[0]['start'], starts[i] + block[-1]['end'] + 1.0
+                if spec.get('chorus', {}).get('lights'): CHORUS.append((c0, c1))
+                if spec.get('chorus', {}).get('banner'):
+                    pieces.append([c0 - 0.8, 'banner', {'text': spec['chorus']['banner'], 'color': '#%02x%02x%02x' % tuple(int(c * 255) for c in accents[0])}])
+                block = []
+    PASTEL, ACCENT = base_pal
+    # place pieces: centred around screen x 1250 when their line starts, never overlapping each other
+    pieces.sort(key=lambda p: p[0]); right = -1e9; placed = []
+    for at, name, opts in pieces:
+        wdt = props.WIDTH.get(name, 400)
+        left = max(scroll_at(at) + 1250 - wdt / 2, right + 60)
+        placed.append((left, left + wdt)); right = left + wdt
+        objs.append(('piece', left, name, at, opts))
+    # clear the generic scenery under each piece
+    objs[:] = [o for o in objs if o[0] == 'piece' or not any(a - 80 < o[1] < b + 40 for a, b in placed)]
 else:
     end = SPEED * TOTAL + W + 2 * ZLEN
     first = ['houses', 'shops', 'park']  # every walk starts in the neighbourhood
@@ -242,6 +288,8 @@ def draw_obj(ctx, o, sx, L, night, t):
     nf = lambda c: lerp(c, hexc('#2A2F5C'), night * 0.85)
     ctx.set_source_rgb(*L); ctx.set_line_width(3)
     k = o[0]
+    if k == 'piece':
+        props.draw_piece(ctx, o[2], sx, GY, t, t - o[3], L, night, nf, o[4], draw_obj, o[1]); return
     if k == 'bldg':
         _, _, w_, h_, cols, p = o
         ctx.rectangle(sx, GY - h_, w_, h_); shape(ctx, nf(lerp(p, (1, 1, 1), .5)), L)
@@ -494,15 +542,34 @@ def far_layer(ctx, kind, off, L, top, bot, night):
 
 GROUND_KINDS = {'zebra'}
 def fx_alpha(name, t):
-    """0..1 strength of a per-song effect at time t (fades in as the song starts, out as it ends)"""
+    """0..1 strength of an effect at time t: per-song effects, or ones a lyric line switches on for a while"""
+    a = 0.0
     for i, (s0, e) in enumerate(zip(starts, ends)):
         if s0 - 0.5 <= t < e + 0.5 and name in TRACK_FX[i]:
-            return min(sm((t - s0 + 0.5) / 2.0), 1 - sm((t - e + 0.5) / 1.5))
-    return 0.0
+            a = max(a, min(sm((t - s0 + 0.5) / 2.0), 1 - sm((t - e + 0.5) / 1.5)))
+    for t0, t1, n in EVENT_FX:
+        if n == name and t0 <= t < t1 + 1.5: a = max(a, min(sm((t - t0) / 1.5), 1 - sm((t - t1) / 1.5)))
+    return a
+
+def chorus_alpha(t):
+    return max([min(sm((t - c0) / 1.2), 1 - sm((t - c1) / 1.2)) for c0, c1 in CHORUS if c0 - 1 <= t <= c1 + 1.5] + [0.0])
+
+def track_tint(t):
+    """(sky colours, weight) of the song playing at t, cross-fading through the gap between songs"""
+    best = (None, 0.0)
+    for i, (s0, e) in enumerate(zip(starts, ends)):
+        if TINTS[i] is None: continue
+        w = min(sm((t - s0 + 1.0) / 2.0), 1 - sm((t - e - 0.5) / 2.0))
+        if w > best[1]: best = (TINTS[i], w)
+    return best
 
 def scene(t, scroll, phase, walk, reach, press, ba, bs):
     u = t / TOTAL
     top, bot, night = sky_at(u)
+    tint, tw = track_tint(t)
+    if tint:   # each song brings its own sky; night still darkens it
+        k = 0.7 * tw * (1 - night)
+        top, bot = lerp(top, tint[0], k), lerp(bot, tint[1], k)
     L = lerp(hexc('#2B2541'), hexc('#EDE6FF'), min(1, night * 1.3))
     s = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H); ctx = cairo.Context(s)
     g = cairo.LinearGradient(0, 0, 0, GY); g.add_color_stop_rgb(0, *top); g.add_color_stop_rgb(1, *bot); ctx.set_source(g); ctx.paint()
@@ -545,7 +612,7 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
         ctx.push_group(); far_layer(ctx, kind, off, L, top, bot, night); ctx.pop_group_to_source(); ctx.paint_with_alpha(alpha)
     for o in objs:
         sx = o[1] - scroll
-        if o[0] not in GROUND_KINDS and -520 < sx < W + 200: draw_obj(ctx, o, sx, L, night, t)
+        if o[0] not in GROUND_KINDS and (-520 < sx < W + 200 or (o[0] == 'piece' and -1000 < sx < W + 1000)): draw_obj(ctx, o, sx, L, night, t)
     # ground: sand on the beach, grass paths in green zones, pavement elsewhere
     gz = zone_of(scroll + CX)
     gcol = hexc('#FFE9B8') if gz == 'beach' else (hexc('#DDF3D2') if gz in GREEN else hexc('#F3E9F7'))
@@ -558,7 +625,7 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
         sx = o[1] - scroll
         if o[0] in GROUND_KINDS and -520 < sx < W + 200: draw_obj(ctx, o, sx, L, night, t)
     if fx('golden') > 0.01:   # warm golden-hour wash
-        ctx.set_source_rgba(1, 0.74, 0.3, 0.16 * fx('golden') * (1 - night)); ctx.paint()
+        ctx.set_source_rgba(1, 0.78, 0.35, 0.09 * fx('golden') * (1 - night)); ctx.paint()
     if fx('breeze') > 0.01:   # leaves and petals carried on the wind
         for j in range(26):
             px = W + 100 - ((t * (220 + j * 9) + j * 211) % (W + 300)); py = 180 + (j * 83) % 520 + 30 * math.sin(t * 1.7 + j)
@@ -572,7 +639,36 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
         g = cairo.RadialGradient(CX + 6, GY - 140, 10, CX + 6, GY - 140, 230)
         g.add_color_stop_rgba(0, 1, 0.93, 0.78, 0.55 * night); g.add_color_stop_rgba(1, 1, 0.93, 0.78, 0)
         ctx.set_source(g); ctx.arc(CX + 6, GY - 140, 230, 0, 2 * math.pi); ctx.fill()
+    ca = chorus_alpha(t)
+    if ca > 0.01:      # chorus: lights strung over the street, notes bouncing around the mascot
+        for j in range(3):
+            x0 = -60 + j * (W + 120) / 3; props.string_lights(ctx, x0, x0 + (W + 120) / 3, GY - 470 + 18 * (j % 2), 70, t, L, ca)
+        ctx.select_font_face('DejaVu Sans', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+        for j in range(3):
+            ph = (t * .8 + j / 3) % 1
+            ctx.set_font_size(30 + 6 * j); ctx.set_source_rgba(*hexc(['#FF5C8A', '#FFB21A', '#7B3BFF'][j]), ca * (1 - ph))
+            ctx.move_to(CX - 70 + j * 60 + 10 * math.sin(t * 3 + j), GY - 250 - 90 * ph); ctx.show_text('\u266a' if j % 2 else '\u266b')
     ch.draw(ctx, CX, GY, t, L=hexc('#2B2541'), phase=phase, walk=walk, reach=reach, press=press)
+    for rt, icon in REACTS:   # the mascot reacts to what it passes
+        k = t - rt
+        if 0 <= k < 2.2 and ba < 0.05:
+            sc = min(1.1, k / 0.2 * 1.1) if k < 0.2 else 1.0
+            al = 1 - sm((k - 1.6) / 0.6)
+            bx, by = CX - 34, GY - 86 - 116 - 42 - 40
+            ctx.save(); ctx.translate(bx, by); ctx.scale(sc, sc); ctx.push_group()
+            ctx.arc(0, 0, 30, 0, 2 * math.pi); ctx.set_source_rgb(1, 1, 1); ctx.fill_preserve()
+            ctx.set_source_rgb(*hexc('#2B2541')); ctx.set_line_width(4); ctx.stroke()
+            ctx.move_to(14, 22); ctx.line_to(26, 40); ctx.line_to(2, 28); ctx.close_path(); ctx.set_source_rgb(1, 1, 1); ctx.fill()
+            if icon == 'heart':
+                ctx.move_to(0, 14); ctx.curve_to(-26, -4, -12, -24, 0, -10); ctx.curve_to(12, -24, 26, -4, 0, 14); ctx.set_source_rgb(*hexc('#FF5C8A')); ctx.fill()
+            elif icon == 'sun':
+                ctx.set_source_rgb(*hexc('#FFB21A')); ctx.arc(0, 0, 9, 0, 2 * math.pi); ctx.fill(); ctx.set_line_width(3)
+                for a in range(8): ctx.move_to(14 * math.cos(a * .785), 14 * math.sin(a * .785)); ctx.line_to(20 * math.cos(a * .785), 20 * math.sin(a * .785))
+                ctx.stroke()
+            else:
+                ctx.select_font_face('DejaVu Sans', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD); ctx.set_font_size(32)
+                ctx.set_source_rgb(*hexc('#7B3BFF')); ctx.move_to(-11, 12); ctx.show_text('\u266a')
+            ctx.pop_group_to_source(); ctx.paint_with_alpha(al); ctx.restore()
     if ba > 0.01 and bs > 0.01:   # play bubble above the head
         bx, by = CX + 40, GY - 86 - 116 - 42 - 62
         ctx.save(); ctx.translate(bx, by); ctx.scale(bs, bs)

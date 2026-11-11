@@ -1,0 +1,208 @@
+{
+  "tracks": {
+    "1": {
+      "title": "Good Side of the Street",
+      "sky": [
+        "#6FD3E8",
+        "#E3FFF2"
+      ],
+      "palette": [
+        "#2EC4A6",
+        "#FF8A3D",
+        "#FFB21A",
+        "#3D9BFF"
+      ],
+      "scenes": [
+        "flowerhouses",
+        "avenue",
+        "shops",
+        "pianohouse",
+        "terrace"
+      ],
+      "effects": [],
+      "chorus": {
+        "banner": "ON THE GOOD SIDE OF THE STREET",
+        "lights": true
+      },
+      "beats": [
+        {
+          "line": "Fresh white shirt",
+          "piece": "sign",
+          "text": "GOOD SIDE ST."
+        },
+        {
+          "line": "watering the flowers",
+          "piece": "waterer"
+        },
+        {
+          "line": "Corner baker",
+          "piece": "baker",
+          "sign": "BAKERY",
+          "react": "heart"
+        },
+        {
+          "line": "tall trees meet",
+          "piece": "tall_trees"
+        },
+        {
+          "line": "bicycle bell",
+          "piece": "cyclist",
+          "react": "note"
+        },
+        {
+          "line": "rooftop meal",
+          "piece": "rooftop"
+        },
+        {
+          "line": "playing keys",
+          "piece": "pianist",
+          "react": "note"
+        },
+        {
+          "line": "Every hello along the way",
+          "piece": "neighbors_wave",
+          "react": "heart"
+        },
+        {
+          "line": "seat beside the window",
+          "piece": "friend_window",
+          "react": "heart"
+        },
+        {
+          "line": "Pull a chair up",
+          "piece": "terrace",
+          "sign": "CAFE"
+        },
+        {
+          "line": "summer leaves",
+          "effect": "breeze",
+          "dur": 12
+        }
+      ],
+      "signs": {
+        "shops": "FLOWERS"
+      }
+    },
+    "2": {
+      "title": "Golden Hour Coffee",
+      "sky": [
+        "#FFB84D",
+        "#FFE6B0"
+      ],
+      "palette": [
+        "#FFB21A",
+        "#FF8A3D",
+        "#FF5C8A",
+        "#E0A43A"
+      ],
+      "scenes": [
+        "curtainhouses",
+        "shops",
+        "neighbors",
+        "park"
+      ],
+      "effects": [
+        "golden"
+      ],
+      "chorus": {
+        "banner": "GOLDEN HOUR COFFEE",
+        "lights": true
+      },
+      "beats": [
+        {
+          "line": "Kettle singing",
+          "piece": "kettle_window",
+          "react": "note"
+        },
+        {
+          "line": "Golden hour coffee, warm inside",
+          "piece": "golden_neon",
+          "sign": "GOLDEN HOUR"
+        },
+        {
+          "line": "Neighbors waving",
+          "piece": "neighbors_wave",
+          "react": "heart"
+        },
+        {
+          "line": "Neighbors waving",
+          "effect": "birds",
+          "dur": 10
+        },
+        {
+          "line": "stick it on the door",
+          "piece": "note_door"
+        },
+        {
+          "line": "Sip it slow",
+          "piece": "sip_terrace",
+          "react": "heart"
+        }
+      ],
+      "signs": {
+        "shops": "CAFE"
+      }
+    },
+    "3": {
+      "title": "Open the Window",
+      "sky": [
+        "#4FB0FF",
+        "#D6F0FF"
+      ],
+      "palette": [
+        "#3D9BFF",
+        "#2EC4A6",
+        "#7B3BFF",
+        "#FF5C8A"
+      ],
+      "scenes": [
+        "openwindows",
+        "shops",
+        "downtown",
+        "avenue"
+      ],
+      "effects": [
+        "breeze"
+      ],
+      "chorus": {
+        "lights": true
+      },
+      "beats": [
+        {
+          "line": "Alarm clock rings",
+          "piece": "alarm_window",
+          "react": "sun"
+        },
+        {
+          "line": "Sneakers by the door",
+          "piece": "sneaker_shop",
+          "sign": "SNEAKERS"
+        },
+        {
+          "line": "So I open the window",
+          "piece": "windows_open",
+          "all": true
+        },
+        {
+          "line": "Coffee from the corner",
+          "piece": "corner_lady",
+          "sign": "CORNER COFFEE",
+          "react": "heart"
+        },
+        {
+          "line": "Streets are painted gold",
+          "effect": "golden",
+          "dur": 10
+        },
+        {
+          "line": "city's singing",
+          "piece": "pianist",
+          "react": "note"
+        }
+      ],
+      "signs": {
+        "shops": "COFFEE"
+      }
+    }
+  }
+}
