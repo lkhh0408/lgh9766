@@ -24,6 +24,7 @@ ap.add_argument('songs', help='folder with numbered audio files, e.g. "1.Golden 
 ap.add_argument('-o', '--out', default='output.mp4', help='output video path')
 ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence between songs')
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
+ap.add_argument('--outfit', default='signature', help='mascot outfit from studio/character.py OUTFITS')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
                 'Lyric timings are read from a timing/ folder next to it (see align_lyrics.py).')
@@ -657,7 +658,7 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
             ph = (t * .8 + j / 3) % 1
             ctx.set_font_size(30 + 6 * j); ctx.set_source_rgba(*hexc(['#FF5C8A', '#FFB21A', '#7B3BFF'][j]), ca * (1 - ph))
             ctx.move_to(CX - 70 + j * 60 + 10 * math.sin(t * 3 + j), GY - 250 - 90 * ph); ctx.show_text('\u266a' if j % 2 else '\u266b')
-    ch.draw(ctx, CX, GY, t, L=hexc('#2B2541'), phase=phase, walk=walk, reach=reach, press=press)
+    ch.draw(ctx, CX, GY, t, L=hexc('#2B2541'), outfit=args.outfit, phase=phase, walk=walk, reach=reach, press=press)
     for rt, icon in REACTS:   # the mascot reacts to what it passes
         k = t - rt
         if 0 <= k < 2.2 and ba < 0.05:

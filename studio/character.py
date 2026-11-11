@@ -11,6 +11,8 @@ SKIN, HAIR = (1, 0.93, 0.86), hexc('#5A3B2E')
 OUTFITS = {
     'morning': dict(top='#FFC53D', bottom='#3D5BFF', phones='#7B3BFF', prop='coffee'),
     'street': dict(top='#1E1E24', bottom='#6B6F7A', phones='#F2C230', prop='coffee'),
+    # channel signature look: sky-blue hoodie, retro headphones
+    'signature': dict(top='#8FD0FF', bottom='#3E4A6B', phones='#E0457B', phones_style='retro', prop='coffee'),
 }
 
 def _shape(ctx, fill, L):
@@ -18,7 +20,19 @@ def _shape(ctx, fill, L):
 
 def _smooth(u): u = max(0.0, min(1.0, u)); return u * u * (3 - 2 * u)
 
-def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='morning', walking=True, phase=None, walk=None, reach=0.0, press=0.0):
+def _phones(ctx, style, hx, hy, R, col, L):
+    if style == 'retro':   # slim silver band, big round cups with a cream plate
+        for w_, c in ((7, L), (3.5, (0.86, 0.88, 0.92))):
+            ctx.set_line_width(w_); ctx.set_source_rgb(*c); ctx.arc(hx - 2, hy - 2, R + 8, math.radians(198), math.radians(325)); ctx.stroke()
+        ctx.arc(hx - 24, hy + 6, 20, 0, 2 * math.pi); ctx.set_source_rgb(*lerp(col, (0.12, 0.1, 0.15), 0.55)); ctx.fill_preserve()
+        ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke()
+        ctx.arc(hx - 28, hy + 6, 18, 0, 2 * math.pi); ctx.set_source_rgb(*col); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.stroke()
+        ctx.arc(hx - 28, hy + 6, 9, 0, 2 * math.pi); ctx.set_source_rgb(1, .96, .88); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(2.5); ctx.stroke()
+    else:                  # classic thin band
+        ctx.set_line_width(8); ctx.set_source_rgb(*col); ctx.arc(hx - 4, hy, R + 6, math.radians(195), math.radians(320)); ctx.stroke()
+        ctx.arc(hx - 24, hy + 4, 11, 0, 2 * math.pi); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke()
+
+def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, phase=None, walk=None, reach=0.0, press=0.0):
     """Draw the mascot standing on ground line gy at x=cx, facing right.
     phase: walk-cycle phase (radians); walk: 0..1 stride amount (0 = standing still);
     reach: 0..1 back hand raised to the headphone; press: 0..1 tap pulse while reaching."""
@@ -78,8 +92,7 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='morning', walking=True, phas
     ctx.set_source_rgba(1, .45, .55, .45); ctx.arc(gx + 4, gy2 + 22, 7, 0, 2 * math.pi); ctx.fill()
     ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.arc(hx + 30, hy + 26, 6, math.radians(10), math.radians(120)); ctx.stroke()
     # outfit: headphones
-    ctx.set_line_width(8); ctx.set_source_rgb(*phones); ctx.arc(hx - 4, hy, R + 6, math.radians(195), math.radians(320)); ctx.stroke()
-    ctx.arc(hx - 24, hy + 4, 11, 0, 2 * math.pi); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke()
+    _phones(ctx, o.get('phones_style', 'classic'), hx, hy, R, phones, L)
     if reach > 0: back_arm(_smooth(reach))
     # outfit: front arm + prop
     ctx.set_line_width(12); ctx.set_source_rgb(*top)
