@@ -1,0 +1,230 @@
+[
+ {
+  "line": "My sister left her songbook here",
+  "section": "Verse",
+  "start": 10.12,
+  "end": 15.14
+ },
+ {
+  "line": "Her name in green across the front",
+  "section": "Verse",
+  "start": 15.14,
+  "end": 20.12
+ },
+ {
+  "line": "She put a star beside the songs she loved",
+  "section": "Verse",
+  "start": 22.3,
+  "end": 27.12
+ },
+ {
+  "line": "This one got three instead of one",
+  "section": "Verse",
+  "start": 27.12,
+  "end": 31.4
+ },
+ {
+  "line": "I take my guitar off the wall",
+  "section": "Verse",
+  "start": 33.52,
+  "end": 37.6
+ },
+ {
+  "line": "Slide the capo down two frets",
+  "section": "Verse",
+  "start": 37.6,
+  "end": 43.24
+ },
+ {
+  "line": "That first line sounds different in this room",
+  "section": "Verse",
+  "start": 43.24,
+  "end": 48.8
+ },
+ {
+  "line": "I like the way it settles in my chest",
+  "section": "Verse",
+  "start": 48.8,
+  "end": 55.1
+ },
+ {
+  "line": "Same song, in my key",
+  "section": "Chorus",
+  "start": 55.1,
+  "end": 58.16
+ },
+ {
+  "line": "Sounds a little more like me",
+  "section": "Chorus",
+  "start": 58.52,
+  "end": 61.12
+ },
+ {
+  "line": "Her voice takes the stairs by twos",
+  "section": "Chorus",
+  "start": 61.12,
+  "end": 63.52
+ },
+ {
+  "line": "Mine likes the landing and the view",
+  "section": "Chorus",
+  "start": 64.6,
+  "end": 66.7
+ },
+ {
+  "line": "Same words, room to breathe",
+  "section": "Chorus",
+  "start": 66.7,
+  "end": 69.64
+ },
+ {
+  "line": "I let the last note ring",
+  "section": "Chorus",
+  "start": 70.28,
+  "end": 72.52
+ },
+ {
+  "line": "Same song, in my key",
+  "section": "Chorus",
+  "start": 72.52,
+  "end": 79.64
+ },
+ {
+  "line": "She comes to take her songbook back",
+  "section": "Verse",
+  "start": 85.2,
+  "end": 88.6
+ },
+ {
+  "line": "And hears me halfway down the hall",
+  "section": "Verse",
+  "start": 89.52,
+  "end": 94.16
+ },
+ {
+  "line": "I hear her keys land in the dish",
+  "section": "Verse",
+  "start": 96.12,
+  "end": 99.7
+ },
+ {
+  "line": "Then her high part through the wall",
+  "section": "Verse",
+  "start": 100.86,
+  "end": 105.6
+ },
+ {
+  "line": "By the time she makes the doorway",
+  "section": "Verse",
+  "start": 105.6,
+  "end": 108.26
+ },
+ {
+  "line": "We’re already on verse three",
+  "section": "Verse",
+  "start": 109.6,
+  "end": 112.26
+ },
+ {
+  "line": "She pulls a chair up for the chorus",
+  "section": "Verse",
+  "start": 112.26,
+  "end": 115.2
+ },
+ {
+  "line": "And leaves the melody to me",
+  "section": "Verse",
+  "start": 115.2,
+  "end": 117.94
+ },
+ {
+  "line": "When we were kids I used to mouth",
+  "section": "Bridge",
+  "start": 118.26,
+  "end": 121.36
+ },
+ {
+  "line": "The words a breath behind her",
+  "section": "Bridge",
+  "start": 121.36,
+  "end": 124.1
+ },
+ {
+  "line": "Now she waits to hear",
+  "section": "Bridge",
+  "start": 124.24,
+  "end": 127.88
+ },
+ {
+  "line": "Where I’m going with the line",
+  "section": "Bridge",
+  "start": 129.1,
+  "end": 132.24
+ },
+ {
+  "line": "I hold it half a beat",
+  "section": "Bridge",
+  "start": 132.24,
+  "end": 135.08
+ },
+ {
+  "line": "She grins and comes in right on time",
+  "section": "Bridge",
+  "start": 135.08,
+  "end": 140.94
+ },
+ {
+  "line": "Same song, in my key",
+  "section": "Final Chorus",
+  "start": 140.94,
+  "end": 143.66
+ },
+ {
+  "line": "She takes the high part over me",
+  "section": "Final Chorus",
+  "start": 143.66,
+  "end": 146.32
+ },
+ {
+  "line": "Two notes hanging in the air",
+  "section": "Final Chorus",
+  "start": 146.32,
+  "end": 149.2
+ },
+ {
+  "line": "I never knew that chord was there",
+  "section": "Final Chorus",
+  "start": 149.2,
+  "end": 152.24
+ },
+ {
+  "line": "Same words, room to breathe",
+  "section": "Final Chorus",
+  "start": 152.24,
+  "end": 154.64
+ },
+ {
+  "line": "How good they sound with company",
+  "section": "Final Chorus",
+  "start": 154.64,
+  "end": 157.18
+ },
+ {
+  "line": "Same song, in my key",
+  "section": "Final Chorus",
+  "start": 157.18,
+  "end": 165.12
+ },
+ {
+  "line": "She takes her book and leaves the page",
+  "section": "Outro",
+  "start": 174.16,
+  "end": 179.28
+ },
+ {
+  "line": "Three green stars above my chords",
+  "section": "Outro",
+  "start": 180.74,
+  "end": 184.8
+ }
+]

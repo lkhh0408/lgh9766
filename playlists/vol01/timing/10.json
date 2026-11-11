@@ -1,0 +1,305 @@
+[
+ {
+  "line": "You pull a peach-colored coat from the rail",
+  "section": "Verse",
+  "start": 0.0,
+  "end": 6.6
+ },
+ {
+  "line": "Silver earrings shaped like a sail",
+  "section": "Verse",
+  "start": 6.6,
+  "end": 11.1
+ },
+ {
+  "line": "Check the mirror, tilt your head",
+  "section": "Verse",
+  "start": 11.1,
+  "end": 15.2
+ },
+ {
+  "line": "Choose the sneakers with the cherry-red threads",
+  "section": "Verse",
+  "start": 15.2,
+  "end": 20.0
+ },
+ {
+  "line": "There's a forecast on the radio",
+  "section": "Verse",
+  "start": 20.0,
+  "end": 22.84
+ },
+ {
+  "line": "You smile and turn the volume low",
+  "section": "Verse",
+  "start": 22.84,
+  "end": 25.04
+ },
+ {
+  "line": "Got your own idea of what feels right",
+  "section": "Verse",
+  "start": 25.38,
+  "end": 28.34
+ },
+ {
+  "line": "And it looks a lot like you in daylight",
+  "section": "Verse",
+  "start": 28.34,
+  "end": 32.9
+ },
+ {
+  "line": "Something in the way you wear it",
+  "section": "Pre-Chorus",
+  "start": 35.84,
+  "end": 38.74
+ },
+ {
+  "line": "Makes the whole thing come alive",
+  "section": "Pre-Chorus",
+  "start": 38.74,
+  "end": 40.65
+ },
+ {
+  "line": "Every shade becomes your favorite",
+  "section": "Pre-Chorus",
+  "start": 41.0,
+  "end": 43.38
+ },
+ {
+  "line": "When you let yourself decide",
+  "section": "Pre-Chorus",
+  "start": 43.38,
+  "end": 45.62
+ },
+ {
+  "line": "You bring your own weather",
+  "section": "Chorus",
+  "start": 45.62,
+  "end": 47.72
+ },
+ {
+  "line": "Your own kind of blue",
+  "section": "Chorus",
+  "start": 47.72,
+  "end": 49.7
+ },
+ {
+  "line": "That easy, sunny feeling",
+  "section": "Chorus",
+  "start": 49.7,
+  "end": 52.44
+ },
+ {
+  "line": "Looks so good on you",
+  "section": "Chorus",
+  "start": 52.44,
+  "end": 54.56
+ },
+ {
+  "line": "Whatever the season",
+  "section": "Chorus",
+  "start": 54.56,
+  "end": 56.12
+ },
+ {
+  "line": "Whatever you choose",
+  "section": "Chorus",
+  "start": 56.12,
+  "end": 58.7
+ },
+ {
+  "line": "You bring your own weather",
+  "section": "Chorus",
+  "start": 59.0,
+  "end": 61.6
+ },
+ {
+  "line": "And it comes shining through",
+  "section": "Chorus",
+  "start": 61.6,
+  "end": 65.4
+ },
+ {
+  "line": "You pin a tiny planet to your sleeve",
+  "section": "Verse",
+  "start": 72.9,
+  "end": 75.9,
+  "estimated": true
+ },
+ {
+  "line": "Say it’s from a shop near Portobello Green",
+  "section": "Verse",
+  "start": 80.4,
+  "end": 83.4,
+  "estimated": true
+ },
+ {
+  "line": "Tell me how you found it on a tray",
+  "section": "Verse",
+  "start": 87.9,
+  "end": 90.9,
+  "estimated": true
+ },
+ {
+  "line": "Next to painted birds and handmade rings",
+  "section": "Verse",
+  "start": 95.4,
+  "end": 100.24
+ },
+ {
+  "line": "Now it travels everywhere you do",
+  "section": "Verse",
+  "start": 102.08,
+  "end": 105.18
+ },
+ {
+  "line": "With a story only known to you",
+  "section": "Verse",
+  "start": 105.18,
+  "end": 107.52
+ },
+ {
+  "line": "I love how you put it all together",
+  "section": "Verse",
+  "start": 107.52,
+  "end": 110.1
+ },
+ {
+  "line": "Like every piece remembers an adventure",
+  "section": "Verse",
+  "start": 110.1,
+  "end": 113.28
+ },
+ {
+  "line": "That’s your color",
+  "section": "Refrain",
+  "start": 113.28,
+  "end": 114.42
+ },
+ {
+  "line": "That’s your way",
+  "section": "Refrain",
+  "start": 114.46,
+  "end": 115.52
+ },
+ {
+  "line": "A perfect fit",
+  "section": "Refrain",
+  "start": 115.52,
+  "end": 116.54
+ },
+ {
+  "line": "For who you are today",
+  "section": "Refrain",
+  "start": 116.54,
+  "end": 119.6
+ },
+ {
+  "line": "Some days linen, some days velvet",
+  "section": "Bridge",
+  "start": 122.46,
+  "end": 124.8
+ },
+ {
+  "line": "Some days something borrowed from a friend",
+  "section": "Bridge",
+  "start": 125.46,
+  "end": 128.58
+ },
+ {
+  "line": "Every version feels familiar",
+  "section": "Bridge",
+  "start": 132.4,
+  "end": 134.96
+ },
+ {
+  "line": "Even when you change it up again",
+  "section": "Bridge",
+  "start": 134.96,
+  "end": 138.5
+ },
+ {
+  "line": "You turn once by the doorway",
+  "section": "Bridge",
+  "start": 141.26,
+  "end": 144.08
+ },
+ {
+  "line": "Let the coat fall into place",
+  "section": "Bridge",
+  "start": 144.08,
+  "end": 146.46
+ },
+ {
+  "line": "Then you catch your own reflection",
+  "section": "Bridge",
+  "start": 146.46,
+  "end": 148.86
+ },
+ {
+  "line": "With that smile upon your face",
+  "section": "Bridge",
+  "start": 148.86,
+  "end": 152.82
+ },
+ {
+  "line": "You bring your own weather",
+  "section": "Final Chorus",
+  "start": 155.74,
+  "end": 157.92
+ },
+ {
+  "line": "Your own kind of blue",
+  "section": "Final Chorus",
+  "start": 158.66,
+  "end": 160.68
+ },
+ {
+  "line": "That easy, sunny feeling",
+  "section": "Final Chorus",
+  "start": 160.68,
+  "end": 163.36
+ },
+ {
+  "line": "Looks so good on you",
+  "section": "Final Chorus",
+  "start": 163.36,
+  "end": 165.5
+ },
+ {
+  "line": "A peach-colored morning",
+  "section": "Final Chorus",
+  "start": 165.56,
+  "end": 167.36
+ },
+ {
+  "line": "With cherry-red shoes",
+  "section": "Final Chorus",
+  "start": 167.88,
+  "end": 170.32
+ },
+ {
+  "line": "You bring your own weather",
+  "section": "Final Chorus",
+  "start": 170.32,
+  "end": 172.62
+ },
+ {
+  "line": "And it comes shining through",
+  "section": "Final Chorus",
+  "start": 172.62,
+  "end": 176.86
+ },
+ {
+  "line": "Before you even step outside",
+  "section": "Outro",
+  "start": 182.88,
+  "end": 186.28
+ },
+ {
+  "line": "You’ve got the forecast right",
+  "section": "Outro",
+  "start": 189.36,
+  "end": 193.54
+ }
+]
