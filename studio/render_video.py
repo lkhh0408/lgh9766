@@ -229,17 +229,19 @@ if os.path.exists(scenes_path):
         # lyric beats: a set piece arrives on screen as its line is sung
         tfile = os.path.join(timing_dir, f'{i + 1}.json')
         lines = json.load(open(tfile)) if os.path.exists(tfile) else []
+        def qnorm(x): return x.lower().replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
         def when(beat):
-            hits = [l['start'] for l in lines if beat['line'].lower() in l['line'].lower()]
+            hits = [l['start'] for l in lines if qnorm(beat['line']) in qnorm(l['line'])]
             if beat.get('all'): return hits
             n = beat.get('nth', 1) - 1
             return hits[n:n + 1]
         accents = ACCENT
         for b in spec.get('beats', []):
+            if lines and not when(b): print(f"  ! TRACK {i + 1:02d}: lyric not found for beat: {b['line']}")
             for T in when(b):
                 at = starts[i] + T
                 if b.get('piece'):
-                    opts = {k_: v for k_, v in b.items() if k_ in ('sign', 'text')}
+                    opts = {k_: v for k_, v in b.items() if k_ in ('sign', 'text', 'scene')}
                     opts['color'] = '#%02x%02x%02x' % tuple(int(c * 255) for c in accents[len(pieces) % len(accents)])
                     pieces.append([at, b['piece'], opts])
                 if b.get('effect'): EVENT_FX.append((at - 0.5, at + b.get('dur', 8), b['effect']))
@@ -345,6 +347,17 @@ def draw_obj(ctx, o, sx, L, night, t):
                 ctx.save(); ctx.translate(bx, GY - 52); ctx.scale(1, .6); ctx.arc(0, 0, 18, math.pi, 0); ctx.restore(); ctx.close_path()
                 shape(ctx, nf(hexc('#F2B562')), L)
                 for d in (-6, 2, 10): ctx.move_to(bx + d - 3, GY - 62); ctx.line_to(bx + d + 3, GY - 56); ctx.stroke()
+        elif items == 'records':   # sleeves and a vinyl in the window
+            for i in range(int(ww_ // 46)):
+                bx = wx0 + 24 + i * 46
+                ctx.rectangle(bx - 18, GY - 92, 36, 36); shape(ctx, nf(ACCENT[i % len(ACCENT)]), L)
+                ctx.arc(bx, GY - 74, 10, 0, 2 * math.pi); shape(ctx, nf(hexc('#2B2541')), L)
+        elif items == 'clothes':   # coats on a rail
+            ctx.move_to(wx0 + 8, GY - 104); ctx.line_to(wx0 + ww_ - 8, GY - 104); ctx.stroke()
+            for i in range(int(ww_ // 40)):
+                bx = wx0 + 22 + i * 40
+                ctx.move_to(bx - 14, GY - 96); ctx.line_to(bx + 14, GY - 96); ctx.line_to(bx + 18, GY - 42); ctx.line_to(bx - 18, GY - 42); ctx.close_path()
+                shape(ctx, nf(ACCENT[(i + 2) % len(ACCENT)]), L)
         elif items == 'cups':    # coffee cups with steam
             for i in range(int(ww_ // 46)):
                 bx = wx0 + 22 + i * 46
@@ -659,6 +672,8 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
             ctx.set_font_size(30 + 6 * j); ctx.set_source_rgba(*hexc(['#FF5C8A', '#FFB21A', '#7B3BFF'][j]), ca * (1 - ph))
             ctx.move_to(CX - 70 + j * 60 + 10 * math.sin(t * 3 + j), GY - 250 - 90 * ph); ctx.show_text('\u266a' if j % 2 else '\u266b')
     ch.draw(ctx, CX, GY, t, L=hexc('#2B2541'), outfit=args.outfit, phase=phase, walk=walk, reach=reach, press=press)
+    if fx('dog') > 0.01:      # a dog trots in beside the mascot for the song that needs one
+        k = fx('dog'); props.dog(ctx, CX + 150 + 400 * (1 - k), GY, phase, walk, t, hexc('#2B2541'), k)
     for rt, icon in REACTS:   # the mascot reacts to what it passes
         k = t - rt
         if 0 <= k < 2.2 and ba < 0.05:

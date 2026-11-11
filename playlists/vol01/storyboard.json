@@ -1,208 +1,1161 @@
 {
-  "tracks": {
-    "1": {
-      "title": "Good Side of the Street",
-      "sky": [
-        "#6FD3E8",
-        "#E3FFF2"
-      ],
-      "palette": [
-        "#2EC4A6",
-        "#FF8A3D",
-        "#FFB21A",
-        "#3D9BFF"
-      ],
-      "scenes": [
-        "flowerhouses",
-        "avenue",
-        "shops",
-        "pianohouse",
-        "terrace"
-      ],
-      "effects": [],
-      "chorus": {
-        "banner": "ON THE GOOD SIDE OF THE STREET",
-        "lights": true
-      },
-      "beats": [
-        {
-          "line": "Fresh white shirt",
-          "piece": "sign",
-          "text": "GOOD SIDE ST."
-        },
-        {
-          "line": "watering the flowers",
-          "piece": "waterer"
-        },
-        {
-          "line": "Corner baker",
-          "piece": "baker",
-          "sign": "BAKERY",
-          "react": "heart"
-        },
-        {
-          "line": "tall trees meet",
-          "piece": "tall_trees"
-        },
-        {
-          "line": "bicycle bell",
-          "piece": "cyclist",
-          "react": "note"
-        },
-        {
-          "line": "rooftop meal",
-          "piece": "rooftop"
-        },
-        {
-          "line": "playing keys",
-          "piece": "pianist",
-          "react": "note"
-        },
-        {
-          "line": "Every hello along the way",
-          "piece": "neighbors_wave",
-          "react": "heart"
-        },
-        {
-          "line": "seat beside the window",
-          "piece": "friend_window",
-          "react": "heart"
-        },
-        {
-          "line": "Pull a chair up",
-          "piece": "terrace",
-          "sign": "CAFE"
-        },
-        {
-          "line": "summer leaves",
-          "effect": "breeze",
-          "dur": 12
-        }
-      ],
-      "signs": {
-        "shops": "FLOWERS"
-      }
+ "tracks": {
+  "1": {
+   "title": "Good Side of the Street",
+   "sky": [
+    "#6FD3E8",
+    "#E3FFF2"
+   ],
+   "palette": [
+    "#2EC4A6",
+    "#FF8A3D",
+    "#FFB21A",
+    "#3D9BFF"
+   ],
+   "scenes": [
+    "flowerhouses",
+    "avenue",
+    "shops",
+    "pianohouse",
+    "terrace"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "ON THE GOOD SIDE OF THE STREET",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Fresh white shirt",
+     "piece": "sign",
+     "text": "GOOD SIDE ST."
     },
-    "2": {
-      "title": "Golden Hour Coffee",
-      "sky": [
-        "#FFB84D",
-        "#FFE6B0"
-      ],
-      "palette": [
-        "#FFB21A",
-        "#FF8A3D",
-        "#FF5C8A",
-        "#E0A43A"
-      ],
-      "scenes": [
-        "curtainhouses",
-        "shops",
-        "neighbors",
-        "park"
-      ],
-      "effects": [
-        "golden"
-      ],
-      "chorus": {
-        "banner": "GOLDEN HOUR COFFEE",
-        "lights": true
-      },
-      "beats": [
-        {
-          "line": "Kettle singing",
-          "piece": "kettle_window",
-          "react": "note"
-        },
-        {
-          "line": "Golden hour coffee, warm inside",
-          "piece": "golden_neon",
-          "sign": "GOLDEN HOUR"
-        },
-        {
-          "line": "Neighbors waving",
-          "piece": "neighbors_wave",
-          "react": "heart"
-        },
-        {
-          "line": "Neighbors waving",
-          "effect": "birds",
-          "dur": 10
-        },
-        {
-          "line": "stick it on the door",
-          "piece": "note_door"
-        },
-        {
-          "line": "Sip it slow",
-          "piece": "sip_terrace",
-          "react": "heart"
-        }
-      ],
-      "signs": {
-        "shops": "CAFE"
-      }
+    {
+     "line": "watering the flowers",
+     "piece": "waterer"
     },
-    "3": {
-      "title": "Open the Window",
-      "sky": [
-        "#4FB0FF",
-        "#D6F0FF"
-      ],
-      "palette": [
-        "#3D9BFF",
-        "#2EC4A6",
-        "#7B3BFF",
-        "#FF5C8A"
-      ],
-      "scenes": [
-        "openwindows",
-        "shops",
-        "downtown",
-        "avenue"
-      ],
-      "effects": [
-        "breeze"
-      ],
-      "chorus": {
-        "lights": true
-      },
-      "beats": [
-        {
-          "line": "Alarm clock rings",
-          "piece": "alarm_window",
-          "react": "sun"
-        },
-        {
-          "line": "Sneakers by the door",
-          "piece": "sneaker_shop",
-          "sign": "SNEAKERS"
-        },
-        {
-          "line": "So I open the window",
-          "piece": "windows_open",
-          "all": true
-        },
-        {
-          "line": "Coffee from the corner",
-          "piece": "corner_lady",
-          "sign": "CORNER COFFEE",
-          "react": "heart"
-        },
-        {
-          "line": "Streets are painted gold",
-          "effect": "golden",
-          "dur": 10
-        },
-        {
-          "line": "city's singing",
-          "piece": "pianist",
-          "react": "note"
-        }
-      ],
-      "signs": {
-        "shops": "COFFEE"
-      }
+    {
+     "line": "Corner baker",
+     "piece": "baker",
+     "sign": "BAKERY",
+     "react": "heart"
+    },
+    {
+     "line": "tall trees meet",
+     "piece": "tall_trees"
+    },
+    {
+     "line": "bicycle bell",
+     "piece": "cyclist",
+     "react": "note"
+    },
+    {
+     "line": "rooftop meal",
+     "piece": "rooftop"
+    },
+    {
+     "line": "playing keys",
+     "piece": "pianist",
+     "react": "note"
+    },
+    {
+     "line": "Every hello along the way",
+     "piece": "neighbors_wave",
+     "react": "heart"
+    },
+    {
+     "line": "seat beside the window",
+     "piece": "friend_window",
+     "react": "heart"
+    },
+    {
+     "line": "Pull a chair up",
+     "piece": "terrace",
+     "sign": "CAFE"
+    },
+    {
+     "line": "summer leaves",
+     "effect": "breeze",
+     "dur": 12
     }
+   ],
+   "signs": {
+    "shops": "FLOWERS"
+   }
+  },
+  "2": {
+   "title": "Golden Hour Coffee",
+   "sky": [
+    "#FFB84D",
+    "#FFE6B0"
+   ],
+   "palette": [
+    "#FFB21A",
+    "#FF8A3D",
+    "#FF5C8A",
+    "#E0A43A"
+   ],
+   "scenes": [
+    "curtainhouses",
+    "shops",
+    "neighbors",
+    "park"
+   ],
+   "effects": [
+    "golden"
+   ],
+   "chorus": {
+    "banner": "GOLDEN HOUR COFFEE",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Kettle singing",
+     "piece": "kettle_window",
+     "react": "note"
+    },
+    {
+     "line": "Golden hour coffee, warm inside",
+     "piece": "golden_neon",
+     "sign": "GOLDEN HOUR"
+    },
+    {
+     "line": "Neighbors waving",
+     "piece": "neighbors_wave",
+     "react": "heart"
+    },
+    {
+     "line": "Neighbors waving",
+     "effect": "birds",
+     "dur": 10
+    },
+    {
+     "line": "stick it on the door",
+     "piece": "note_door"
+    },
+    {
+     "line": "Sip it slow",
+     "piece": "sip_terrace",
+     "react": "heart"
+    }
+   ],
+   "signs": {
+    "shops": "CAFE"
+   }
+  },
+  "3": {
+   "title": "Open the Window",
+   "sky": [
+    "#4FB0FF",
+    "#D6F0FF"
+   ],
+   "palette": [
+    "#3D9BFF",
+    "#2EC4A6",
+    "#7B3BFF",
+    "#FF5C8A"
+   ],
+   "scenes": [
+    "openwindows",
+    "shops",
+    "downtown",
+    "avenue"
+   ],
+   "effects": [
+    "breeze"
+   ],
+   "chorus": {
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Alarm clock rings",
+     "piece": "alarm_window",
+     "react": "sun"
+    },
+    {
+     "line": "Sneakers by the door",
+     "piece": "sneaker_shop",
+     "sign": "SNEAKERS"
+    },
+    {
+     "line": "So I open the window",
+     "piece": "windows_open",
+     "all": true
+    },
+    {
+     "line": "Coffee from the corner",
+     "piece": "corner_lady",
+     "sign": "CORNER COFFEE",
+     "react": "heart"
+    },
+    {
+     "line": "Streets are painted gold",
+     "effect": "golden",
+     "dur": 10
+    },
+    {
+     "line": "city's singing",
+     "piece": "pianist",
+     "react": "note"
+    }
+   ],
+   "signs": {
+    "shops": "COFFEE"
+   }
+  },
+  "4": {
+   "title": "Your Side of the Table",
+   "sky": [
+    "#7FCBF5",
+    "#FFE9C9"
+   ],
+   "palette": [
+    "#FF8A5B",
+    "#3D9BFF",
+    "#FFC233",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "houses",
+    "market",
+    "shops",
+    "beach"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "FROM YOUR SIDE OF THE TABLE",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "You fold the paper",
+     "piece": "window",
+     "scene": "breakfast",
+     "react": "heart"
+    },
+    {
+     "line": "the train we",
+     "piece": "tram"
+    },
+    {
+     "line": "beside the sea",
+     "piece": "sign",
+     "text": "TO THE SEASIDE →"
+    },
+    {
+     "line": "fruit stand down the stairs",
+     "piece": "market_lady"
+    },
+    {
+     "line": "rent two bikes",
+     "piece": "cyclist",
+     "react": "note"
+    },
+    {
+     "line": "you put the kettle on",
+     "piece": "window",
+     "scene": "breakfast"
+    },
+    {
+     "line": "slide the tickets over",
+     "piece": "tram",
+     "react": "heart"
+    }
+   ],
+   "signs": {
+    "shops": "BOOKSTORE"
+   }
+  },
+  "5": {
+   "title": "Little by Little",
+   "sky": [
+    "#9EE6C8",
+    "#F2FFE9"
+   ],
+   "palette": [
+    "#5CC27A",
+    "#FFC233",
+    "#D9734A",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "flowerhouses",
+    "park",
+    "flowers",
+    "houses"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "LITTLE BY LITTLE",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Clay pot sitting",
+     "piece": "window",
+     "scene": "plant",
+     "react": "heart"
+    },
+    {
+     "line": "Turn you gently",
+     "piece": "window",
+     "scene": "plant"
+    },
+    {
+     "line": "Picked a yellow pot",
+     "piece": "market_lady"
+    },
+    {
+     "line": "thyme and a rosemary",
+     "piece": "window",
+     "scene": "plant",
+     "react": "note"
+    },
+    {
+     "line": "bring a cutting over",
+     "piece": "waterer"
+    },
+    {
+     "line": "A little garden down our street",
+     "piece": "window",
+     "scene": "plant"
+    },
+    {
+     "line": "every friend will have a few",
+     "effect": "breeze",
+     "dur": 10
+    }
+   ],
+   "signs": {}
+  },
+  "6": {
+   "title": "Made for This",
+   "sky": [
+    "#8FC2FF",
+    "#FFF1F4"
+   ],
+   "palette": [
+    "#3D6BFF",
+    "#E0457B",
+    "#FFC233",
+    "#FF8A5B"
+   ],
+   "scenes": [
+    "flowerhouses",
+    "shops",
+    "avenue"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "MADE FOR THIS",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Pick a pencil from the jar",
+     "piece": "window",
+     "scene": "drawing",
+     "sign": "ART STUDIO",
+     "react": "note"
+    },
+    {
+     "line": "Set a tiny house on a hill",
+     "piece": "window",
+     "scene": "drawing"
+    },
+    {
+     "line": "Give the windows some daffodils",
+     "piece": "waterer"
+    },
+    {
+     "line": "There's a postcard taking shape",
+     "piece": "mailbox",
+     "react": "heart"
+    },
+    {
+     "line": "Hold it up against the window",
+     "piece": "window",
+     "scene": "drawing",
+     "sign": "ART STUDIO"
+    },
+    {
+     "line": "When you open up the envelope",
+     "piece": "mailbox"
+    }
+   ],
+   "signs": {
+    "shops": "ART SUPPLY"
+   }
+  },
+  "7": {
+   "title": "Just Like That",
+   "sky": [
+    "#FFB3C8",
+    "#FFF0D9"
+   ],
+   "palette": [
+    "#FF5C8A",
+    "#FFC233",
+    "#3D9BFF",
+    "#7B3BFF"
+   ],
+   "scenes": [
+    "houses",
+    "town",
+    "curtainhouses"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "JUST LIKE THAT",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Barefoot with the laundry",
+     "piece": "window",
+     "scene": "laundry",
+     "react": "note"
+    },
+    {
+     "line": "Half past eight",
+     "piece": "window",
+     "scene": "laundry"
+    },
+    {
+     "line": "Blue socks tucked",
+     "piece": "window",
+     "scene": "laundry",
+     "react": "heart"
+    },
+    {
+     "line": "Put the last shirt",
+     "piece": "window",
+     "scene": "laundry"
+    },
+    {
+     "line": "With the morning all around me",
+     "piece": "window",
+     "scene": "laundry",
+     "react": "note"
+    }
+   ],
+   "signs": {}
+  },
+  "8": {
+   "title": "First Name Basis",
+   "sky": [
+    "#B9A8FF",
+    "#FFF3E6"
+   ],
+   "palette": [
+    "#7B3BFF",
+    "#FF5C8A",
+    "#2EC4A6",
+    "#FFC233"
+   ],
+   "scenes": [
+    "houses",
+    "shops",
+    "park"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "FIRST NAME BASIS",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "painted wooden sign",
+     "piece": "sign",
+     "text": "SATURDAY YOGA ↑"
+    },
+    {
+     "line": "She says, “I'm June,”",
+     "piece": "window",
+     "scene": "yoga",
+     "sign": "YOGA STUDIO",
+     "react": "heart"
+    },
+    {
+     "line": "Next week, June brings",
+     "piece": "window",
+     "scene": "yoga",
+     "sign": "YOGA STUDIO"
+    },
+    {
+     "line": "a place for Sunday lunch",
+     "piece": "terrace",
+     "sign": "SUNDAY LUNCH"
+    },
+    {
+     "line": "We were hoping you could join us",
+     "piece": "neighbors_wave",
+     "react": "heart"
+    },
+    {
+     "line": "Now I'm waving from the doorway",
+     "piece": "window",
+     "scene": "yoga",
+     "sign": "YOGA STUDIO"
+    }
+   ],
+   "signs": {
+    "shops": "CAFE"
+   }
+  },
+  "9": {
+   "title": "Out of Office",
+   "sky": [
+    "#7FD8F5",
+    "#FFF6D8"
+   ],
+   "palette": [
+    "#2EC4A6",
+    "#FF8A5B",
+    "#FFC233",
+    "#3D9BFF"
+   ],
+   "scenes": [
+    "park",
+    "houses",
+    "avenue",
+    "beach"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "I'M OUT OF OFFICE",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Phone face down",
+     "piece": "sign",
+     "text": "OUT OF OFFICE"
+    },
+    {
+     "line": "There's a book with a ribbon",
+     "piece": "window",
+     "scene": "reading",
+     "react": "sun"
+    },
+    {
+     "line": "Read three pages",
+     "piece": "window",
+     "scene": "reading"
+    },
+    {
+     "line": "Blue-tiled roofs and a harbor",
+     "effect": "golden",
+     "dur": 10
+    },
+    {
+     "line": "Maybe later I'll pick a movie",
+     "piece": "cinema",
+     "text": "NOW SHOWING"
+    },
+    {
+     "line": "I turn another page",
+     "piece": "window",
+     "scene": "reading",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "10": {
+   "title": "Your Own Weather",
+   "sky": [
+    "#FFC1A8",
+    "#FFF0F4"
+   ],
+   "palette": [
+    "#FF8A5B",
+    "#E0457B",
+    "#FFC233",
+    "#7B3BFF"
+   ],
+   "scenes": [
+    "shops",
+    "houses",
+    "town"
+   ],
+   "effects": [
+    "golden"
+   ],
+   "chorus": {
+    "banner": "YOU BRING YOUR OWN WEATHER",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "peach-colored coat",
+     "piece": "boutique",
+     "sign": "BOUTIQUE",
+     "react": "heart"
+    },
+    {
+     "line": "There's a forecast on the radio",
+     "piece": "sign",
+     "text": "FORECAST: SUNNY"
+    },
+    {
+     "line": "Portobello Green",
+     "piece": "market_lady"
+    },
+    {
+     "line": "Some days linen",
+     "piece": "boutique",
+     "sign": "VINTAGE"
+    },
+    {
+     "line": "A peach-colored morning",
+     "piece": "boutique",
+     "sign": "BOUTIQUE",
+     "react": "sun"
+    }
+   ],
+   "signs": {
+    "shops": "VINTAGE"
+   }
+  },
+  "11": {
+   "title": "Call It Even",
+   "sky": [
+    "#FFB27A",
+    "#E9D6FF"
+   ],
+   "palette": [
+    "#FF8A5B",
+    "#7B3BFF",
+    "#FFC233",
+    "#E0457B"
+   ],
+   "scenes": [
+    "houses",
+    "curtainhouses",
+    "town"
+   ],
+   "effects": [
+    "golden"
+   ],
+   "chorus": {
+    "banner": "SEND ME YOUR SUNSET",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "You're peeling an orange",
+     "piece": "window",
+     "scene": "videocall",
+     "react": "heart"
+    },
+    {
+     "line": "Send me your sunset",
+     "piece": "window",
+     "scene": "videocall"
+    },
+    {
+     "line": "You take me out onto the landing",
+     "piece": "window",
+     "scene": "videocall",
+     "react": "sun"
+    },
+    {
+     "line": "We used to share a bathroom mirror",
+     "piece": "window",
+     "scene": "videocall"
+    },
+    {
+     "line": "To kiss the lens good morning",
+     "piece": "window",
+     "scene": "videocall",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "12": {
+   "title": "Mess Up the Kitchen",
+   "sky": [
+    "#FFD36B",
+    "#FFF6E0"
+   ],
+   "palette": [
+    "#FFC233",
+    "#FF5C8A",
+    "#3D9BFF",
+    "#FF8A5B"
+   ],
+   "scenes": [
+    "houses",
+    "flowerhouses",
+    "shops"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "LET'S MESS UP THE KITCHEN",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "First Sunday at our new address",
+     "piece": "boxes",
+     "text": "OUR NEW ADDRESS",
+     "react": "heart"
+    },
+    {
+     "line": "get the pancake mix involved",
+     "piece": "window",
+     "scene": "kitchen"
+    },
+    {
+     "line": "We eat the first one",
+     "piece": "window",
+     "scene": "kitchen",
+     "react": "note"
+    },
+    {
+     "line": "The radio goes by the kettle",
+     "piece": "window",
+     "scene": "kitchen"
+    },
+    {
+     "line": "Kiss the flour off your cheek",
+     "piece": "window",
+     "scene": "kitchen",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "13": {
+   "title": "The Other Side of Seven",
+   "sky": [
+    "#8FD3FF",
+    "#FFF4E0"
+   ],
+   "palette": [
+    "#FF8A5B",
+    "#7B3BFF",
+    "#2EC4A6",
+    "#E0457B"
+   ],
+   "scenes": [
+    "shops",
+    "town",
+    "houses"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "MEET ME ON THE OTHER SIDE OF SEVEN",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Six letters for a bird at sea",
+     "piece": "window",
+     "scene": "crossword",
+     "sign": "DINER",
+     "react": "note"
+    },
+    {
+     "line": "We've got a booth",
+     "piece": "window",
+     "scene": "crossword",
+     "sign": "DINER"
+    },
+    {
+     "line": "Four down is asking for a singer",
+     "piece": "window",
+     "scene": "crossword",
+     "sign": "DINER",
+     "react": "note"
+    },
+    {
+     "line": "You do the whole thing in blue pencil",
+     "piece": "window",
+     "scene": "crossword",
+     "sign": "DINER",
+     "react": "heart"
+    }
+   ],
+   "signs": {
+    "shops": "NEWSSTAND"
+   }
+  },
+  "14": {
+   "title": "Spin It Again",
+   "sky": [
+    "#C3A6FF",
+    "#FFE9F2"
+   ],
+   "palette": [
+    "#7B3BFF",
+    "#E0457B",
+    "#FFC233",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "shops",
+    "town",
+    "downtown"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "SPIN IT AGAIN",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Milo drops a record",
+     "piece": "window",
+     "scene": "turntable",
+     "sign": "RECORDS",
+     "react": "note"
+    },
+    {
+     "line": "He sets the needle in the groove",
+     "piece": "window",
+     "scene": "turntable",
+     "sign": "RECORDS"
+    },
+    {
+     "line": "I take the sleeve up to the till",
+     "piece": "window",
+     "scene": "turntable",
+     "sign": "RECORDS",
+     "react": "heart"
+    },
+    {
+     "line": "Two bars of keys",
+     "piece": "pianist",
+     "react": "note"
+    },
+    {
+     "line": "Back at my place",
+     "piece": "window",
+     "scene": "turntable",
+     "sign": "SIDE B · TRACK 3"
+    }
+   ],
+   "signs": {
+    "shops": "RECORDS"
+   }
+  },
+  "15": {
+   "title": "Follow My Nose",
+   "sky": [
+    "#8FE0C0",
+    "#F0FFE8"
+   ],
+   "palette": [
+    "#2EC4A6",
+    "#FFC233",
+    "#FF8A5B",
+    "#3D9BFF"
+   ],
+   "scenes": [
+    "park",
+    "flowers",
+    "avenue",
+    "houses"
+   ],
+   "effects": [
+    "dog"
+   ],
+   "chorus": {
+    "banner": "FOLLOW MY NOSE",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Left where the rosemary grows",
+     "piece": "waterer"
+    },
+    {
+     "line": "Outside the bakery",
+     "piece": "baker",
+     "sign": "BAKERY",
+     "react": "heart"
+    },
+    {
+     "line": "a boy with grass on his knees",
+     "piece": "tall_trees",
+     "react": "note"
+    },
+    {
+     "line": "One good throw",
+     "piece": "sign",
+     "text": "DOG PARK"
+    },
+    {
+     "line": "You hang the leash",
+     "piece": "neighbors_wave",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "16": {
+   "title": "Off the Page",
+   "sky": [
+    "#A8E06B",
+    "#FFF8DC"
+   ],
+   "palette": [
+    "#B8D85A",
+    "#FF8A5B",
+    "#FFC233",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "market",
+    "shops",
+    "houses"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "ONE FOR TODAY, ONE FOR TOMORROW",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "On the way to the morning market",
+     "piece": "sign",
+     "text": "MORNING MARKET"
+    },
+    {
+     "line": "The woman in the apron",
+     "piece": "market_lady",
+     "react": "heart"
+    },
+    {
+     "line": "She taps the softer pear",
+     "piece": "market_lady"
+    },
+    {
+     "line": "I draw a peach",
+     "piece": "market_lady",
+     "react": "note"
+    },
+    {
+     "line": "A pear inside my pocket",
+     "piece": "neighbors_wave",
+     "react": "heart"
+    }
+   ],
+   "signs": {
+    "shops": "FRUIT"
+   }
+  },
+  "17": {
+   "title": "Matinee",
+   "sky": [
+    "#FF9AA2",
+    "#FFE6C7"
+   ],
+   "palette": [
+    "#E0457B",
+    "#FFC233",
+    "#7B3BFF",
+    "#FF8A5B"
+   ],
+   "scenes": [
+    "shops",
+    "town",
+    "downtown"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "DAYLIGHT AT THE DOOR",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Ten in the morning",
+     "piece": "cinema",
+     "text": "MATINEE",
+     "react": "note"
+    },
+    {
+     "line": "Popcorn for breakfast",
+     "piece": "sign",
+     "text": "POPCORN →"
+    },
+    {
+     "line": "The man in the movie steps out",
+     "piece": "cinema",
+     "text": "NOW SHOWING"
+    },
+    {
+     "line": "The house lights come up",
+     "piece": "cinema",
+     "text": "MATINEE",
+     "react": "heart"
+    },
+    {
+     "line": "I step out at noon",
+     "effect": "golden",
+     "dur": 10
+    }
+   ],
+   "signs": {
+    "shops": "POPCORN"
+   }
+  },
+  "18": {
+   "title": "Make That Two",
+   "sky": [
+    "#9BB8FF",
+    "#FFE9F0"
+   ],
+   "palette": [
+    "#3D6BFF",
+    "#E0457B",
+    "#FFC233",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "town",
+    "shops",
+    "houses"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "MAKE THAT TWO",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "You're three train stops",
+     "piece": "tram"
+    },
+    {
+     "line": "My thumb's already on your number",
+     "piece": "window",
+     "scene": "videocall",
+     "react": "note"
+    },
+    {
+     "line": "At the counter of a little theater",
+     "piece": "cinema",
+     "text": "TWO, PLEASE",
+     "react": "heart"
+    },
+    {
+     "line": "Walking back, you try the chorus",
+     "piece": "neighbors_wave",
+     "react": "note"
+    },
+    {
+     "line": "Three train stops back",
+     "piece": "tram",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "19": {
+   "title": "Still Going",
+   "sky": [
+    "#6FC8F0",
+    "#E6FAFF"
+   ],
+   "palette": [
+    "#2EC4A6",
+    "#3D9BFF",
+    "#FFC233",
+    "#7B3BFF"
+   ],
+   "scenes": [
+    "park",
+    "forest",
+    "flowers"
+   ],
+   "effects": [
+    "breeze"
+   ],
+   "chorus": {
+    "banner": "STILL GOING",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "I pick a flat stone",
+     "piece": "lake",
+     "react": "note"
+    },
+    {
+     "line": "One, two, three, still going",
+     "piece": "lake",
+     "all": true
+    },
+    {
+     "line": "I find a white one",
+     "piece": "lake"
+    },
+    {
+     "line": "I lie back on the wooden dock",
+     "piece": "lake",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "20": {
+   "title": "In My Key",
+   "sky": [
+    "#C9A8FF",
+    "#FFF0E6"
+   ],
+   "palette": [
+    "#2EC4A6",
+    "#E0457B",
+    "#7B3BFF",
+    "#FFC233"
+   ],
+   "scenes": [
+    "houses",
+    "curtainhouses",
+    "town"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "SAME SONG, IN MY KEY",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "My sister left her songbook",
+     "piece": "window",
+     "scene": "guitar",
+     "react": "note"
+    },
+    {
+     "line": "I take my guitar off the wall",
+     "piece": "window",
+     "scene": "guitar"
+    },
+    {
+     "line": "She comes to take her songbook back",
+     "piece": "window",
+     "scene": "guitar",
+     "react": "heart"
+    },
+    {
+     "line": "When we were kids",
+     "piece": "window",
+     "scene": "guitar"
+    },
+    {
+     "line": "She takes the high part",
+     "piece": "window",
+     "scene": "guitar",
+     "react": "note"
+    }
+   ],
+   "signs": {}
   }
+ }
 }

@@ -103,6 +103,8 @@ def neon_text(ctx, text, cx, y, size, col, t, alpha=1.0):
 
 def draw_piece(ctx, name, sx, GY, t, dt, L, night, nf, opts, draw_obj, wx):
     """Draw piece `name` whose left edge is at screen x `sx`. dt = seconds since its lyric line."""
+    if name in ('window', 'cinema', 'tram', 'mailbox', 'boxes', 'market_lady', 'lake', 'boutique'):
+        return draw_extra(ctx, name, sx, GY, t, dt, L, night, nf, opts, draw_obj, wx)
     W_ = WIDTH.get(name, 400)
     acc = hexc(opts.get('color', '#FF5C8A'))
     lit = lambda: (ctx.set_source_rgba(1, .85, .45, min(1, night * 1.4)), ctx.fill_preserve()) if night > .3 else None
@@ -262,3 +264,231 @@ def draw_piece(ctx, name, sx, GY, t, dt, L, night, nf, opts, draw_obj, wx):
         if e.width > W_ - 100: ctx.set_font_size(size * (W_ - 100) / e.width); e = ctx.text_extents(txt)
         ctx.set_source_rgb(1, 1, 1); ctx.move_to(sx + 40 + (W_ - 60) / 2 - e.width / 2, GY - 218); ctx.show_text(txt)
     ctx.set_source_rgb(*L)
+
+
+# ---------------------------------------------------------------- window vignettes
+WIDTH.update({'window': 340, 'cinema': 440, 'tram': 520, 'mailbox': 220, 'boxes': 380, 'market_lady': 360,
+              'lake': 560, 'boutique': 420})
+
+def _book(ctx, x, y, L, nf, col):
+    ctx.rectangle(x, y, 22, 16); shape(ctx, nf(col), L); ctx.move_to(x + 11, y); ctx.line_to(x + 11, y + 16); ctx.stroke()
+
+def vignette(ctx, scene, x0, y0, w, h, t, dt, L, nf):
+    """an indoor moment seen through a window (x0, y0, w, h); people drawn small"""
+    floor = y0 + h
+    ctx.set_line_width(2.5)
+    if scene == 'breakfast':       # two people planning a trip over breakfast
+        ctx.rectangle(x0 + 60, floor - 34, w - 120, 8); shape(ctx, nf(hexc('#E8C9A0')), L)
+        npc(ctx, x0 + 52, floor + 8, t, L, dict(skin=1, hair=2, top='#FF8A5B', style='long'), 'sit', face=1, s=.42, nf=nf)
+        npc(ctx, x0 + w - 52, floor + 8, t, L, dict(skin=0, hair=1, top='#3D9BFF'), 'sit', face=-1, s=.42, nf=nf)
+        ctx.rectangle(x0 + w / 2 - 22, floor - 44, 44, 10); shape(ctx, nf((1, 1, 1)), L)       # the folded page
+        ctx.set_source_rgb(*hexc('#E0457B')); ctx.arc(x0 + w / 2 + 12, floor - 39, 3, 0, 2 * math.pi); ctx.fill(); ctx.set_source_rgb(*L)
+        for dx in (-40, 40): ctx.save(); ctx.translate(x0 + w / 2 + dx, floor - 37); ctx.scale(1, .35); ctx.arc(0, 0, 12, 0, 2 * math.pi); ctx.restore(); shape(ctx, nf((1, 1, 1)), L)
+    elif scene == 'plant':         # basil on the sill, a new leaf every few seconds
+        for k, (px, col) in enumerate(((w * .3, '#D9734A'), (w * .55, '#FFC233'), (w * .78, '#D9734A'))):
+            cx = x0 + px; ctx.move_to(cx - 18, floor - 4); ctx.line_to(cx + 18, floor - 4); ctx.line_to(cx + 13, floor - 34); ctx.line_to(cx - 13, floor - 34); ctx.close_path()
+            ctx.move_to(cx - 18, floor - 34)
+            shape(ctx, nf(hexc(col)), L)
+            n = 3 + (min(8, int(max(0, dt) / 2.5)) if k == 0 else 2)
+            ctx.move_to(cx, floor - 34); ctx.line_to(cx, floor - 34 - 8 * n); ctx.stroke()
+            for i in range(n):
+                side = 1 if i % 2 else -1; ly = floor - 40 - 8 * i
+                ctx.save(); ctx.translate(cx + side * 9, ly); ctx.rotate(side * .5); ctx.scale(1, .6); ctx.arc(0, 0, 9, 0, 2 * math.pi); ctx.restore()
+                shape(ctx, nf(hexc('#5CC27A')), L)
+        ctx.rectangle(x0, floor - 6, w, 6); shape(ctx, nf((1, 1, 1)), L)
+    elif scene == 'drawing':       # someone drawing a little house on a hill
+        ctx.rectangle(x0 + 30, floor - 30, w - 60, 8); shape(ctx, nf(hexc('#C99B6A')), L)
+        npc(ctx, x0 + 60, floor + 10, t, L, dict(skin=1, hair=3, top='#3D6BFF', style='bun'), 'piano', face=1, s=.45, nf=nf)
+        px, py = x0 + w / 2 + 10, floor - 92
+        ctx.rectangle(px, py, 110, 64); shape(ctx, nf((1, 1, 1)), L)
+        ctx.arc(px + 55, py + 70, 50, math.pi * 1.15, math.pi * 1.85); ctx.stroke()
+        ctx.rectangle(px + 44, py + 26, 20, 16); shape(ctx, nf(hexc('#E0457B')), L)
+        for i in range(2): ctx.set_source_rgb(*nf(hexc('#FFC233'))); ctx.arc(px + 20 + i * 70, py + 48, 5, 0, 2 * math.pi); ctx.fill()
+        ctx.set_source_rgb(*L)
+    elif scene == 'laundry':       # dancing barefoot with the laundry
+        ctx.move_to(x0 + 10, y0 + 24); ctx.curve_to(x0 + w * .3, y0 + 40, x0 + w * .7, y0 + 40, x0 + w - 10, y0 + 24); ctx.stroke()
+        for i, col in enumerate(('#3D9BFF', '#FFFFFF', '#FF8A5B', '#3D9BFF')):
+            sx = x0 + 40 + i * (w - 80) / 3; sw = 4 * math.sin(t * 3 + i)
+            ctx.rectangle(sx - 12 + sw, y0 + 30, 24, 30); shape(ctx, nf(hexc(col)), L)
+        bob = 6 * abs(math.sin(t * 4))
+        npc(ctx, x0 + w * .45, floor + 6 - bob, t, L, dict(skin=2, hair=0, top='#FFC233'), 'wave', face=1 if math.sin(t * 2) > 0 else -1, s=.45, nf=nf)
+        ctx.rectangle(x0 + w * .72, floor - 26, 50, 26); shape(ctx, nf(hexc('#E8C9A0')), L)
+    elif scene == 'yoga':          # a class stretching on mats
+        for i in range(3):
+            mx = x0 + 40 + i * (w - 80) / 2
+            ctx.rectangle(mx - 30, floor - 6, 60, 6); shape(ctx, nf(hexc(['#7FD99A', '#FF9AA2', '#9FD3FF'][i])), L)
+            npc(ctx, mx, floor - 4, t, L, dict(skin=i % 4, hair=(i + 1) % 5, top=['#2EC4A6', '#FF5C8A', '#7B3BFF'][i], style=['long', 'bun', 'short'][i]),
+                'wave' if math.sin(t * 1.2 + i) > -0.3 else 'stand', face=1, s=.4, nf=nf)
+    elif scene == 'reading':       # a day off in a sunny armchair
+        ctx.set_source_rgba(1, .9, .5, .35); ctx.rectangle(x0 + w * .3, y0, w * .5, h); ctx.fill(); ctx.set_source_rgb(*L)
+        ctx.rectangle(x0 + w / 2 - 50, floor - 50, 100, 50); shape(ctx, nf(hexc('#FF8A5B')), L)
+        ctx.rectangle(x0 + w / 2 - 50, floor - 90, 22, 90); shape(ctx, nf(hexc('#FF8A5B')), L)
+        npc(ctx, x0 + w / 2 - 10, floor - 22, t, L, dict(skin=0, hair=2, top='#2EC4A6'), 'sip', face=1, s=.45, nf=nf)
+        _book(ctx, x0 + w / 2 + 6, floor - 66, L, nf, hexc('#E0457B'))
+    elif scene == 'videocall':     # sunrise here, sunset on the phone
+        npc(ctx, x0 + w * .35, floor + 8, t, L, dict(skin=1, hair=3, top='#FFC233', style='long'), 'sip', face=1, s=.45, nf=nf)
+        px, py = x0 + w * .58, floor - 104
+        ctx.rectangle(px, py, 64, 104); shape(ctx, nf(hexc('#2B2541')), L)
+        g = cairo.LinearGradient(0, py + 6, 0, py + 98); g.add_color_stop_rgb(0, *hexc('#7B3BFF')); g.add_color_stop_rgb(1, *hexc('#FF9A5B'))
+        ctx.rectangle(px + 5, py + 6, 54, 92); ctx.set_source(g); ctx.fill(); ctx.set_source_rgb(*L)
+        ctx.arc(px + 32, py + 52, 14, 0, 2 * math.pi); shape(ctx, nf(SKINS[0]), L)
+        ctx.arc(px + 32, py + 40, 14, math.pi, 2 * math.pi); ctx.set_source_rgb(*nf(hexc('#C9CED6'))); ctx.fill(); ctx.set_source_rgb(*L)
+        if 0 < dt % 6 < 1.5:
+            ctx.set_source_rgb(*hexc('#FF5C8A')); ctx.arc(px + 48, py + 20, 6, 0, 2 * math.pi); ctx.fill(); ctx.set_source_rgb(*L)
+    elif scene == 'kitchen':       # pancakes in a new kitchen, one flipping
+        ctx.rectangle(x0 + 20, floor - 34, w - 40, 34); shape(ctx, nf(hexc('#FFE9A8')), L)
+        npc(ctx, x0 + w * .38, floor + 4, t, L, dict(skin=2, hair=1, top='#3D9BFF'), 'stand', face=1, s=.45, nf=nf)
+        npc(ctx, x0 + w * .78, floor + 4, t, L, dict(skin=0, hair=3, top='#FF5C8A', style='long'), 'wave', face=-1, s=.45, nf=nf)
+        cx, cy = x0 + w * .55, floor - 40
+        ctx.move_to(cx - 24, cy); ctx.line_to(cx + 10, cy); ctx.stroke(); ctx.move_to(cx - 40, cy); ctx.line_to(cx - 24, cy); ctx.set_line_width(5); ctx.stroke(); ctx.set_line_width(2.5)
+        ph = (t * .8) % 1; fy = cy - 6 - 60 * math.sin(ph * math.pi)
+        ctx.save(); ctx.translate(cx - 7, fy); ctx.scale(1, abs(math.cos(ph * math.pi * 2)) * .4 + .05); ctx.arc(0, 0, 13, 0, 2 * math.pi); ctx.restore()
+        shape(ctx, nf(hexc('#E8B060')), L)
+    elif scene == 'crossword':     # a diner booth, a pencil, a crossword
+        ctx.rectangle(x0 + 50, floor - 34, w - 100, 8); shape(ctx, nf(hexc('#FF8A5B')), L)
+        npc(ctx, x0 + 46, floor + 8, t, L, dict(skin=3, hair=1, top='#7B3BFF'), 'sit', face=1, s=.42, nf=nf)
+        npc(ctx, x0 + w - 46, floor + 8, t, L, dict(skin=0, hair=2, top='#2EC4A6', style='long'), 'sit', face=-1, s=.42, nf=nf)
+        gx, gy = x0 + w / 2 - 26, floor - 72
+        ctx.rectangle(gx, gy, 52, 36); shape(ctx, nf((1, 1, 1)), L)
+        for i in range(1, 4): ctx.move_to(gx + i * 13, gy); ctx.line_to(gx + i * 13, gy + 36)
+        for j in range(1, 3): ctx.move_to(gx, gy + j * 12); ctx.line_to(gx + 52, gy + j * 12)
+        ctx.set_line_width(1.2); ctx.stroke(); ctx.set_line_width(2.5)
+        ctx.rectangle(gx + 13, gy + 12, 13, 12); ctx.set_source_rgb(*hexc('#2B2541')); ctx.fill(); ctx.set_source_rgb(*L)
+    elif scene == 'turntable':     # a record spinning in the shop window
+        ctx.rectangle(x0 + w * .3, floor - 30, 120, 30); shape(ctx, nf(hexc('#C99B6A')), L)
+        cx, cy = x0 + w * .3 + 50, floor - 36
+        ctx.save(); ctx.translate(cx, cy); ctx.scale(1, .35); ctx.arc(0, 0, 36, 0, 2 * math.pi); ctx.restore(); shape(ctx, nf(hexc('#2B2541')), L)
+        a = t * 4; ctx.set_source_rgb(*hexc('#E0457B')); ctx.arc(cx + 8 * math.cos(a), cy + 3 * math.sin(a), 4, 0, 2 * math.pi); ctx.fill(); ctx.set_source_rgb(*L)
+        npc(ctx, x0 + w * .82, floor + 6, t, L, dict(skin=1, hair=4, top='#FF5C8A', style='long'), 'counter', face=-1, s=.48, dt=dt, nf=nf)
+    elif scene == 'guitar':        # playing a sister's song in my own key
+        npc(ctx, x0 + w * .35, floor + 4, t, L, dict(skin=1, hair=0, top='#2EC4A6'), 'sit', face=1, s=.48, nf=nf)
+        gx, gy = x0 + w * .35 + 14, floor - 34
+        ctx.save(); ctx.translate(gx, gy); ctx.rotate(-.5); ctx.arc(0, 0, 13, 0, 2 * math.pi); ctx.restore(); shape(ctx, nf(hexc('#E8A05A')), L)
+        ctx.set_line_width(4); ctx.move_to(gx + 6, gy - 6); ctx.line_to(gx + 34, gy - 30); ctx.stroke(); ctx.set_line_width(2.5)
+        if dt > 4: npc(ctx, x0 + w * .75, floor + 4, t, L, dict(skin=1, hair=0, top='#FF9AA2', style='long'), 'sit', face=-1, s=.48, nf=nf)
+        ctx.rectangle(x0 + w * .5, floor - 60, 36, 26); shape(ctx, nf((1, 1, 1)), L)
+        for i in range(3): ctx.set_source_rgb(*hexc('#2EA36B')); ctx.arc(x0 + w * .5 + 8 + i * 10, floor - 48, 3, 0, 2 * math.pi); ctx.fill()
+        ctx.set_source_rgb(*L)
+
+def draw_extra(ctx, name, sx, GY, t, dt, L, night, nf, opts, draw_obj, wx):
+    """pieces added for VOL.01 songs 4-20"""
+    W_ = WIDTH.get(name, 400); acc = hexc(opts.get('color', '#FF5C8A'))
+    ctx.set_line_width(3); ctx.set_source_rgb(*L)
+    if name == 'window':
+        sign = opts.get('sign')
+        bh = 300 if sign else 250
+        ctx.rectangle(sx, GY - bh, W_, bh); shape(ctx, nf(lerp(acc, (1, 1, 1), .78)), L)
+        if sign:
+            n = 7; aw = W_ / n
+            for i in range(n):
+                ctx.move_to(sx + i * aw, GY - bh + 50); ctx.line_to(sx + (i + 1) * aw, GY - bh + 50); ctx.line_to(sx + (i + 1) * aw, GY - bh + 76)
+                ctx.arc(sx + (i + .5) * aw, GY - bh + 76, aw / 2, 0, math.pi); ctx.close_path(); shape(ctx, nf(acc if i % 2 == 0 else (1, 1, 1)), L)
+            ctx.select_font_face('DejaVu Sans', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD); ctx.set_font_size(26)
+            e = ctx.text_extents(sign)
+            if e.width > W_ - 30: ctx.set_font_size(26 * (W_ - 30) / e.width); e = ctx.text_extents(sign)
+            ctx.move_to(sx + W_ / 2 - e.width / 2, GY - bh + 36); ctx.show_text(sign)
+        else:
+            ctx.move_to(sx - 14, GY - bh); ctx.line_to(sx + W_ / 2, GY - bh - 70); ctx.line_to(sx + W_ + 14, GY - bh); ctx.close_path(); shape(ctx, nf(acc), L)
+        x0, y0, w, h = sx + 26, GY - 210, W_ - 52, 160
+        ctx.rectangle(x0, y0, w, h)
+        ctx.set_source_rgb(*nf(hexc('#FFF8EC'))); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.stroke()
+        if night > .3: ctx.set_source_rgba(1, .85, .45, .35 * night); ctx.rectangle(x0, y0, w, h); ctx.fill(); ctx.set_source_rgb(*L)
+        ctx.save(); ctx.rectangle(x0, y0, w, h); ctx.clip(); vignette(ctx, opts.get('scene', 'reading'), x0, y0, w, h, t, dt, L, nf); ctx.restore()
+        ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.rectangle(x0, y0, w, h); ctx.stroke()
+        ctx.move_to(x0 + w / 2, y0); ctx.line_to(x0 + w / 2, y0 + 10); ctx.stroke()
+        ctx.rectangle(x0 - 6, y0 + h, w + 12, 10); shape(ctx, nf((1, 1, 1)), L)
+    elif name == 'cinema':
+        ctx.rectangle(sx, GY - 330, W_, 330); shape(ctx, nf(hexc('#3A2E5C')), L)
+        mx, my, mw, mh = sx + 40, GY - 300, W_ - 80, 90
+        ctx.rectangle(mx, my, mw, mh); shape(ctx, nf(hexc('#FFF4DF')), L)
+        n = 22
+        for i in range(n):           # chasing marquee bulbs
+            u = i / n; per = 2 * (mw + mh); d = u * per
+            bx, by = (mx + d, my) if d < mw else ((mx + mw, my + d - mw) if d < mw + mh else ((mx + mw - (d - mw - mh), my + mh) if d < 2 * mw + mh else (mx, my + mh - (d - 2 * mw - mh))))
+            on = (int(t * 6) + i) % 3 == 0
+            ctx.arc(bx, by, 5, 0, 2 * math.pi); ctx.set_source_rgb(*(hexc('#FFD34D') if on else nf(hexc('#C9A23A')))); ctx.fill()
+        ctx.set_source_rgb(*hexc('#E0457B')); ctx.select_font_face('DejaVu Sans', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+        txt = opts.get('text', 'MATINEE'); ctx.set_font_size(42); e = ctx.text_extents(txt)
+        if e.width > mw - 30: ctx.set_font_size(42 * (mw - 30) / e.width); e = ctx.text_extents(txt)
+        ctx.move_to(mx + mw / 2 - e.width / 2, my + mh / 2 + e.height / 2); ctx.show_text(txt); ctx.set_source_rgb(*L)
+        for px in (sx + 40, sx + W_ - 120):
+            ctx.rectangle(px, GY - 180, 80, 110); shape(ctx, nf(hexc('#FFC233')), L)
+            ctx.arc(px + 40, GY - 140, 18, 0, 2 * math.pi); shape(ctx, nf(hexc('#FF5C8A')), L)
+        ctx.rectangle(sx + W_ / 2 - 50, GY - 110, 100, 110); shape(ctx, nf(hexc('#FFE3A3')), L)
+        ctx.move_to(sx + W_ / 2, GY - 110); ctx.line_to(sx + W_ / 2, GY); ctx.stroke()
+    elif name == 'tram':             # a little tram glides past, faster than the walker
+        rx = sx + 1000 - 300 * max(0.0, dt + 2.0)
+        if -600 < rx - sx < 1600:
+            ctx.rectangle(rx, GY - 170, 440, 150); shape(ctx, nf(acc), L)
+            ctx.rectangle(rx, GY - 170, 440, 26); shape(ctx, nf((1, 1, 1)), L)
+            for i in range(5):
+                wx0 = rx + 20 + i * 84; ctx.rectangle(wx0, GY - 136, 64, 56); shape(ctx, nf(hexc('#DFF3FF')), L)
+                if i % 2 == 0:
+                    ctx.save(); ctx.rectangle(wx0, GY - 136, 64, 56); ctx.clip()
+                    ctx.arc(wx0 + 32, GY - 104, 13, 0, 2 * math.pi); shape(ctx, nf(SKINS[i % 4]), L); ctx.restore()
+            for wxo in (60, 380): ctx.arc(rx + wxo, GY - 16, 16, 0, 2 * math.pi); shape(ctx, nf(hexc('#3A3A46')), L)
+            ctx.move_to(rx + 220, GY - 170); ctx.line_to(rx + 200, GY - 230); ctx.line_to(rx + 260, GY - 230); ctx.stroke()
+    elif name == 'mailbox':
+        ctx.rectangle(sx + 80, GY - 150, 70, 150); shape(ctx, nf(hexc('#E0457B')), L)
+        ctx.arc(sx + 115, GY - 150, 35, math.pi, 0); ctx.close_path(); shape(ctx, nf(hexc('#E0457B')), L)
+        ctx.rectangle(sx + 93, GY - 130, 44, 8); shape(ctx, nf(hexc('#2B2541')), L)
+        k = sm(dt / 1.5)
+        if k < 1:
+            ctx.save(); ctx.translate(sx + 30 + 85 * k, GY - 180 + 54 * k); ctx.rotate(-.3 * (1 - k)); ctx.rectangle(-20, -13, 40, 26); ctx.restore()
+            shape(ctx, nf(hexc('#FFF4DF')), L)
+        npc(ctx, sx + 30, GY, t, L, dict(skin=1, hair=3, top='#3D6BFF', style='bun'), 'wave' if dt > 1.5 else 'stand', face=1, s=.85, dt=dt, nf=nf)
+    elif name == 'boxes':
+        for i, (bx, by, bw, bh) in enumerate(((20, 0, 90, 70), (120, 0, 100, 80), (60, -70, 80, 60), (240, 0, 80, 60))):
+            ctx.rectangle(sx + bx, GY - by - bh, bw, bh); shape(ctx, nf(hexc('#D9A86C')), L)
+            ctx.move_to(sx + bx + bw / 2, GY - by - bh); ctx.line_to(sx + bx + bw / 2, GY - by - bh + 16); ctx.stroke()
+        draw_piece(ctx, 'sign', sx + 10, GY, t, dt, L, night, nf, {'text': opts.get('text', 'NEW ADDRESS'), 'color': opts.get('color')}, draw_obj, wx)
+    elif name == 'market_lady':
+        draw_obj(ctx, ('stall', wx, 240, acc, hexc('#FFF1DC')), sx, L, night, t)
+        for i in range(5):
+            px_ = sx + 30 + i * 40
+            ctx.save(); ctx.translate(px_, GY - 98); ctx.scale(.8, 1); ctx.arc(0, 0, 13, 0, 2 * math.pi); ctx.restore(); shape(ctx, nf(hexc('#B8D85A')), L)
+        npc(ctx, sx + 300, GY, t, L, dict(skin=2, hair=4, top='#FF8A5B', style='bun'), 'wave' if dt > 0 else 'stand', face=-1, s=.85, dt=dt, nf=nf)
+    elif name == 'lake':
+        ctx.save(); ctx.translate(0, 0)
+        ctx.move_to(sx, GY); ctx.curve_to(sx + 40, GY - 46, sx + W_ - 40, GY - 46, sx + W_, GY); ctx.close_path(); shape(ctx, nf(hexc('#6CC8EF')), L)
+        ctx.rectangle(sx + 20, GY - 30, 150, 10); shape(ctx, nf(hexc('#C99B6A')), L)       # dock
+        for px in (sx + 40, sx + 150): ctx.move_to(px, GY - 20); ctx.line_to(px, GY); ctx.stroke()
+        for i in range(6):           # stone skipping: one, two, three... still going
+            hop_t = dt - i * 0.45
+            if hop_t > 0:
+                hx = sx + 200 + i * 55; r = 6 + 22 * min(1, hop_t / 2.5)
+                ctx.set_source_rgba(*L, max(0, 1 - hop_t / 3)); ctx.save(); ctx.translate(hx, GY - 14); ctx.scale(1, .3); ctx.arc(0, 0, r, 0, 2 * math.pi); ctx.restore(); ctx.stroke()
+        ph = dt / 0.45
+        if 0 < ph < 6:
+            k = int(ph); f = ph - k
+            ctx.set_source_rgb(*hexc('#8A8F9A')); ctx.arc(sx + 200 + (k + f) * 55, GY - 14 - 30 * math.sin(f * math.pi) * (1 - k / 7), 5, 0, 2 * math.pi); ctx.fill()
+        for rx_ in (sx + W_ - 60, sx + W_ - 40): ctx.set_source_rgb(*L); ctx.move_to(rx_, GY); ctx.curve_to(rx_ - 4, GY - 40, rx_ + 4, GY - 60, rx_, GY - 80); ctx.stroke()
+        ctx.restore()
+    elif name == 'boutique':
+        draw_obj(ctx, ('shop', wx, 420, opts.get('sign', 'BOUTIQUE'), hexc('#FFF1F4'), acc, 'clothes'), sx, L, night, t)
+        npc(ctx, sx + 380, GY, t, L, dict(skin=1, hair=2, top='#FFB38A', style='long'), 'wave' if math.sin(dt * 1.5) > 0 else 'stand', face=1 if math.sin(dt) > 0 else -1, s=.85, dt=dt, nf=nf)
+    ctx.set_source_rgb(*L)
+
+def dog(ctx, x, gy, phase, walk, t, L, alpha=1.0):
+    """a small dog trotting beside the walker (Follow My Nose)"""
+    ctx.save(); ctx.push_group(); ctx.translate(x, gy)
+    ctx.set_line_cap(cairo.LINE_CAP_ROUND); ctx.set_line_join(cairo.LINE_JOIN_ROUND)
+    fur, dark = hexc('#E8B878'), hexc('#8A5A3C')
+    bob = 2 * abs(math.sin(phase * 2)) * walk
+    ctx.set_line_width(7); ctx.set_source_rgb(*dark)
+    for i, (lx, off) in enumerate(((-30, 0), (-18, math.pi), (18, math.pi), (30, 0))):
+        a = 0.45 * math.sin(phase * 2 + off) * walk
+        ctx.move_to(lx, -34 - bob); ctx.line_to(lx + 14 * math.sin(a), -4); ctx.stroke()
+    ctx.set_line_width(3.5)
+    ctx.save(); ctx.translate(0, -44 - bob); ctx.scale(1, .55); ctx.arc(0, 0, 42, 0, 2 * math.pi); ctx.restore(); shape(ctx, fur, L)
+    wag = math.sin(t * 12) * 0.5
+    ctx.set_line_width(7); ctx.set_source_rgb(*fur); ctx.move_to(-40, -50 - bob); ctx.line_to(-58, -70 - bob + 10 * wag); ctx.stroke()
+    ctx.set_line_width(3.5); ctx.set_source_rgb(*L)
+    hx, hy = 42, -74 - bob
+    ctx.arc(hx, hy, 20, 0, 2 * math.pi); shape(ctx, fur, L)
+    ctx.save(); ctx.translate(hx + 18, hy + 8); ctx.scale(1, .7); ctx.arc(0, 0, 11, 0, 2 * math.pi); ctx.restore(); shape(ctx, fur, L)
+    ctx.arc(hx + 28, hy + 4, 4, 0, 2 * math.pi); ctx.fill()
+    ctx.arc(hx + 8, hy - 4, 3, 0, 2 * math.pi); ctx.fill()
+    ctx.move_to(hx - 8, hy - 14); ctx.curve_to(hx - 24, hy - 10, hx - 22, hy + 14, hx - 12, hy + 12); ctx.close_path(); shape(ctx, dark, L)
+    ctx.set_line_width(4); ctx.set_source_rgb(*hexc('#E0457B')); ctx.arc(hx - 4, hy + 12, 14, math.radians(60), math.radians(150)); ctx.stroke()
+    ctx.pop_group_to_source(); ctx.paint_with_alpha(alpha); ctx.restore()
