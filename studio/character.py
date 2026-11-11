@@ -11,8 +11,10 @@ SKIN, HAIR = (1, 0.93, 0.86), hexc('#5A3B2E')
 OUTFITS = {
     'morning': dict(top='#FFC53D', bottom='#3D5BFF', phones='#7B3BFF', prop='coffee'),
     'street': dict(top='#1E1E24', bottom='#6B6F7A', phones='#F2C230', prop='coffee'),
-    # channel signature look: sky-blue hoodie, retro headphones
-    'signature': dict(top='#8FD0FF', bottom='#3E4A6B', phones='#E0457B', phones_style='retro', prop='coffee'),
+    # channel signature look (profile and banner): sky-blue hoodie, retro headphones, hot coffee in a kraft sleeve
+    'signature': dict(top='#8FD0FF', bottom='#3E4A6B', phones='#2EC4A6', phones_style='retro', prop='hot'),
+    # per-video looks: change colours and props every volume
+    'vol01': dict(top='#8FD0FF', bottom='#3E4A6B', phones='#E0457B', phones_style='retro', prop='hot'),
 }
 
 def _shape(ctx, fill, L):
@@ -31,6 +33,54 @@ def _phones(ctx, style, hx, hy, R, col, L):
     else:                  # classic thin band
         ctx.set_line_width(8); ctx.set_source_rgb(*col); ctx.arc(hx - 4, hy, R + 6, math.radians(195), math.radians(320)); ctx.stroke()
         ctx.arc(hx - 24, hy + 4, 11, 0, 2 * math.pi); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke()
+
+def _prop(ctx, kind, ex, ey, t, L, sleeve):
+    sleeve = hexc(sleeve)
+    skin = SKIN
+    if kind == 'coffee':      # original
+        ctx.set_line_width(3.5)
+        ctx.move_to(ex - 4, ey - 24); ctx.line_to(ex + 16, ey - 24); ctx.line_to(ex + 13, ey + 4); ctx.line_to(ex - 1, ey + 4); ctx.close_path(); _shape(ctx, (1, 1, 1), L)
+        ctx.rectangle(ex - 2, ey - 16, 16, 8); _shape(ctx, hexc('#FF5C8A'), L)
+        return
+    cx, by = ex + 7, ey + 8          # cup centre x, bottom y
+    ctx.set_line_width(3.2); ctx.set_line_join(cairo.LINE_JOIN_ROUND)
+    if kind in ('hot', 'hot_brand'):
+        top, bot, h = 15, 11, 36
+        ctx.move_to(cx - top, by - h); ctx.line_to(cx + top, by - h); ctx.line_to(cx + bot, by); ctx.line_to(cx - bot, by); ctx.close_path(); _shape(ctx, (1, 1, 1), L)
+        # sleeve
+        y0, y1 = by - h + 11, by - 9
+        f = lambda y: top + (bot - top) * (y - (by - h)) / h
+        ctx.move_to(cx - f(y0), y0); ctx.line_to(cx + f(y0), y0); ctx.line_to(cx + f(y1), y1); ctx.line_to(cx - f(y1), y1); ctx.close_path()
+        _shape(ctx, hexc('#E0457B') if kind == 'hot_brand' else sleeve, L)
+        if kind == 'hot_brand':
+            ctx.arc(cx, (y0 + y1) / 2, 4.5, 0, 2 * math.pi); ctx.set_source_rgb(1, 1, 1); ctx.fill(); ctx.set_source_rgb(*L)
+        # dome lid
+        ctx.rectangle(cx - top - 3, by - h - 6, 2 * top + 6, 7); _shape(ctx, (0.96, 0.96, 0.98), L)
+        ctx.move_to(cx - top + 2, by - h - 6); ctx.curve_to(cx - top + 4, by - h - 14, cx + top - 4, by - h - 14, cx + top - 2, by - h - 6); ctx.close_path(); _shape(ctx, (0.96, 0.96, 0.98), L)
+        ctx.arc(cx + 6, by - h - 11, 2, 0, 2 * math.pi); ctx.fill()
+        ctx.save(); ctx.set_source_rgba(1, 1, 1, .9); ctx.set_line_width(3.5)
+        for i, dx in enumerate((-5, 5)):          # soft white steam
+            s = math.sin(t * 3 + i)
+            ctx.move_to(cx + dx, by - h - 17); ctx.curve_to(cx + dx + 5 * s, by - h - 23, cx + dx - 5 * s, by - h - 29, cx + dx, by - h - 35); ctx.stroke()
+        ctx.restore()
+    elif kind == 'iced':
+        top, bot, h = 15, 11, 40
+        ctx.move_to(cx - top, by - h); ctx.line_to(cx + top, by - h); ctx.line_to(cx + bot, by); ctx.line_to(cx - bot, by); ctx.close_path()
+        ctx.set_source_rgb(0.9, 0.96, 1); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.stroke()
+        lv = by - h + 12
+        f = lambda y: top + (bot - top) * (y - (by - h)) / h
+        ctx.move_to(cx - f(lv) + 2, lv); ctx.line_to(cx + f(lv) - 2, lv); ctx.line_to(cx + bot - 2, by - 2); ctx.line_to(cx - bot + 2, by - 2); ctx.close_path()
+        ctx.set_source_rgb(*hexc('#B07A4F')); ctx.fill()
+        for (dx, dy) in ((-6, 6), (4, 10), (-2, 18)):
+            ctx.rectangle(cx + dx - 4, lv + dy - 4, 8, 8); ctx.set_source_rgba(1, 1, 1, .85); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(1.5); ctx.stroke()
+        ctx.set_line_width(3.2)
+        ctx.rectangle(cx - top - 3, by - h - 6, 2 * top + 6, 7); _shape(ctx, (0.96, 0.96, 0.98), L)
+        ctx.set_line_width(5); ctx.set_source_rgb(*L); ctx.move_to(cx + 3, by - h - 4); ctx.line_to(cx + 9, by - h - 30); ctx.stroke()
+        ctx.set_line_width(3); ctx.set_source_rgb(*hexc('#E0457B')); ctx.move_to(cx + 3, by - h - 4); ctx.line_to(cx + 9, by - h - 30); ctx.stroke()
+        ctx.set_source_rgb(*L); ctx.set_line_width(3.2)
+    # hand wrapped round the cup
+    ctx.arc(cx - 9, by - 16, 8, 0, 2 * math.pi); _shape(ctx, skin, L)
+    ctx.set_line_width(2); ctx.move_to(cx - 6, by - 21); ctx.line_to(cx, by - 21); ctx.move_to(cx - 6, by - 16); ctx.line_to(cx, by - 16); ctx.move_to(cx - 6, by - 11); ctx.line_to(cx, by - 11); ctx.stroke()
 
 def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, phase=None, walk=None, reach=0.0, press=0.0):
     """Draw the mascot standing on ground line gy at x=cx, facing right.
@@ -97,11 +147,5 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
     # outfit: front arm + prop
     ctx.set_line_width(12); ctx.set_source_rgb(*top)
     ex, ey = limb(sh[0], sh[1], math.radians(10), 30, math.radians(-75), 28)
-    if o['prop'] == 'coffee':
-        ctx.set_line_width(3.5)
-        ctx.move_to(ex - 4, ey - 24); ctx.line_to(ex + 16, ey - 24); ctx.line_to(ex + 13, ey + 4); ctx.line_to(ex - 1, ey + 4); ctx.close_path(); _shape(ctx, (1, 1, 1), L)
-        ctx.rectangle(ex - 2, ey - 16, 16, 8); _shape(ctx, hexc('#FF5C8A'), L)
-        for i, dx in enumerate((2, 10)):
-            s = math.sin(t * 3 + i)
-            ctx.move_to(ex + dx, ey - 30); ctx.curve_to(ex + dx + 6 * s, ey - 40, ex + dx - 6 * s, ey - 50, ex + dx, ey - 60); ctx.stroke()
+    _prop(ctx, o['prop'], ex, ey, t, L, o.get('sleeve', '#C68B59'))
     return (hx, hy, R)
