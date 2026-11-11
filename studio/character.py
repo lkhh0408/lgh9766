@@ -10,6 +10,7 @@ SKIN, HAIR = (1, 0.93, 0.86), hexc('#5A3B2E')
 
 OUTFITS = {
     'morning': dict(top='#FFC53D', bottom='#3D5BFF', phones='#7B3BFF', prop='coffee'),
+    'street': dict(top='#1E1E24', bottom='#6B6F7A', phones='#F2C230', prop='coffee'),
 }
 
 def _shape(ctx, fill, L):
