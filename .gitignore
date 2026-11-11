@@ -1,3 +1,4 @@
 *.mp4
 *_mix.wav
 __pycache__/
+studio/_*.py
