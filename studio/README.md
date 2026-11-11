@@ -30,6 +30,24 @@ python studio/render_video.py songs/morning-vol1 -o morning-vol1.mp4
 |---|---|---|
 | `--gap` | `1.5` | 곡 사이 공백(초) |
 | `--seed` | `21` | 배경 순서와 배치. 영상마다 바꾸면 매번 다른 거리를 걸어가요 |
+| `--scenes` | 곡 폴더의 `scenes.json` | 곡별 장면 계획. 없으면 배경이 무작위로 이어져요 |
+| `--stills` | - | `10,60,200`처럼 시간(초)을 주면 영상 대신 그 시점의 PNG만 저장해요. 전체 렌더링 전에 장면을 빠르게 확인할 때 써요 |
+
+## 곡별 장면 (`scenes.json`)
+가사에 맞춰 곡마다 걸어갈 거리를 정해요. 곡이 바뀌는 순간(헤드폰 탭) 캐릭터 바로 앞에서 다음 곡의 장면이 시작돼요. 예시는 `playlists/vol01/scenes.json`에 있어요.
+```json
+{"tracks": {
+  "1": {"scenes": ["flowerhouses", "bakery", "avenue"], "signs": {"bakery": "BAKERY"}, "effects": []},
+  "2": {"scenes": ["curtainhouses", "goldencafe"], "signs": {"goldencafe": "GOLDEN HOUR"}, "effects": ["golden", "birds"]}
+}}
+```
+- `scenes`: 순서대로 반복되는 장면이에요. 하나에 약 8초씩 이어져요.
+  - 동네: `flowerhouses`(창가 꽃 상자), `curtainhouses`(흔들리는 커튼), `openwindows`(활짝 열린 창), `neighbors`(창가에서 손 흔드는 이웃)
+  - 가게: `bakery`(빵), `goldencafe` / `cornercoffee` / `terrace`(커피, 오렌지 의자)
+  - 거리: `avenue`(가로수길), `crossing`(횡단보도, 신호등, 자전거), `pianohouse` / `downtown`(창문에서 음표가 흘러나오는 건물)
+  - 기존 테마: `houses`, `shops`, `park`, `beach`, `forest`, `flowers`, `market`, `town`
+- `signs`: 가게 간판 글자를 바꿔요.
+- `effects`: `golden`(황금빛 햇살), `birds`(새 떼), `breeze`(바람에 날리는 잎사귀)
 
 렌더링 시간은 영상 1분에 1분 남짓 걸려요. 1시간 영상이면 1시간 이상 걸려요.
 

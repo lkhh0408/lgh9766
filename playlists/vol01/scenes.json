@@ -1,0 +1,22 @@
+{
+  "tracks": {
+    "1": {
+      "title": "Good Side of the Street",
+      "scenes": ["flowerhouses", "bakery", "avenue", "crossing", "pianohouse", "terrace"],
+      "signs": {"bakery": "BAKERY", "terrace": "CAFE"},
+      "effects": []
+    },
+    "2": {
+      "title": "Golden Hour Coffee",
+      "scenes": ["curtainhouses", "goldencafe", "neighbors"],
+      "signs": {"goldencafe": "GOLDEN HOUR"},
+      "effects": ["golden", "birds"]
+    },
+    "3": {
+      "title": "Open the Window",
+      "scenes": ["openwindows", "cornercoffee", "downtown"],
+      "signs": {"cornercoffee": "CORNER COFFEE"},
+      "effects": ["breeze"]
+    }
+  }
+}

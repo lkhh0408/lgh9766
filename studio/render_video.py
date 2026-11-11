@@ -6,7 +6,7 @@ Between songs the mascot stops, taps the headphones, a play bubble pops up and t
 
     python studio/render_video.py path/to/songs -o out.mp4
 """
-import argparse, math, os, random, re, subprocess, sys, wave
+import argparse, bisect, math, os, random, re, subprocess, sys, wave
 import cairo
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -23,6 +23,8 @@ ap.add_argument('songs', help='folder with numbered audio files, e.g. "1.Golden 
 ap.add_argument('-o', '--out', default='output.mp4', help='output video path')
 ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence between songs')
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
+ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
+ap.add_argument('--scenes', help='JSON with per-song scenes (default: scenes.json in the songs folder, if present)')
 args = ap.parse_args()
 
 W, H, FPS = 1920, 1080, 24
@@ -96,21 +98,21 @@ def sky_at(u):
     return hexc(SKY[-1][1]), hexc(SKY[-1][2]), 1.0
 
 # ---------- themed zones ----------
-# each theme: which far layer sits behind it
+# each zone kind: which far layer sits behind it
 THEMES = {'town': 'skyline', 'park': 'hills', 'shops': 'skyline', 'houses': 'hills',
           'forest': 'treeline', 'beach': 'sea', 'flowers': 'hills', 'market': 'skyline'}
-order, last = [], None
-end = SPEED * TOTAL + W + 2 * ZLEN
-first = ['houses', 'shops', 'park']  # every walk starts in the neighbourhood
-while len(order) * ZLEN < end:
-    if len(order) < len(first): z = first[len(order)]
-    else: z = rnd.choice([k for k in THEMES if k != last])
-    order.append(z); last = z
-zone_of = lambda wx: order[max(0, min(len(order) - 1, int(wx // ZLEN)))]
+# scene kinds used by per-song plans (scenes.json)
+SCENES = {'flowerhouses': 'hills', 'bakery': 'skyline', 'avenue': 'treeline', 'crossing': 'skyline',
+          'pianohouse': 'skyline', 'terrace': 'skyline', 'curtainhouses': 'hills', 'goldencafe': 'skyline',
+          'neighbors': 'hills', 'openwindows': 'hills', 'cornercoffee': 'skyline', 'downtown': 'skyline'}
+FAR = {**THEMES, **SCENES}
+GREEN = {'park', 'forest', 'flowers', 'avenue'}
 
 objs = []
-for zi, z in enumerate(order):
-    x, xe = zi * ZLEN + 40, (zi + 1) * ZLEN - 120
+def gen_zone(z, x, xe, sign=None):
+    """fill world x..xe with objects for zone kind z"""
+    zstart = x
+    x += 40; xe -= 120
     while x < xe:
         p = rnd.choice(PASTEL); a = rnd.choice(ACCENT)
         if z == 'town':
@@ -135,7 +137,7 @@ for zi, z in enumerate(order):
             k = rnd.random()
             if k < 0.35: objs.append(('palm', x + 40, rnd.randint(220, 300))); x += 220
             elif k < 0.7: objs.append(('umbrella', x + 50, a)); x += 200
-            elif k < 0.85 and not any(o[0] == 'lighthouse' and o[1] > zi * ZLEN for o in objs): objs.append(('lighthouse', x + 60)); x += 260
+            elif k < 0.85 and not any(o[0] == 'lighthouse' and o[1] > zstart for o in objs): objs.append(('lighthouse', x + 60)); x += 260
             else: objs.append(('sandcastle', x + 40)); x += 150
         elif z == 'flowers':
             if rnd.random() < 0.15: objs.append(('windmill', x + 70)); x += 240
@@ -143,6 +145,81 @@ for zi, z in enumerate(order):
         elif z == 'market':
             objs.append(('stall', x, rnd.randint(200, 240), a, p)); x += 270
             if rnd.random() < 0.3: objs.append(('lamp', x)); x += 60
+        # ---- scene kinds (per-song plans)
+        elif z == 'flowerhouses':
+            w_ = rnd.randint(160, 190); objs.append(('house2', x, w_, rnd.randint(130, 160), p, a, 'flowerbox')); x += w_ + 30
+            objs.append(('flowers', x, rnd.randint(3, 4))); x += 110
+        elif z in ('bakery', 'goldencafe', 'cornercoffee'):
+            items = {'bakery': 'bread', 'goldencafe': 'cups', 'cornercoffee': 'cups'}[z]
+            w_ = 380 if z == 'cornercoffee' else rnd.randint(320, 360)
+            objs.append(('shop', x, w_, sign or {'bakery': 'BAKERY', 'goldencafe': 'CAFE', 'cornercoffee': 'COFFEE'}[z], p, a, items)); x += w_ + 40
+            objs.append(('table', x + 50, a)); x += 160
+            if z == 'goldencafe': objs.append(('house2', x, 170, 140, p, a, 'note')); x += 210
+        elif z == 'avenue':
+            objs.append(('tree', x + 60, rnd.randint(95, 120), rnd.randint(170, 210))); x += 210
+            if rnd.random() < 0.4: objs.append(('bench', x + 50)); x += 150
+            elif rnd.random() < 0.5: objs.append(('lamp', x)); x += 70
+        elif z == 'crossing':
+            objs.append(('signal', x + 20)); x += 80
+            objs.append(('zebra', x, 420)); x += 440
+            objs.append(('bicycle', x + 60, a)); x += 200
+            w_ = rnd.randint(170, 220); objs.append(('bldg', x, w_, rnd.randint(230, 330), 3, p)); x += w_ + 40
+        elif z in ('pianohouse', 'downtown'):
+            w_ = rnd.randint(200, 260)
+            if z == 'pianohouse' or rnd.random() < 0.5: objs.append(('pianobldg', x, w_, rnd.randint(300, 400), 3, p))
+            else: objs.append(('bldg', x, w_, rnd.randint(240, 400), rnd.choice([3, 4]), p))
+            x += w_ + rnd.randint(30, 60)
+            if rnd.random() < 0.4: objs.append(('lamp', x - 10)); x += 40
+        elif z == 'terrace':
+            objs.append(('table', x + 60, hexc('#FF8A3D'))); objs.append(('chair', x + 130)); objs.append(('chair', x - 10, True)); x += 240
+            if rnd.random() < 0.35: w_ = 320; objs.append(('shop', x, w_, sign or 'CAFE', p, hexc('#FF8A3D'), 'cups')); x += w_ + 40
+        elif z in ('curtainhouses', 'openwindows', 'neighbors'):
+            w_ = rnd.randint(160, 190)
+            style = {'curtainhouses': 'curtain', 'openwindows': 'open', 'neighbors': 'wave'}[z]
+            objs.append(('house2', x, w_, rnd.randint(130, 160), p, a, style)); x += w_ + 30
+            if rnd.random() < 0.5: objs.append(('fence', x, 80)); x += 100
+            elif rnd.random() < 0.5: objs.append(('tree', x + 50, 60, 100)); x += 130
+        else:
+            raise SystemExit(f'unknown scene kind: {z}')
+
+zones = []     # (world_x_start, kind, track_index)
+TRACK_FX = [set() for _ in TRACKS]
+scenes_path = args.scenes or os.path.join(args.songs, 'scenes.json')
+if os.path.exists(scenes_path):
+    import json
+    plan = json.load(open(scenes_path))['tracks']
+    # where will the walker be when each song starts? simulate the walk once
+    pos, scroll_at = 0.0, []
+    nxt = 0
+    for fi in range(int(TOTAL * FPS) + 1):
+        t = fi / FPS
+        while nxt < len(starts) and t >= starts[nxt]: scroll_at.append(pos); nxt += 1
+        pos += SPEED * motion(t)[0] / FPS
+    world_end = pos + W + 800
+    # each song's scenery begins just ahead of the walker, so the tap leads into the new song's street
+    bounds = [0.0] + [scroll_at[i] + CX + 180 for i in range(1, len(TRACKS))] + [world_end]
+    SEG = 1100
+    for i in range(len(TRACKS)):
+        spec = plan.get(str(i + 1), {})
+        kinds = spec.get('scenes') or ['houses', 'shops', 'park']
+        signs = spec.get('signs', {})
+        TRACK_FX[i] = set(spec.get('effects', []))
+        x, k = bounds[i], 0
+        while x < bounds[i + 1]:
+            z = kinds[k % len(kinds)]; xe = min(x + SEG, bounds[i + 1])
+            zones.append((x, z, i)); gen_zone(z, x, xe, signs.get(z)); x = xe; k += 1
+else:
+    end = SPEED * TOTAL + W + 2 * ZLEN
+    first = ['houses', 'shops', 'park']  # every walk starts in the neighbourhood
+    last = None
+    while len(zones) * ZLEN < end:
+        z = first[len(zones)] if len(zones) < len(first) else rnd.choice([k for k in THEMES if k != last])
+        zones.append((len(zones) * ZLEN, z, None)); gen_zone(z, len(zones) * ZLEN - ZLEN, len(zones) * ZLEN); last = z
+ZSTART = [z[0] for z in zones]
+def zone_at(wx):
+    i = max(0, bisect.bisect_right(ZSTART, wx) - 1)
+    return i
+zone_of = lambda wx: zones[zone_at(wx)][1]
 objs.sort(key=lambda o: o[1])
 clouds = [(rnd.uniform(0, 7000), rnd.uniform(190, 360), rnd.uniform(0.7, 1.3)) for _ in range(16)]
 birds = [(rnd.uniform(0, 9000), rnd.uniform(220, 420), rnd.uniform(0.6, 1.0)) for _ in range(10)]
@@ -195,17 +272,101 @@ def draw_obj(ctx, o, sx, L, night, t):
         for bx in (-50, 50): ctx.move_to(sx + bx, GY); ctx.line_to(sx + bx, GY - 80)
         ctx.stroke()
     elif k == 'shop':
-        _, _, w_, sign, p, a = o
+        _, _, w_, sign, p, a = o[:6]; items = o[6] if len(o) > 6 else None
         ctx.rectangle(sx, GY - 260, w_, 260); shape(ctx, nf(lerp(p, (1, 1, 1), .4)), L)
         n = 8; aw = w_ / n
         for i in range(n):
             ctx.move_to(sx + i * aw, GY - 170); ctx.line_to(sx + (i + 1) * aw, GY - 170); ctx.line_to(sx + (i + 1) * aw, GY - 140)
             ctx.arc(sx + (i + .5) * aw, GY - 140, aw / 2, 0, math.pi); ctx.close_path()
             shape(ctx, nf(a if i % 2 == 0 else (1, 1, 1)), L)
-        ctx.rectangle(sx + 30, GY - 120, w_ * .45, 90); lit_window(ctx, night, L)
+        wx0, ww_ = sx + 30, w_ * .45
+        ctx.rectangle(wx0, GY - 120, ww_, 90); lit_window(ctx, night, L)
+        if items == 'bread':     # loaves on the shelf
+            for i in range(int(ww_ // 44)):
+                bx = wx0 + 26 + i * 44
+                ctx.save(); ctx.translate(bx, GY - 52); ctx.scale(1, .6); ctx.arc(0, 0, 18, math.pi, 0); ctx.restore(); ctx.close_path()
+                shape(ctx, nf(hexc('#F2B562')), L)
+                for d in (-6, 2, 10): ctx.move_to(bx + d - 3, GY - 62); ctx.line_to(bx + d + 3, GY - 56); ctx.stroke()
+        elif items == 'cups':    # coffee cups with steam
+            for i in range(int(ww_ // 46)):
+                bx = wx0 + 22 + i * 46
+                ctx.rectangle(bx - 10, GY - 64, 20, 24); shape(ctx, nf((1, 1, 1)), L)
+                ctx.arc(bx + 12, GY - 53, 6, -math.pi / 2, math.pi / 2); ctx.stroke()
+                ww = math.sin(t * 2.5 + i)
+                ctx.move_to(bx, GY - 70); ctx.curve_to(bx + 5 * ww, GY - 80, bx - 5 * ww, GY - 88, bx, GY - 98); ctx.stroke()
         ctx.rectangle(sx + w_ - 90, GY - 110, 50, 110); ctx.stroke()
         ctx.select_font_face('DejaVu Sans', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD); ctx.set_font_size(28)
-        ext = ctx.text_extents(sign); ctx.move_to(sx + w_ / 2 - ext.width / 2, GY - 205); ctx.show_text(sign)
+        ext = ctx.text_extents(sign)
+        if ext.width > w_ - 40: ctx.set_font_size(28 * (w_ - 40) / ext.width); ext = ctx.text_extents(sign)
+        ctx.move_to(sx + w_ / 2 - ext.width / 2, GY - 205); ctx.show_text(sign)
+    elif k == 'house2':
+        _, _, w_, h_, p, a, style = o
+        ctx.rectangle(sx, GY - h_, w_, h_); shape(ctx, nf(p), L)
+        ctx.move_to(sx - 16, GY - h_); ctx.line_to(sx + w_ / 2, GY - h_ - 80); ctx.line_to(sx + w_ + 16, GY - h_); ctx.close_path(); shape(ctx, nf(a), L)
+        ctx.rectangle(sx + 22, GY - 62, 32, 62); ctx.stroke()                           # door
+        if style == 'note':                                                             # little note stuck on the door
+            ctx.save(); ctx.translate(sx + 38, GY - 40); ctx.rotate(-0.12); ctx.rectangle(-9, -9, 18, 18); ctx.restore()
+            shape(ctx, nf(hexc('#FFE14D')), L)
+        wx, wy, ww, wh = sx + w_ - 82, GY - h_ + 26, 54, 58                             # window
+        ctx.rectangle(wx, wy, ww, wh); lit_window(ctx, night, L)
+        if style == 'wave':      # a neighbour waving from the window
+            ctx.save(); ctx.rectangle(wx, wy, ww, wh); ctx.clip()
+            ctx.arc(wx + ww / 2, wy + 30, 12, 0, 2 * math.pi); shape(ctx, nf((1, .9, .8)), L)
+            ctx.rectangle(wx + ww / 2 - 14, wy + 42, 28, 30); shape(ctx, nf(ACCENT[int(o[1]) % len(ACCENT)]), L)
+            ctx.restore()
+            sw = math.sin(t * 6 + o[1]) * 0.5
+            ax, ay = wx + ww / 2 + 12, wy + 46
+            ctx.set_line_width(5); ctx.move_to(ax, ay); ctx.line_to(ax + 22 * math.sin(0.6 + sw), ay - 26 * math.cos(0.6 + sw)); ctx.stroke(); ctx.set_line_width(3)
+        if style in ('curtain', 'open', 'wave'):   # curtains swaying in the breeze
+            amp = 14 if style == 'open' else 5
+            for side in (0, 1):
+                x0 = wx + (0 if side == 0 else ww); d = 1 if side == 0 else -1
+                sway = amp * (0.6 + 0.4 * math.sin(t * 2 + side + o[1]))
+                if style == 'open': d = -d                                             # blown outside the frame
+                ctx.move_to(x0, wy); ctx.curve_to(x0 + d * (18 + sway), wy + 20, x0 + d * (6 + sway), wy + 40, x0 + d * (12 + sway * 1.2), wy + wh)
+                ctx.line_to(x0, wy + wh); ctx.close_path(); shape(ctx, nf(hexc('#FFF4E8')), L)
+        if style == 'flowerbox':  # flower box under the window, drops of water catching the light
+            ctx.rectangle(wx - 6, wy + wh, ww + 12, 16); shape(ctx, nf(hexc('#B07A4F')), L)
+            for i in range(4):
+                fx_ = wx + 4 + i * 15; c = ACCENT[(i + int(o[1])) % len(ACCENT)]
+                ctx.arc(fx_, wy + wh - 4, 6, 0, 2 * math.pi); shape(ctx, nf(c), L)
+            if night < 0.5:
+                for i in range(3):
+                    tw = 0.5 + 0.5 * math.sin(t * 4 + i * 2 + o[1])
+                    ctx.set_source_rgba(1, .85, .3, tw * (1 - night)); ctx.arc(wx + 10 + i * 18, wy + wh - 22 - i * 6, 3, 0, 2 * math.pi); ctx.fill()
+                ctx.set_source_rgb(*L)
+    elif k == 'pianobldg':
+        _, _, w_, h_, cols, p = o
+        draw_obj(ctx, ('bldg', o[1], w_, h_, cols, p), sx, L, night, t)
+        nx, ny = sx + w_ * .5, GY - h_ + 100                                           # notes drifting out of a 2nd floor window
+        ctx.select_font_face('DejaVu Sans', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+        for i in range(3):
+            ph = (t * 0.6 + i / 3) % 1
+            ctx.set_font_size(30 + 6 * i); ctx.set_source_rgba(*L, 1 - ph)
+            ctx.move_to(nx + 40 * ph + 14 * math.sin(t * 2 + i), ny - 110 * ph); ctx.show_text('\u266a' if i % 2 else '\u266b')
+        ctx.set_source_rgb(*L)
+    elif k == 'zebra':
+        _, _, w_ = o
+        for i in range(0, int(w_), 56):
+            ctx.rectangle(sx + i, GY + 12, 34, 70); ctx.set_source_rgb(*nf((1, 1, 1))); ctx.fill_preserve(); ctx.set_source_rgba(*L, .5); ctx.stroke()
+        ctx.set_source_rgb(*L)
+    elif k == 'signal':
+        ctx.move_to(sx, GY); ctx.line_to(sx, GY - 200); ctx.stroke()
+        ctx.rectangle(sx - 18, GY - 270, 36, 76); shape(ctx, nf(hexc('#3A3A46')), L)
+        ctx.arc(sx, GY - 250, 10, 0, 2 * math.pi); ctx.set_source_rgb(*lerp(hexc('#5A2A2A'), hexc('#FF5C5C'), 0)); ctx.fill()
+        ctx.arc(sx, GY - 216, 10, 0, 2 * math.pi); ctx.set_source_rgb(*hexc('#3DDC84')); ctx.fill(); ctx.set_source_rgb(*L)
+    elif k == 'bicycle':
+        a = o[2]
+        for wxo in (-36, 36): ctx.arc(sx + wxo, GY - 26, 24, 0, 2 * math.pi); ctx.stroke()
+        ctx.move_to(sx - 36, GY - 26); ctx.line_to(sx - 8, GY - 66); ctx.line_to(sx + 22, GY - 66); ctx.line_to(sx + 36, GY - 26)
+        ctx.move_to(sx - 8, GY - 66); ctx.line_to(sx, GY - 26); ctx.line_to(sx + 22, GY - 66)
+        ctx.set_source_rgb(*nf(a)); ctx.set_line_width(5); ctx.stroke(); ctx.set_line_width(3); ctx.set_source_rgb(*L)
+        ctx.move_to(sx - 14, GY - 76); ctx.line_to(sx - 2, GY - 76); ctx.move_to(sx + 22, GY - 66); ctx.line_to(sx + 26, GY - 80); ctx.line_to(sx + 36, GY - 82); ctx.stroke()
+    elif k == 'chair':
+        flip = len(o) > 2 and o[2]; d = -1 if flip else 1
+        ctx.move_to(sx, GY); ctx.line_to(sx, GY - 50); ctx.line_to(sx + d * 40, GY - 50); ctx.line_to(sx + d * 40, GY)
+        ctx.move_to(sx + d * 40, GY - 50); ctx.line_to(sx + d * 40, GY - 100)
+        ctx.set_source_rgb(*nf(hexc('#FF8A3D'))); ctx.set_line_width(6); ctx.stroke(); ctx.set_line_width(3); ctx.set_source_rgb(*L)
     elif k == 'table':
         a = o[2]
         ctx.move_to(sx, GY); ctx.line_to(sx, GY - 150); ctx.stroke()
@@ -331,6 +492,14 @@ def far_layer(ctx, kind, off, L, top, bot, night):
                 ctx.move_to(x, y); ctx.curve_to(x + 15, y - 8, x + 30, y - 8, x + 45, y)
             ctx.stroke()
 
+GROUND_KINDS = {'zebra'}
+def fx_alpha(name, t):
+    """0..1 strength of a per-song effect at time t (fades in as the song starts, out as it ends)"""
+    for i, (s0, e) in enumerate(zip(starts, ends)):
+        if s0 - 0.5 <= t < e + 0.5 and name in TRACK_FX[i]:
+            return min(sm((t - s0 + 0.5) / 2.0), 1 - sm((t - e + 0.5) / 1.5))
+    return 0.0
+
 def scene(t, scroll, phase, walk, reach, press, ba, bs):
     u = t / TOTAL
     top, bot, night = sky_at(u)
@@ -356,9 +525,19 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
                 f = 10 * sc * math.sin(t * 8 + bx0)
                 ctx.move_to(bx - 14 * sc, by - f); ctx.curve_to(bx - 6 * sc, by - 8 * sc, bx, by - 2, bx, by)
                 ctx.curve_to(bx, by - 2, bx + 6 * sc, by - 8 * sc, bx + 14 * sc, by - f); ctx.stroke()
+    fx = lambda name: fx_alpha(name, t)
+    if fx('birds') > 0.01 and night < 0.5:   # a flock passing over the street
+        ctx.set_source_rgba(*L, fx('birds')); ctx.set_line_width(3)
+        for j in range(7):
+            bx = W + 200 - ((t * 140 + j * 37) % (W + 600)) + (j % 3) * 30; by = 250 + (j * 47) % 160
+            f = 9 * math.sin(t * 9 + j)
+            ctx.move_to(bx - 13, by - f); ctx.curve_to(bx - 6, by - 7, bx, by - 2, bx, by)
+            ctx.curve_to(bx, by - 2, bx + 6, by - 7, bx + 13, by - f); ctx.stroke()
     # far layer cross-fades with the zone at screen centre
-    cw = scroll + W / 2; zi = int(cw // ZLEN); fr = (cw % ZLEN) / ZLEN
-    k_now = THEMES[order[zi]]; k_next = THEMES[order[min(zi + 1, len(order) - 1)]]
+    cw = scroll + W / 2; zi = zone_at(cw)
+    z0 = zones[zi][0]; z1 = zones[zi + 1][0] if zi + 1 < len(zones) else z0 + ZLEN
+    fr = (cw - z0) / max(1, z1 - z0)
+    k_now = FAR[zones[zi][1]]; k_next = FAR[zones[min(zi + 1, len(zones) - 1)][1]]
     blend = max(0, (fr - 0.8) / 0.2)
     off = scroll * 0.35
     for kind, alpha in ((k_now, 1 - blend if k_now != k_next else 1), (k_next, blend if k_now != k_next else 0)):
@@ -366,15 +545,28 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
         ctx.push_group(); far_layer(ctx, kind, off, L, top, bot, night); ctx.pop_group_to_source(); ctx.paint_with_alpha(alpha)
     for o in objs:
         sx = o[1] - scroll
-        if -520 < sx < W + 200: draw_obj(ctx, o, sx, L, night, t)
-    # ground: sand on the beach, path elsewhere
+        if o[0] not in GROUND_KINDS and -520 < sx < W + 200: draw_obj(ctx, o, sx, L, night, t)
+    # ground: sand on the beach, grass paths in green zones, pavement elsewhere
     gz = zone_of(scroll + CX)
-    gcol = hexc('#FFE9B8') if gz == 'beach' else (hexc('#DDF3D2') if gz in ('park', 'forest', 'flowers') else hexc('#F3E9F7'))
+    gcol = hexc('#FFE9B8') if gz == 'beach' else (hexc('#DDF3D2') if gz in GREEN else hexc('#F3E9F7'))
     ctx.rectangle(0, GY, W, H - GY); ctx.set_source_rgb(*lerp(gcol, hexc('#1A1F3D'), night)); ctx.fill()
     ctx.set_source_rgb(*L); ctx.set_line_width(4); ctx.move_to(0, GY); ctx.line_to(W, GY); ctx.stroke()
     ctx.set_line_width(3)
     for k in range(-1, W // 140 + 2):
         x_ = k * 140 - scroll % 140; ctx.move_to(x_, GY + 44); ctx.line_to(x_ + 60, GY + 44); ctx.stroke()
+    for o in objs:
+        sx = o[1] - scroll
+        if o[0] in GROUND_KINDS and -520 < sx < W + 200: draw_obj(ctx, o, sx, L, night, t)
+    if fx('golden') > 0.01:   # warm golden-hour wash
+        ctx.set_source_rgba(1, 0.74, 0.3, 0.16 * fx('golden') * (1 - night)); ctx.paint()
+    if fx('breeze') > 0.01:   # leaves and petals carried on the wind
+        for j in range(26):
+            px = W + 100 - ((t * (220 + j * 9) + j * 211) % (W + 300)); py = 180 + (j * 83) % 520 + 30 * math.sin(t * 1.7 + j)
+            ang = t * 3 + j
+            ctx.save(); ctx.translate(px, py); ctx.rotate(ang); ctx.scale(1, 0.55)
+            ctx.arc(0, 0, 9, 0, 2 * math.pi); ctx.restore()
+            ctx.set_source_rgba(*(ACCENT[j % len(ACCENT)] if j % 3 else hexc('#7FD99A')), 0.85 * fx('breeze')); ctx.fill_preserve()
+            ctx.set_source_rgba(*L, 0.6 * fx('breeze')); ctx.set_line_width(2); ctx.stroke()
     # soft light behind the mascot so it stays clear at night
     if night > 0.05:
         g = cairo.RadialGradient(CX + 6, GY - 140, 10, CX + 6, GY - 140, 230)
@@ -417,7 +609,8 @@ def card(num, title, col):
 cards_d = [card(n, ti, (43, 37, 65)) for n, ti in TRACKS]; cards_l = [card(n, ti, (255, 255, 255)) for n, ti in TRACKS]
 fmt = lambda s: f"{int(s // 60)}:{int(s % 60):02d}"
 
-ff = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
+STILLS = {int(float(v) * FPS) for v in args.stills.split(',')} if args.stills else None
+ff = None if STILLS else subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
                        '-i', MIX, '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
                        '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart',
                        args.out], stdin=subprocess.PIPE)
@@ -426,6 +619,8 @@ scroll = phase = 0.0
 for fi in range(nframes):
     t = fi / FPS
     walk, reach, press, ba, bs = motion(t)
+    if STILLS is not None and fi not in STILLS:
+        scroll += SPEED * walk / FPS; phase += 2 * math.pi * 0.85 * walk / FPS; continue
     img, night = scene(t, scroll, phase, walk, reach, press, ba, bs)
     scroll += SPEED * walk / FPS; phase += 2 * math.pi * 0.85 * walk / FPS
     frame = img.convert('RGBA'); dark_ui = night < 0.45
@@ -442,8 +637,11 @@ for fi in range(nframes):
     fw = max(6, int(BAR_W * pr)); ov.alpha_composite(barfill.crop((0, 0, fw, 6)), (BAR_X, BAR_Y))
     dl.ellipse((BAR_X + fw - 10, BAR_Y - 7, BAR_X + fw + 10, BAR_Y + 13), fill=(255, 255, 255, 255), outline=(43, 37, 65, 120))
     dl.text((BAR_X + BAR_W, BAR_Y + 18), f"{fmt(since)} / {fmt(dur)}", font=F_SM, fill=tc, anchor='ra')
-    frame.alpha_composite(ov); out = frame.convert('RGB'); ff.stdin.write(out.tobytes())
+    frame.alpha_composite(ov); out = frame.convert('RGB')
+    if STILLS is not None:
+        out.save(f'{os.path.splitext(args.out)[0]}_{t:06.1f}s.png'); continue
+    ff.stdin.write(out.tobytes())
     if fi % (FPS * 60) == 0: print(f'  rendered {fi // (FPS * 60)} / {int(TOTAL // 60)} min', flush=True)
-ff.stdin.close(); ff.wait()
+if ff: ff.stdin.close(); ff.wait()
 os.remove(MIX)
 print('done:', args.out)
