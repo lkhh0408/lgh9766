@@ -9,15 +9,48 @@
 - 가사는 모두 새로 쓴 창작 가사예요. 실제 곡의 가사, 제목, 가수 이름은 쓰지 않아요.
 - 곡마다 Title, 장르, BPM, Styles, Exclude, Lyrics, 곡 소개(멜론 앨범 소개 스타일)를 함께 만들어요.
 
-**공통 Styles (앞부분)**
+**Styles 구성 (VOL.02부터)**: `곡별 장르 부분` + `공통 뒷부분`. 장르가 맨 앞에 와야 Suno가 장르 색을 살려요.
+
+**공통 Styles (뒷부분)**
 ```
-soft modern pop, catchy but gentle melody, radio hit quality, easy listening, warm and cozy feel-good vibe, positive, smooth relaxed vocals, mellow dynamics, consistent volume, background music friendly, short song under 3 minutes
+catchy but gentle melody, easy listening, warm feel-good vibe, positive, smooth relaxed vocals, mellow dynamics, consistent volume, background music friendly, short song under 3 minutes
 ```
 
 **Exclude**
 ```
 belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudden loud parts, distortion, rock, rap, sad, dark, explicit lyrics
 ```
+- R&B, 멜로딕 힙합 곡은 `heavy bass`를 빼고 Styles에 `warm round bass`를 넣어요. `rap`은 항상 막아요(힙합은 비트만, 보컬은 노래).
+
+## 흐름 규칙 (환기)
+- 바로 옆 곡끼리 장르, 보컬(남/여/듀엣)이 겹치지 않아요.
+- 템포는 물결처럼: 느린 곡(85~92), 중간(95~105), 리듬감(108~115)을 번갈아요.
+- 4~5곡마다 R&B나 멜로딕 힙합 같은 환기곡을 넣어요.
+- 20곡 비율: 팝 계열 10, 가벼운 R&B/네오소울 4, 멜로딕 힙합(노래 보컬) 3, 포크/소울/컨트리 팝 등 3.
+
+### VOL.02 흐름표
+| # | 장르 | 보컬 |
+|---|---|---|
+| 1 | 시티팝 | 남 |
+| 2 | 재즈 팝 | 여 |
+| 3 | 인디 포크 | 듀엣 |
+| 4 | 칠 R&B (환기) | 남 |
+| 5 | 어쿠스틱 팝 | 여 |
+| 6 | 레트로 소울 | 남 |
+| 7 | 컨트리 팝 | 여 |
+| 8 | 피아노 팝 | 남 |
+| 9 | 멜로딕 힙합 (환기) | 여 |
+| 10 | 보사 팝 | 남 |
+| 11 | 네오소울 | 여 |
+| 12 | 소프트 펑크 | 남 |
+| 13 | 인디 팝 | 여 |
+| 14 | 칠 R&B (환기) | 듀엣 |
+| 15 | 레게 팝 | 남 |
+| 16 | 멜로딕 힙합 (환기) | 남 |
+| 17 | 라운지 디스코 | 여 |
+| 18 | R&B | 여 |
+| 19 | 어쿠스틱 포크 | 남 |
+| 20 | 마무리 팝 | 듀엣 |
 
 ## 지금까지 만든 곡
 | # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
@@ -32,12 +65,14 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 |---|---|---|---|---|---|
 | 01 | Two Wheels, No Hurry | 남성 | 시티팝 | 98 | 강변을 따라 자전거 페달을 천천히 밟는 오후, 바람이 등을 밀어주는 날의 노래 |
 | 02 | Blanket on the Grass | 여성 | 재즈 팝 | 104 | 체크무늬 담요 한 장과 친구들, 공원 잔디 위에서 열리는 작은 피크닉 |
+| 03 | Harmony in the Passenger Seat | 듀엣 | 인디 포크 | 88 | 창문을 내리고 라디오 볼륨을 올린 드라이브, 조수석에서 맞춰 부르는 화음 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
 - 02: `male vocal, soft indie pop, gentle clean electric guitar, acoustic guitar, light brushed drums, 96 BPM`
 - V2-01: `male vocal, mellow city pop, smooth electric piano, clean funky guitar, soft bass, light drum groove, breezy, 98 BPM`
 - V2-02: `female vocal, light jazz pop, bright upright piano, walking upright bass, brushed snare, finger snaps, playful, 104 BPM`
+- V2-03: `indie folk, male and female duet vocals, warm acoustic guitar, soft harmonica, gentle stomp and clap, close harmonies, 88 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
