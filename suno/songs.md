@@ -75,7 +75,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 7 | 소프트 일렉트로 팝 | 여 | 104 |
 | 8 | 멜로딕 힙합 (환기, 소프트 트랩 비트) | 남 | 86 |
 | 9 | 칠 하우스 팝 | 듀엣 | 114 |
-| 10 | 드림 팝 | 여 | 92 |
+| 10 | (변경 예정, 드림 팝 제외) | 여 | 92 |
 | 11 | 얼트 팝 | 남 | 108 |
 | 12 | 얼터너티브 R&B (환기) | 여 | 90 |
 | 13 | 라틴 팝 (소프트 레게톤 리듬) | 남 | 98 |
@@ -126,7 +126,6 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 07 | Save Point | 여성 | 소프트 일렉트로 팝 | 104 | 게임 속 세이브 포인트처럼, 오늘의 좋은 순간들을 마음에 하나씩 저장하는 하루 |
 | 08 | Do Not Disturb | 남성 | 멜로딕 힙합 (소프트 트랩) | 86 | 휴대폰을 방해금지 모드로 돌려두고, 오롯이 나에게만 집중하는 느긋한 오후 |
 | 09 | Rooftop Hours | 듀엣 | 칠 하우스 팝 | 114 | 퇴근 후 옥상에 올라 노을이 질 때까지, 시간이 천천히 흐르는 두 사람의 저녁 |
-| 10 | Daydream Tab | 여성 | 드림 팝 | 92 | 바쁜 업무 창 사이에 몰래 열어둔 공상 탭, 잠깐 다녀오는 마음속 바다 여행 |
 | 11 | Fresh Cut | 남성 | 얼트 팝 | 108 | 미용실 문을 나서는 순간 달라 보이는 세상, 새 머리 하나로 충전되는 자신감 |
 
 곡별 Styles 뒷부분:
@@ -155,7 +154,6 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-07: `soft electro pop, female vocal, clear bright tone, clean bouncy synth plucks, crisp light beat, soft sub bass, sparkling arpeggios, airy, 104 BPM`
 - V3-08: `melodic hip hop, soft trap beat, male sung vocals, smooth autotune-free melodic singing, airy guitar loop, soft hi-hats, warm round bass, mellow 808, dreamy pads, 86 BPM` (Exclude에서 heavy bass 뺌)
 - V3-09: `chill house pop, male and female duet vocals, smooth trade-off verses, soft four-on-the-floor beat, warm deep house chords, gentle plucked synths, soft round bass, airy vocal chops, sunset glow, 114 BPM`
-- V3-10: `dream pop, female vocal, breathy soft airy tone, shimmering reverb guitars, lush washed synth pads, soft steady drum machine, gentle bass, floating hazy atmosphere, 92 BPM`
 - V3-11: `alt pop, male vocal, cool laid-back tone, punchy but soft drum groove, clean bright guitar riff, bouncy synth bass, quirky percussion, playful whistles, confident, 108 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
@@ -171,5 +169,5 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 07 Save Point: save point, click, checkpoint, loading, level up, song on the radio(⚠ radio 반복)
 - 08 Do Not Disturb: do not disturb, moon on my screen, notifications, unread, airplane mode, recharge
 - 09 Rooftop Hours: rooftop hours, pink to purple, city hums below, string lights, shoes kicked off, stay till the sky turns
-- 10 Daydream Tab: daydream tab, spreadsheet, cursor blinking, ocean in my head, drift, back in five
 - 11 Fresh Cut: fresh cut, barber chair, mirror, neck feels the breeze, walking taller, new me same heart
+
