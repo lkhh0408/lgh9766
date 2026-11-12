@@ -31,11 +31,13 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
 |---|---|---|---|---|---|
 | 01 | Two Wheels, No Hurry | 남성 | 시티팝 | 98 | 강변을 따라 자전거 페달을 천천히 밟는 오후, 바람이 등을 밀어주는 날의 노래 |
+| 02 | Blanket on the Grass | 여성 | 재즈 팝 | 104 | 체크무늬 담요 한 장과 친구들, 공원 잔디 위에서 열리는 작은 피크닉 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
 - 02: `male vocal, soft indie pop, gentle clean electric guitar, acoustic guitar, light brushed drums, 96 BPM`
 - V2-01: `male vocal, mellow city pop, smooth electric piano, clean funky guitar, soft bass, light drum groove, breezy, 98 BPM`
+- V2-02: `female vocal, light jazz pop, bright upright piano, walking upright bass, brushed snare, finger snaps, playful, 104 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
