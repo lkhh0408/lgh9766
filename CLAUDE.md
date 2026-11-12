@@ -26,4 +26,4 @@ YouTube 음악 채널 **Open to Close** (@OpentoClose_day) 작업 저장소예�
 - 영상: 가사 타이밍(`studio/align_lyrics.py`) → 스토리보드(`playlists/volXX/storyboard.json`, 가사 한 줄마다 장면) → 미리보기(`--stills`) → 렌더링. 자세한 건 `studio/README.md`, `docs/OpenToClose_process_guide.pdf`.
 - 곡 사이 1.5초: 캐릭터가 멈춰 헤드폰을 탭하고 ▶ 말풍선, 화면 표시는 `TRACK 0X`와 곡 제목.
 - 작업 방식이 새로 생기거나 바뀌면 사용자가 이해하기 쉽게 프로세스(단계, 프로그램, 하는 일)를 함께 설명해요.
-- Suno 곡 요청("다음 곡")은 `suno/songs.md`의 규칙을 따르고, 곡마다 Title, Styles, Exclude, Lyrics, 곡 소개(멜론 앨범 소개 스타일)를 줘요.
+- Suno 곡 요청("다음 곡")은 `suno/songs.md`의 규칙을 따르고, 곡마다 Title, 장르, BPM, Styles, Exclude, Lyrics, 곡 소개(멜론 앨범 소개 스타일)를 줘요.
