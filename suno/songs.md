@@ -75,6 +75,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 10 | Under the Awning | 남성 | 보사 팝 | 102 | 갑작스러운 소나기, 가게 차양 아래 모인 낯선 사람들과 함께 기다리는 무지개 |
 | 11 | Oversized Sweater | 여성 | 네오소울 | 86 | 소매가 손등을 덮는 큰 스웨터와 차 한 잔, 나를 다정하게 안아주는 오후 |
 | 12 | Roller Rink Saturday | 남성 | 소프트 펑크 | 112 | 디스코 볼 아래 롤러스케이트장, 넘어져도 웃으며 다시 일어나는 토요일 |
+| 13 | Four Frames | 여성 | 인디 팝 | 96 | 친구들과 비좁은 포토부스에 들어가 찍은 네 컷, 우스운 표정까지 모두 보물 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -91,6 +92,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V2-10: `bossa nova pop, male vocal, soft nylon string guitar, light rim-click percussion, gentle shaker, warm flute melody, soft upright bass, 102 BPM`
 - V2-11: `neo soul, female vocal, silky warm tone, lush Rhodes chords, warm round bass, soft live drums with ghost notes, gentle guitar licks, cozy, 86 BPM`
 - V2-12: `soft funk, male vocal, clean chicken-scratch guitar, warm round bass groove, light clavinet, soft horn stabs, tight but gentle drums, playful, 112 BPM`
+- V2-13: `indie pop, female vocal, airy dreamy tone, shimmering clean electric guitar, soft synth pad, glockenspiel accents, light drum machine, 96 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
