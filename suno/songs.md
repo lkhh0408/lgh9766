@@ -106,6 +106,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
 |---|---|---|---|---|---|
 | 01 | Line Dried | 여성 | 선샤인 팝 | 104 | 햇볕에 바싹 마른 빨래처럼, 걱정까지 바람에 널어 말리는 가벼운 오후 |
+| 02 | Balcony Tomatoes | 남성 | 포크 팝 | 90 | 작은 화분 몇 개로 시작한 베란다 텃밭, 처음 빨갛게 익은 토마토 하나의 기쁨 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -125,6 +126,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V2-13: `indie pop, female vocal, airy dreamy tone, shimmering clean electric guitar, soft synth pad, glockenspiel accents, light drum machine, 96 BPM`
 - V2-14: `chill R&B, male and female duet vocals, smooth call and response, warm Rhodes, warm round bass, soft snaps and rimshot, dreamy guitar, late night glow, 92 BPM`
 - V3-01: `sunshine pop, female vocal, bright clean electric guitar, bouncy bass, light handclaps, soft glockenspiel, airy backing vocals, 104 BPM`
+- V3-02: `folk pop, male vocal, warm fingerpicked acoustic guitar, soft mandolin, gentle upright bass, light shaker, homey, 90 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
