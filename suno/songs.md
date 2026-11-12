@@ -52,6 +52,30 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 19 | 어쿠스틱 포크 | 남 |
 | 20 | 마무리 팝 | 듀엣 |
 
+### VOL.03 흐름표 (파일 41~60)
+| # | 장르 | 보컬 | BPM |
+|---|---|---|---|
+| 1 | 선샤인 팝 | 여 | 104 |
+| 2 | 포크 팝 | 남 | 90 |
+| 3 | 소프트 신스 팝 | 듀엣 | 110 |
+| 4 | 네오소울 (환기) | 남 | 86 |
+| 5 | 재즈 팝 | 여 | 100 |
+| 6 | 컨트리 팝 | 남 | 92 |
+| 7 | 브라스 팝 | 여 | 112 |
+| 8 | 멜로딕 힙합 (환기) | 남 | 88 |
+| 9 | 어쿠스틱 팝 | 듀엣 | 98 |
+| 10 | 보사 팝 | 여 | 94 |
+| 11 | 소울 팝 | 남 | 108 |
+| 12 | 칠 R&B (환기) | 여 | 90 |
+| 13 | 인디 포크 | 남 | 100 |
+| 14 | 라이트 디스코 팝 | 여 | 114 |
+| 15 | 멜로딕 힙합 (환기) | 듀엣 | 86 |
+| 16 | 피아노 팝 | 남 | 96 |
+| 17 | R&B | 여 | 104 |
+| 18 | 레게 팝 | 남 | 92 |
+| 19 | 시티팝 | 여 | 110 |
+| 20 | 마무리 팝 | 듀엣 | 98 |
+
 ## 지금까지 만든 곡
 | # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
 |---|---|---|---|---|---|
@@ -78,6 +102,11 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 13 | Four Frames | 여성 | 인디 팝 | 96 | 친구들과 비좁은 포토부스에 들어가 찍은 네 컷, 우스운 표정까지 모두 보물 |
 | 14 | Aisle Five | 듀엣 | 칠 R&B | 92 | 늦은 밤 마트 다섯 번째 통로, 시리얼 하나 고르며 주고받는 다정한 대화 |
 
+## VOL.03
+| # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
+|---|---|---|---|---|---|
+| 01 | Line Dried | 여성 | 선샤인 팝 | 104 | 햇볕에 바싹 마른 빨래처럼, 걱정까지 바람에 널어 말리는 가벼운 오후 |
+
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
 - 02: `male vocal, soft indie pop, gentle clean electric guitar, acoustic guitar, light brushed drums, 96 BPM`
@@ -95,6 +124,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V2-12: `soft funk, male vocal, clean chicken-scratch guitar, warm round bass groove, light clavinet, soft horn stabs, tight but gentle drums, playful, 112 BPM`
 - V2-13: `indie pop, female vocal, airy dreamy tone, shimmering clean electric guitar, soft synth pad, glockenspiel accents, light drum machine, 96 BPM`
 - V2-14: `chill R&B, male and female duet vocals, smooth call and response, warm Rhodes, warm round bass, soft snaps and rimshot, dreamy guitar, late night glow, 92 BPM`
+- V3-01: `sunshine pop, female vocal, bright clean electric guitar, bouncy bass, light handclaps, soft glockenspiel, airy backing vocals, 104 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
