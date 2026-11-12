@@ -72,6 +72,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 07 | Tailgate Constellations | 여성 | 컨트리 팝 | 90 | 트럭 짐칸에 누워 별자리를 새로 지어 붙이는 시골 밤 |
 | 08 | Middle C | 남성 | 피아노 팝 | 106 | 어른이 되어 처음 배우는 피아노, 서툰 손가락으로 완성한 첫 곡의 기쁨 |
 | 09 | Headphones On | 여성 | 멜로딕 힙합 | 88 | 헤드폰을 쓰는 순간 붐비는 도시가 나만의 뮤직비디오가 되는 출근길 |
+| 10 | Under the Awning | 남성 | 보사 팝 | 102 | 갑작스러운 소나기, 가게 차양 아래 모인 낯선 사람들과 함께 기다리는 무지개 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -85,6 +86,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V2-07: `country pop, female vocal, warm acoustic guitar, soft banjo picking, gentle pedal steel, light brushed drums, porch-night feel, 90 BPM`
 - V2-08: `piano pop, male vocal, bouncy bright piano chords, light pizzicato strings, soft bass, gentle drum groove, cheerful, 106 BPM`
 - V2-09: `melodic hip hop, lo-fi boom bap beat, female sung vocals, no rap, jazzy electric piano, warm round bass, soft vinyl crackle, mellow head-nod groove, 88 BPM`
+- V2-10: `bossa nova pop, male vocal, soft nylon string guitar, light rim-click percussion, gentle shaker, warm flute melody, soft upright bass, 102 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
