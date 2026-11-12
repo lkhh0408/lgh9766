@@ -20,6 +20,7 @@ catchy but gentle melody, easy listening, warm feel-good vibe, positive, smooth 
 ```
 belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudden loud parts, distortion, rock, rap, sad, dark, explicit lyrics
 ```
+- 송랩 곡(VOL.03 18번처럼 사용자가 정한 자리)만 예외로 Exclude에서 `rap`을 빼고 Styles에 `melodic sing-song rap, soft relaxed flow, no aggressive delivery`를 넣어요. 나머지 곡은 계속 `rap`을 막아요.
 - R&B, 멜로딕 힙합 곡은 `heavy bass`를 빼고 Styles에 `warm round bass`를 넣어요. `rap`은 항상 막아요(힙합은 비트만, 보컬은 노래).
 
 ## 흐름 규칙 (환기)
@@ -61,7 +62,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 4 | 네오소울 (환기) | 남 | 86 |
 | 5 | 재즈 팝 | 여 | 100 |
 | 6 | 베드룸 팝 | 남 | 88 |
-| 7 | (변경 예정, 아프로팝 제외) | 여 | 104 |
+| 7 | 소프트 일렉트로 팝 | 여 | 104 |
 | 8 | 멜로딕 힙합 (환기, 소프트 트랩 비트) | 남 | 86 |
 | 9 | 칠 하우스 팝 | 듀엣 | 114 |
 | 10 | 드림 팝 | 여 | 92 |
@@ -72,10 +73,10 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 15 | 멜로딕 힙합 (환기, 로파이) | 듀엣 | 86 |
 | 16 | 인디 팝 | 남 | 108 |
 | 17 | R&B 팝 | 여 | 94 |
-| 18 | 소프트 아마피아노 | 남 | 110 |
+| 18 | 송랩 (노래하듯 부드러운 멜로딕 랩) | 남 | 100 |
 | 19 | 로파이 팝 | 여 | 90 |
 | 20 | 모던 어쿠스틱 팝 (마무리) | 듀엣 | 98 |
-- VOL.03부터 컨트리, 브라스, 보사, 레게, 시티팝, 디스코 같은 옛날 느낌 장르는 빼고 요즘 장르(베드룸 팝, 칠 하우스, 얼트 R&B, 아마피아노 등)를 넣어요. 리듬이 강한 장르도 `heavy bass`는 계속 막고 `warm round bass`, 부드러운 비트로 배경음악 느낌을 지켜요.
+- VOL.03부터 컨트리, 브라스, 보사, 레게, 시티팝, 디스코 같은 옛날 느낌 장르는 빼고 요즘 장르(베드룸 팝, 칠 하우스, 얼트 R&B 등)를 넣어요. 리듬이 강한 장르도 `heavy bass`는 계속 막고 `warm round bass`, 부드러운 비트로 배경음악 느낌을 지켜요.
 
 ## 지금까지 만든 곡
 | # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
@@ -112,6 +113,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 04 | B-Side | 남성 | 네오소울 | 86 | 레코드 가게 구석에서 찾은 낡은 판, 아무도 몰랐던 뒷면의 노래가 오늘의 최애곡이 되는 오후 |
 | 05 | Crossword in Pen | 여성 | 재즈 팝 | 100 | 틀려도 괜찮다며 볼펜으로 채워 가는 일요일 낱말 퍼즐, 자신감 한 스푼 넣은 아침 |
 | 06 | Glow-in-the-Dark Stars | 남성 | 베드룸 팝 | 88 | 천장에 붙인 야광 별 스티커, 내 방이 작은 우주가 되는 밤 |
+| 07 | Save Point | 여성 | 소프트 일렉트로 팝 | 104 | 게임 속 세이브 포인트처럼, 오늘의 좋은 순간들을 마음에 하나씩 저장하는 하루 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -136,6 +138,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-04: `neo soul, male vocal, smooth warm tone, soft falsetto touches, lush Rhodes chords, warm round bass, laid-back live drums, gentle wah guitar, vinyl warmth, 86 BPM`
 - V3-05: `jazz pop, female vocal, playful bright tone, swinging piano, walking upright bass, brushed drums, muted trumpet accents, finger snaps, cheeky and light, 100 BPM`
 - V3-06: `bedroom pop, male vocal, soft intimate close-mic vocals, lo-fi warm clean guitar, mellow synth pad, soft drum machine, gentle bass, cozy, 88 BPM`
+- V3-07: `soft electro pop, female vocal, clear bright tone, clean bouncy synth plucks, crisp light beat, soft sub bass, sparkling arpeggios, airy, 104 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
