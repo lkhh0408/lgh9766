@@ -126,6 +126,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 07 | Save Point | 여성 | 소프트 일렉트로 팝 | 104 | 게임 속 세이브 포인트처럼, 오늘의 좋은 순간들을 마음에 하나씩 저장하는 하루 |
 | 08 | Do Not Disturb | 남성 | 멜로딕 힙합 (소프트 트랩) | 86 | 휴대폰을 방해금지 모드로 돌려두고, 오롯이 나에게만 집중하는 느긋한 오후 |
 | 09 | Rooftop Hours | 듀엣 | 칠 하우스 팝 | 114 | 퇴근 후 옥상에 올라 노을이 질 때까지, 시간이 천천히 흐르는 두 사람의 저녁 |
+| 10 | Daydream Tab | 여성 | 드림 팝 | 92 | 바쁜 업무 창 사이에 몰래 열어둔 공상 탭, 잠깐 다녀오는 마음속 바다 여행 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -153,6 +154,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-07: `soft electro pop, female vocal, clear bright tone, clean bouncy synth plucks, crisp light beat, soft sub bass, sparkling arpeggios, airy, 104 BPM`
 - V3-08: `melodic hip hop, soft trap beat, male sung vocals, smooth autotune-free melodic singing, airy guitar loop, soft hi-hats, warm round bass, mellow 808, dreamy pads, 86 BPM` (Exclude에서 heavy bass 뺌)
 - V3-09: `chill house pop, male and female duet vocals, smooth trade-off verses, soft four-on-the-floor beat, warm deep house chords, gentle plucked synths, soft round bass, airy vocal chops, sunset glow, 114 BPM`
+- V3-10: `dream pop, female vocal, breathy soft airy tone, shimmering reverb guitars, lush washed synth pads, soft steady drum machine, gentle bass, floating hazy atmosphere, 92 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -167,3 +169,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 07 Save Point: save point, click, checkpoint, loading, level up, song on the radio(⚠ radio 반복)
 - 08 Do Not Disturb: do not disturb, moon on my screen, notifications, unread, airplane mode, recharge
 - 09 Rooftop Hours: rooftop hours, pink to purple, city hums below, string lights, shoes kicked off, stay till the sky turns
+- 10 Daydream Tab: daydream tab, spreadsheet, cursor blinking, ocean in my head, drift, back in five
