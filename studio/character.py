@@ -15,6 +15,8 @@ OUTFITS = {
     'signature': dict(top='#8FD0FF', bottom='#3E4A6B', phones='#2EC4A6', phones_style='retro', prop='hot'),
     # per-video looks: change colours and props every volume
     'vol01': dict(top='#8FD0FF', bottom='#3E4A6B', phones='#E0457B', phones_style='retro', prop='hot'),
+    # VOL.02 (draft A): cream top, cobalt retro headphones, mustard backpack
+    'vol02': dict(top='#F3E9D2', bottom='#3E4A6B', phones='#2F5BEA', phones_style='retro', prop='hot', bag='backpack', bag_color='#E9A23B', strap='#B97A1F'),
 }
 
 def _shape(ctx, fill, L):
