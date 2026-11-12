@@ -1,0 +1,885 @@
+{
+ "world": "river",
+ "tracks": {
+  "1": {
+   "title": "I Like Your Quiet",
+   "sky": [
+    "#9FD8F5",
+    "#F2FBFF"
+   ],
+   "palette": [
+    "#7FC8F8",
+    "#FFB38A",
+    "#FFD86B",
+    "#9B7BFF"
+   ],
+   "scenes": [
+    "lawn",
+    "picnic",
+    "promenade"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "I LIKE YOUR QUIET",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Your thumb holds down the paperback",
+     "piece": "rv_readers",
+     "react": "heart"
+    },
+    {
+     "line": "The needle on the record lifts",
+     "piece": "window",
+     "sign": "RECORDS",
+     "scene": "turntable",
+     "react": "note"
+    },
+    {
+     "line": "Halfway down, you tap a sentence",
+     "piece": "window",
+     "scene": "reading",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "2": {
+   "title": "Yours, Mine",
+   "sky": [
+    "#7CC8F0",
+    "#E8F7FF"
+   ],
+   "palette": [
+    "#2EA36B",
+    "#FF5C8A",
+    "#3D9BFF",
+    "#FFB21A"
+   ],
+   "scenes": [
+    "sports",
+    "plaza",
+    "lawn"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "YOURS, MINE",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "White chalk line on a green tabletop",
+     "piece": "rv_pingpong",
+     "react": "note"
+    },
+    {
+     "line": "A kid on the bench puts his comic down",
+     "piece": "sign",
+     "text": "PING PONG"
+    },
+    {
+     "line": "Off the edge",
+     "react": "note"
+    },
+    {
+     "line": "One soft serve",
+     "piece": "sign",
+     "text": "SOFT SERVE",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "3": {
+   "title": "Keep the Jar",
+   "sky": [
+    "#A8E0C0",
+    "#F4FFF6"
+   ],
+   "palette": [
+    "#FFB38A",
+    "#7CC47F",
+    "#FFD34D",
+    "#E0457B"
+   ],
+   "scenes": [
+    "garden",
+    "lawn",
+    "picnic"
+   ],
+   "effects": [
+    "breeze"
+   ],
+   "chorus": {
+    "banner": "KEEP THE JAR",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "You brought me peaches in a jar",
+     "piece": "rv_jar",
+     "react": "heart"
+    },
+    {
+     "line": "Slipped a note underneath the string",
+     "piece": "mailbox"
+    },
+    {
+     "line": "Who keeps my basil green",
+     "piece": "window",
+     "scene": "plant"
+    },
+    {
+     "line": "You poured us both some lemonade",
+     "piece": "sip_terrace",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "4": {
+   "title": "Just the Color",
+   "sky": [
+    "#FFC9A8",
+    "#FFF4E8"
+   ],
+   "palette": [
+    "#FF8A3D",
+    "#3D9BFF",
+    "#FFD86B",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "plaza",
+    "promenade",
+    "lawn"
+   ],
+   "effects": [
+    "golden"
+   ],
+   "chorus": {
+    "banner": "JUST THE COLOR",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "I went in for a plain white tee",
+     "piece": "boutique",
+     "sign": "TEES",
+     "react": "heart"
+    },
+    {
+     "line": "My brother took me bowling",
+     "piece": "rv_bowling",
+     "react": "note"
+    },
+    {
+     "line": "In a jacket bright as June",
+     "react": "sun"
+    }
+   ],
+   "signs": {}
+  },
+  "5": {
+   "title": "You Say It Too",
+   "sky": [
+    "#8FD0FF",
+    "#EEF8FF"
+   ],
+   "palette": [
+    "#2EC4A6",
+    "#FF8A5B",
+    "#9B7BFF",
+    "#FFB21A"
+   ],
+   "scenes": [
+    "lawn",
+    "promenade",
+    "picnic"
+   ],
+   "effects": [
+    "dog"
+   ],
+   "chorus": {
+    "banner": "YOU SAY IT TOO",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "When a dog walks into view",
+     "piece": "rv_dogmeet",
+     "react": "heart"
+    },
+    {
+     "line": "good parking karma",
+     "piece": "sign",
+     "text": "PARKING"
+    },
+    {
+     "line": "Someone asked about the pie",
+     "piece": "window",
+     "scene": "kitchen",
+     "react": "heart"
+    },
+    {
+     "line": "a beagle on the stairs",
+     "piece": "rv_dogmeet",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "6": {
+   "title": "Wish You Could Smell This",
+   "sky": [
+    "#B3E5FF",
+    "#FFFBEA"
+   ],
+   "palette": [
+    "#FFB21A",
+    "#3D9BFF",
+    "#FF8A9B",
+    "#7CC47F"
+   ],
+   "scenes": [
+    "garden",
+    "plaza",
+    "lawn"
+   ],
+   "effects": [
+    "breeze"
+   ],
+   "chorus": {
+    "banner": "WISH YOU COULD SMELL THIS",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Your postcard had a perfect view",
+     "piece": "mailbox",
+     "react": "heart"
+    },
+    {
+     "line": "a bakery by the square",
+     "piece": "baker",
+     "sign": "BAKERY",
+     "react": "heart"
+    },
+    {
+     "line": "The grass next door was freshly cut",
+     "piece": "waterer"
+    },
+    {
+     "line": "you brought the recipe",
+     "piece": "window",
+     "scene": "kitchen",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "7": {
+   "title": "I Get It Now",
+   "sky": [
+    "#A9C8FF",
+    "#F2F6FF"
+   ],
+   "palette": [
+    "#7B3BFF",
+    "#FF5C8A",
+    "#2EC4A6",
+    "#FFB21A"
+   ],
+   "scenes": [
+    "plaza",
+    "promenade",
+    "lawn"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "I GET IT NOW",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "You set the needle down on side B",
+     "piece": "window",
+     "sign": "RECORDS",
+     "scene": "turntable",
+     "react": "note"
+    },
+    {
+     "line": "On Friday in the checkout line",
+     "piece": "market_lady"
+    },
+    {
+     "line": "I called you from the parking lot",
+     "piece": "sign",
+     "text": "SIDE B",
+     "react": "note"
+    },
+    {
+     "line": "Headphones on, come sit right here",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "8": {
+   "title": "The Good Skip",
+   "sky": [
+    "#7CCBEF",
+    "#E6F8FF"
+   ],
+   "palette": [
+    "#3D9BFF",
+    "#FFB21A",
+    "#2EC4A6",
+    "#FF8A6B"
+   ],
+   "scenes": [
+    "promenade",
+    "lawn",
+    "picnic"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "THE GOOD SKIP",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "I set my shoes up on the bank",
+     "piece": "lake",
+     "react": "note"
+    },
+    {
+     "line": "A man with a paper and a coffee cup",
+     "piece": "sip_terrace",
+     "sign": "KIOSK"
+    },
+    {
+     "line": "The ferry pulled in",
+     "piece": "sign",
+     "text": "FERRY",
+     "react": "heart"
+    },
+    {
+     "line": "I turned my wrist and let it fly",
+     "piece": "lake",
+     "react": "note"
+    }
+   ],
+   "signs": {}
+  },
+  "9": {
+   "title": "Best Seat in the House",
+   "sky": [
+    "#FFB8C9",
+    "#FFF0F4"
+   ],
+   "palette": [
+    "#E0457B",
+    "#C9A7FF",
+    "#FFD34D",
+    "#3D9BFF"
+   ],
+   "scenes": [
+    "plaza",
+    "promenade",
+    "lawn"
+   ],
+   "effects": [
+    "golden"
+   ],
+   "chorus": {
+    "banner": "BEST SEAT IN THE HOUSE",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "the window of the dance supply",
+     "piece": "boutique",
+     "sign": "DANCE SUPPLY",
+     "react": "heart"
+    },
+    {
+     "line": "A cyclist stops to let a taxi through",
+     "piece": "cyclist",
+     "react": "note"
+    },
+    {
+     "line": "You cross the street, sit down by me",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "10": {
+   "title": "Two Wheels, No Hurry",
+   "sky": [
+    "#6FC3F2",
+    "#E6F7FF"
+   ],
+   "palette": [
+    "#FFB21A",
+    "#3D9BFF",
+    "#2EC4A6",
+    "#FF5C8A"
+   ],
+   "scenes": [
+    "lawn",
+    "picnic",
+    "promenade"
+   ],
+   "effects": [
+    "breeze"
+   ],
+   "chorus": {
+    "banner": "TWO WHEELS, NO HURRY",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Pumped up the tires",
+     "piece": "cyclist",
+     "react": "note"
+    },
+    {
+     "line": "Kids are flying kites",
+     "piece": "rv_kitekids",
+     "react": "heart"
+    },
+    {
+     "line": "I wave to the ferry",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "11": {
+   "title": "Harmony in the Passenger Seat",
+   "sky": [
+    "#FFD98A",
+    "#FFF8E6"
+   ],
+   "palette": [
+    "#FFD34D",
+    "#FF8A3D",
+    "#7CC47F",
+    "#3D9BFF"
+   ],
+   "scenes": [
+    "garden",
+    "picnic",
+    "lawn"
+   ],
+   "effects": [
+    "golden"
+   ],
+   "chorus": {
+    "banner": "HARMONY IN THE PASSENGER SEAT",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Sunflowers waving",
+     "piece": "rv_sunflowers",
+     "react": "sun"
+    },
+    {
+     "line": "Stopped for peaches at a roadside stand",
+     "piece": "market_lady",
+     "react": "heart"
+    },
+    {
+     "line": "Radio's crackling",
+     "react": "note"
+    }
+   ],
+   "signs": {}
+  },
+  "12": {
+   "title": "When the Streetlights Come On",
+   "sky": [
+    "#FFB27A",
+    "#FFE3C7"
+   ],
+   "palette": [
+    "#FF8A3D",
+    "#FFD34D",
+    "#9B7BFF",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "promenade",
+    "plaza",
+    "lawn"
+   ],
+   "effects": [
+    "golden"
+   ],
+   "chorus": {
+    "banner": "WHEN THE STREETLIGHTS COME ON",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Bakery's pulling shutters",
+     "piece": "baker",
+     "sign": "BAKERY"
+    },
+    {
+     "line": "One by one",
+     "piece": "rv_lamps",
+     "react": "sun"
+    },
+    {
+     "line": "Neighbor's on the stoop",
+     "piece": "neighbors_wave",
+     "react": "note"
+    },
+    {
+     "line": "Text from my mama",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "13": {
+   "title": "Seashell in My Pocket",
+   "sky": [
+    "#6FD3E8",
+    "#E3FFF8"
+   ],
+   "palette": [
+    "#FF9EB5",
+    "#FFD34D",
+    "#3D9BFF",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "picnic",
+    "plaza",
+    "lawn"
+   ],
+   "effects": [
+    "bubbles"
+   ],
+   "chorus": {
+    "banner": "SEASHELL IN MY POCKET",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Rolled up my jeans and I ran to the tide",
+     "piece": "rv_beach",
+     "react": "heart"
+    },
+    {
+     "line": "Ice cream dripping",
+     "piece": "sign",
+     "text": "ICE CREAM",
+     "react": "heart"
+    },
+    {
+     "line": "Shh, listen",
+     "react": "note"
+    }
+   ],
+   "signs": {}
+  },
+  "14": {
+   "title": "Green Lights All the Way",
+   "sky": [
+    "#9FE3B8",
+    "#F0FFF4"
+   ],
+   "palette": [
+    "#2EC4A6",
+    "#FFC233",
+    "#FF5C8A",
+    "#3D9BFF"
+   ],
+   "scenes": [
+    "plaza",
+    "promenade",
+    "lawn"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "GREEN LIGHTS ALL THE WAY",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Bus pulled up the second",
+     "piece": "rv_busstop",
+     "react": "sun"
+    },
+    {
+     "line": "Coffee man said",
+     "piece": "terrace",
+     "sign": "COFFEE",
+     "react": "heart"
+    },
+    {
+     "line": "Ran into an old friend",
+     "piece": "neighbors_wave",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "15": {
+   "title": "Middle C",
+   "sky": [
+    "#C9B8FF",
+    "#F6F2FF"
+   ],
+   "palette": [
+    "#7B3BFF",
+    "#FFB21A",
+    "#FF5C8A",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "promenade",
+    "lawn",
+    "garden"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "MIDDLE C",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Bought a little keyboard",
+     "piece": "pianist",
+     "react": "note"
+    },
+    {
+     "line": "yesterday they knocked",
+     "piece": "note_door",
+     "react": "heart"
+    },
+    {
+     "line": "Wrong notes, right heart",
+     "react": "note"
+    }
+   ],
+   "signs": {}
+  },
+  "16": {
+   "title": "Headphones On",
+   "sky": [
+    "#B49CFF",
+    "#F3EEFF"
+   ],
+   "palette": [
+    "#9B7BFF",
+    "#3D9BFF",
+    "#FF5C8A",
+    "#FFB21A"
+   ],
+   "scenes": [
+    "plaza",
+    "promenade",
+    "lawn"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "HEADPHONES ON",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Crowded platform",
+     "piece": "rv_metro",
+     "react": "note"
+    },
+    {
+     "line": "Busker on the corner",
+     "piece": "window",
+     "scene": "guitar",
+     "react": "note"
+    },
+    {
+     "line": "Kid in a stroller",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "17": {
+   "title": "Under the Awning",
+   "sky": [
+    "#9AB7D3",
+    "#E6EEF5"
+   ],
+   "palette": [
+    "#3D9BFF",
+    "#FF5C8A",
+    "#FFD34D",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "plaza",
+    "promenade"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "UNDER THE AWNING",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Sky cracked open",
+     "effect": "rain",
+     "dur": 95
+    },
+    {
+     "line": "Seven of us squeezed",
+     "piece": "rv_awning",
+     "react": "heart"
+    },
+    {
+     "line": "Florist next door",
+     "piece": "boutique",
+     "sign": "FLOWERS",
+     "react": "heart"
+    },
+    {
+     "line": "Then the clouds pulled back",
+     "effect": "rainbow",
+     "dur": 40
+    }
+   ],
+   "signs": {}
+  },
+  "18": {
+   "title": "Oversized Sweater",
+   "sky": [
+    "#7E86C9",
+    "#D9D4F2"
+   ],
+   "palette": [
+    "#C68B59",
+    "#FFB38A",
+    "#9B7BFF",
+    "#E8DCC4"
+   ],
+   "scenes": [
+    "garden",
+    "lawn",
+    "promenade"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "OVERSIZED SWEATER",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Kettle's singing softly",
+     "piece": "kettle_window",
+     "react": "heart"
+    },
+    {
+     "line": "Cat curled on the cushion",
+     "piece": "window",
+     "scene": "reading",
+     "react": "heart"
+    },
+    {
+     "line": "Don't have to prove a thing",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "19": {
+   "title": "Roller Rink Saturday",
+   "sky": [
+    "#5B4FA8",
+    "#B49CFF"
+   ],
+   "palette": [
+    "#FF5C8A",
+    "#5BC0EB",
+    "#FFD34D",
+    "#7FD99A"
+   ],
+   "scenes": [
+    "plaza",
+    "sports",
+    "lawn"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "ROLLER RINK SATURDAY",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Laced up my skates",
+     "piece": "rv_rink",
+     "react": "note"
+    },
+    {
+     "line": "Snack bar's serving pretzels",
+     "piece": "sign",
+     "text": "SNACK BAR"
+    },
+    {
+     "line": "Couple skate",
+     "piece": "rv_rink",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  },
+  "20": {
+   "title": "Four Frames",
+   "sky": [
+    "#3A3F7A",
+    "#7A6FC9"
+   ],
+   "palette": [
+    "#FF5C8A",
+    "#3D9BFF",
+    "#FFD34D",
+    "#2EC4A6"
+   ],
+   "scenes": [
+    "promenade",
+    "plaza",
+    "lawn"
+   ],
+   "effects": [],
+   "chorus": {
+    "banner": "FOUR FRAMES",
+    "lights": true
+   },
+   "beats": [
+    {
+     "line": "Four of us squeezed in a booth",
+     "piece": "rv_photobooth",
+     "react": "heart"
+    },
+    {
+     "line": "Frame number four",
+     "piece": "rv_photobooth",
+     "react": "heart"
+    },
+    {
+     "line": "Years from now",
+     "react": "heart"
+    }
+   ],
+   "signs": {}
+  }
+ }
+}

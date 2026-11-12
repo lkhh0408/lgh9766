@@ -15,6 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import character as ch
 import props
+import river
 
 ASSETS = os.path.join(HERE, 'assets')
 LOGO = os.path.join(ASSETS, 'logo_horizontal.png')
@@ -25,6 +26,7 @@ ap.add_argument('-o', '--out', default='output.mp4', help='output video path')
 ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence between songs')
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
 ap.add_argument('--outfit', default='signature', help='mascot outfit from studio/character.py OUTFITS')
+ap.add_argument('--world', default='street', choices=['street', 'river'], help='scenery world: street (VOL.01) or river (VOL.02 riverside park)')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
                 'Lyric timings are read from a timing/ folder next to it (see align_lyrics.py).')
@@ -191,6 +193,8 @@ def gen_zone(z, x, xe, sign=None):
             objs.append(('house2', x, w_, rnd.randint(130, 160), p, a, style)); x += w_ + 30
             if rnd.random() < 0.5: objs.append(('fence', x, 80)); x += 100
             elif rnd.random() < 0.5: objs.append(('tree', x + 50, 60, 100)); x += 130
+        elif args.world == 'river' and z in river.KINDS:
+            river.gen(z, x, xe, rnd, objs, ACCENT); return
         else:
             raise SystemExit(f'unknown scene kind: {z}')
 
@@ -227,7 +231,8 @@ if os.path.exists(scenes_path):
             z = kinds[k % len(kinds)]; xe = min(x + SEG, bounds[i + 1])
             zones.append((x, z, i)); gen_zone(z, x, xe, signs.get(z)); x = xe; k += 1
         # lyric beats: a set piece arrives on screen as its line is sung
-        tfile = os.path.join(timing_dir, f'{i + 1}.json')
+        tfile = os.path.join(timing_dir, f'{songs[i][0]}.json')   # timing files use the song's file number (VOL.02: 21-40)
+        if not os.path.exists(tfile): tfile = os.path.join(timing_dir, f'{i + 1}.json')
         lines = json.load(open(tfile)) if os.path.exists(tfile) else []
         def qnorm(x): return x.lower().replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
         def when(beat):
@@ -257,6 +262,7 @@ if os.path.exists(scenes_path):
                     pieces.append([c0 - 0.8, 'banner', {'text': spec['chorus']['banner'], 'color': '#%02x%02x%02x' % tuple(int(c * 255) for c in accents[0])}])
                 block = []
     PASTEL, ACCENT = base_pal
+    if args.world == 'river': WORLD = river.World(rnd, TOTAL, starts, ends, scroll_at, sky_at, SPEED)
     # place pieces: centred around screen x 1250 when their line starts, never overlapping each other
     pieces.sort(key=lambda p: p[0]); right = -1e9; placed = []
     for at, name, opts in pieces:
@@ -300,6 +306,8 @@ def draw_obj(ctx, o, sx, L, night, t):
     nf = lambda c: lerp(c, hexc('#2A2F5C'), night * 0.85)
     ctx.set_source_rgb(*L); ctx.set_line_width(3)
     k = o[0]
+    if k.startswith('rv_'): river.draw(ctx, o, sx, L, night, t); return
+    if k == 'piece' and o[2].startswith('rv_'): river.piece(ctx, o[2], sx, t, t - o[3], L, night, o[4], draw_obj, o[1]); return
     if k == 'piece':
         props.draw_piece(ctx, o[2], sx, GY, t, t - o[3], L, night, nf, o[4], draw_obj, o[1]); return
     if k == 'bldg':
@@ -623,30 +631,39 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
             f = 9 * math.sin(t * 9 + j)
             ctx.move_to(bx - 13, by - f); ctx.curve_to(bx - 6, by - 7, bx, by - 2, bx, by)
             ctx.curve_to(bx, by - 2, bx + 6, by - 7, bx + 13, by - f); ctx.stroke()
-    # far layer cross-fades with the zone at screen centre
-    cw = scroll + W / 2; zi = zone_at(cw)
-    z0 = zones[zi][0]; z1 = zones[zi + 1][0] if zi + 1 < len(zones) else z0 + ZLEN
-    fr = (cw - z0) / max(1, z1 - z0)
-    k_now = FAR[zones[zi][1]]; k_next = FAR[zones[min(zi + 1, len(zones) - 1)][1]]
-    blend = max(0, (fr - 0.8) / 0.2)
-    off = scroll * 0.35
-    for kind, alpha in ((k_now, 1 - blend if k_now != k_next else 1), (k_next, blend if k_now != k_next else 0)):
-        if alpha <= 0.01: continue
-        ctx.push_group(); far_layer(ctx, kind, off, L, top, bot, night); ctx.pop_group_to_source(); ctx.paint_with_alpha(alpha)
-    for o in objs:
-        sx = o[1] - scroll
-        if o[0] not in GROUND_KINDS and (-520 < sx < W + 200 or (o[0] == 'piece' and -1000 < sx < W + 1000)): draw_obj(ctx, o, sx, L, night, t)
-    # ground: sand on the beach, grass paths in green zones, pavement elsewhere
-    gz = zone_of(scroll + CX)
-    gcol = hexc('#FFE9B8') if gz == 'beach' else (hexc('#DDF3D2') if gz in GREEN else hexc('#F3E9F7'))
-    ctx.rectangle(0, GY, W, H - GY); ctx.set_source_rgb(*lerp(gcol, hexc('#1A1F3D'), night)); ctx.fill()
-    ctx.set_source_rgb(*L); ctx.set_line_width(4); ctx.move_to(0, GY); ctx.line_to(W, GY); ctx.stroke()
-    ctx.set_line_width(3)
-    for k in range(-1, W // 140 + 2):
-        x_ = k * 140 - scroll % 140; ctx.move_to(x_, GY + 44); ctx.line_to(x_ + 60, GY + 44); ctx.stroke()
-    for o in objs:
-        sx = o[1] - scroll
-        if o[0] in GROUND_KINDS and -520 < sx < W + 200: draw_obj(ctx, o, sx, L, night, t)
+    if args.world == 'river':
+        WORLD.back(ctx, t, scroll, night, L, top, bot, u)
+        WORLD.actors(ctx, t, scroll, night, L, river.FAR_PATH)
+        WORLD.actors(ctx, t, scroll, night, L, river.NEAR_PATH)
+        for o in objs:
+            sx = o[1] - scroll
+            if -520 < sx < W + 200 or (o[0] == 'piece' and -1000 < sx < W + 1000): draw_obj(ctx, o, sx, L, night, t)
+        WORLD.ground(ctx, scroll, night, L)
+    else:
+        # far layer cross-fades with the zone at screen centre
+        cw = scroll + W / 2; zi = zone_at(cw)
+        z0 = zones[zi][0]; z1 = zones[zi + 1][0] if zi + 1 < len(zones) else z0 + ZLEN
+        fr = (cw - z0) / max(1, z1 - z0)
+        k_now = FAR[zones[zi][1]]; k_next = FAR[zones[min(zi + 1, len(zones) - 1)][1]]
+        blend = max(0, (fr - 0.8) / 0.2)
+        off = scroll * 0.35
+        for kind, alpha in ((k_now, 1 - blend if k_now != k_next else 1), (k_next, blend if k_now != k_next else 0)):
+            if alpha <= 0.01: continue
+            ctx.push_group(); far_layer(ctx, kind, off, L, top, bot, night); ctx.pop_group_to_source(); ctx.paint_with_alpha(alpha)
+        for o in objs:
+            sx = o[1] - scroll
+            if o[0] not in GROUND_KINDS and (-520 < sx < W + 200 or (o[0] == 'piece' and -1000 < sx < W + 1000)): draw_obj(ctx, o, sx, L, night, t)
+        # ground: sand on the beach, grass paths in green zones, pavement elsewhere
+        gz = zone_of(scroll + CX)
+        gcol = hexc('#FFE9B8') if gz == 'beach' else (hexc('#DDF3D2') if gz in GREEN else hexc('#F3E9F7'))
+        ctx.rectangle(0, GY, W, H - GY); ctx.set_source_rgb(*lerp(gcol, hexc('#1A1F3D'), night)); ctx.fill()
+        ctx.set_source_rgb(*L); ctx.set_line_width(4); ctx.move_to(0, GY); ctx.line_to(W, GY); ctx.stroke()
+        ctx.set_line_width(3)
+        for k in range(-1, W // 140 + 2):
+            x_ = k * 140 - scroll % 140; ctx.move_to(x_, GY + 44); ctx.line_to(x_ + 60, GY + 44); ctx.stroke()
+        for o in objs:
+            sx = o[1] - scroll
+            if o[0] in GROUND_KINDS and -520 < sx < W + 200: draw_obj(ctx, o, sx, L, night, t)
     if fx('golden') > 0.01:   # warm golden-hour wash
         ctx.set_source_rgba(1, 0.78, 0.35, 0.09 * fx('golden') * (1 - night)); ctx.paint()
     if fx('breeze') > 0.01:   # leaves and petals carried on the wind
@@ -674,6 +691,7 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
     ch.draw(ctx, CX, GY, t, L=hexc('#2B2541'), outfit=args.outfit, phase=phase, walk=walk, reach=reach, press=press)
     if fx('dog') > 0.01:      # a dog trots in beside the mascot for the song that needs one
         k = fx('dog'); props.dog(ctx, CX + 150 + 400 * (1 - k), GY, phase, walk, t, hexc('#2B2541'), k)
+    if args.world == 'river': WORLD.front(ctx, t, scroll, phase, walk, night, L, fx)
     for rt, icon in REACTS:   # the mascot reacts to what it passes
         k = t - rt
         if 0 <= k < 2.2 and ba < 0.05:
