@@ -75,7 +75,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 7 | 소프트 일렉트로 팝 | 여 | 104 |
 | 8 | 멜로딕 힙합 (환기, 소프트 트랩 비트) | 남 | 86 |
 | 9 | 칠 하우스 팝 | 듀엣 | 114 |
-| 10 | (변경 예정, 드림 팝 제외) | 여 | 92 |
+| 10 | 포크트로니카 | 여 | 92 |
 | 11 | 얼트 팝 | 남 | 108 |
 | 12 | 얼터너티브 R&B (환기) | 여 | 90 |
 | 13 | 라틴 팝 (소프트 레게톤 리듬) | 남 | 98 |
@@ -127,6 +127,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 08 | Do Not Disturb | 남성 | 멜로딕 힙합 (소프트 트랩) | 86 | 휴대폰을 방해금지 모드로 돌려두고, 오롯이 나에게만 집중하는 느긋한 오후 |
 | 09 | Rooftop Hours | 듀엣 | 칠 하우스 팝 | 114 | 퇴근 후 옥상에 올라 노을이 질 때까지, 시간이 천천히 흐르는 두 사람의 저녁 |
 | 11 | Fresh Cut | 남성 | 얼트 팝 | 108 | 미용실 문을 나서는 순간 달라 보이는 세상, 새 머리 하나로 충전되는 자신감 |
+| 12 | Soft Reset | 여성 | 얼터너티브 R&B | 90 | 방을 치우고 초를 켜고 마스크팩을 붙이는 일요일 밤, 나를 다시 시작하는 작은 의식 (10번은 나중에) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -155,6 +156,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-08: `melodic hip hop, soft trap beat, male sung vocals, smooth autotune-free melodic singing, airy guitar loop, soft hi-hats, warm round bass, mellow 808, dreamy pads, 86 BPM` (Exclude에서 heavy bass 뺌)
 - V3-09: `chill house pop, male and female duet vocals, smooth trade-off verses, soft four-on-the-floor beat, warm deep house chords, gentle plucked synths, soft round bass, airy vocal chops, sunset glow, 114 BPM`
 - V3-11: `alt pop, male vocal, cool laid-back tone, punchy but soft drum groove, clean bright guitar riff, bouncy synth bass, quirky percussion, playful whistles, confident, 108 BPM`
+- V3-12: `alternative R&B, female vocal, silky intimate tone, layered soft harmonies, minimal moody-warm keys, warm round bass, crisp gentle trap-soul drums, subtle guitar textures, late evening glow, 90 BPM` (Exclude에서 heavy bass 뺌)
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -170,4 +172,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 08 Do Not Disturb: do not disturb, moon on my screen, notifications, unread, airplane mode, recharge
 - 09 Rooftop Hours: rooftop hours, pink to purple, city hums below, string lights, shoes kicked off, stay till the sky turns
 - 11 Fresh Cut: fresh cut, barber chair, mirror, neck feels the breeze, walking taller, new me same heart
-
+- 12 Soft Reset: soft reset, candle, sheet mask, fresh pillowcase, lavender, starting over gently
