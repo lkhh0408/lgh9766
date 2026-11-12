@@ -27,9 +27,15 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 02 | Open the Window | 남성 | 소프트 인디 팝 | 96 | 걱정은 정리하지 않은 침대 위에 두고, 창문을 활짝 열어 새로운 하루를 들이는 아침의 노래 |
 | 03 | Little Things | 여성 | 보사 팝 | 92 | 김 서린 거울 위의 미소, 오랜만에 찾은 양말 한 짝. 행복은 언제나 작은 것들 속에 숨어 있다 |
 
+## VOL.02
+| # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
+|---|---|---|---|---|---|
+| 01 | Two Wheels, No Hurry | 남성 | 시티팝 | 98 | 강변을 따라 자전거 페달을 천천히 밟는 오후, 바람이 등을 밀어주는 날의 노래 |
+
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
 - 02: `male vocal, soft indie pop, gentle clean electric guitar, acoustic guitar, light brushed drums, 96 BPM`
+- V2-01: `male vocal, mellow city pop, smooth electric piano, clean funky guitar, soft bass, light drum groove, breezy, 98 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
