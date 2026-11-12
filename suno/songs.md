@@ -70,6 +70,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 05 | Seashell in My Pocket | 여성 | 어쿠스틱 팝 | 110 | 바닷가에서 주운 조개껍데기 하나, 주머니 속에 넣어 온 파도 소리 같은 하루 |
 | 06 | Green Lights All the Way | 남성 | 레트로 소울 | 100 | 신호등이 전부 초록불인 날, 작은 행운이 줄줄이 이어지는 기분 좋은 하루 |
 | 07 | Tailgate Constellations | 여성 | 컨트리 팝 | 90 | 트럭 짐칸에 누워 별자리를 새로 지어 붙이는 시골 밤 |
+| 08 | Middle C | 남성 | 피아노 팝 | 106 | 어른이 되어 처음 배우는 피아노, 서툰 손가락으로 완성한 첫 곡의 기쁨 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -81,6 +82,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V2-05: `acoustic pop, female vocal, bright strummed acoustic guitar, upbeat ukulele, light tambourine, handclaps, sunny beach vibe, 110 BPM`
 - V2-06: `retro soul, 60s Motown feel, male vocal, warm backing vocal choir, tambourine, clean jangly guitar, soft horn section, upright piano, 100 BPM`
 - V2-07: `country pop, female vocal, warm acoustic guitar, soft banjo picking, gentle pedal steel, light brushed drums, porch-night feel, 90 BPM`
+- V2-08: `piano pop, male vocal, bouncy bright piano chords, light pizzicato strings, soft bass, gentle drum groove, cheerful, 106 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
