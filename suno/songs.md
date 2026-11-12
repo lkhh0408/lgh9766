@@ -111,6 +111,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 03 | Voice Note | 듀엣 | 소프트 신스 팝 | 110 | 바쁜 하루 사이사이 주고받는 음성 메시지, 목소리만으로 가까워지는 두 사람 |
 | 04 | B-Side | 남성 | 네오소울 | 86 | 레코드 가게 구석에서 찾은 낡은 판, 아무도 몰랐던 뒷면의 노래가 오늘의 최애곡이 되는 오후 |
 | 05 | Crossword in Pen | 여성 | 재즈 팝 | 100 | 틀려도 괜찮다며 볼펜으로 채워 가는 일요일 낱말 퍼즐, 자신감 한 스푼 넣은 아침 |
+| 06 | Glow-in-the-Dark Stars | 남성 | 베드룸 팝 | 88 | 천장에 붙인 야광 별 스티커, 내 방이 작은 우주가 되는 밤 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -134,6 +135,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-03: `soft synth pop, male and female duet vocals, call and response, warm analog synth pads, gentle arpeggiator, soft bass, light electronic drums, dreamy but upbeat, 110 BPM`
 - V3-04: `neo soul, male vocal, smooth warm tone, soft falsetto touches, lush Rhodes chords, warm round bass, laid-back live drums, gentle wah guitar, vinyl warmth, 86 BPM`
 - V3-05: `jazz pop, female vocal, playful bright tone, swinging piano, walking upright bass, brushed drums, muted trumpet accents, finger snaps, cheeky and light, 100 BPM`
+- V3-06: `bedroom pop, male vocal, soft intimate close-mic vocals, lo-fi warm clean guitar, mellow synth pad, soft drum machine, gentle bass, cozy, 88 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
