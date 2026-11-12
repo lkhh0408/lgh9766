@@ -82,6 +82,35 @@ def _prop(ctx, kind, ex, ey, t, L, sleeve):
     ctx.arc(cx - 9, by - 16, 8, 0, 2 * math.pi); _shape(ctx, skin, L)
     ctx.set_line_width(2); ctx.move_to(cx - 6, by - 21); ctx.line_to(cx, by - 21); ctx.move_to(cx - 6, by - 16); ctx.line_to(cx, by - 16); ctx.move_to(cx - 6, by - 11); ctx.line_to(cx, by - 11); ctx.stroke()
 
+def _bag_back(ctx, kind, hip, col, L):
+    """Bag parts drawn behind the torso (character faces right, so the back is to the left)."""
+    x, y = hip
+    if kind == 'backpack':
+        ctx.set_line_width(4)
+        ctx.move_to(x - 22, y - 66); ctx.curve_to(x - 50, y - 66, x - 54, y - 56, x - 54, y - 34)
+        ctx.line_to(x - 52, y - 6); ctx.curve_to(x - 50, y + 2, x - 30, y + 2, x - 22, y - 2); ctx.close_path(); _shape(ctx, col, L)
+        ctx.move_to(x - 52, y - 30); ctx.curve_to(x - 60, y - 30, x - 60, y - 8, x - 50, y - 8); ctx.stroke()
+        ctx.set_line_width(3); ctx.move_to(x - 48, y - 46); ctx.line_to(x - 30, y - 46); ctx.stroke()
+    elif kind == 'tote':
+        ctx.set_line_width(4); ctx.set_source_rgb(*L)
+        ctx.move_to(x - 20, y - 68); ctx.curve_to(x - 34, y - 60, x - 38, y - 40, x - 36, y - 30); ctx.stroke()
+        ctx.move_to(x - 48, y - 30); ctx.line_to(x - 22, y - 30); ctx.line_to(x - 18, y + 14); ctx.line_to(x - 52, y + 14); ctx.close_path(); _shape(ctx, col, L)
+
+def _bag_front(ctx, kind, hip, col, L, strap):
+    """Straps and bags drawn over the torso."""
+    x, y = hip
+    st = hexc(strap) if strap else L
+    if kind == 'backpack':
+        ctx.set_line_width(6); ctx.set_source_rgb(*st)
+        ctx.move_to(x - 4, y - 72); ctx.curve_to(x + 8, y - 60, x + 10, y - 42, x + 4, y - 26); ctx.stroke()
+    elif kind == 'crossbody':
+        ctx.set_line_width(5); ctx.set_source_rgb(*st)
+        ctx.move_to(x - 12, y - 72); ctx.line_to(x + 22, y - 12); ctx.stroke()
+        ctx.set_line_width(4)
+        ctx.move_to(x + 12, y - 16); ctx.line_to(x + 38, y - 16); ctx.curve_to(x + 40, y + 4, x + 36, y + 8, x + 25, y + 8)
+        ctx.curve_to(x + 14, y + 8, x + 10, y + 4, x + 12, y - 16); ctx.close_path(); _shape(ctx, col, L)
+        ctx.set_line_width(3); ctx.move_to(x + 12, y - 8); ctx.line_to(x + 38, y - 8); ctx.stroke()
+
 def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, phase=None, walk=None, reach=0.0, press=0.0):
     """Draw the mascot standing on ground line gy at x=cx, facing right.
     phase: walk-cycle phase (radians); walk: 0..1 stride amount (0 = standing still);
@@ -121,10 +150,13 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
         ctx.set_line_width(12); ctx.set_source_rgb(*lerp(top, (.3, .2, .1), .3 * (1 - r)))
         limb(sh[0], sh[1], a1, 32, a2, 30)
     if reach <= 0: back_arm(0)
+    bag = o.get('bag')
+    if bag: _bag_back(ctx, bag, hip, hexc(o.get('bag_color', '#E9A23B')), L)
     ctx.set_line_width(4)
     ctx.move_to(hip[0] - 26, hip[1] + 8); ctx.curve_to(hip[0] - 30, hip[1] - 40, hip[0] - 24, hip[1] - 72, hip[0] + 2, hip[1] - 74)
     ctx.curve_to(hip[0] + 26, hip[1] - 72, hip[0] + 30, hip[1] - 40, hip[0] + 26, hip[1] + 8); ctx.close_path(); _shape(ctx, top, L)
     ctx.move_to(hip[0] + 4, hip[1] - 30); ctx.line_to(hip[0] + 22, hip[1] - 30); ctx.stroke()
+    if bag: _bag_front(ctx, bag, hip, hexc(o.get('bag_color', '#E9A23B')), L, o.get('strap'))
     leg(ph, False)
     # head (fixed identity)
     hx, hy, R = cx + 6, hip[1] - 116, 42
