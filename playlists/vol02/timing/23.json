@@ -56,8 +56,9 @@
  {
   "line": "I’ve got a shelf full where those are",
   "section": "Chorus",
-  "start": 51.88,
-  "end": 53.26
+  "start": 51.04,
+  "end": 53.16,
+  "realigned": true
  },
  {
   "line": "Fill it up with something good",
