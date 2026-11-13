@@ -86,8 +86,9 @@
  {
   "line": "Ooh-ooh, by the sea again",
   "section": "Chorus",
-  "start": 56.2,
-  "end": 56.98
+  "start": 52.05,
+  "end": 53.0,
+  "realigned": true
  },
  {
   "line": "Ice cream dripping faster than I can eat",

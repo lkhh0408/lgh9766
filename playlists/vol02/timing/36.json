@@ -8,9 +8,10 @@
  {
   "line": "Click",
   "section": "Intro",
-  "start": 10.48,
-  "end": 13.48,
-  "estimated": true
+  "start": 9.36,
+  "end": 11.5,
+  "realigned": true,
+  "skip": true
  },
  {
   "line": "Crowded platform, everybody rushing by",
@@ -261,8 +262,8 @@
  {
   "line": "Mm, sing along",
   "section": "Outro",
-  "start": 162.83,
-  "end": 165.83,
-  "estimated": true
+  "start": 160.83,
+  "end": 166.0,
+  "realigned": true
  }
 ]

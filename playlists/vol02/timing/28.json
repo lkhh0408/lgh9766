@@ -80,9 +80,9 @@
  {
   "line": "Good skip",
   "section": "Chorus",
-  "start": 55.14,
-  "end": 58.14,
-  "estimated": true
+  "start": 54.0,
+  "end": 55.0,
+  "realigned": true
  },
  {
   "line": "A man with a paper and a coffee cup",

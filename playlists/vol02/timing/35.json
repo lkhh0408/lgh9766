@@ -4,35 +4,35 @@
   "section": "Verse",
   "start": 5.0,
   "end": 8.0,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Sticker on the keys so I'd learn every name",
   "section": "Verse",
   "start": 10.0,
   "end": 13.0,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Thirty-one and starting like a kid of nine",
   "section": "Verse",
   "start": 15.0,
   "end": 18.0,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Teacher says \"Relax your hands, you're doing fine\"",
   "section": "Verse",
   "start": 20.0,
   "end": 23.0,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Every Tuesday night",
   "section": "Pre-Chorus",
   "start": 25.0,
   "end": 28.0,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "I'm getting it right",

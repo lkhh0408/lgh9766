@@ -74,8 +74,9 @@
  {
   "line": "Don't know what I did right",
   "section": "Chorus",
-  "start": 56.58,
-  "end": 56.58
+  "start": 56.0,
+  "end": 58.0,
+  "realigned": true
  },
  {
   "line": "But I'll take it with a smile",
@@ -86,9 +87,9 @@
  {
   "line": "Green lights all the way",
   "section": "Chorus",
-  "start": 60.58,
-  "end": 63.58,
-  "estimated": true
+  "start": 61.0,
+  "end": 62.2,
+  "realigned": true
  },
  {
   "line": "(Green lights all the way)",
@@ -195,9 +196,9 @@
  {
   "line": "(Green lights all the way)",
   "section": "Chorus",
-  "start": 125.33,
-  "end": 128.33,
-  "estimated": true
+  "start": 124.84,
+  "end": 126.64,
+  "realigned": true
  },
  {
   "line": "Gonna ride this for a while",

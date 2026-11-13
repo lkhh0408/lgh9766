@@ -4,28 +4,28 @@
   "section": "Verse 1 - Male",
   "start": 6.26,
   "end": 9.26,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Sunflowers waving like they already know",
   "section": "Verse 1 - Male",
   "start": 12.52,
   "end": 15.52,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "You've got the map upside down on your knee",
   "section": "Verse 1 - Male",
   "start": 18.78,
   "end": 21.78,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Saying \"Left at the barn,\" but it's right, we'll see",
   "section": "Verse 1 - Male",
   "start": 25.04,
   "end": 28.04,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Radio's crackling an old summer tune",
@@ -102,47 +102,51 @@
  {
   "line": "Stopped for peaches at a roadside stand",
   "section": "Verse 3 - Male",
-  "start": 89.0,
-  "end": 89.0
+  "start": 78.0,
+  "end": 82.5,
+  "checked": true
  },
  {
   "line": "Juice on our fingers and dust on our hands",
   "section": "Verse 3 - Male",
-  "start": 89.0,
-  "end": 92.0,
-  "estimated": true
+  "start": 82.5,
+  "end": 87.0,
+  "checked": true
  },
  {
   "line": "The farmer just laughed when we sang him a line",
   "section": "Verse 4 - Female",
-  "start": 89.0,
-  "end": 89.0
+  "start": 87.0,
+  "end": 91.0,
+  "checked": true
  },
  {
   "line": "Said, \"Come back next summer, you two sound fine\"",
   "section": "Verse 4 - Female",
-  "start": 96.54,
-  "end": 99.54,
-  "estimated": true
+  "start": 91.0,
+  "end": 96.5,
+  "checked": true
  },
  {
   "line": "Harmony in the passenger seat",
   "section": "Chorus - Both",
-  "start": 104.08,
-  "end": 104.32
+  "start": 97.0,
+  "end": 100.0,
+  "checked": true
  },
  {
   "line": "Two different voices, one easy beat",
   "section": "Chorus - Both",
-  "start": 104.43,
-  "end": 107.43,
-  "estimated": true
+  "start": 100.0,
+  "end": 102.0,
+  "checked": true
  },
  {
   "line": "Miles of gold and a sky so wide",
   "section": "Chorus - Both",
-  "start": 104.54,
-  "end": 105.16
+  "start": 102.0,
+  "end": 105.0,
+  "checked": true
  },
  {
   "line": "Singing out loud on a sunny ride",
