@@ -4,42 +4,42 @@
   "section": "Verse",
   "start": 3.84,
   "end": 7.7,
-  "realigned": true
+  "skip": true
  },
  {
   "line": "Two red paddles from the corner shop",
   "section": "Verse",
   "start": 7.7,
   "end": 12.14,
-  "realigned": true
+  "skip": true
  },
  {
   "line": "You bounce the ball on the back of your hand",
   "section": "Verse",
   "start": 12.14,
   "end": 15.8,
-  "realigned": true
+  "skip": true
  },
  {
   "line": "I ask the rules and you say, “You’ll see”",
   "section": "Verse",
   "start": 15.8,
   "end": 19.74,
-  "realigned": true
+  "skip": true
  },
  {
   "line": "It clips the net, comes down on your side",
   "section": "Verse",
   "start": 21.58,
   "end": 26.14,
-  "realigned": true
+  "skip": true
  },
  {
   "line": "You scoop it up, send it shoulder-high",
   "section": "Verse",
   "start": 26.14,
   "end": 28.46,
-  "realigned": true
+  "skip": true
  },
  {
   "line": "I give you one you can reach this time",
