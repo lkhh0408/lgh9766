@@ -1,6 +1,6 @@
 쇼츠 업로드 정보 (업로드 순서대로, 한국 시간)
 공통: 설명에 그 회차 1시간 영상 링크를 넣어요. 사운드 추가는 누르지 않아요.
-설명 형식: 🎧 곡 제목 - Open to Close / 전체 1시간 플레이리스트는 하단 링크 / ▶영상 주소 / 해시태그
+설명 형식: 🎧 Open to Close - 곡 제목 / 전체 1시간 플레이리스트는 하단 링크 / ▶영상 주소 / 해시태그
 ※ 매일 1편 (평일 오후 5시, 주말 낮 12시). 11/19부터는 다음 쇼츠 묶음으로 이어가요.
 
 ========================================
@@ -10,7 +10,7 @@
 
 제목: 썸 타는 사람한테 몰래 보내고 싶은 노래 🎧
 설명:
-🎧 Yours, Mine - Open to Close
+🎧 Open to Close - Yours, Mine
 전체 1시간 플레이리스트는 하단 링크
 ▶https://www.youtube.com/watch?v=xyTQO_rt0eE
 
@@ -23,7 +23,7 @@
 
 제목: 일어나기 싫은 아침, 이 노래 틀면 창문부터 엶 🎧
 설명:
-🎧 Open the Window - Open to Close
+🎧 Open to Close - Open the Window
 전체 1시간 플레이리스트는 하단 링크
 ▶(PLAY LIST 01 영상 주소)
 
@@ -36,7 +36,7 @@
 
 제목: 오늘 하루 고생한 나한테 틀어주는 노래 🎧
 설명:
-🎧 When the Streetlights Come On - Open to Close
+🎧 Open to Close - When the Streetlights Come On
 전체 1시간 플레이리스트는 하단 링크
 ▶https://www.youtube.com/watch?v=xyTQO_rt0eE
 
@@ -49,7 +49,7 @@
 
 제목: 월요일 아침인데 휴가 온 기분 됨 🎧
 설명:
-🎧 Out of Office - Open to Close
+🎧 Open to Close - Out of Office
 전체 1시간 플레이리스트는 하단 링크
 ▶(PLAY LIST 01 영상 주소)
 
@@ -62,7 +62,7 @@
 
 제목: 사람 많은 출근길, 헤드폰 쓰면 나만의 무대 됨 🎧
 설명:
-🎧 Headphones On - Open to Close
+🎧 Open to Close - Headphones On
 전체 1시간 플레이리스트는 하단 링크
 ▶https://www.youtube.com/watch?v=xyTQO_rt0eE
 
@@ -75,7 +75,7 @@
 
 제목: 샤워하다가 나도 모르게 따라 부름 🎧
 설명:
-🎧 In My Key - Open to Close
+🎧 Open to Close - In My Key
 전체 1시간 플레이리스트는 하단 링크
 ▶(PLAY LIST 01 영상 주소)
 
