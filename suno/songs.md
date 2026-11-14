@@ -138,6 +138,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 12 | Soft Reset | 여성 | 얼터너티브 R&B | 90 | 방을 치우고 초를 켜고 마스크팩을 붙이는 일요일 밤, 나를 다시 시작하는 작은 의식 (10번은 나중에) |
 | 13 | Fountain Square | 남성 | 라틴 팝 (소프트 레게톤) | 98 | 해 질 녘 분수 광장, 누군가 틀어둔 스피커에 맞춰 모르는 사람들과 하나둘 춤추게 되는 저녁 |
 | 14 | Same Page | 여성 | 이지리스닝 걸그룹 팝 (Y2K, 2-step) | 112 | 같은 순간 똑같은 문자를 보내는 단짝, 눈빛 반만 봐도 다 아는 사이 (공감) |
+| 15 | Made It Home | 듀엣 | 멜로딕 힙합 (로파이) | 86 | 야근 끝난 밤 편의점 앞 컵라면 하나, 오늘도 버텨낸 서로를 다독이는 두 사람 (위로) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -170,6 +171,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-10: `folktronica, female vocal, warm gentle tone, fingerpicked acoustic guitar, soft glitchy electronic textures, light electronic beat, warm sub bass, airy synth swells, travelling feel, 92 BPM`
 - V3-13: `latin pop, soft reggaeton rhythm, male vocal, warm smooth tone, light dembow groove, nylon guitar riff, warm round bass, soft congas and shaker, breezy summer-evening feel, 98 BPM` (Exclude에서 heavy bass 뺌)
 - V3-14: `easy listening K-pop style girl group pop, Y2K feel, female vocals with light group harmonies, airy breathy tone, soft UK garage 2-step beat, glossy synth plucks, warm round bass, dreamy pads, playful but calm, 112 BPM`
+- V3-15: `melodic hip hop, lo-fi beat, male and female duet sung vocals, no rap, soft call and response, dusty warm keys, mellow jazzy guitar loop, warm round bass, soft vinyl texture, late night calm, 86 BPM` (Exclude에서 heavy bass 뺌)
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -189,3 +191,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 10 Day Trip Ticket: day trip ticket, one-way morning, fields rolling by, platform, tunnel, solo, back by midnight
 - 13 Fountain Square: fountain square, meet me by the water, coins in the fountain, one more song, old couple dancing, sway till the speakers stop
 - 14 Same Page: same page, same text same time, half a look, finish my sentence, typing at once, you get me
+- 15 Made It Home: made it home, didn't win today, cup noodles, corner store light, last bus, one more day done
