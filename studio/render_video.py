@@ -84,7 +84,8 @@ if RITUAL:
 for i, ((_, _, p), d) in enumerate(zip(songs, DURS)):
     gain = TARGET_LUFS - loudness(p)
     fl.append(f'[{i}]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,volume={gain:.2f}dB,'
-              f'alimiter=limit={CEILING:.4f}:attack=5:release=60:level=disabled,afade=t=out:st={max(0, d - 0.8):.3f}:d=0.8[a{i}]')
+              f'alimiter=limit={CEILING:.4f}:attack=5:release=60:level=disabled,afade=t=out:st={max(0, d - 0.8):.3f}:d=0.8,'
+              f'atrim=end={d:.6f},apad=whole_dur={d:.6f}[a{i}]')  # exactly d long, so the songs never drift from the picture
     seq.append(f'[a{i}]')
     if i < len(songs) - 1:
         fl.append(f'[{len(songs) + i}]aformat=sample_fmts=fltp:channel_layouts=stereo[g{i}]'); seq.append(f'[g{i}]')
