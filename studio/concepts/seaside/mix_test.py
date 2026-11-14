@@ -11,7 +11,7 @@ FPS = 24; OUT = os.path.join(HERE, 'mix_test.mp4'); GY = 860; CXH = 880
 
 # ---------- audio ----------
 CLIPS = [('41', 43.3, 8.0), ('52', 38.2, 10.0), ('60', 21.5, 10.0)]
-GAPS = [5.8, 3.6]; TAIL = 3.4
+GAPS = [3.0, 2.0]; TAIL = 3.4
 def song(n): return [os.path.join(SP, 'vol03_songs', f) for f in os.listdir(os.path.join(SP, 'vol03_songs')) if f.startswith(n + '.')][0]
 def lufs(p, ss, d):
     e = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-ss', str(ss), '-t', str(d), '-i', p, '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
@@ -35,10 +35,10 @@ CAR = '#7ED6C4'
 ch.OUTFITS['pl03_walk'] = WALK_OUT
 
 # ---------- motion plan ----------
-T1_WALK = (E1 + 1.1, E1 + 3.5)        # walk from the parked bike to the car
+T1_WALK = (E1 + .7, E1 + 2.05)        # walk from the parked bike to the car
 def speed(t):
     if t < E1: return 260 * min(sm((t + .2) / .6), 1 - sm((t - (E1 - 1.2)) / 1.2))
-    if t < S2: return 190 * min(sm((t - T1_WALK[0]) / .3), 1 - sm((t - (T1_WALK[1] - .3)) / .3))
+    if t < S2: return 340 * min(sm((t - T1_WALK[0]) / .3), 1 - sm((t - (T1_WALK[1] - .3)) / .3))
     if t < S3: return 420 * min(sm((t - (S2 - .2)) / 1.2), 1 - sm((t - (E2 - 1.4)) / 1.4))
     return 130 * min(sm((t - (S3 - .2)) / .8), 1 - sm((t - (E3 - 1.2)) / 1.2))
 POS = [0.0]
@@ -126,40 +126,40 @@ def render(t, scroll, ph, wph):
         c.push_group(); fn(); c.pop_group_to_source(); c.paint_with_alpha(min(1, alpha))
     ba = 0.0
     # ---- day: bicycle ----
-    if t < E1 + 1.1:
-        sun = 1 - sm((t - (E1 + .2)) / .5); helm = 1 - sm((t - (E1 + .1)) / .5)
-        rider = 1 - sm((t - (E1 + .75)) / .35)
+    if t < E1 + .7:
+        sun = 1 - sm((t - (E1 - .3)) / .5); helm = 1 - sm((t - (E1 - .3)) / .5)
+        rider = 1 - sm((t - (E1 + .3)) / .3)
         if t >= E1 + .2:
             bx = BIKE_PARK - scroll; layer(lambda: parked_bike(c, bx), 1 - rider)
         def b():
             c.save(); c.translate(CXH, GY); bike_haru(c, t, ph, OUTFIT, 1.0, 0, 0, sun, helm); c.restore()
         layer(b, rider)
-        walker_a = sm((t - (E1 + .75)) / .35)
+        walker_a = sm((t - (E1 + .3)) / .3)
         if walker_a > 0:
             layer(lambda: ch.draw(c, CXH, GY, t, L=L, outfit='pl03_walk', walk=0, phase=wph), walker_a)
     # ---- hand-over 1: walk to the car, get in ----
     if E1 + .2 <= t < S2 + 2:
         bx = BIKE_PARK - scroll
-        if t >= E1 + 1.1 and -300 < bx < W + 300: parked_bike(c, bx)
-    if E1 + 1.1 <= t < S2:
+        if t >= E1 + .7 and -300 < bx < W + 300: parked_bike(c, bx)
+    if E1 + .7 <= t < S2:
         cx = CAR_PARK0 - scroll
         inside = sm((t - (T1_WALK[1] + .05)) / .3)
-        reach = min(sm((t - (T1_WALK[1] + .5)) / .3), 1 - sm((t - (S2 - .5)) / .3)); press = math.sin((t - (T1_WALK[1] + .8)) / .35 * math.pi) if T1_WALK[1] + .8 <= t < T1_WALK[1] + 1.15 else 0
+        reach = min(sm((t - (T1_WALK[1] + .3)) / .25), 1 - sm((t - (S2 - .25)) / .25)); press = math.sin((t - (T1_WALK[1] + .5)) / .3 * math.pi) if T1_WALK[1] + .5 <= t < T1_WALK[1] + .8 else 0
         convertible(c, cx, t, 0, seated=dict(reach=reach, press=press) if inside > .5 else None)
         w = walk_amt(t)
         layer(lambda: ch.draw(c, CXH, GY, t, L=L, outfit='pl03_walk', walk=w, phase=wph), 1 - inside)
-        if t > T1_WALK[1] + .85: ba = 1 - sm((t - (S2 + .1)) / .5)
+        if t > T1_WALK[1] + .55: ba = 1 - sm((t - (S2 + .1)) / .5)
     # ---- sunset: convertible ----
     if S2 <= t < S3:
         if t < E2 + .3:
             convertible(c, CXH, t, ph * 1.4, seated=dict(wind=sm(speed(t) / 420)))
         else:
             cx = CAR_PARK1 - scroll
-            out_a = sm((t - (E2 + .35)) / .35)
+            out_a = sm((t - (E2 + .15)) / .3)
             convertible(c, cx, t, 0, seated=dict() if out_a < .5 else None)
-            reach = min(sm((t - (E2 + 1.0)) / .3), 1 - sm((t - (E2 + 1.9)) / .3)); press = math.sin((t - (E2 + 1.25)) / .35 * math.pi) if E2 + 1.25 <= t < E2 + 1.6 else 0
+            reach = min(sm((t - (E2 + .5)) / .25), 1 - sm((t - (E2 + 1.5)) / .3)); press = math.sin((t - (E2 + .7)) / .3 * math.pi) if E2 + .7 <= t < E2 + 1.0 else 0
             layer(lambda: ch.draw(c, CXH, GY, t, L=L, outfit='pl03_walk', walk=0, phase=wph, reach=reach, press=press), out_a)
-            if t > E2 + 1.3: ba = 1 - sm((t - (S3 + .1)) / .5)
+            if t > E2 + .75: ba = 1 - sm((t - (S3 + .1)) / .5)
     # ---- night: walking ----
     if t >= S3:
         cx = CAR_PARK1 - scroll
@@ -174,7 +174,7 @@ def render(t, scroll, ph, wph):
     return buf.astype(np.uint8)
 
 def walk_amt(t):
-    if E1 < t < S2: return min(1.0, speed(t) / 190)
+    if E1 < t < S2: return min(1.0, speed(t) / 340)
     if t >= S3: return min(1.0, speed(t) / 130)
     return 0.0
 
@@ -191,5 +191,5 @@ for fi in range(int(TOTAL * FPS)):
         else: cairo.ImageSurface.create_for_data(np.ascontiguousarray(img), cairo.FORMAT_ARGB32, W, H).write_to_png(os.path.join(HERE, f'mix_{t:05.1f}.png'))
     ph += 2 * math.pi * (speed(t) / 260 if t < E1 else 0) / FPS
     if S2 <= t < S3: ph += 2 * math.pi * speed(t) / 420 / FPS
-    wph += 2 * math.pi * .85 * walk_amt(t) / FPS
+    wph += 2 * math.pi * .85 * walk_amt(t) * (2.2 if E1 < t < S2 else 1.0) / FPS
 ff.stdin.close(); ff.wait(); os.remove(MIX); print('done', OUT, f'{TOTAL:.1f}s')
