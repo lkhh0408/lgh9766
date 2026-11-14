@@ -790,6 +790,48 @@ INTRO = {}
 if os.path.exists(scenes_path):
     INTRO = json.load(open(scenes_path)).get('intro', {})
 F_KO = os.path.join(ASSETS, 'fonts', 'NanumSquareRoundB.ttf')
+
+# lyric captions (from VOL.03, storyboard "captions": true): English line + Korean translation, bottom right.
+# Lines come from timing/<file number>.json ("skip" lines are left out), translations from translation/*.tsv
+# (English<TAB>Korean; an empty Korean column shows the English line alone, e.g. humming).
+CAPS = []
+if os.path.exists(scenes_path) and json.load(open(scenes_path)).get('captions'):
+    base = os.path.dirname(scenes_path); KO = {}
+    for tf in sorted(os.listdir(os.path.join(base, 'translation'))) if os.path.isdir(os.path.join(base, 'translation')) else []:
+        if tf.endswith('.tsv'):
+            for row in open(os.path.join(base, 'translation', tf), encoding='utf-8'):
+                if '\t' in row: e_, k_ = row.rstrip('\n').split('\t', 1); KO[e_.strip()] = k_.strip()
+    for i in range(len(TRACKS)):
+        tfile = os.path.join(base, 'timing', f'{songs[i][0]}.json')
+        if not os.path.exists(tfile): continue
+        ls = [l for l in json.load(open(tfile)) if not l.get('skip')]
+        for j, l in enumerate(ls):
+            nxt = ls[j + 1]['start'] if j + 1 < len(ls) else l['end'] + 1.5
+            t0 = starts[i] + l['start'] - 0.15; t1 = starts[i] + min(max(l['end'] + 0.8, l['start'] + 1.6), nxt - 0.1)
+            CAPS.append((t0, min(t1, ends[i]), l['line'], KO.get(l['line'].strip(), '')))
+    missing = sorted({c[2] for c in CAPS if c[2].strip() not in KO})
+    if missing: print(f'  ! {len(missing)} caption lines have no translation row, e.g. {missing[:3]}')
+F_CAP_EN = ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-500.ttf'), 34)
+F_CAP_KO = ImageFont.truetype(F_KO, 32)
+def draw_captions(frame, t, dark_ui):
+    for t0, t1, en, ko in CAPS:
+        if t0 <= t < t1: break
+    else: return
+    a = max(0.0, min(1.0, (t - t0) / .2, (t1 - t) / .25))
+    ov = Image.new('RGBA', frame.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+    fe, fk = F_CAP_EN, F_CAP_KO
+    for size in (34, 30, 26):   # shrink long lines to fit the right half
+        fe = ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-500.ttf'), size); fk = ImageFont.truetype(F_KO, size - 2)
+        if max(d.textlength(en, font=fe), d.textlength(ko, font=fk) if ko else 0) < 860: break
+    col = (43, 37, 65) if dark_ui else (255, 255, 255)
+    sh = (255, 255, 255) if dark_ui else (20, 18, 40)
+    rx = W - 96
+    rows = [(en, fe, 924 if ko else 950), (ko, fk, 968)] if ko else [(en, fe, 950)]
+    for txt, f_, y in rows:
+        for dx, dy in ((0, 2), (2, 0), (-2, 0), (0, -2)):
+            d.text((rx + dx, y + dy), txt, font=f_, fill=sh + (int(110 * a),), anchor='ra')
+        d.text((rx, y), txt, font=f_, fill=col + (int(255 * a),), anchor='ra')
+    frame.alpha_composite(ov)
 def _ease(u): u = max(0.0, min(1.0, u)); return 1 - (1 - u) ** 3
 def tag_alpha(t):
     a = min(1, (t - .4) / .3, (4.7 + LEAD - t) / .3) if t < 5 + LEAD else 0
@@ -856,7 +898,7 @@ for fi in range(nframes):
         fw = max(6, int(BAR_W * pr)); ov.alpha_composite(barfill.crop((0, 0, fw, 6)), (BAR_X, BAR_Y))
         dl.ellipse((BAR_X + fw - 10, BAR_Y - 7, BAR_X + fw + 10, BAR_Y + 13), fill=(255, 255, 255, 255), outline=(43, 37, 65, 120))
         dl.text((BAR_X + BAR_W, BAR_Y + 18), f"{fmt(since)} / {fmt(dur)}", font=F_SM, fill=tc, anchor='ra')
-    frame.alpha_composite(ov); draw_nametag(frame, t, ba, 4 * abs(math.cos(phase)) * walk); out = frame.convert('RGB')
+    frame.alpha_composite(ov); draw_nametag(frame, t, ba, 4 * abs(math.cos(phase)) * walk); draw_captions(frame, t, dark_ui); out = frame.convert('RGB')
     fa = fade_at(t)
     if fa < 0.999: out = Image.blend(Image.new('RGB', out.size, (0, 0, 0)), out, max(0.0, fa))
     if STILLS is not None:
