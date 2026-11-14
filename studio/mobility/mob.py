@@ -104,6 +104,11 @@ def detail(ctx, hip, o, L):
     elif d == 'collar':   # denim jacket over a white tee
         ctx.move_to(x - 8, y - 73); ctx.line_to(x + 2, y - 52); ctx.line_to(x + 12, y - 73); ctx.close_path(); _shape(ctx, (1, 1, 1), L)
         ctx.move_to(x + 2, y - 52); ctx.line_to(x + 2, y + 6); ctx.stroke()
+    elif d == 'scarf':    # knit top with a muffler (colour: o['scarf'])
+        sc = hexc(o.get('scarf', '#2B2541'))
+        ctx.set_line_width(3); ctx.move_to(x + 6, y - 66); ctx.line_to(x + 18, y - 34); ctx.line_to(x + 6, y - 32); ctx.line_to(x - 2, y - 62); ctx.close_path(); _shape(ctx, sc, L)
+        ctx.move_to(x - 22, y - 80); ctx.curve_to(x - 10, y - 66, x + 16, y - 64, x + 26, y - 78); ctx.line_to(x + 24, y - 66); ctx.curve_to(x + 12, y - 54, x - 12, y - 56, x - 24, y - 68); ctx.close_path(); _shape(ctx, sc, L)
+        ctx.set_line_width(2); ctx.move_to(x + 9, y - 44); ctx.line_to(x + 16, y - 46); ctx.stroke()
     elif d == 'buttons':  # knit cardigan
         ctx.move_to(x + 6, y - 72); ctx.line_to(x + 6, y + 6); ctx.stroke()
         for yy in (-58, -40, -22): ctx.arc(x + 12, y + yy, 2.6, 0, 2 * math.pi); _shape(ctx, (1, 1, 1), L)
