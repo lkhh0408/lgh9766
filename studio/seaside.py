@@ -211,7 +211,7 @@ def scene(c, m, scroll=0.0, t=1.0):
     c.rectangle(0, GY, W, H - GY); shape(c, tone('#C9C6D6', m), L)
     c.set_line_width(6); c.set_source_rgba(1, 1, 1, .8)
     for k in range(12):
-        px = wrapx(k * 220, scroll, 1.2, W + 600); c.move_to(px, 960); c.line_to(px + 100, 960); c.stroke()
+        px = wrapx(k * 220, scroll, 1.2, W + 600); c.move_to(px, 1014); c.line_to(px + 100, 1014); c.stroke()
     for k in range(26):
         px = wrapx(k * 95, scroll, 1.35, W + 600)
         for dx, rr in ((-26, 26), (0, 34), (28, 24)): c.new_sub_path(); c.arc(px + dx, 1066, rr + 2.5, 0, 6.3)
