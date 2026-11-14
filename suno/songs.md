@@ -46,7 +46,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - **장르에 맞춰 가사 총 줄 수를 정해요** (실제 Suno 결과로 맞춘 기준, 2026-11-14). 너무 길면 지루해서 안 들어요.
   - 신나는 팝(아이돌, 일렉트로닉, 하우스): 약 40~42줄 / 중간(라틴, 힙합, 어쿠스틱): 약 38~40줄 / 느린 곡(R&B, 로파이): 약 28줄
   - 연주 구간([Intro], [Instrumental Break], [Instrumental Outro])은 하나에 약 20~30초가 늘어나서 **곡마다 최대 1개**만 넣어요.
-  - 실제 결과: Same Page 37줄/연주 없음 2:43, Fountain Square 42줄/없음 3:05, One More Page 30줄/2개 2:47, Encore Room 36줄/없음 2:11(짧음) → 42줄/인트로 2:40, Table for One 26줄/2개 3:17, Laptop Closed 38줄/2개 3:22, Highlight Reel 32줄/2개 3:28(김)
+  - 실제 결과: Same Page 37줄/연주 없음 2:43, Fountain Square 42줄/없음 3:05, One More Page 30줄/2개 2:47, Encore Room 36줄/없음 2:11(짧음) → 42줄/인트로 2:40, Table for One 26줄/2개 3:17, Laptop Closed 38줄/2개 3:22, Highlight Reel 32줄/2개 3:28(김), Nothing Special 40줄/없음 3:24·3:08(칠 R&B 듀엣)
   - 살짝 긴 곡은 영상 만들 때 앞뒤 연주 부분을 잘라 3:15 안으로 맞출 수 있어요(자연스러운 페이드).
 
 ## 곡 구성 다양하게 (VOL.03 16번부터)
