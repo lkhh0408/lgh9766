@@ -101,6 +101,12 @@ def _prop(ctx, kind, ex, ey, t, L, sleeve):
     ctx.arc(cx - 9, by - 16, 8, 0, 2 * math.pi); _shape(ctx, skin, L)
     ctx.set_line_width(2); ctx.move_to(cx - 6, by - 21); ctx.line_to(cx, by - 21); ctx.move_to(cx - 6, by - 16); ctx.line_to(cx, by - 16); ctx.move_to(cx - 6, by - 11); ctx.line_to(cx, by - 11); ctx.stroke()
 
+def shades_on_head(ctx, hx, hy, R, L, lift=0.0):
+    """round sunglasses pushed up and resting on top of the head (an outfit prop, the real glasses stay on)"""
+    ctx.save(); ctx.translate(hx + 10, hy - R + 6 - lift); ctx.rotate(-.12)
+    ctx.arc(0, 0, 12, math.pi, 2 * math.pi); ctx.close_path(); ctx.set_source_rgba(.13, .12, .2, .95); ctx.fill_preserve()
+    ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke(); ctx.restore()
+
 def _bag_back(ctx, kind, hip, col, L):
     """Bag parts drawn behind the torso (character faces right, so the back is to the left)."""
     x, y = hip
@@ -179,6 +185,11 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
     ctx.curve_to(hip[0] + 26, hip[1] - 72, hip[0] + 30, hip[1] - 40, hip[0] + 26, hip[1] + 8); ctx.close_path(); _shape(ctx, top, L)
     ctx.move_to(hip[0] + 4, hip[1] - 30); ctx.line_to(hip[0] + 22, hip[1] - 30); ctx.stroke()
     if bag: _bag_front(ctx, bag, hip, hexc(o.get('bag_color', '#E9A23B')), L, o.get('strap'))
+    if o.get('scarf'):   # muffler: wrap round the neck + a tail down the front
+        x, y = hip; sc = hexc(o['scarf']); ctx.set_line_width(3)
+        ctx.move_to(x + 6, y - 66); ctx.line_to(x + 18, y - 34); ctx.line_to(x + 6, y - 32); ctx.line_to(x - 2, y - 62); ctx.close_path(); _shape(ctx, sc, L)
+        ctx.move_to(x - 22, y - 80); ctx.curve_to(x - 10, y - 66, x + 16, y - 64, x + 26, y - 78); ctx.line_to(x + 24, y - 66); ctx.curve_to(x + 12, y - 54, x - 12, y - 56, x - 24, y - 68); ctx.close_path(); _shape(ctx, sc, L)
+        ctx.set_line_width(4)
     leg(ph, False)
     # head (fixed identity)
     hx, hy, R = cx + 6, hip[1] - 116, 42
@@ -197,6 +208,7 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
     ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.arc(hx + 30, hy + 26, 6, math.radians(10), math.radians(120)); ctx.stroke()
     # outfit: headphones
     _phones(ctx, o.get('phones_style', 'classic'), hx, hy, R, phones, L, don)
+    if o.get('shades_up'): shades_on_head(ctx, hx, hy, R, L)
     if reach > 0: back_arm(_smooth(reach))
     # outfit: front arm + prop
     ctx.set_line_width(12); ctx.set_source_rgb(*top)
