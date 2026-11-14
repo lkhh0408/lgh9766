@@ -183,6 +183,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 24 | Run Club | 여성 | 소프트 리퀴드 드럼앤베이스 팝 | 172 | 토요일 아침 러닝 크루, 처음 만난 사람들과 보폭을 맞춰 달리는 강변 (기쁨, 구성 B) |
 | 25 | Dear Twenty | 남성 | 베드룸 R&B | 86 | 스무 살의 나에게 쓰는 편지, 계획한 길은 아니어도 결국 잘 지내고 있다는 다독임 (위로, 구성 K) |
 | 26 | Out Loud | 여성 | 인디 팝 (신스) | 108 | 데려다주는 길 집 앞, 머릿속으로 백 번 한 말을 처음 소리 내 말하기 직전의 설렘 (설렘·공감, 구성 F) |
+| 27 | Nothing Special | 듀엣 | 칠 R&B 감성 혼성 팝 | 96 | 오래 만난 연인의 평범한 저녁, 특별한 건 없어서 더 우리 같은 시간 (공감, 구성 G) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -227,6 +228,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-24: `soft liquid drum and bass pop, female vocal, airy breathy tone, gentle rolling breakbeat, half-time feel, warm sub bass kept soft, lush pads, shimmering keys, uplifting morning energy, post-chorus vocal hook, 172 BPM`
 - V3-25: `bedroom R&B, male vocal, soft warm intimate tone, gentle falsetto, mellow electric piano, soft muted guitar, warm round bass, laid-back soft drums, late night letter mood, long instrumental outro with keys, 86 BPM` (Exclude에서 heavy bass 뺌)
 - V3-26: `indie pop, female vocal, bright sweet airy tone, shimmering synth pads, bouncy plucked synths, soft punchy drums, warm round bass, fluttery heartbeat feel, short instrumental break with synth melody, 108 BPM`
+- V3-27: `chill R&B flavored co-ed duet pop, male and female vocals trading verses, warm smooth tones, soft electric piano, mellow synth pads, warm round bass, gentle laid-back beat, cozy evening at home, 96 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -258,3 +260,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 24 Run Club: run club, saturday 7am, same pace, we run to feel alive, breathing in time, high five at the finish
 - 25 Dear Twenty: dear twenty, not the way you planned, you'll find your way, the ones who stay, you did okay
 - 26 Out Loud: out loud, a hundred times inside my head, walking you home, porch steps, three little words, don't go in yet
+- 27 Nothing Special: nothing special, that's what makes it ours, shared blanket, fell asleep on the show, delivery at the door, same old couch
