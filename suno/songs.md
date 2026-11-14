@@ -13,7 +13,7 @@
 
 **공통 Styles (뒷부분)** (VOL.03 8번부터 맨 앞에 요즘 사운드 문구 추가)
 ```
-modern polished production, contemporary 2020s sound, catchy but gentle melody, easy listening, warm feel-good vibe, positive, smooth relaxed vocals, mellow dynamics, consistent volume, background music friendly, short song under 3 minutes
+modern polished production, contemporary 2020s sound, catchy but gentle melody, easy listening, warm feel-good vibe, positive, smooth relaxed vocals, mellow dynamics, consistent volume, background music friendly, full length song around 3 minutes
 ```
 
 **Exclude**
@@ -36,16 +36,20 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 4. **위로도 밝게 끝내요**: 슬픈 노래는 안 되지만, 지친 마음을 살짝 알아준 뒤 따뜻하게 마무리해요.
 5. **한국어로 옮겨도 자연스러운 영어**로 써요: 영어 말장난에만 기대지 않고, 번역해도 뜻과 감정이 그대로 전해지게.
 
+## 곡 길이 (확정)
+- 모든 곡은 **2분 40초 이상 ~ 3분 15초 미만**. 1분대, 2분 초반은 안 돼요.
+- 공통 Styles 끝은 `full length song around 3 minutes`.
+- 가사는 최소 **벌스 2개 + 후렴 3번 + 브리지 + 아웃트로**, 필요하면 [Intro], [Instrumental Break]로 길이를 채워요.
+
 ## 곡 구성 다양하게 (VOL.03 16번부터)
 - 모든 곡을 벌스 → 프리코러스 → 코러스로 만들지 않아요. **바로 옆 곡끼리 구성이 겹치지 않게** 아래 유형을 섞어 써요.
   - A. 후렴 먼저: 후렴 → 벌스 → 후렴 → 벌스 → 후렴 (아이돌 팝, R&B 팝)
   - B. 포스트 코러스: 후렴 뒤에 [Post-Chorus] 짧은 반복 훅 (아이돌 팝, 칠 하우스)
   - C. 프리코러스 없음: 벌스 → 후렴 → 벌스 → 후렴 → 브리지 → 후렴 (로파이, 송랩)
-  - D. 짧은 구성: 인트로 → 벌스 → 후렴 → 벌스 → 후렴 → 아웃트로, 브리지 없음 (로파이 팝, 베드룸 팝)
   - E. 후렴구 반복형: 큰 후렴 없이 벌스마다 끝에 제목 문장 (어쿠스틱, 포크)
   - F. 중간 연주 구간: 후렴 → [Instrumental Break] → 마지막 후렴 (R&B, 하우스)
   - G. 듀엣 주고받기: 1절 한 사람, 2절 다른 사람, 후렴 같이, 브리지 한 줄씩 (듀엣)
-- VOL.03 남은 곡 계획: 16 = A+B, 17 = F, 18 = C, 19 = D, 20 = E
+- VOL.03 남은 곡 계획: 16 = A+B, 17 = F, 18 = C, 19 = G 대신 여성 솔로라 '인트로가 긴 구성'(긴 [Intro] + 벌스 → 후렴 ×3 + 브리지), 20 = E
 
 ## 가사 겹침 금지
 - 곡끼리 **후렴 핵심 문장, 제목, 특징적인 표현**이 겹치지 않게 써요(이전 VOL 곡 제목 포함). 꼭 필요한 기본 단어(love, day 등)는 괜찮아요.
