@@ -39,7 +39,10 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 ## 곡 길이 (확정)
 - 모든 곡은 **2분 40초 이상 ~ 3분 15초 미만**. 1분대, 2분 초반은 안 돼요.
 - 공통 Styles 끝은 `full length song around 3 minutes`.
-- 가사는 최소 **벌스 2개 + 후렴 3번 + 브리지 + 아웃트로**, 필요하면 [Intro], [Instrumental Break]로 길이를 채워요.
+- 가사는 **벌스 2개 + 후렴 3번 + 브리지 + 아웃트로**를 기본으로 해요.
+- **BPM에 맞춰 가사 총 줄 수를 정해요** (한 줄 ≈ 480 ÷ BPM 초). 너무 길면 지루해서 안 들어요.
+  - 85~90 BPM: 약 28줄 / 94~100 BPM: 약 30줄 / 105~115 BPM: 약 36줄
+  - [Intro], [Instrumental Break]를 넣으면 그만큼 줄을 빼요. 후렴은 보통 4~6줄, 벌스는 4줄.
 
 ## 곡 구성 다양하게 (VOL.03 16번부터)
 - 모든 곡을 벌스 → 프리코러스 → 코러스로 만들지 않아요. **바로 옆 곡끼리 구성이 겹치지 않게** 아래 유형을 섞어 써요.
