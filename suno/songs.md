@@ -155,6 +155,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 14 | Same Page | 여성 | 이지리스닝 걸그룹 팝 (Y2K, 2-step) | 112 | 같은 순간 똑같은 문자를 보내는 단짝, 눈빛 반만 봐도 다 아는 사이 (공감) |
 | 15 | Made It Home | 듀엣 | 멜로딕 힙합 (로파이) | 86 | 야근 끝난 밤 편의점 앞 컵라면 하나, 오늘도 버텨낸 서로를 다독이는 두 사람 (위로) |
 | 16 | Laptop Closed | 남성 | 이지리스닝 보이그룹 팝 | 108 | 금요일 저녁 노트북을 덮는 순간 시작되는 주말, 일주일을 버틴 나에게 주는 해방감 (기쁨, 구성 A+B) |
+| 17 | Highlight Reel | 여성 | R&B 팝 | 94 | 밤에 SNS를 넘기다 작아지는 순간, 내 비하인드를 남의 하이라이트와 비교하지 말자는 다독임 (공감·위로, 구성 F) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -189,6 +190,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-14: `easy listening K-pop style girl group pop, Y2K feel, female vocals with light group harmonies, airy breathy tone, soft UK garage 2-step beat, glossy synth plucks, warm round bass, dreamy pads, playful but calm, 112 BPM`
 - V3-15: `melodic hip hop, lo-fi beat, male and female duet sung vocals, no rap, soft call and response, dusty warm keys, mellow jazzy guitar loop, warm round bass, soft vinyl texture, late night calm, 86 BPM` (Exclude에서 heavy bass 뺌)
 - V3-16: `easy listening K-pop style boy group pop, male vocals with soft group harmonies, bright clean tone, groovy light funk guitar, bouncy synth bass, crisp gentle drums, catchy vocal post-chorus hook, fresh and upbeat but calm, 108 BPM`
+- V3-17: `R&B pop, female vocal, warm silky tone, soft layered harmonies, smooth Rhodes and soft synth pads, warm round bass, crisp laid-back drums, gentle guitar licks, instrumental break with mellow keys solo, comforting late night mood, 94 BPM` (Exclude에서 heavy bass 뺌)
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -210,3 +212,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 14 Same Page: same page, same text same time, half a look, finish my sentence, typing at once, you get me
 - 15 Made It Home: made it home, didn't win today, cup noodles, corner store light, last bus, one more day done
 - 16 Laptop Closed: laptop closed, friday evening, held it all week, let it go, weekend starts now, no alarm
+- 17 Highlight Reel: highlight reel, behind-the-scenes, scrolling at 2am, filters, my own timeline, put the phone down
