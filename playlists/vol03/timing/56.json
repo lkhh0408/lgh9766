@@ -1,0 +1,160 @@
+[
+ {
+  "line": "One more page, one more sip",
+  "section": "Hook",
+  "start": 0.0,
+  "end": 5.5
+ },
+ {
+  "line": "Then I'll let the evening slip",
+  "section": "Hook",
+  "start": 7.24,
+  "end": 10.9
+ },
+ {
+  "line": "Desk lamp glowing, notes all over",
+  "section": "Verse",
+  "start": 12.0,
+  "end": 17.68
+ },
+ {
+  "line": "Tea gone cold beside my shoulder",
+  "section": "Verse",
+  "start": 17.68,
+  "end": 22.54
+ },
+ {
+  "line": "Rain keeps tapping on the glass",
+  "section": "Verse",
+  "start": 22.78,
+  "end": 26.64
+ },
+ {
+  "line": "Watching all the hours pass",
+  "section": "Verse",
+  "start": 26.64,
+  "end": 31.86
+ },
+ {
+  "line": "One more page, one more sip",
+  "section": "Hook",
+  "start": 32.4,
+  "end": 36.68
+ },
+ {
+  "line": "Then I'll let the evening slip",
+  "section": "Hook",
+  "start": 36.68,
+  "end": 42.26
+ },
+ {
+  "line": "Cat walks over my open book",
+  "section": "Verse",
+  "start": 42.26,
+  "end": 48.28
+ },
+ {
+  "line": "Takes my spot with a sleepy look",
+  "section": "Verse",
+  "start": 48.28,
+  "end": 53.44
+ },
+ {
+  "line": "Phone lights up, a friend says, \"Rest",
+  "section": "Verse",
+  "start": 53.44,
+  "end": 58.34
+ },
+ {
+  "line": "You've done more than you think, I bet\"",
+  "section": "Verse",
+  "start": 58.34,
+  "end": 62.52
+ },
+ {
+  "line": "One more page, one more sip",
+  "section": "Hook",
+  "start": 62.52,
+  "end": 67.58
+ },
+ {
+  "line": "Then I'll let the evening slip",
+  "section": "Hook",
+  "start": 69.16,
+  "end": 73.0
+ },
+ {
+  "line": "Mm, mm, mm",
+  "section": "Interlude",
+  "start": 79.7,
+  "end": 82.7,
+  "estimated": true
+ },
+ {
+  "line": "Mm, mm, mm",
+  "section": "Interlude",
+  "start": 86.4,
+  "end": 89.4,
+  "estimated": true
+ },
+ {
+  "line": "You don't have to finish it all tonight",
+  "section": "Verse",
+  "start": 93.1,
+  "end": 98.62
+ },
+ {
+  "line": "Half a chapter's still alright",
+  "section": "Verse",
+  "start": 98.62,
+  "end": 103.84
+ },
+ {
+  "line": "Close the book and dim the light",
+  "section": "Verse",
+  "start": 104.52,
+  "end": 108.94
+ },
+ {
+  "line": "Tomorrow's page can wait till light",
+  "section": "Verse",
+  "start": 108.94,
+  "end": 114.08
+ },
+ {
+  "line": "One more page, one more sip",
+  "section": "Hook",
+  "start": 114.08,
+  "end": 119.02
+ },
+ {
+  "line": "Then I'll let the evening slip",
+  "section": "Hook",
+  "start": 120.76,
+  "end": 124.38
+ },
+ {
+  "line": "One more page, then I'll rest",
+  "section": "Hook",
+  "start": 125.08,
+  "end": 129.56
+ },
+ {
+  "line": "Today I gave it all my best",
+  "section": "Hook",
+  "start": 129.56,
+  "end": 135.26
+ },
+ {
+  "line": "One more page",
+  "section": "Outro",
+  "start": 135.42,
+  "end": 138.56
+ },
+ {
+  "line": "Then I'll rest",
+  "section": "Outro",
+  "start": 141.22,
+  "end": 142.42
+ }
+]

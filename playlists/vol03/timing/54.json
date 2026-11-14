@@ -1,0 +1,274 @@
+[
+ {
+  "line": "Oh-oh, oh-oh",
+  "section": "Intro",
+  "start": 3.8,
+  "end": 6.8,
+  "estimated": true
+ },
+ {
+  "line": "(Laptop closed)",
+  "section": "Intro",
+  "start": 7.6,
+  "end": 8.72
+ },
+ {
+  "line": "Laptop closed, the weekend's here",
+  "section": "Chorus",
+  "start": 10.18,
+  "end": 14.22
+ },
+ {
+  "line": "Every heavy thing just disappears",
+  "section": "Chorus",
+  "start": 14.78,
+  "end": 18.38
+ },
+ {
+  "line": "You held it all week, now let it go",
+  "section": "Chorus",
+  "start": 18.38,
+  "end": 23.16
+ },
+ {
+  "line": "Turn it up and take it slow",
+  "section": "Chorus",
+  "start": 23.16,
+  "end": 25.92
+ },
+ {
+  "line": "Oh-oh, no alarm tomorrow",
+  "section": "Post-Chorus",
+  "start": 29.66,
+  "end": 32.26
+ },
+ {
+  "line": "Oh-oh, the night is ours to borrow",
+  "section": "Post-Chorus",
+  "start": 33.36,
+  "end": 35.8
+ },
+ {
+  "line": "Five fifty-nine, I'm watching the clock",
+  "section": "Verse",
+  "start": 38.92,
+  "end": 40.06
+ },
+ {
+  "line": "One last email, then I hit stop",
+  "section": "Verse",
+  "start": 40.06,
+  "end": 42.32
+ },
+ {
+  "line": "Jacket on, there's a breeze outside",
+  "section": "Verse",
+  "start": 43.06,
+  "end": 44.62
+ },
+ {
+  "line": "Sky's turning pink like it's on my side",
+  "section": "Verse",
+  "start": 44.62,
+  "end": 47.0
+ },
+ {
+  "line": "Every step feels lighter than before",
+  "section": "Verse",
+  "start": 47.0,
+  "end": 50.96
+ },
+ {
+  "line": "Leaving Monday at the office door",
+  "section": "Verse",
+  "start": 50.96,
+  "end": 55.26
+ },
+ {
+  "line": "Laptop closed, the weekend's here",
+  "section": "Chorus",
+  "start": 55.26,
+  "end": 59.28
+ },
+ {
+  "line": "Every heavy thing just disappears",
+  "section": "Chorus",
+  "start": 59.28,
+  "end": 63.62
+ },
+ {
+  "line": "You held it all week, now let it go",
+  "section": "Chorus",
+  "start": 63.62,
+  "end": 68.26
+ },
+ {
+  "line": "Turn it up and take it slow",
+  "section": "Chorus",
+  "start": 68.26,
+  "end": 71.02
+ },
+ {
+  "line": "Oh-oh, no alarm tomorrow",
+  "section": "Post-Chorus",
+  "start": 74.36,
+  "end": 77.56
+ },
+ {
+  "line": "Oh-oh, the night is ours to borrow",
+  "section": "Post-Chorus",
+  "start": 78.42,
+  "end": 82.38
+ },
+ {
+  "line": "Group chat's buzzing, \"Where are we going?\"",
+  "section": "Verse",
+  "start": 82.38,
+  "end": 86.02
+ },
+ {
+  "line": "Somebody says, \"Anywhere, let's go\"",
+  "section": "Verse",
+  "start": 86.02,
+  "end": 88.06
+ },
+ {
+  "line": "Street food smoke and a song we know",
+  "section": "Verse",
+  "start": 88.06,
+  "end": 90.3
+ },
+ {
+  "line": "Laughing too loud on the way home",
+  "section": "Verse",
+  "start": 90.3,
+  "end": 92.8
+ },
+ {
+  "line": "Nobody's checking what time it is",
+  "section": "Verse",
+  "start": 92.8,
+  "end": 97.12
+ },
+ {
+  "line": "Who knew that freedom felt like this",
+  "section": "Verse",
+  "start": 97.12,
+  "end": 100.64
+ },
+ {
+  "line": "Laptop closed, the weekend's here",
+  "section": "Chorus",
+  "start": 100.92,
+  "end": 104.3
+ },
+ {
+  "line": "Every heavy thing just disappears",
+  "section": "Chorus",
+  "start": 104.3,
+  "end": 108.54
+ },
+ {
+  "line": "You held it all week, now let it go",
+  "section": "Chorus",
+  "start": 109.03,
+  "end": 113.42
+ },
+ {
+  "line": "Turn it up and take it slow",
+  "section": "Chorus",
+  "start": 113.42,
+  "end": 116.06
+ },
+ {
+  "line": "Oh-oh, no alarm tomorrow",
+  "section": "Post-Chorus",
+  "start": 119.32,
+  "end": 122.54
+ },
+ {
+  "line": "Oh-oh, the night is ours to borrow",
+  "section": "Post-Chorus",
+  "start": 123.14,
+  "end": 125.84
+ },
+ {
+  "line": "You did enough, you really did",
+  "section": "Bridge",
+  "start": 126.96,
+  "end": 131.48
+ },
+ {
+  "line": "Give yourself the time you never get",
+  "section": "Bridge",
+  "start": 131.48,
+  "end": 136.0
+ },
+ {
+  "line": "Sleep in late, or stay up all night",
+  "section": "Bridge",
+  "start": 137.62,
+  "end": 141.02
+ },
+ {
+  "line": "Either way, you're doing alright",
+  "section": "Bridge",
+  "start": 141.02,
+  "end": 143.92
+ },
+ {
+  "line": "Laptop closed, the weekend's here",
+  "section": "Final Chorus",
+  "start": 162.82,
+  "end": 167.08
+ },
+ {
+  "line": "Every heavy thing just disappears",
+  "section": "Final Chorus",
+  "start": 167.08,
+  "end": 171.32
+ },
+ {
+  "line": "You held it all week, now let it go",
+  "section": "Final Chorus",
+  "start": 171.32,
+  "end": 176.1
+ },
+ {
+  "line": "Turn it up and take it slow",
+  "section": "Final Chorus",
+  "start": 176.1,
+  "end": 178.9
+ },
+ {
+  "line": "Oh-oh, no alarm tomorrow",
+  "section": "Post-Chorus",
+  "start": 181.96,
+  "end": 185.36
+ },
+ {
+  "line": "Oh-oh, the night is ours to borrow",
+  "section": "Post-Chorus",
+  "start": 185.36,
+  "end": 188.6
+ },
+ {
+  "line": "Laptop closed",
+  "section": "Outro",
+  "start": 190.0,
+  "end": 192.06
+ },
+ {
+  "line": "Now let it go",
+  "section": "Outro",
+  "start": 192.06,
+  "end": 198.08
+ },
+ {
+  "line": "Oh-oh, oh-oh",
+  "section": "Outro",
+  "start": 200.08,
+  "end": 203.08,
+  "estimated": true
+ }
+]
