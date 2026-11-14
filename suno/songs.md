@@ -266,5 +266,14 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 번호 | 제목 | 보컬 | 장르 | BPM | 내용 |
 |---|---|---|---|---|---|
 | K-TEST-01 | 오늘부터 다르게 | 여자(걸그룹 느낌) | 아이돌 이지리스닝 K팝 | 102 | 오래된 친구와 걷던 밤, 친구에서 연인이 되는 순간 (기쁨) |
+| K-TEST-02 | It's a Date | 남자(보이그룹 느낌) | 청량 신스팝 K팝 | 116 | 첫 데이트 전날 밤, 기다리던 답장 (기쁨, 후렴으로 시작) |
+| K-TEST-03 | 알람 없는 아침 | 여자 솔로 | K-R&B | 84 | 알람 없이 눈뜬 날, 아무것도 안 해도 괜찮은 하루 (위로, AABA) |
+| K-TEST-04 | 새벽 두 시 수다 | 여자(걸그룹 느낌) | 2-step 개러지 K팝 | 128 | 퇴근 후 친구 집 앞, 새벽까지 이어지는 수다 (공감, 반복 훅) |
 - Styles: `K-pop girl group easy listening, bright soft female vocals, Korean lyrics with a short English hook, airy synth pads, soft plucked synths, clean modern drums, warm round bass, light groove, night walk butterflies, 102 BPM`
 - 사용한 핵심 표현: 친구라는 말로는 부족해, Walk with me tonight, 가로등 아래 그림자, 반 줄까, 한 바퀴만 더 걷자
+- Styles 02: `K-pop boy group easy listening, fresh clear male vocals, Korean lyrics with a short English hook, bright synth pop, sparkling synths, crisp modern drums, warm round bass, light bouncy groove, late night butterflies before a first date, 116 BPM`
+- Styles 03: `K-R&B, soft female solo vocal, Korean lyrics, warm intimate tone, soft electric piano, mellow synth pads, warm round bass, slow laid-back groove, lazy sunny morning, 84 BPM`
+- Styles 04: `K-pop girl group easy listening, light airy female vocals, Korean lyrics with a short English hook, soft modern 2-step garage beat, shuffling hi-hats, airy synth chords, warm round bass, late night city friends, 128 BPM`
+- 사용한 핵심 표현 02: it's a date, 내일 몇 시에 볼까, 읽음 표시, 쓰다 지운 말, 내일 봐 세 글자
+- 사용한 핵심 표현 03: 알람 없이 눈을 뜬 아침, 오늘의 나는 이걸로 충분해, take it slow, 내일의 나는 내일 걱정할게
+- 사용한 핵심 표현 04: 새벽 두 시, talk all night, 우리만 아는 농담, 편의점 봉지, 나쁘지 않은 어른
