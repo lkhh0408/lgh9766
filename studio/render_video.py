@@ -749,6 +749,41 @@ cards_d = [card(n, ti, (43, 37, 65)) for n, ti in TRACKS]; cards_l = [card(n, ti
 fmt = lambda s: f"{int(s // 60)}:{int(s % 60):02d}"
 
 STILLS = {int(float(v) * FPS) for v in args.stills.split(',')} if args.stills else None
+
+# Haru's name tag (from VOL.03): an intro card for the first seconds, and a "HARU" tag above the head
+# at the start and at every song change. Turned on by an "intro" block in the storyboard, e.g.
+# "intro": {"sub": "코발트 헤드폰 · 머스터드 백팩 · 강변 산책"}
+INTRO = {}
+if os.path.exists(scenes_path):
+    INTRO = json.load(open(scenes_path)).get('intro', {})
+F_KO = os.path.join(ASSETS, 'fonts', 'NanumSquareRoundB.ttf')
+def _ease(u): u = max(0.0, min(1.0, u)); return 1 - (1 - u) ** 3
+def tag_alpha(t):
+    a = min(1, (t - .4) / .3, (4.7 - t) / .3) if t < 5 else 0
+    for i in range(len(TRACKS) - 1):
+        a = max(a, min(1, (t - (ends[i] - .15)) / .25, (starts[i + 1] + 2.2 - t) / .4))
+    return max(0.0, a)
+def draw_nametag(frame, t, ba, bob):
+    if not INTRO: return
+    L = (43, 37, 65)
+    ov = Image.new('RGBA', frame.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+    ta = tag_alpha(t)
+    if ta > 0:
+        sc = .6 + .4 * _ease(ta * 1.2); side = _ease(min(1, ba * 1.5))
+        ft = ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-800.ttf'), int(30 * sc)); w = d.textlength('HARU', font=ft)
+        cx, cy = CX + 6 - 70 * side, 484 - bob
+        d.rounded_rectangle((cx - w / 2 - 16 * sc, cy - 22 * sc, cx + w / 2 + 16 * sc, cy + 22 * sc), int(22 * sc),
+                            fill=(255, 255, 255, int(255 * ta)), outline=L + (int(255 * ta),), width=3)
+        d.text((cx - w / 2, cy - 19 * sc), 'HARU', font=ft, fill=L + (int(255 * ta),))
+    if t < 5:
+        a = max(0.0, min(1, (t - .5) / .35, (4.7 - t) / .35))
+        if a > 0:
+            w, h = 470, 150; x0, y0 = CX - 70 - w, 430 + int(14 * (1 - _ease(a)))
+            d.rounded_rectangle((x0, y0, x0 + w, y0 + h), 26, fill=(255, 253, 246, int(250 * a)), outline=L + (int(255 * a),), width=4)
+            d.text((x0 + 28, y0 + 20), "TODAY'S HARU", font=ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-800.ttf'), 24), fill=(47, 91, 234, int(255 * a)))
+            d.text((x0 + 28, y0 + 52), INTRO.get('title', '오늘의 하루(Haru)'), font=ImageFont.truetype(F_KO, 38), fill=L + (int(255 * a),))
+            d.text((x0 + 28, y0 + 102), INTRO.get('sub', ''), font=ImageFont.truetype(F_KO, 22), fill=(90, 90, 110, int(255 * a)))
+    frame.alpha_composite(ov)
 ff = None if STILLS else subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
                        '-i', MIX, '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
                        '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '384k', '-aac_coder', 'twoloop', '-ar', '48000', '-shortest', '-movflags', '+faststart',
@@ -776,7 +811,7 @@ for fi in range(nframes):
     fw = max(6, int(BAR_W * pr)); ov.alpha_composite(barfill.crop((0, 0, fw, 6)), (BAR_X, BAR_Y))
     dl.ellipse((BAR_X + fw - 10, BAR_Y - 7, BAR_X + fw + 10, BAR_Y + 13), fill=(255, 255, 255, 255), outline=(43, 37, 65, 120))
     dl.text((BAR_X + BAR_W, BAR_Y + 18), f"{fmt(since)} / {fmt(dur)}", font=F_SM, fill=tc, anchor='ra')
-    frame.alpha_composite(ov); out = frame.convert('RGB')
+    frame.alpha_composite(ov); draw_nametag(frame, t, ba, 4 * abs(math.cos(phase)) * walk); out = frame.convert('RGB')
     if STILLS is not None:
         out.save(f'{os.path.splitext(args.out)[0]}_{t:06.1f}s.png'); continue
     ff.stdin.write(out.tobytes())
