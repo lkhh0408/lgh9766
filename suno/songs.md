@@ -129,6 +129,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 10 | Day Trip Ticket | 여성 | 포크트로니카 | 92 | 충동적으로 끊은 기차표 한 장, 창밖 풍경을 따라 혼자 떠나는 당일치기 여행 |
 | 11 | Fresh Cut | 남성 | 얼트 팝 | 108 | 미용실 문을 나서는 순간 달라 보이는 세상, 새 머리 하나로 충전되는 자신감 |
 | 12 | Soft Reset | 여성 | 얼터너티브 R&B | 90 | 방을 치우고 초를 켜고 마스크팩을 붙이는 일요일 밤, 나를 다시 시작하는 작은 의식 (10번은 나중에) |
+| 13 | Fountain Square | 남성 | 라틴 팝 (소프트 레게톤) | 98 | 해 질 녘 분수 광장, 누군가 틀어둔 스피커에 맞춰 모르는 사람들과 하나둘 춤추게 되는 저녁 |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -159,6 +160,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-11: `alt pop, male vocal, cool laid-back tone, punchy but soft drum groove, clean bright guitar riff, bouncy synth bass, quirky percussion, playful whistles, confident, 108 BPM`
 - V3-12: `alternative R&B, female vocal, silky intimate tone, layered soft harmonies, minimal moody-warm keys, warm round bass, crisp gentle trap-soul drums, subtle guitar textures, late evening glow, 90 BPM` (Exclude에서 heavy bass 뺌)
 - V3-10: `folktronica, female vocal, warm gentle tone, fingerpicked acoustic guitar, soft glitchy electronic textures, light electronic beat, warm sub bass, airy synth swells, travelling feel, 92 BPM`
+- V3-13: `latin pop, soft reggaeton rhythm, male vocal, warm smooth tone, light dembow groove, nylon guitar riff, warm round bass, soft congas and shaker, breezy summer-evening feel, 98 BPM` (Exclude에서 heavy bass 뺌)
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -176,3 +178,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 11 Fresh Cut: fresh cut, barber chair, mirror, neck feels the breeze, walking taller, new me same heart
 - 12 Soft Reset: soft reset, candle, sheet mask, fresh pillowcase, lavender, starting over gently
 - 10 Day Trip Ticket: day trip ticket, one-way morning, fields rolling by, platform, tunnel, solo, back by midnight
+- 13 Fountain Square: fountain square, meet me by the water, coins in the fountain, one more song, old couple dancing, sway till the speakers stop
