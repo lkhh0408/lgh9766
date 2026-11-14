@@ -4,35 +4,35 @@
   "section": "Verse",
   "start": 5.17,
   "end": 8.17,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Kettle singing like it knows my name",
   "section": "Verse",
   "start": 10.34,
   "end": 13.34,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Bare feet dancing on the kitchen tile",
   "section": "Verse",
   "start": 15.51,
   "end": 18.51,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Got nowhere to be, so I'm taking my time",
   "section": "Verse",
   "start": 20.68,
   "end": 23.68,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "And the world outside is waking slow",
   "section": "Pre-Chorus",
   "start": 25.85,
   "end": 28.85,
-  "estimated": true
+  "skip": true
  },
  {
   "line": "Just like me, it's taking it easy, oh",

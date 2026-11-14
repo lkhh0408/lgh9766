@@ -1,0 +1,4430 @@
+1
+00:00:01,200 --> 00:00:05,710
+Fresh white shirt and my favorite shoes
+새로 산 흰 셔츠에 제일 좋아하는 신발
+
+2
+00:00:05,760 --> 00:00:09,110
+Front door swings to a sky so blue
+현관문 열면 하늘이 새파래
+
+3
+00:00:09,160 --> 00:00:12,850
+Someone’s watering the flowers downstairs
+아래층에선 누가 꽃에 물을 주고 있고
+
+4
+00:00:12,900 --> 00:00:18,010
+Little drops catching gold in the air
+물방울이 햇빛에 반짝여
+
+5
+00:00:18,060 --> 00:00:20,390
+Corner baker with the window wide
+길모퉁이 빵집 아저씨는 창문 활짝 열고
+
+6
+00:00:20,440 --> 00:00:22,990
+Draws a smile in the flour by his side
+밀가루 위에 웃는 얼굴을 그려
+
+7
+00:00:23,040 --> 00:00:25,390
+I take a left where the tall trees meet
+키 큰 나무들 사이 길로 꺾어 들어가
+
+8
+00:00:25,440 --> 00:00:27,610
+Got a little extra bounce in my feet
+발걸음이 오늘따라 더 가벼워
+
+9
+00:00:27,660 --> 00:00:29,850
+And the whole block falls in time
+동네 전체가 박자를 맞춰
+
+10
+00:00:29,900 --> 00:00:32,250
+With a tune that’s running through my mind
+내 머릿속에 흐르는 노래에
+
+11
+00:00:32,300 --> 00:00:34,570
+Every ordinary thing
+평범한 것들이 하나같이
+
+12
+00:00:34,620 --> 00:00:36,810
+Has a way of making me sing
+나를 노래하게 만들어
+
+13
+00:00:36,860 --> 00:00:39,930
+On the good side of the street
+햇살 드는 쪽 길을 걸으면
+
+14
+00:00:39,980 --> 00:00:42,330
+Every step’s got a melody
+걸음마다 멜로디가 생겨
+
+15
+00:00:42,380 --> 00:00:44,390
+Got a pocket full of somewhere to be
+가고 싶은 곳이 주머니 가득이고
+
+16
+00:00:44,440 --> 00:00:46,810
+And the morning looks good on me
+오늘 아침은 나랑 잘 어울려
+
+17
+00:00:46,860 --> 00:00:48,630
+Let the avenue carry the beat
+큰길이 박자를 이끌어주고
+
+18
+00:00:48,680 --> 00:00:50,570
+Past the tables and the tangerine seats
+야외 테이블이랑 주황색 의자들을 지나
+
+19
+00:00:50,620 --> 00:00:54,350
+With the whole day opening up for me
+하루가 통째로 나를 위해 열려 있어
+
+20
+00:00:54,400 --> 00:00:57,400
+On the good side of the street
+햇살 드는 쪽 길을 걸으면
+
+21
+00:00:57,660 --> 00:01:00,170
+At the crossing, there’s a bicycle bell
+건널목에선 자전거 벨이 울리고
+
+22
+00:01:00,220 --> 00:01:02,590
+And a friend with a story to tell
+할 얘기 잔뜩 있는 친구를 만났어
+
+23
+00:01:02,640 --> 00:01:04,750
+We make plans for a rooftop meal
+옥상에서 밥 먹자고 약속하고
+
+24
+00:01:04,800 --> 00:01:07,190
+Shake on it like we’ve signed a deal
+계약이라도 한 것처럼 악수했지
+
+25
+00:01:07,240 --> 00:01:09,210
+Someone’s playing keys on the second floor
+2층에서 누가 피아노를 치는데
+
+26
+00:01:09,260 --> 00:01:11,490
+I catch four bars, then a couple more
+네 마디 듣고, 조금 더 듣고
+
+27
+00:01:11,540 --> 00:01:13,490
+Tap the rhythm on the rail as I go
+걸으면서 난간에 박자를 맞추고
+
+28
+00:01:13,540 --> 00:01:16,210
+Take a little of that song down the road
+그 노래를 조금 데리고 길을 내려가
+
+29
+00:01:16,260 --> 00:01:18,490
+All these little lives in view
+눈에 보이는 이 작은 일상들이
+
+30
+00:01:18,540 --> 00:01:20,650
+Making something I can step into
+내가 들어갈 수 있는 무언가를 만들어
+
+31
+00:01:20,700 --> 00:01:23,030
+Every hello along the way
+길에서 나누는 인사 하나하나가
+
+32
+00:01:23,080 --> 00:01:25,310
+Adds a little color to the day
+하루에 색을 조금씩 더해줘
+
+33
+00:01:25,360 --> 00:01:27,950
+On the good side of the street
+햇살 드는 쪽 길을 걸으면
+
+34
+00:01:28,000 --> 00:01:30,370
+Every step’s got a melody
+걸음마다 멜로디가 생겨
+
+35
+00:01:30,420 --> 00:01:32,510
+Got a pocket full of somewhere to be
+가고 싶은 곳이 주머니 가득이고
+
+36
+00:01:32,560 --> 00:01:34,870
+And the morning looks good on me
+오늘 아침은 나랑 잘 어울려
+
+37
+00:01:34,920 --> 00:01:36,650
+Let the avenue carry the beat
+큰길이 박자를 이끌어주고
+
+38
+00:01:36,700 --> 00:01:38,550
+Past the tables and the tangerine seats
+야외 테이블이랑 주황색 의자들을 지나
+
+39
+00:01:38,600 --> 00:01:42,330
+With the whole day opening up for me
+하루가 통째로 나를 위해 열려 있어
+
+40
+00:01:42,380 --> 00:01:46,260
+On the good side of the street
+햇살 드는 쪽 길을 걸으면
+
+41
+00:01:52,660 --> 00:01:55,210
+Maybe it’s the way this city
+아마 이 도시가
+
+42
+00:01:55,260 --> 00:01:57,570
+Fits a hundred worlds in one
+수많은 세상을 하나에 담고 있어서일까
+
+43
+00:01:57,620 --> 00:01:59,690
+Everybody brings a little
+다들 자기만의 무언가를
+
+44
+00:01:59,740 --> 00:02:03,270
+Something of their own
+조금씩 들고 오니까
+
+45
+00:02:03,320 --> 00:02:06,050
+I can feel my own part starting
+내 차례가 시작되는 게 느껴져
+
+46
+00:02:06,100 --> 00:02:10,050
+As I turn around the bend
+모퉁이를 도는 순간
+
+47
+00:02:10,100 --> 00:02:12,910
+There’s a seat beside the window
+창가에 자리가 하나 있고
+
+48
+00:02:12,960 --> 00:02:15,210
+And a wave from my friend
+친구가 손을 흔들어
+
+49
+00:02:15,260 --> 00:02:18,390
+On the good side of the street
+햇살 드는 쪽 길을 걸으면
+
+50
+00:02:18,440 --> 00:02:20,570
+Pull a chair up next to me
+내 옆에 의자 하나 끌어와 앉아
+
+51
+00:02:20,620 --> 00:02:23,070
+There’s a story at every table
+테이블마다 이야기가 있고
+
+52
+00:02:23,120 --> 00:02:25,110
+And a place I’m glad to be
+여기 있는 게 참 좋아
+
+53
+00:02:25,160 --> 00:02:27,130
+Let the avenue carry the beat
+큰길이 박자를 이끌어주고
+
+54
+00:02:27,180 --> 00:02:29,250
+Hear it drifting through the summer leaves
+여름 나뭇잎 사이로 노래가 흘러와
+
+55
+00:02:29,300 --> 00:02:32,130
+With the whole day opening up for me
+하루가 통째로 나를 위해 열려 있어
+
+56
+00:02:32,180 --> 00:02:36,040
+On the good side of the street
+햇살 드는 쪽 길을 걸으면
+
+57
+00:02:42,300 --> 00:02:48,730
+One more smile, somewhere to be
+한 번 더 웃고, 또 가볼 곳으로
+
+58
+00:02:48,780 --> 00:02:54,420
+And the morning looks good on me
+오늘 아침은 나랑 잘 어울려
+
+59
+00:03:28,704 --> 00:03:33,834
+Just like me, it's taking it easy, oh
+나처럼 여유롭게, oh
+
+60
+00:03:33,884 --> 00:03:38,554
+Golden hour coffee, warm inside my hands
+황금빛 아침 햇살 속 커피, 손안이 따뜻해
+
+61
+00:03:38,604 --> 00:03:43,244
+Every little moment feels the way I planned
+모든 순간이 딱 내가 바라던 대로야
+
+62
+00:03:43,564 --> 00:03:47,114
+Hum a little melody, the day is brand new
+멜로디를 흥얼거려, 오늘은 새로운 하루
+
+63
+00:03:47,164 --> 00:03:53,524
+Golden hour coffee, yeah, I'm starting with you
+황금빛 커피 한 잔, 오늘은 너로 시작해
+
+64
+00:04:00,684 --> 00:04:05,374
+Open up the window, let the city in
+창문을 열고 도시를 들여
+
+65
+00:04:05,424 --> 00:04:09,674
+Neighbors waving, birds are joining in
+이웃들은 손 흔들고, 새들도 같이 노래해
+
+66
+00:04:09,724 --> 00:04:13,754
+Write a little note and stick it on the door
+짧은 쪽지를 써서 문에 붙여놔
+
+67
+00:04:13,804 --> 00:04:18,814
+Today is gonna be what we've been waiting for
+오늘은 우리가 기다리던 그런 날이 될 거야
+
+68
+00:04:18,864 --> 00:04:23,194
+Golden hour coffee, warm inside my hands
+황금빛 아침 햇살 속 커피, 손안이 따뜻해
+
+69
+00:04:23,244 --> 00:04:27,854
+Every little moment feels the way I planned
+모든 순간이 딱 내가 바라던 대로야
+
+70
+00:04:27,904 --> 00:04:31,954
+Hum a little melody, the day is brand new
+멜로디를 흥얼거려, 오늘은 새로운 하루
+
+71
+00:04:32,004 --> 00:04:38,034
+Golden hour coffee, yeah, I'm starting with you
+황금빛 커피 한 잔, 오늘은 너로 시작해
+
+72
+00:04:38,084 --> 00:04:40,854
+Sip it slow, let it glow
+천천히 마시면서 그 따뜻함을 느껴
+
+73
+00:04:40,904 --> 00:04:46,544
+Every morning's a second hello
+아침마다 다시 건네는 인사 같아
+
+74
+00:04:47,844 --> 00:04:54,674
+Golden hour coffee, warm inside my hands
+황금빛 아침 햇살 속 커피, 손안이 따뜻해
+
+75
+00:04:54,724 --> 00:04:58,934
+Every little moment feels the way I planned
+모든 순간이 딱 내가 바라던 대로야
+
+76
+00:04:58,984 --> 00:05:03,254
+Hum a little melody, the day is brand new
+멜로디를 흥얼거려, 오늘은 새로운 하루
+
+77
+00:05:03,304 --> 00:05:09,764
+Golden hour coffee, yeah, I'm starting with you
+황금빛 커피 한 잔, 오늘은 너로 시작해
+
+78
+00:05:11,324 --> 00:05:20,204
+Starting with you, starting with you
+너로 시작해, 너로 시작해
+
+79
+00:05:41,428 --> 00:05:44,638
+Alarm clock rings but I'm already awake
+알람이 울리는데 난 벌써 깨어 있어
+
+80
+00:05:44,688 --> 00:05:50,018
+Thinking 'bout the plans that I'm gonna make
+오늘 뭐 할지 생각하면서
+
+81
+00:05:50,068 --> 00:05:55,118
+Sneakers by the door and a song in my head
+현관엔 운동화, 머릿속엔 노래 한 곡
+
+82
+00:05:55,168 --> 00:06:01,068
+Leaving all my worries on the unmade bed
+걱정은 다 안 갠 이불 위에 두고 나와
+
+83
+00:06:01,148 --> 00:06:05,988
+Something in the air says go, go, go
+공기마저 어서 가라고 말하는 것 같고
+
+84
+00:06:06,148 --> 00:06:09,738
+Something in the light says you already know
+햇살도 너도 이미 알잖아 하는 것 같아
+
+85
+00:06:09,788 --> 00:06:15,038
+So I open the window, let the morning in
+그래서 창문을 열고 아침을 들여
+
+86
+00:06:15,088 --> 00:06:19,538
+Feel the cool breeze moving on my skin
+시원한 바람이 피부에 닿는 걸 느껴
+
+87
+00:06:19,588 --> 00:06:25,018
+Every road is open, every door's a friend
+모든 길이 열려 있고, 모든 문이 반가워
+
+88
+00:06:25,068 --> 00:06:33,648
+Open the window, let the day begin
+창문을 열고, 하루를 시작해
+
+89
+00:06:41,328 --> 00:06:46,138
+Coffee from the corner and a smile for free
+모퉁이 카페 커피에 미소는 덤으로
+
+90
+00:06:46,188 --> 00:06:51,218
+Lady at the counter says it's good to see me
+계산대 아주머니가 반갑다고 인사해
+
+91
+00:06:51,268 --> 00:06:56,098
+Streets are painted gold where the shadows used to be
+그림자 지던 거리가 금빛으로 물들고
+
+92
+00:06:56,148 --> 00:07:00,378
+Feels like this whole city's singing just for me
+이 도시 전체가 나를 위해 노래하는 것 같아
+
+93
+00:07:00,428 --> 00:07:05,078
+So I open the window, let the morning in
+그래서 창문을 열고 아침을 들여
+
+94
+00:07:05,128 --> 00:07:10,138
+Feel the cool breeze moving on my skin
+시원한 바람이 피부에 닿는 걸 느껴
+
+95
+00:07:10,188 --> 00:07:14,918
+Every road is open, every door's a friend
+모든 길이 열려 있고, 모든 문이 반가워
+
+96
+00:07:14,968 --> 00:07:23,628
+Open the window, let the day begin
+창문을 열고, 하루를 시작해
+
+97
+00:07:24,308 --> 00:07:27,438
+Na na na, let the day begin
+Na na na, 하루를 시작해
+
+98
+00:07:27,488 --> 00:07:34,768
+Na na na, let the morning in
+Na na na, 아침을 들여
+
+99
+00:07:39,568 --> 00:07:45,098
+So I open the window, let the morning in
+그래서 창문을 열고 아침을 들여
+
+100
+00:07:45,148 --> 00:07:49,798
+Feel the cool breeze moving on my skin
+시원한 바람이 피부에 닿는 걸 느껴
+
+101
+00:07:49,848 --> 00:07:54,958
+Every road is open, every door's a friend
+모든 길이 열려 있고, 모든 문이 반가워
+
+102
+00:07:55,008 --> 00:08:02,928
+Open the window, let the day begin
+창문을 열고, 하루를 시작해
+
+103
+00:08:08,588 --> 00:08:13,408
+Let the day begin
+하루를 시작해
+
+104
+00:08:36,280 --> 00:08:39,770
+You fold the paper, pass me half
+넌 신문을 접어서 반을 나한테 건네고
+
+105
+00:08:39,820 --> 00:08:42,210
+Circle something, make me laugh
+뭔가에 동그라미를 쳐서 날 웃게 해
+
+106
+00:08:42,260 --> 00:08:44,610
+Apricot jam on a silver spoon
+은색 숟가락에 살구잼을 올리면서
+
+107
+00:08:44,660 --> 00:08:47,310
+You say, “We could make that trip in June”
+"6월에 그 여행 갈 수 있겠다" 하잖아
+
+108
+00:08:47,360 --> 00:08:49,950
+Your bare feet find the chair by mine
+네 맨발이 내 의자 옆을 찾아오고
+
+109
+00:08:50,000 --> 00:08:52,570
+We talk about the train we’d like
+우린 타고 싶은 기차 얘기를 해
+
+110
+00:08:52,620 --> 00:08:54,990
+A little place beside the sea
+바닷가에 있는 작은 숙소
+
+111
+00:08:55,040 --> 00:08:58,010
+You read the names out loud to me
+넌 지명을 하나씩 소리 내 읽어줘
+
+112
+00:08:58,060 --> 00:09:03,260
+From your side of the table
+테이블 건너편에서
+
+113
+00:09:03,310 --> 00:09:07,230
+You slide a whole world over
+넌 세상 하나를 통째로 건네줘
+
+114
+00:09:07,280 --> 00:09:12,510
+A seaside town, a date in June
+바닷가 마을, 6월의 하루
+
+115
+00:09:12,560 --> 00:09:17,410
+Then reach across to fill my spoon
+그러고는 손을 뻗어 내 숟가락을 채워줘
+
+116
+00:09:17,460 --> 00:09:21,290
+I love the way we make a plan
+우리가 계획 세우는 이 시간이 좋아
+
+117
+00:09:21,340 --> 00:09:23,930
+With breakfast dishes close at hand
+아침 먹은 접시들을 옆에 두고
+
+118
+00:09:23,980 --> 00:09:27,090
+A thousand miles can start so small
+아무리 먼 길도 이렇게 작게 시작할 수 있어
+
+119
+00:09:27,140 --> 00:09:31,660
+With you across the table
+테이블 건너편에 네가 있으면
+
+120
+00:09:35,200 --> 00:09:38,590
+You want the room above the square
+넌 광장이 내려다보이는 방이 좋대
+
+121
+00:09:38,640 --> 00:09:40,750
+I want the fruit stand down the stairs
+난 계단 밑 과일 가게가 좋고
+
+122
+00:09:40,800 --> 00:09:43,410
+We pick a day to rent two bikes
+자전거 두 대 빌릴 날을 정하고
+
+123
+00:09:43,460 --> 00:09:49,380
+And stop wherever something catches our eyes
+눈에 들어오는 데마다 멈추기로 했어
+
+124
+00:09:49,520 --> 00:09:52,870
+You write “the beach” beside “bookstore”
+넌 "서점" 옆에 "해변"이라고 쓰고
+
+125
+00:09:52,920 --> 00:09:55,210
+I add a place you’d love next door
+난 그 옆에 네가 좋아할 곳을 하나 더 적어
+
+126
+00:09:55,260 --> 00:09:59,450
+Between the plates, a folded page
+접시들 사이 접힌 종이 한 장이
+
+127
+00:09:59,500 --> 00:10:05,200
+Is filling up with places we could stay
+우리가 머물 곳들로 채워지고 있어
+
+128
+00:10:05,480 --> 00:10:09,950
+From your side of the table
+테이블 건너편에서
+
+129
+00:10:10,000 --> 00:10:15,390
+You slide a whole world over
+넌 세상 하나를 통째로 건네줘
+
+130
+00:10:15,440 --> 00:10:20,150
+A seaside town, a date in June
+바닷가 마을, 6월의 하루
+
+131
+00:10:20,200 --> 00:10:26,440
+Then reach across to fill my spoon
+그러고는 손을 뻗어 내 숟가락을 채워줘
+
+132
+00:10:26,500 --> 00:10:29,210
+I love the way we make a plan
+우리가 계획 세우는 이 시간이 좋아
+
+133
+00:10:29,260 --> 00:10:31,950
+With breakfast dishes close at hand
+아침 먹은 접시들을 옆에 두고
+
+134
+00:10:32,000 --> 00:10:35,110
+A thousand miles can start so small
+아무리 먼 길도 이렇게 작게 시작할 수 있어
+
+135
+00:10:35,160 --> 00:10:40,300
+With you across the table
+테이블 건너편에 네가 있으면
+
+136
+00:10:43,250 --> 00:10:45,550
+Keep the little list we made
+우리가 만든 이 목록은
+
+137
+00:10:45,600 --> 00:10:48,150
+Tuck it in the kitchen drawer
+부엌 서랍에 넣어두자
+
+138
+00:10:48,200 --> 00:10:51,050
+We’ll take it out when June comes round
+6월이 오면 다시 꺼내서
+
+139
+00:10:51,100 --> 00:10:53,030
+And add a few things more
+몇 개 더 적어 넣자
+
+140
+00:10:53,080 --> 00:10:55,910
+For now, you put the kettle on
+지금은 네가 물을 올리고
+
+141
+00:10:55,960 --> 00:10:57,930
+I cut another pear
+난 배를 하나 더 깎아
+
+142
+00:10:57,980 --> 00:11:00,970
+You ask which train I’d like to take
+넌 어떤 기차 타고 싶냐고 묻고
+
+143
+00:11:01,020 --> 00:11:05,930
+I say, “Let’s see what gets us there”
+난 "가는 거 보고 정하자" 해
+
+144
+00:11:05,980 --> 00:11:11,400
+From your side of the table
+테이블 건너편에서
+
+145
+00:11:11,520 --> 00:11:16,410
+You slide the tickets over
+넌 기차표를 내 쪽으로 밀어주고
+
+146
+00:11:16,460 --> 00:11:18,860
+Two window seats, an afternoon
+창가 자리 두 개, 어느 오후
+
+147
+00:11:20,500 --> 00:11:25,610
+Our names beneath a date in June
+6월 날짜 밑에 우리 이름
+
+148
+00:11:25,660 --> 00:11:29,590
+I love the way we make a plan
+우리가 계획 세우는 이 시간이 좋아
+
+149
+00:11:29,640 --> 00:11:32,090
+Your fingers resting in my hand
+네 손가락이 내 손 안에 있어
+
+150
+00:11:32,140 --> 00:11:35,310
+A thousand miles can start so small
+아무리 먼 길도 이렇게 작게 시작할 수 있어
+
+151
+00:11:35,360 --> 00:11:40,540
+With you across the table
+테이블 건너편에 네가 있으면
+
+152
+00:11:41,920 --> 00:11:44,950
+You draw a little star beside
+넌 우리가 고른 날 옆에
+
+153
+00:11:45,000 --> 00:11:47,210
+The day we chose
+작은 별을 그려
+
+154
+00:11:47,260 --> 00:11:51,670
+I fold the page along the line
+난 그 종이를 반듯하게 접어서
+
+155
+00:11:51,720 --> 00:11:56,560
+And hold it close
+소중하게 간직해
+
+156
+00:12:08,904 --> 00:12:15,044
+A little water, a little room
+물 조금, 자리 조금
+
+157
+00:12:17,204 --> 00:12:21,584
+Something good is coming through
+좋은 일이 오고 있어
+
+158
+00:12:22,364 --> 00:12:24,814
+Clay pot sitting by the window frame
+창틀 옆에 흙 화분 하나
+
+159
+00:12:24,864 --> 00:12:27,294
+On a wooden stick, I wrote your name
+나무 막대에 네 이름을 써 꽂아뒀어
+
+160
+00:12:27,344 --> 00:12:29,494
+Sweet basil in a secondhand cup
+중고 컵에 심은 스위트 바질
+
+161
+00:12:29,544 --> 00:12:32,354
+Every few days, another leaf turns up
+며칠마다 새 잎이 하나씩 나
+
+162
+00:12:32,404 --> 00:12:34,714
+Turn you gently to the morning rays
+아침 햇살 쪽으로 살짝 돌려주고
+
+163
+00:12:34,764 --> 00:12:36,914
+Touch the soil like the neighbor says
+이웃이 알려준 대로 흙도 만져봐
+
+164
+00:12:36,964 --> 00:12:39,234
+There's a new green curl where the stem divides
+줄기 갈라진 곳에 새 잎이 돌돌 말려 나왔어
+
+165
+00:12:39,284 --> 00:12:42,114
+I pull my chair up for a closer eye
+더 가까이 보려고 의자를 끌어와
+
+166
+00:12:42,164 --> 00:12:44,114
+Funny how a thing so small
+신기하지, 이렇게 작은 게
+
+167
+00:12:44,164 --> 00:12:46,554
+Gets me looking up at all
+나를 이렇게 설레게 하다니
+
+168
+00:12:46,604 --> 00:12:49,534
+The quiet changes taking place
+늘 있던 이 자리에서
+
+169
+00:12:49,584 --> 00:12:51,994
+Right here in the same old space
+조용히 일어나는 변화들
+
+170
+00:12:52,044 --> 00:12:54,174
+Little by little, leaf by leaf
+조금씩, 한 잎 한 잎
+
+171
+00:12:54,224 --> 00:12:56,634
+You take your time, and so can we
+넌 천천히 자라고, 우리도 그래도 돼
+
+172
+00:12:56,684 --> 00:12:58,774
+A little water, a little room
+물 조금, 자리 조금
+
+173
+00:12:58,824 --> 00:13:01,874
+I like the way you're coming through
+네가 자라는 모습이 좋아
+
+174
+00:13:01,924 --> 00:13:04,114
+Growing at the speed of green
+초록이 자라는 속도로
+
+175
+00:13:04,164 --> 00:13:06,294
+That's a good enough speed for me
+나한텐 그 속도면 충분해
+
+176
+00:13:06,344 --> 00:13:08,914
+Something lovely taking shape
+예쁜 무언가가 모양을 갖춰가
+
+177
+00:13:08,964 --> 00:13:13,544
+A little more with every day
+하루하루 조금씩 더
+
+178
+00:13:16,164 --> 00:13:18,174
+Picked a yellow pot on Sunday afternoon
+일요일 오후에 노란 화분을 하나 골랐어
+
+179
+00:13:18,224 --> 00:13:20,794
+Made a little space to give you room
+널 위해 자리도 조금 만들어두고
+
+180
+00:13:20,844 --> 00:13:23,614
+Got some thyme and a rosemary sprig
+타임이랑 로즈마리도 데려왔더니
+
+181
+00:13:23,664 --> 00:13:26,054
+Now the windowsill's a garden in the making
+이제 창가가 작은 정원이 되어가고 있어
+
+182
+00:13:26,104 --> 00:13:28,354
+Take a picture from the same old spot
+늘 같은 자리에서 사진을 찍어
+
+183
+00:13:28,404 --> 00:13:30,854
+See the inches that a week has brought
+일주일 동안 얼마나 컸는지 보려고
+
+184
+00:13:30,904 --> 00:13:33,834
+Send my sister one, she sends me three
+언니한테 한 장 보냈더니 세 장이 왔어
+
+185
+00:13:33,884 --> 00:13:36,634
+Of the tiny grove beside her kitchen sink
+언니네 부엌 싱크대 옆 작은 화분들 사진
+
+186
+00:13:36,684 --> 00:13:38,754
+Little by little, leaf by leaf
+조금씩, 한 잎 한 잎
+
+187
+00:13:38,804 --> 00:13:41,254
+You take your time, and so can we
+넌 천천히 자라고, 우리도 그래도 돼
+
+188
+00:13:41,304 --> 00:13:43,354
+A little water, a little room
+물 조금, 자리 조금
+
+189
+00:13:43,404 --> 00:13:46,414
+I like the way you're coming through
+네가 자라는 모습이 좋아
+
+190
+00:13:46,464 --> 00:13:48,714
+Growing at the speed of green
+초록이 자라는 속도로
+
+191
+00:13:48,764 --> 00:13:50,894
+That's a good enough speed for me
+나한텐 그 속도면 충분해
+
+192
+00:13:50,944 --> 00:13:53,354
+Something lovely taking shape
+예쁜 무언가가 모양을 갖춰가
+
+193
+00:13:53,404 --> 00:13:56,434
+A little more with every day
+하루하루 조금씩 더
+
+194
+00:13:56,484 --> 00:13:58,634
+Soon I'll bring a cutting over
+곧 꺾꽂이한 걸 하나 가져갈게
+
+195
+00:13:58,684 --> 00:14:01,584
+In a jar tied up with string
+끈으로 묶은 유리병에 담아서
+
+196
+00:14:01,634 --> 00:14:03,574
+You can set it by your curtains
+네 커튼 옆에 두고
+
+197
+00:14:03,624 --> 00:14:05,874
+See what gentle tending brings
+정성껏 돌보면 어떻게 되는지 봐
+
+198
+00:14:05,924 --> 00:14:08,534
+Maybe by the end of summer
+여름이 끝날 즈음엔
+
+199
+00:14:08,584 --> 00:14:10,534
+Every friend will have a few
+친구들 모두 몇 개씩 갖고 있겠지
+
+200
+00:14:10,584 --> 00:14:13,274
+Little windows full of color
+색깔로 가득한 작은 창가들
+
+201
+00:14:13,324 --> 00:14:16,134
+Something living, something new
+살아 있는 것, 새로운 것
+
+202
+00:14:16,184 --> 00:14:18,514
+Little by little, leaf by leaf
+조금씩, 한 잎 한 잎
+
+203
+00:14:18,564 --> 00:14:20,814
+A little garden down our street
+우리 동네 길을 따라 작은 정원이 생기고
+
+204
+00:14:20,864 --> 00:14:23,074
+A little water, a little room
+물 조금, 자리 조금
+
+205
+00:14:23,124 --> 00:14:26,154
+So many ways of coming through
+저마다의 모습으로 자라나
+
+206
+00:14:26,204 --> 00:14:28,354
+Growing at the speed of green
+초록이 자라는 속도로
+
+207
+00:14:28,404 --> 00:14:30,554
+That's a good enough speed for me
+나한텐 그 속도면 충분해
+
+208
+00:14:30,604 --> 00:14:33,134
+Something lovely taking shape
+예쁜 무언가가 모양을 갖춰가
+
+209
+00:14:33,184 --> 00:14:36,514
+A little more with every day
+하루하루 조금씩 더
+
+210
+00:14:36,564 --> 00:14:48,534
+Turn the pot a quarter round
+화분을 살짝 돌려서
+
+211
+00:14:48,584 --> 00:14:51,694
+Set it where the sun comes down
+햇살 드는 자리에 놓아줘
+
+212
+00:14:51,744 --> 00:14:57,784
+One new leaf for me to see
+내가 볼 새 잎 하나
+
+213
+00:15:04,044 --> 00:15:08,364
+Growing at the speed of green
+초록이 자라는 속도로
+
+214
+00:15:15,884 --> 00:15:18,554
+Tie my hair with a ribbon of blue
+파란 리본으로 머리를 묶고
+
+215
+00:15:18,604 --> 00:15:24,084
+Roll my sleeves like I always do
+늘 하던 대로 소매를 걷어
+
+216
+00:15:24,134 --> 00:15:27,174
+Pick a pencil from the jar
+통에서 연필 하나를 꺼내
+
+217
+00:15:27,224 --> 00:15:32,404
+Let it wander, see where we are
+손 가는 대로 그려보는 중
+
+218
+00:15:32,714 --> 00:15:35,934
+Draw a curve and it turns to a face
+곡선 하나 그렸더니 얼굴이 됐어
+
+219
+00:15:35,984 --> 00:15:39,354
+Give it freckles and a little more space
+주근깨도 그려주고 여유도 조금 줘
+
+220
+00:15:39,404 --> 00:15:43,574
+There's a character looking back
+날 쳐다보는 캐릭터가 생겼어
+
+221
+00:15:43,624 --> 00:15:47,994
+With a bright red coat and a yellow hat
+빨간 코트에 노란 모자를 쓴
+
+222
+00:15:48,044 --> 00:15:52,494
+One idea brings another along
+아이디어 하나가 또 다른 걸 데려와
+
+223
+00:15:52,544 --> 00:15:57,094
+Like a rhythm finding its song
+리듬이 자기 노래를 찾아가듯이
+
+224
+00:15:57,144 --> 00:16:00,334
+And my hands already know
+내 손은 벌써 알고 있어
+
+225
+00:16:00,384 --> 00:16:05,414
+Where the next little line should go
+다음 선을 어디에 그어야 할지
+
+226
+00:16:05,464 --> 00:16:08,354
+Oh, I could do this all morning
+아, 아침 내내 이것만 해도 좋아
+
+227
+00:16:08,404 --> 00:16:10,014
+Making something of my own
+나만의 무언가를 만드는 거
+
+228
+00:16:10,064 --> 00:16:12,374
+Following a little feeling
+작은 느낌을 따라가면서
+
+229
+00:16:12,424 --> 00:16:14,214
+Seeing where it wants to go
+그게 어디로 가고 싶은지 보는 거
+
+230
+00:16:14,264 --> 00:16:16,674
+When the pieces fit together
+조각들이 딱 맞아떨어지고
+
+231
+00:16:16,724 --> 00:16:18,614
+And the picture starts to click
+그림이 완성되기 시작하면
+
+232
+00:16:18,664 --> 00:16:21,014
+There's a smile I get from making
+만들면서 저절로 웃음이 나
+
+233
+00:16:21,064 --> 00:16:23,054
+Something quite like this
+이런 걸 만들 때면
+
+234
+00:16:23,104 --> 00:16:26,694
+A little more blue
+파란색 조금 더
+
+235
+00:16:26,744 --> 00:16:31,384
+A little more me
+나다운 것도 조금 더
+
+236
+00:16:31,644 --> 00:16:39,844
+Look what a simple idea can be
+작은 아이디어가 이렇게 될 수 있어
+
+237
+00:16:41,164 --> 00:16:43,734
+Set a tiny house on a hill
+언덕 위에 작은 집을 하나 그리고
+
+238
+00:16:43,784 --> 00:16:45,894
+Give the windows some daffodils
+창가엔 수선화를 그려 넣어
+
+239
+00:16:45,944 --> 00:16:48,054
+Paint a doorway tall and wide
+문은 크고 넓게 칠해
+
+240
+00:16:48,104 --> 00:16:50,234
+For the stories that could live inside
+안에서 살아갈 이야기들을 위해
+
+241
+00:16:50,284 --> 00:16:52,294
+There's a postcard taking shape
+엽서 한 장이 완성되어 가
+
+242
+00:16:52,344 --> 00:16:54,534
+For a friend a couple towns away
+몇 동네 건너 사는 친구한테 보낼
+
+243
+00:16:54,584 --> 00:16:56,594
+On the back, I'll write a line
+뒷면엔 한 줄 적을 거야
+
+244
+00:16:56,644 --> 00:16:59,134
+“Made this with you in mind”
+"너 생각하면서 만들었어"
+
+245
+00:16:59,184 --> 00:17:02,514
+Oh, I could do this all morning
+아, 아침 내내 이것만 해도 좋아
+
+246
+00:17:02,564 --> 00:17:04,594
+Making something of my own
+나만의 무언가를 만드는 거
+
+247
+00:17:04,644 --> 00:17:06,894
+Following a little feeling
+작은 느낌을 따라가면서
+
+248
+00:17:06,944 --> 00:17:08,834
+Seeing where it wants to go
+그게 어디로 가고 싶은지 보는 거
+
+249
+00:17:08,884 --> 00:17:11,254
+When the pieces fit together
+조각들이 딱 맞아떨어지고
+
+250
+00:17:11,304 --> 00:17:13,194
+And the picture starts to click
+그림이 완성되기 시작하면
+
+251
+00:17:13,244 --> 00:17:15,714
+There's a smile I get from making
+만들면서 저절로 웃음이 나
+
+252
+00:17:15,764 --> 00:17:18,714
+Something quite like this
+이런 걸 만들 때면
+
+253
+00:17:18,764 --> 00:17:21,054
+I like the blue upon my fingers
+손가락에 묻은 파란 물감도
+
+254
+00:17:21,104 --> 00:17:23,174
+And the shavings by my chair
+의자 옆에 떨어진 연필 깎은 부스러기도 좋아
+
+255
+00:17:23,224 --> 00:17:25,414
+All the lovely little traces
+내가 여기서 보낸 시간이 남긴
+
+256
+00:17:25,464 --> 00:17:27,494
+Of the time I'm spending here
+사랑스러운 작은 흔적들
+
+257
+00:17:27,544 --> 00:17:29,794
+Hold it up against the window
+창문에 비춰 들어 보고
+
+258
+00:17:29,844 --> 00:17:31,734
+Add my name beneath the hill
+언덕 밑에 내 이름을 적어
+
+259
+00:17:31,784 --> 00:17:34,054
+There's room beside the tiny house
+작은 집 옆에 자리가 남았네
+
+260
+00:17:34,104 --> 00:17:36,414
+For another daffodil
+수선화 하나 더 그릴 자리
+
+261
+00:17:36,464 --> 00:17:41,084
+Oh, I could do this all morning
+아, 아침 내내 이것만 해도 좋아
+
+262
+00:17:41,484 --> 00:17:45,304
+Making something I can share
+나눌 수 있는 걸 만들면서
+
+263
+00:17:45,844 --> 00:17:49,964
+Putting all these little details
+작은 디테일들을 하나하나
+
+264
+00:17:50,304 --> 00:17:54,654
+Into something you’ll keep somewhere
+네가 어딘가에 간직할 무언가에 담아
+
+265
+00:17:54,704 --> 00:17:57,434
+When you open up the envelope
+네가 봉투를 열었을 때
+
+266
+00:17:57,484 --> 00:17:59,094
+Hope it gives your day a lift
+하루가 조금 더 즐거워지면 좋겠어
+
+267
+00:17:59,144 --> 00:18:02,964
+There's a smile I get from making
+만들면서 저절로 웃음이 나
+
+268
+00:18:03,364 --> 00:18:10,174
+Something just like this
+딱 이런 걸로
+
+269
+00:18:10,224 --> 00:18:13,484
+One last line
+마지막 선 하나
+
+270
+00:18:14,624 --> 00:18:16,534
+Then I sign
+그리고 내 이름을 적어
+
+271
+00:18:16,584 --> 00:18:21,134
+A small piece of my morning
+내 아침의 작은 조각이
+
+272
+00:18:21,184 --> 00:18:24,484
+On its way to you
+너한테 가는 중이야
+
+273
+00:18:43,684 --> 00:18:46,974
+Just like that, I'm dancing
+그냥 그렇게, 나 춤추고 있어
+
+274
+00:18:47,024 --> 00:18:51,054
+Barefoot with the laundry in my hands
+맨발로 빨래를 손에 든 채
+
+275
+00:18:51,104 --> 00:18:55,414
+That bass comes through the ceiling
+천장 너머로 베이스가 울리면
+
+276
+00:18:55,464 --> 00:18:59,914
+And my shoulders understand
+어깨가 먼저 알아들어
+
+277
+00:18:59,964 --> 00:19:02,234
+I've got nowhere else to take this
+이 흥을 들고 갈 데도 없으니까
+
+278
+00:19:02,284 --> 00:19:07,074
+Let the bedroom be the floor
+내 방을 무대 삼아
+
+279
+00:19:07,124 --> 00:19:11,434
+Just like that, an ordinary Tuesday
+그냥 그렇게, 평범한 화요일이
+
+280
+00:19:11,484 --> 00:19:18,074
+Has me reaching for one chorus more
+후렴 한 번만 더 듣고 싶게 만들어
+
+281
+00:19:18,124 --> 00:19:21,514
+Half past eight, the sheets are clean
+8시 반, 이불은 깨끗하고
+
+282
+00:19:21,564 --> 00:19:25,634
+Got my favorite T-shirt fresh out of the machine
+제일 좋아하는 티셔츠가 막 세탁기에서 나왔어
+
+283
+00:19:25,684 --> 00:19:28,774
+Shake it out, give it a spin
+탁탁 털어서 한 바퀴 돌려보고
+
+284
+00:19:28,824 --> 00:19:33,774
+Catch my own reflection with a sideways grin
+거울 속 나랑 눈 마주치며 씩 웃어
+
+285
+00:19:33,824 --> 00:19:38,014
+Slide the basket over with my heel
+발뒤꿈치로 빨래 바구니를 밀어놓고
+
+286
+00:19:38,064 --> 00:19:41,894
+Funny how a song can change the way a room feels
+노래 하나로 방 분위기가 이렇게 바뀌다니 신기해
+
+287
+00:19:41,944 --> 00:19:46,334
+Fold the sleeves, then count to four
+소매를 접고 넷까지 세고
+
+288
+00:19:46,384 --> 00:19:49,914
+Let the cotton settle while I turn once more
+옷을 내려놓고 한 바퀴 더 돌아
+
+289
+00:19:49,964 --> 00:19:53,824
+That's my kind of good time
+이게 내가 좋아하는 즐거움이야
+
+290
+00:19:53,904 --> 00:19:57,944
+Right here in the daylight
+바로 여기, 햇살 속에서
+
+291
+00:19:59,264 --> 00:20:03,314
+Blue socks tucked in a tidy row
+파란 양말들은 가지런히 줄 세워놓고
+
+292
+00:20:03,364 --> 00:20:07,414
+Hangers tapping softly as I let them go
+옷걸이들이 살짝 부딪히는 소리
+
+293
+00:20:07,464 --> 00:20:10,674
+There's a sleeve draped over my arm
+팔에는 옷소매가 걸쳐 있고
+
+294
+00:20:10,724 --> 00:20:14,754
+And a melody that fits me like a charm
+멜로디가 나한테 딱 맞아
+
+295
+00:20:14,804 --> 00:20:17,994
+I know where the singer takes a breath
+가수가 어디서 숨 쉬는지도 알아
+
+296
+00:20:18,044 --> 00:20:23,354
+Leave a little space, then I sing what comes next
+잠깐 쉬었다가 다음 가사를 불러
+
+297
+00:20:23,404 --> 00:20:27,694
+By the time the final towel is dry
+마지막 수건이 다 마를 때쯤엔
+
+298
+00:20:27,744 --> 00:20:31,414
+I've got every word and every harmony right
+가사도 화음도 다 외웠어
+
+299
+00:20:31,464 --> 00:20:33,774
+Some days joy is this precise
+어떤 날은 행복이 이렇게 분명해
+
+300
+00:20:33,824 --> 00:20:36,094
+Fresh sheets and a bassline
+깨끗한 이불이랑 베이스 라인
+
+301
+00:20:36,144 --> 00:20:38,014
+I could stay here for a while
+여기 좀 더 있고 싶어
+
+302
+00:20:38,064 --> 00:20:41,354
+Doing things in my own style
+내 방식대로 하면서
+
+303
+00:20:41,404 --> 00:20:44,334
+Just like that, I'm dancing
+그냥 그렇게, 나 춤추고 있어
+
+304
+00:20:44,384 --> 00:20:49,674
+Barefoot with the laundry in my hands
+맨발로 빨래를 손에 든 채
+
+305
+00:20:49,724 --> 00:20:52,814
+That bass comes through the ceiling
+천장 너머로 베이스가 울리면
+
+306
+00:20:52,864 --> 00:20:57,254
+And my shoulders understand
+어깨가 먼저 알아들어
+
+307
+00:20:57,304 --> 00:20:59,594
+I've got nowhere else to take this
+이 흥을 들고 갈 데도 없으니까
+
+308
+00:20:59,644 --> 00:21:04,484
+Let the bedroom be the floor
+내 방을 무대 삼아
+
+309
+00:21:04,664 --> 00:21:08,694
+Just like that, an ordinary Tuesday
+그냥 그렇게, 평범한 화요일이
+
+310
+00:21:08,744 --> 00:21:16,584
+Has me reaching for one chorus more
+후렴 한 번만 더 듣고 싶게 만들어
+
+311
+00:21:30,384 --> 00:21:34,414
+Put the last shirt in its place
+마지막 셔츠까지 제자리에 걸고
+
+312
+00:21:34,464 --> 00:21:38,574
+Let the record fill the space
+음악이 방을 채우게 둬
+
+313
+00:21:38,624 --> 00:21:42,114
+Now the room is looking sweet
+이제 방이 깔끔해졌고
+
+314
+00:21:42,164 --> 00:21:48,574
+And the next track starts with that same easy beat
+다음 곡도 똑같이 편한 박자로 시작해
+
+315
+00:21:48,624 --> 00:21:51,234
+Just like that, I'm dancing
+그냥 그렇게, 나 춤추고 있어
+
+316
+00:21:51,284 --> 00:21:55,574
+With the morning all around me
+아침이 날 감싸고
+
+317
+00:21:55,624 --> 00:21:59,194
+Every move a conversation
+동작 하나하나가 대화가 돼
+
+318
+00:21:59,244 --> 00:22:03,394
+With the rhythm that has found me
+날 찾아온 리듬이랑
+
+319
+00:22:03,444 --> 00:22:06,764
+From the doorway to the dresser
+문에서 서랍장까지
+
+320
+00:22:07,284 --> 00:22:10,514
+I'm enjoying every step
+한 걸음 한 걸음이 즐거워
+
+321
+00:22:10,564 --> 00:22:16,584
+Just like that, I find my kind of pleasure
+그냥 그렇게, 내가 좋아하는 즐거움을 찾아
+
+322
+00:22:17,524 --> 00:22:20,394
+In the song that's playing next
+다음에 나오는 노래 속에서
+
+323
+00:22:20,444 --> 00:22:24,374
+That's my kind of good time
+이게 내가 좋아하는 즐거움이야
+
+324
+00:22:24,424 --> 00:22:28,124
+Right here in the daylight
+바로 여기, 햇살 속에서
+
+325
+00:22:43,648 --> 00:22:47,908
+Saturday, a quarter after nine
+토요일 아침 9시 15분
+
+326
+00:22:50,028 --> 00:22:51,978
+Rolled-up mat and a painted wooden sign
+돌돌 만 요가 매트, 페인트칠한 나무 간판
+
+327
+00:22:52,028 --> 00:22:57,138
+Through the courtyard, up a flight of stairs
+마당을 지나 계단을 올라가면
+
+328
+00:22:57,188 --> 00:23:02,118
+Someone waves me to a place beside theirs
+누군가 자기 옆자리로 오라고 손짓해
+
+329
+00:23:02,168 --> 00:23:05,378
+She says, “I'm June,” I tell her my name
+"난 준이야" 하길래 나도 내 이름을 말했어
+
+330
+00:23:05,428 --> 00:23:07,978
+We reach for our toes and laugh the same
+같이 발끝을 잡으려다 똑같이 웃음이 터졌어
+
+331
+00:23:08,028 --> 00:23:10,918
+Teacher opens up the balcony doors
+선생님이 발코니 문을 열자
+
+332
+00:23:10,968 --> 00:23:13,838
+Morning air moves across the floor
+아침 공기가 바닥을 스치며 들어와
+
+333
+00:23:13,888 --> 00:23:16,118
+By the second stretch, we're talking
+두 번째 스트레칭쯤엔 벌써 수다를 떨어
+
+334
+00:23:16,168 --> 00:23:19,598
+Like we've done this all before
+원래 알던 사이처럼
+
+335
+00:23:19,648 --> 00:23:21,538
+Then she asks about next weekend
+다음 주말에도 오냐고 묻길래
+
+336
+00:23:21,588 --> 00:23:24,098
+And I say, “I'll be here for sure”
+"당연히 오지" 했어
+
+337
+00:23:24,148 --> 00:23:26,858
+We're on a first-name basis
+이제 이름 부르는 사이가 됐어
+
+338
+00:23:26,908 --> 00:23:29,878
+Saving each other spaces
+서로 자리도 맡아주고
+
+339
+00:23:29,928 --> 00:23:31,558
+A “see you soon” already
+"또 봐" 한마디가 벌써
+
+340
+00:23:31,608 --> 00:23:35,338
+Feels like somewhere I belong
+내가 있을 곳처럼 느껴져
+
+341
+00:23:35,388 --> 00:23:37,558
+Funny how a room of faces
+신기해, 처음 보는 얼굴들로 가득한 방이
+
+342
+00:23:37,608 --> 00:23:40,238
+Turns into familiar places
+익숙한 곳이 되어가는 게
+
+343
+00:23:40,288 --> 00:23:43,018
+I came to spend an hour
+한 시간만 있다 가려고 왔는데
+
+344
+00:23:43,068 --> 00:23:47,268
+Found a place to come along
+계속 오고 싶은 곳을 찾았어
+
+345
+00:23:51,548 --> 00:23:54,058
+Next week, June brings somebody new
+다음 주엔 준이 새 친구를 데려왔어
+
+346
+00:23:54,108 --> 00:23:56,778
+I move my mat and say, “There's room for you”
+매트를 옮기며 "여기 자리 있어" 했지
+
+347
+00:23:56,828 --> 00:23:59,258
+Now we're three by the balcony rail
+이제 발코니 난간 옆에 셋이 나란히
+
+348
+00:23:59,308 --> 00:24:02,218
+Trading names and favorite walking trails
+이름이랑 좋아하는 산책길을 주고받아
+
+349
+00:24:02,268 --> 00:24:04,798
+Someone's got a birthday coming up
+누구는 곧 생일이고
+
+350
+00:24:04,848 --> 00:24:07,538
+Someone knows a place for Sunday lunch
+누구는 일요일 점심 맛집을 알고
+
+351
+00:24:07,588 --> 00:24:09,518
+As we put the folded blankets away
+담요를 개서 정리하면서
+
+352
+00:24:09,568 --> 00:24:12,298
+We make a reservation for eight
+여덟 명 자리로 예약을 했어
+
+353
+00:24:12,348 --> 00:24:15,078
+We're on a first-name basis
+이제 이름 부르는 사이가 됐어
+
+354
+00:24:15,128 --> 00:24:18,058
+Saving each other spaces
+서로 자리도 맡아주고
+
+355
+00:24:18,108 --> 00:24:19,758
+A “see you soon” already
+"또 봐" 한마디가 벌써
+
+356
+00:24:19,808 --> 00:24:23,598
+Feels like somewhere I belong
+내가 있을 곳처럼 느껴져
+
+357
+00:24:23,648 --> 00:24:25,798
+Funny how a room of faces
+신기해, 처음 보는 얼굴들로 가득한 방이
+
+358
+00:24:25,848 --> 00:24:28,478
+Turns into familiar places
+익숙한 곳이 되어가는 게
+
+359
+00:24:28,528 --> 00:24:30,838
+I came to spend an hour
+한 시간만 있다 가려고 왔는데
+
+360
+00:24:30,888 --> 00:24:35,158
+Found a place to come along
+계속 오고 싶은 곳을 찾았어
+
+361
+00:24:35,208 --> 00:24:38,018
+There's a moment at the doorway
+문 앞에서 그런 순간이 있어
+
+362
+00:24:38,068 --> 00:24:41,058
+When somebody turns to say
+누군가 돌아보며
+
+363
+00:24:41,108 --> 00:24:43,598
+“We were hoping you could join us”
+"너도 같이 갔으면 했어" 할 때
+
+364
+00:24:43,648 --> 00:24:46,328
+And you hear yourself say, “Great”
+나도 모르게 "좋아!" 하게 되는 순간
+
+365
+00:24:46,378 --> 00:24:48,838
+Now the calendar has Saturdays
+이제 달력의 토요일마다
+
+366
+00:24:48,888 --> 00:24:51,078
+With a circle round the time
+그 시간에 동그라미가 쳐져 있고
+
+367
+00:24:51,128 --> 00:24:54,058
+And a room above a courtyard
+마당 위의 작은 방은
+
+368
+00:24:54,108 --> 00:24:56,818
+Has become a part of mine
+내 일상의 한 부분이 됐어
+
+369
+00:24:56,868 --> 00:25:01,558
+We're on a first-name basis
+이제 이름 부르는 사이가 됐어
+
+370
+00:25:01,608 --> 00:25:03,338
+Saving each other spaces
+서로 자리도 맡아주고
+
+371
+00:25:03,388 --> 00:25:06,098
+I know who likes the window
+누가 창가를 좋아하는지
+
+372
+00:25:06,148 --> 00:25:09,318
+Who will get here right on time
+누가 늘 시간 맞춰 오는지 알아
+
+373
+00:25:09,368 --> 00:25:11,418
+Funny how a room of faces
+신기해, 처음 보는 얼굴들로 가득한 방이
+
+374
+00:25:11,468 --> 00:25:14,038
+Turns into familiar places
+익숙한 곳이 되어가는 게
+
+375
+00:25:14,088 --> 00:25:16,778
+Now I'm waving from the doorway
+이젠 내가 문 앞에서 손 흔들어
+
+376
+00:25:16,828 --> 00:25:20,998
+“Come on in, you're next to mine”
+"들어와, 내 옆자리야"
+
+377
+00:25:21,048 --> 00:25:28,208
+Same time, same place
+같은 시간, 같은 곳
+
+378
+00:25:29,608 --> 00:25:30,608
+A wave, a name
+손 인사, 이름 하나
+
+379
+00:25:30,568 --> 00:25:35,208
+I'll be here next Saturday
+다음 토요일에도 여기 올게
+
+380
+00:26:00,832 --> 00:26:04,842
+Phone face down on a folded shirt
+휴대폰은 개어둔 셔츠 위에 엎어두고
+
+381
+00:26:04,892 --> 00:26:06,882
+Nine fifteen and the whole day's yours
+9시 15분, 오늘 하루는 다 내 거야
+
+382
+00:26:06,932 --> 00:26:09,062
+Pull the curtains, let the room breathe
+커튼을 걷고 방에 바람 좀 들이고
+
+383
+00:26:09,112 --> 00:26:12,502
+Stretch out underneath the sheets
+이불 속에서 기지개를 쭉 켜
+
+384
+00:26:12,552 --> 00:26:15,362
+There's a book with a ribbon halfway through
+가름끈 꽂아둔 반쯤 읽은 책이 있고
+
+385
+00:26:15,412 --> 00:26:18,482
+And a sun-warmed spot with a perfect view
+햇볕 잘 드는 전망 좋은 자리도 있어
+
+386
+00:26:18,532 --> 00:26:20,942
+You can tell by the look on my face
+내 표정 보면 알겠지
+
+387
+00:26:20,992 --> 00:26:23,482
+I'm about to put that chair to use
+저 의자에 앉아서 쉴 거라는 거
+
+388
+00:26:23,532 --> 00:26:26,462
+I'm out of office, into the morning
+나 오늘 휴무야, 아침 속으로
+
+389
+00:26:26,512 --> 00:26:29,202
+Taking my time with the day
+하루를 천천히 보낼 거야
+
+390
+00:26:29,252 --> 00:26:32,802
+Got an appointment with absolutely anything
+뭐든 마주치는 거랑 약속이 있어
+
+391
+00:26:32,852 --> 00:26:35,962
+That happens to come my way
+오늘 나한테 오는 거라면
+
+392
+00:26:36,012 --> 00:26:39,122
+Let the clock keep doing its thing
+시계는 알아서 가라 그래
+
+393
+00:26:39,172 --> 00:26:41,322
+I've got a different kind of swing
+난 나만의 리듬으로 갈 거야
+
+394
+00:26:41,372 --> 00:26:47,702
+I'm out of office, into the morning
+나 오늘 휴무야, 아침 속으로
+
+395
+00:26:47,752 --> 00:26:54,492
+And I like how that sounds when I say it
+말로 해보니까 그 말이 참 좋다
+
+396
+00:26:59,072 --> 00:27:03,252
+Read three pages, then I close my eyes
+세 쪽 읽고 눈을 감아
+
+397
+00:27:04,832 --> 00:27:09,612
+Picture every place the writer describes
+작가가 그린 곳들을 하나하나 떠올려
+
+398
+00:27:09,732 --> 00:27:11,482
+Blue-tiled roofs and a harbor below
+파란 타일 지붕들 아래 항구 하나
+
+399
+00:27:11,532 --> 00:27:15,122
+For a minute, that's where I go
+잠깐 동안 난 거기 가 있어
+
+400
+00:27:15,172 --> 00:27:19,582
+Then the sun moves over to my knees
+그러다 햇살이 무릎까지 내려오고
+
+401
+00:27:19,632 --> 00:27:22,822
+And I hear the leaves in the courtyard breeze
+마당 바람에 나뭇잎 흔들리는 소리가 들려
+
+402
+00:27:22,872 --> 00:27:25,742
+I could stay on this chapter all day
+이 장에서 하루 종일 머물러도 좋아
+
+403
+00:27:25,792 --> 00:27:30,922
+Let the next one come when I please
+다음 장은 내가 원할 때 읽을래
+
+404
+00:27:30,972 --> 00:27:33,582
+Today is mine to spend
+오늘은 내 마음대로 쓰는 날
+
+405
+00:27:33,632 --> 00:27:35,302
+However feels like me
+나답게 보내면 돼
+
+406
+00:27:35,352 --> 00:27:36,742
+An open afternoon
+아무 계획 없는 오후
+
+407
+00:27:36,792 --> 00:27:39,052
+And room to simply be
+그냥 있어도 되는 여유
+
+408
+00:27:43,132 --> 00:27:46,142
+Maybe later I'll pick a movie
+이따가 영화를 고를 수도 있고
+
+409
+00:27:46,192 --> 00:27:49,612
+Maybe take the scenic route
+경치 좋은 길로 산책할 수도 있고
+
+410
+00:27:49,792 --> 00:27:51,582
+Right now, this chair is everything
+지금은 이 의자가 전부야
+
+411
+00:27:51,632 --> 00:27:54,522
+A day off ought to be about
+쉬는 날은 원래 이래야지
+
+412
+00:27:54,572 --> 00:27:57,182
+I turn another page
+책장을 한 장 더 넘기고
+
+413
+00:27:57,232 --> 00:28:00,002
+And settle further in
+더 편하게 몸을 기대
+
+414
+00:28:00,052 --> 00:28:02,702
+There's a certain kind of pleasure
+이런 하루를 보낼 수 있다는 건
+
+415
+00:28:02,752 --> 00:28:07,982
+In a day you get to live like this
+그것만으로 참 기분 좋은 일이야
+
+416
+00:28:08,032 --> 00:28:11,522
+I'm out of office, into the morning
+나 오늘 휴무야, 아침 속으로
+
+417
+00:28:11,572 --> 00:28:13,962
+Taking my time with the day
+하루를 천천히 보낼 거야
+
+418
+00:28:14,012 --> 00:28:17,602
+Got an appointment with absolutely anything
+뭐든 마주치는 거랑 약속이 있어
+
+419
+00:28:17,652 --> 00:28:20,742
+That happens to come my way
+오늘 나한테 오는 거라면
+
+420
+00:28:20,792 --> 00:28:24,002
+Let the clock keep doing its thing
+시계는 알아서 가라 그래
+
+421
+00:28:24,052 --> 00:28:26,122
+I've got a different kind of swing
+난 나만의 리듬으로 갈 거야
+
+422
+00:28:26,172 --> 00:28:32,662
+I'm out of office, into the morning
+나 오늘 휴무야, 아침 속으로
+
+423
+00:28:32,712 --> 00:28:39,122
+And I like how that sounds when I say it
+말로 해보니까 그 말이 참 좋다
+
+424
+00:28:43,472 --> 00:28:45,762
+Ask me what I'm up to
+뭐 하냐고 물으면
+
+425
+00:28:45,812 --> 00:28:48,522
+I'll say, “Enjoying the view”
+"경치 구경 중이야" 할 거야
+
+426
+00:28:48,572 --> 00:28:51,322
+There's a bookmark on the cushion
+쿠션 위엔 책갈피가 있고
+
+427
+00:28:51,372 --> 00:28:56,612
+And a whole day to choose
+하루를 통째로 내 마음대로
+
+428
+00:29:07,764 --> 00:29:14,314
+You pull a peach-colored coat from the rail
+넌 옷걸이에서 복숭아색 코트를 꺼내
+
+429
+00:29:14,364 --> 00:29:18,814
+Silver earrings shaped like a sail
+돛 모양 은 귀걸이를 하고
+
+430
+00:29:18,864 --> 00:29:22,914
+Check the mirror, tilt your head
+거울 보면서 고개를 갸웃하고
+
+431
+00:29:22,964 --> 00:29:27,714
+Choose the sneakers with the cherry-red threads
+체리색 실로 꾸민 운동화를 골라
+
+432
+00:29:27,764 --> 00:29:30,554
+There's a forecast on the radio
+라디오에선 일기예보가 나오는데
+
+433
+00:29:30,604 --> 00:29:33,094
+You smile and turn the volume low
+넌 웃으면서 볼륨을 줄여
+
+434
+00:29:33,144 --> 00:29:36,054
+Got your own idea of what feels right
+뭐가 좋은지는 네가 제일 잘 알지
+
+435
+00:29:36,104 --> 00:29:41,864
+And it looks a lot like you in daylight
+그게 햇살 아래 네 모습이랑 꼭 닮았어
+
+436
+00:29:43,604 --> 00:29:46,454
+Something in the way you wear it
+네가 입으면 뭔가 달라
+
+437
+00:29:46,504 --> 00:29:48,714
+Makes the whole thing come alive
+옷이 전부 살아나
+
+438
+00:29:48,764 --> 00:29:51,094
+Every shade becomes your favorite
+어떤 색이든 네가 좋아하는 색이 돼
+
+439
+00:29:51,144 --> 00:29:53,334
+When you let yourself decide
+네가 직접 고르기만 하면
+
+440
+00:29:53,384 --> 00:29:55,434
+You bring your own weather
+넌 너만의 날씨를 데리고 다녀
+
+441
+00:29:55,484 --> 00:29:57,414
+Your own kind of blue
+너만의 파란색
+
+442
+00:29:57,464 --> 00:30:00,154
+That easy, sunny feeling
+그 편안하고 화창한 느낌이
+
+443
+00:30:00,204 --> 00:30:02,274
+Looks so good on you
+너한테 정말 잘 어울려
+
+444
+00:30:02,324 --> 00:30:03,834
+Whatever the season
+어떤 계절이든
+
+445
+00:30:03,884 --> 00:30:06,714
+Whatever you choose
+뭘 고르든
+
+446
+00:30:06,764 --> 00:30:09,314
+You bring your own weather
+넌 너만의 날씨를 데리고 다녀
+
+447
+00:30:09,364 --> 00:30:14,364
+And it comes shining through
+그 모습이 환하게 빛나
+
+448
+00:30:20,664 --> 00:30:24,864
+You pin a tiny planet to your sleeve
+넌 소매에 작은 행성 브로치를 달고
+
+449
+00:30:28,164 --> 00:30:32,364
+Say it’s from a shop near Portobello Green
+포토벨로 그린 근처 가게에서 샀대
+
+450
+00:30:35,664 --> 00:30:39,864
+Tell me how you found it on a tray
+쟁반 위에 놓인 걸 발견했대
+
+451
+00:30:43,164 --> 00:30:49,204
+Next to painted birds and handmade rings
+그림 그린 새들이랑 수제 반지 옆에서
+
+452
+00:30:49,844 --> 00:30:52,894
+Now it travels everywhere you do
+이제 그건 네가 가는 곳마다 같이 다녀
+
+453
+00:30:52,944 --> 00:30:55,234
+With a story only known to you
+너만 아는 이야기를 품고서
+
+454
+00:30:55,284 --> 00:30:57,814
+I love how you put it all together
+네가 이렇게 다 맞춰 입는 게 좋아
+
+455
+00:30:57,864 --> 00:31:00,994
+Like every piece remembers an adventure
+하나하나가 모험을 기억하는 것처럼
+
+456
+00:31:01,044 --> 00:31:02,174
+That’s your color
+그게 네 색이야
+
+457
+00:31:02,224 --> 00:31:03,234
+That’s your way
+그게 네 스타일이야
+
+458
+00:31:03,284 --> 00:31:04,284
+A perfect fit
+딱 맞아
+
+459
+00:31:04,304 --> 00:31:08,564
+For who you are today
+오늘의 너한테
+
+460
+00:31:10,224 --> 00:31:13,174
+Some days linen, some days velvet
+어떤 날은 린넨, 어떤 날은 벨벳
+
+461
+00:31:13,224 --> 00:31:17,544
+Some days something borrowed from a friend
+어떤 날은 친구한테 빌린 옷
+
+462
+00:31:20,164 --> 00:31:22,674
+Every version feels familiar
+어떤 모습이든 다 너다워
+
+463
+00:31:22,724 --> 00:31:27,464
+Even when you change it up again
+또 스타일을 바꿔도 말이야
+
+464
+00:31:29,024 --> 00:31:31,794
+You turn once by the doorway
+넌 문 앞에서 한 바퀴 돌고
+
+465
+00:31:31,844 --> 00:31:34,174
+Let the coat fall into place
+코트를 툭 내려 자리 잡게 하고
+
+466
+00:31:34,224 --> 00:31:36,574
+Then you catch your own reflection
+거울에 비친 자기 모습을 보며
+
+467
+00:31:36,624 --> 00:31:41,784
+With that smile upon your face
+그 미소를 지어
+
+468
+00:31:43,504 --> 00:31:46,374
+You bring your own weather
+넌 너만의 날씨를 데리고 다녀
+
+469
+00:31:46,424 --> 00:31:48,394
+Your own kind of blue
+너만의 파란색
+
+470
+00:31:48,444 --> 00:31:51,074
+That easy, sunny feeling
+그 편안하고 화창한 느낌이
+
+471
+00:31:51,124 --> 00:31:53,274
+Looks so good on you
+너한테 정말 잘 어울려
+
+472
+00:31:53,324 --> 00:31:55,594
+A peach-colored morning
+복숭아색 아침
+
+473
+00:31:55,644 --> 00:31:58,034
+With cherry-red shoes
+체리색 운동화
+
+474
+00:31:58,084 --> 00:32:00,334
+You bring your own weather
+넌 너만의 날씨를 데리고 다녀
+
+475
+00:32:00,384 --> 00:32:05,824
+And it comes shining through
+그 모습이 환하게 빛나
+
+476
+00:32:10,644 --> 00:32:15,244
+Before you even step outside
+밖에 나가기도 전에
+
+477
+00:32:17,124 --> 00:32:22,504
+You’ve got the forecast right
+넌 이미 오늘 날씨를 맞혔어
+
+478
+00:32:38,604 --> 00:32:41,994
+You’re peeling an orange in one long curl
+넌 오렌지 껍질을 한 줄로 길게 깎고 있고
+
+479
+00:32:42,044 --> 00:32:45,574
+I’m pouring the coffee you like
+난 네가 좋아하는 커피를 따르는 중
+
+480
+00:32:45,624 --> 00:32:48,534
+It’s half past seven in my kitchen
+우리 부엌은 아침 7시 반인데
+
+481
+00:32:48,584 --> 00:32:51,754
+And half past dinner on your side
+거긴 저녁 먹고 난 시간이네
+
+482
+00:32:51,804 --> 00:32:54,494
+You prop me up against the sugar
+넌 휴대폰을 설탕 통에 기대 세우고
+
+483
+00:32:54,544 --> 00:32:57,754
+I lean you by the kitchen sink
+난 너를 싱크대 옆에 세워놔
+
+484
+00:32:57,804 --> 00:33:01,334
+You say, “You’ve got my favorite mug there”
+"그거 내가 제일 좋아하던 머그잔이다" 하길래
+
+485
+00:33:01,384 --> 00:33:04,794
+I hold it closer, take a drink
+잔을 더 가까이 들고 한 모금 마셔
+
+486
+00:33:04,844 --> 00:33:07,114
+Send me your sunset
+너는 노을을 보내줘
+
+487
+00:33:07,164 --> 00:33:10,814
+I’ll send you my sunrise
+나는 해 뜨는 걸 보낼게
+
+488
+00:33:10,864 --> 00:33:13,694
+Hold yours up to the camera
+네 하늘을 카메라에 비춰주면
+
+489
+00:33:13,744 --> 00:33:18,214
+I’ll hold up mine
+나도 내 하늘을 비춰줄게
+
+490
+00:33:18,264 --> 00:33:20,674
+Half a world between us
+지구 반 바퀴만큼 떨어져 있어도
+
+491
+00:33:20,724 --> 00:33:24,684
+Two colors on one screen
+한 화면 안에 두 가지 하늘색
+
+492
+00:33:24,734 --> 00:33:26,814
+You bring the evening
+네가 저녁을 가져오면
+
+493
+00:33:26,864 --> 00:33:32,344
+We’ll call it even
+그걸로 우린 비긴 걸로 하자
+
+494
+00:33:43,984 --> 00:33:48,174
+You take me out onto the landing
+넌 날 계단참으로 데리고 나가
+
+495
+00:33:48,224 --> 00:33:51,014
+In slippers I remember well
+기억나는 그 슬리퍼를 신고
+
+496
+00:33:51,064 --> 00:33:53,914
+The sky behind you’s turning lilac
+네 뒤로 하늘이 연보라색으로 물들어
+
+497
+00:33:53,964 --> 00:33:57,354
+I’ve got some gold for you as well
+나도 너한테 보여줄 금빛 하늘이 있어
+
+498
+00:33:57,404 --> 00:34:00,074
+You ask me how the new job’s going
+새 직장은 어떠냐고 묻길래
+
+499
+00:34:00,124 --> 00:34:04,154
+I turn my badge so you can see
+사원증을 돌려서 보여줬어
+
+500
+00:34:04,204 --> 00:34:06,734
+You read my name beneath the photo
+넌 사진 밑에 있는 내 이름을 읽어
+
+501
+00:34:06,784 --> 00:34:10,614
+The way you did when I was three
+내가 세 살 때 그랬던 것처럼
+
+502
+00:34:10,664 --> 00:34:12,874
+Half past seven
+아침 7시 반
+
+503
+00:34:12,924 --> 00:34:14,174
+There you are
+네가 거기 있어
+
+504
+00:34:14,224 --> 00:34:19,004
+Close enough to see you smile
+웃는 게 보일 만큼 가까이
+
+505
+00:34:24,884 --> 00:34:28,674
+We used to share a bathroom mirror
+예전엔 욕실 거울 하나를 같이 썼지
+
+506
+00:34:28,724 --> 00:34:31,834
+Your face up high and mine below
+네 얼굴은 위에, 내 얼굴은 아래에
+
+507
+00:34:31,884 --> 00:34:34,934
+Now I can see us both in one frame
+이젠 한 화면에 우리 둘이 같이 보여
+
+508
+00:34:34,984 --> 00:34:40,664
+I take a picture for us both
+우리 둘을 위해 사진을 한 장 찍어
+
+509
+00:34:43,564 --> 00:34:45,634
+Send me your sunset
+너는 노을을 보내줘
+
+510
+00:34:45,684 --> 00:34:49,394
+I’ll send you my sunrise
+나는 해 뜨는 걸 보낼게
+
+511
+00:34:49,444 --> 00:34:52,714
+Hold yours up to the camera
+네 하늘을 카메라에 비춰주면
+
+512
+00:34:52,764 --> 00:34:57,054
+I’ll hold up mine
+나도 내 하늘을 비춰줄게
+
+513
+00:34:57,104 --> 00:34:59,754
+Half a world between us
+지구 반 바퀴만큼 떨어져 있어도
+
+514
+00:34:59,804 --> 00:35:02,094
+And you still lean in
+넌 아직도 몸을 기울여
+
+515
+00:35:02,144 --> 00:35:05,734
+To kiss the lens good morning
+화면에 굿모닝 뽀뽀를 해줘
+
+516
+00:35:05,784 --> 00:35:14,884
+While I tuck you in
+나는 너한테 잘 자라고 인사하고
+
+517
+00:35:15,664 --> 00:35:19,764
+You bring the evening
+네가 저녁을 가져오면
+
+518
+00:35:19,864 --> 00:35:22,354
+I’ll bring the day
+난 낮을 가져올게
+
+519
+00:35:22,404 --> 00:35:26,494
+Same time tomorrow?
+내일 같은 시간?
+
+520
+00:35:26,544 --> 00:35:28,704
+Okay
+좋아
+
+521
+00:35:46,716 --> 00:35:50,686
+Come on, let’s mess up the kitchen
+자, 부엌 좀 어지럽혀 보자
+
+522
+00:35:50,736 --> 00:35:56,516
+That’s what a kitchen is for
+부엌은 원래 그러라고 있는 거잖아
+
+523
+00:35:56,976 --> 00:35:59,706
+First Sunday at our new address
+새집에서 맞는 첫 일요일
+
+524
+00:35:59,756 --> 00:36:05,716
+Two mugs on a cardboard box
+이삿짐 상자 위에 머그잔 두 개
+
+525
+00:36:06,476 --> 00:36:09,186
+You find a pan, I find the coffee
+넌 프라이팬을 찾고, 난 커피를 찾아
+
+526
+00:36:09,236 --> 00:36:14,916
+We drink it sitting in our socks
+양말 바람으로 앉아서 마셔
+
+527
+00:36:15,096 --> 00:36:18,466
+The walls look good in morning light
+아침 햇살에 벽이 예뻐 보이고
+
+528
+00:36:18,516 --> 00:36:24,136
+Our voices echo down the hall
+우리 목소리가 복도에 울려
+
+529
+00:36:24,936 --> 00:36:27,766
+You say, “It’s ours.” I say, “It’s almost”
+넌 "우리 집이야" 하고, 난 "거의" 하고는
+
+530
+00:36:27,816 --> 00:36:34,116
+And get the pancake mix involved
+팬케이크 가루를 꺼내
+
+531
+00:36:34,916 --> 00:36:36,806
+Come on, let’s mess up the kitchen
+자, 부엌 좀 어지럽혀 보자
+
+532
+00:36:36,856 --> 00:36:42,776
+That’s what a kitchen is for
+부엌은 원래 그러라고 있는 거잖아
+
+533
+00:36:43,956 --> 00:36:46,406
+Leave a ring on the counter
+조리대엔 컵 자국을 남기고
+
+534
+00:36:46,456 --> 00:36:52,306
+Leave a print on the drawer
+서랍엔 손자국을 남겨
+
+535
+00:36:52,356 --> 00:36:55,386
+I liked it fine in the pictures
+사진으로 볼 때도 좋았는데
+
+536
+00:36:55,436 --> 00:37:00,246
+I like it better than before
+지금이 훨씬 더 좋아
+
+537
+00:37:00,296 --> 00:37:04,886
+With your socks sliding into mine
+네 양말이 내 양말 쪽으로 미끄러져 오는
+
+538
+00:37:04,936 --> 00:37:10,136
+On our very own kitchen floor
+우리 부엌 바닥 위에서
+
+539
+00:37:11,056 --> 00:37:13,866
+We eat the first one with our fingers
+첫 번째 팬케이크는 손으로 집어 먹어
+
+540
+00:37:13,916 --> 00:37:19,716
+The plates are halfway down the stack
+접시는 아직 상자 속에 있으니까
+
+541
+00:37:20,276 --> 00:37:23,886
+You pour the next one like a question mark
+넌 다음 반죽을 물음표 모양으로 붓고
+
+542
+00:37:23,936 --> 00:37:28,936
+I make a crooked answer back
+난 삐뚤빼뚤하게 대답을 그려
+
+543
+00:37:29,056 --> 00:37:32,266
+The radio goes by the kettle
+라디오는 주전자 옆에 두고
+
+544
+00:37:32,316 --> 00:37:38,216
+The good pan hangs beside the stove
+좋은 프라이팬은 가스레인지 옆에 걸어
+
+545
+00:37:38,456 --> 00:37:41,806
+We’re finding places as we use things
+쓰면서 하나씩 자리를 찾아가는 중이야
+
+546
+00:37:41,856 --> 00:37:47,096
+That’s how I’ll know my way around this home
+그렇게 이 집이 점점 익숙해질 거야
+
+547
+00:37:49,096 --> 00:37:51,746
+Years from now, if we repaint it
+몇 년 뒤에 벽을 다시 칠하게 되면
+
+548
+00:37:51,796 --> 00:37:54,006
+Let’s leave one square behind the door
+문 뒤에 한 칸만 남겨두자
+
+549
+00:37:54,056 --> 00:37:56,446
+So we can say, “That was the yellow
+그래야 "이게 그 노란색이었어
+
+550
+00:37:56,496 --> 00:38:02,476
+Of the first place that was yours and mine”
+우리 둘의 첫 집 색깔" 하고 말할 수 있잖아
+
+551
+00:38:02,526 --> 00:38:05,106
+Come on, let’s mess up the kitchen
+자, 부엌 좀 어지럽혀 보자
+
+552
+00:38:05,156 --> 00:38:11,016
+That’s what a kitchen is for
+부엌은 원래 그러라고 있는 거잖아
+
+553
+00:38:12,056 --> 00:38:14,546
+There’s a ring on the counter
+조리대엔 컵 자국이 있고
+
+554
+00:38:14,596 --> 00:38:19,466
+There’s a print on the drawer
+서랍엔 손자국이 있어
+
+555
+00:38:19,516 --> 00:38:23,866
+You ask me, “Does it feel like home yet?”
+"이제 좀 집 같아?" 하고 묻길래
+
+556
+00:38:23,916 --> 00:38:29,326
+I slide across the floor
+난 바닥을 미끄러지듯 다가가
+
+557
+00:38:29,376 --> 00:38:33,066
+Kiss the flour off your cheek
+네 볼에 묻은 밀가루를 뽀뽀로 닦고
+
+558
+00:38:33,116 --> 00:38:37,546
+And put the pan back on for more
+팬을 다시 올려 하나 더 구워
+
+559
+00:38:37,596 --> 00:38:42,446
+One for you, one for me
+하나는 너, 하나는 나
+
+560
+00:38:42,496 --> 00:38:48,156
+Sunday at our new address
+새집에서 보내는 일요일
+
+561
+00:39:05,188 --> 00:39:07,698
+Six letters for a bird at sea
+"바다에 사는 새, 여섯 글자"
+
+562
+00:39:07,748 --> 00:39:11,678
+Your pencil drums against your knee
+넌 연필로 무릎을 톡톡 두드리고
+
+563
+00:39:11,728 --> 00:39:15,058
+I say, “A puffin.” You count twice
+내가 "퍼핀"이라 하니까 넌 두 번 세어보더니
+
+564
+00:39:15,108 --> 00:39:20,568
+It fits. We like that. Pass the ice.
+딱 맞아. 기분 좋아. 얼음 좀 줄래?
+
+565
+00:39:20,788 --> 00:39:25,108
+Your coffee sweats a perfect O
+네 아이스커피 잔이 동그랗게 물 자국을 남겨
+
+566
+00:39:25,228 --> 00:39:28,218
+Around a clue we almost know
+거의 풀 것 같은 문제 위에
+
+567
+00:39:28,268 --> 00:39:31,858
+We’ve got a booth, a pen that works
+식당 자리 하나, 잘 나오는 펜 하나
+
+568
+00:39:31,908 --> 00:39:36,198
+And Sunday in our hands
+그리고 우리 손에 일요일이 있어
+
+569
+00:39:36,248 --> 00:39:39,558
+Meet me on the other side of seven
+7번 문제 반대편에서 만나
+
+570
+00:39:39,608 --> 00:39:42,458
+I’ll go down and you go across
+난 세로를 풀고 넌 가로를 풀어
+
+571
+00:39:42,508 --> 00:39:45,498
+Somewhere in the middle of a word
+어느 단어 한가운데에서
+
+572
+00:39:45,548 --> 00:39:48,758
+Your train of thought runs into mine
+네 생각이 내 생각이랑 만나
+
+573
+00:39:48,808 --> 00:39:51,978
+You leave a letter there for me
+넌 나를 위해 글자 하나를 남겨주고
+
+574
+00:39:52,028 --> 00:39:53,978
+I give you one you need
+난 네가 필요한 글자를 채워줘
+
+575
+00:39:54,028 --> 00:39:56,258
+Meet me on the other side of seven
+7번 문제 반대편에서 만나
+
+576
+00:39:56,308 --> 00:40:00,988
+Where your answer crosses mine
+네 답이 내 답이랑 겹치는 그곳에서
+
+577
+00:40:03,368 --> 00:40:07,048
+You know the moons around a planet
+넌 행성 주위 위성 이름을 알고
+
+578
+00:40:07,268 --> 00:40:11,668
+I know the words to movie themes
+난 영화 주제가 가사를 알아
+
+579
+00:40:11,768 --> 00:40:14,278
+You take the ones about the Romans
+로마 시대 문제는 네가 가져가고
+
+580
+00:40:14,328 --> 00:40:20,088
+Leave all the leading ladies to me
+여주인공 이름은 다 나한테 맡겨
+
+581
+00:40:20,208 --> 00:40:22,698
+Four down is asking for a singer
+세로 4번은 가수 이름을 묻는데
+
+582
+00:40:22,748 --> 00:40:28,108
+You hum two bars, I write her name
+네가 두 소절 흥얼거리면 난 그 이름을 적어
+
+583
+00:40:28,228 --> 00:40:31,258
+The waitress tops us up and whispers,
+직원분이 커피를 더 따라주면서 속삭여
+
+584
+00:40:31,308 --> 00:40:36,418
+“My mother plays that song most days”
+"우리 엄마가 그 노래 맨날 틀어요"
+
+585
+00:40:36,468 --> 00:40:38,418
+One square left
+한 칸 남았어
+
+586
+00:40:38,468 --> 00:40:40,638
+Under your thumb
+네 엄지 밑에
+
+587
+00:40:40,688 --> 00:40:42,558
+Lift it up
+손 떼봐
+
+588
+00:40:42,608 --> 00:40:44,918
+We’ve got this one
+이건 우리가 풀었어
+
+589
+00:40:44,968 --> 00:40:49,138
+Of all the things I know about you
+내가 너에 대해 아는 것 중에
+
+590
+00:40:49,188 --> 00:40:52,298
+My favorite might be this
+제일 좋아하는 건 이거야
+
+591
+00:40:52,348 --> 00:40:56,338
+You do the whole thing in blue pencil
+넌 처음부터 끝까지 파란 연필로 풀고
+
+592
+00:40:56,388 --> 00:41:00,178
+Then date it like a work of art
+작품처럼 날짜를 적어둬
+
+593
+00:41:00,228 --> 00:41:03,658
+I used to toss the Sunday paper
+예전엔 일요일 신문을 그냥 버렸는데
+
+594
+00:41:03,708 --> 00:41:05,598
+Now there’s a stack beneath my bed
+이젠 침대 밑에 한 무더기 쌓여 있어
+
+595
+00:41:05,648 --> 00:41:08,298
+A hundred mornings in your handwriting
+네 글씨로 채운 수많은 아침들
+
+596
+00:41:08,348 --> 00:41:12,188
+With half the words in mine
+그 단어의 반은 내 글씨고
+
+597
+00:41:13,108 --> 00:41:15,958
+Meet me on the other side of seven
+7번 문제 반대편에서 만나
+
+598
+00:41:16,008 --> 00:41:18,938
+I’ll go down and you go across
+난 세로를 풀고 넌 가로를 풀어
+
+599
+00:41:18,988 --> 00:41:21,938
+Somewhere in the middle of a word
+어느 단어 한가운데에서
+
+600
+00:41:21,988 --> 00:41:25,118
+Your train of thought runs into mine
+네 생각이 내 생각이랑 만나
+
+601
+00:41:25,168 --> 00:41:27,318
+You write the date beneath the grid
+넌 퍼즐 밑에 날짜를 적고
+
+602
+00:41:27,368 --> 00:41:30,358
+I draw a circle round it twice
+난 그 위에 동그라미를 두 번 그려
+
+603
+00:41:30,408 --> 00:41:33,598
+Another Sunday for the stack
+쌓아둘 일요일이 또 하나 늘었어
+
+604
+00:41:33,648 --> 00:41:39,408
+Where your answer crosses mine
+네 답이 내 답이랑 겹치는 그곳에서
+
+605
+00:41:39,848 --> 00:41:43,598
+You slide the paper over
+넌 신문을 내 쪽으로 밀어주고
+
+606
+00:41:43,648 --> 00:41:48,148
+I fold it on the dotted line
+난 점선을 따라 반듯하게 접어
+
+607
+00:42:02,968 --> 00:42:05,038
+Milo drops a record in my crate
+마일로가 내 바구니에 레코드 한 장을 넣어주며
+
+608
+00:42:05,088 --> 00:42:11,548
+Says, “Side B, track three, just wait”
+"B면 3번, 기다려 봐" 해
+
+609
+00:42:11,948 --> 00:42:14,458
+On the sleeve, three men in suits
+커버엔 정장 입은 남자 셋
+
+610
+00:42:14,508 --> 00:42:17,198
+One in a pair of silver boots
+그중 한 명은 은색 부츠를 신었어
+
+611
+00:42:17,248 --> 00:42:21,598
+I’ve got a ten. It’s marked at five
+난 만 원이 있는데 가격표는 오천 원
+
+612
+00:42:21,648 --> 00:42:27,278
+The shop’s been open since a quarter to nine
+가게는 8시 45분부터 열려 있었어
+
+613
+00:42:27,328 --> 00:42:31,158
+He sets the needle in the groove
+마일로가 바늘을 홈에 올리는데
+
+614
+00:42:31,208 --> 00:42:34,018
+I’m halfway sold by bar two
+두 마디 만에 벌써 반쯤 넘어갔어
+
+615
+00:42:34,068 --> 00:42:35,258
+Spin it again
+한 번 더 틀어줘
+
+616
+00:42:35,308 --> 00:42:39,458
+I want to hear how the bass comes in
+베이스가 어떻게 들어오는지 다시 듣고 싶어
+
+617
+00:42:39,508 --> 00:42:41,978
+Two beats late like it owns the place
+두 박자 늦게, 여기가 제 무대인 것처럼
+
+618
+00:42:42,028 --> 00:42:46,238
+Oh, spin it again
+아, 한 번만 더 틀어줘
+
+619
+00:42:46,288 --> 00:42:49,298
+I came in here for something else
+원래 다른 거 사러 왔는데
+
+620
+00:42:49,348 --> 00:42:52,378
+Now I want that sound all to myself
+이젠 그 소리를 꼭 내 걸로 하고 싶어
+
+621
+00:42:52,428 --> 00:42:56,118
+From the top, my friend
+처음부터 다시, 친구야
+
+622
+00:42:56,168 --> 00:42:59,028
+Spin it again
+한 번 더 틀어줘
+
+623
+00:43:08,778 --> 00:43:11,558
+I take the sleeve up to the till
+앨범을 들고 계산대로 갔더니
+
+624
+00:43:11,608 --> 00:43:14,438
+The woman there is smiling still
+계산대 직원분이 계속 웃고 있어
+
+625
+00:43:14,488 --> 00:43:17,258
+She taps the silver boots and says
+은색 부츠를 톡톡 짚으면서
+
+626
+00:43:17,308 --> 00:43:19,698
+“That’s my brother. He still has them”
+"이거 우리 오빠예요. 아직도 그 부츠 있어요" 해
+
+627
+00:43:19,748 --> 00:43:22,858
+I ask her, “Did you hear them play?”
+"공연하는 거 보셨어요?" 하고 물으니
+
+628
+00:43:22,908 --> 00:43:25,078
+She leans across the counter, says,
+계산대 너머로 몸을 기울이며
+
+629
+00:43:25,128 --> 00:43:27,138
+“Listen close when the band drops out
+"밴드 소리가 멈출 때 잘 들어봐요
+
+630
+00:43:27,188 --> 00:43:29,778
+That laugh you hear? That’s me”
+그때 들리는 웃음소리, 그게 저예요"
+
+631
+00:43:29,828 --> 00:43:31,918
+Two bars of keys
+건반 두 마디
+
+632
+00:43:31,968 --> 00:43:33,358
+A tap on the rim
+드럼 테두리를 한 번 치고
+
+633
+00:43:33,408 --> 00:43:34,618
+There’s her laugh
+그녀의 웃음소리가 들리고
+
+634
+00:43:34,668 --> 00:43:36,518
+Then the bass comes in
+그다음에 베이스가 들어와
+
+635
+00:43:36,568 --> 00:43:38,998
+She writes the date across a paper bag
+그녀는 종이봉투에 날짜를 적고
+
+636
+00:43:39,048 --> 00:43:41,458
+The name of the room where they cut the track
+그 곡을 녹음한 스튜디오 이름도 적어줬어
+
+637
+00:43:41,508 --> 00:43:44,358
+I know her laugh, I know his shoes
+이제 난 그녀의 웃음도, 그 오빠의 신발도 알아
+
+638
+00:43:44,408 --> 00:43:49,608
+And I only walked in twenty minutes ago
+가게 들어온 지 20분밖에 안 됐는데
+
+639
+00:43:52,008 --> 00:43:53,898
+Spin it again
+한 번 더 틀어줘
+
+640
+00:43:53,948 --> 00:43:56,618
+Now I know where the laugh comes in
+이젠 웃음소리가 어디서 나오는지 알아
+
+641
+00:43:56,668 --> 00:43:59,318
+One beat clear in the space they leave
+밴드가 비워둔 한 박자 사이에 또렷하게
+
+642
+00:43:59,368 --> 00:44:03,778
+Then the whole band leans back in
+그러고 나서 밴드가 다시 들어와
+
+643
+00:44:03,828 --> 00:44:07,258
+I came in here with a five to spend
+오천 원 쓰려고 들어왔다가
+
+644
+00:44:07,308 --> 00:44:10,558
+Found a song with a story tucked in
+이야기가 담긴 노래를 찾았어
+
+645
+00:44:10,608 --> 00:44:15,708
+From the top, my friend
+처음부터 다시, 친구야
+
+646
+00:44:17,128 --> 00:44:19,928
+Spin it again
+한 번 더 틀어줘
+
+647
+00:44:29,888 --> 00:44:34,918
+Back at my place, the jacket hits the shelf
+집에 와서 앨범을 선반에 꽂아
+
+648
+00:44:34,968 --> 00:44:36,948
+Side B, track three
+B면 3번
+
+649
+00:44:39,288 --> 00:44:42,648
+I can find it myself
+이젠 나 혼자서도 찾을 수 있어
+
+650
+00:45:00,988 --> 00:45:04,798
+One eye opens when your keys go click
+네가 열쇠 집는 소리에 한쪽 눈을 떠
+
+651
+00:45:04,848 --> 00:45:08,618
+You’ve got one shoe on, I’m already up
+넌 신발 한 짝 신었고, 난 벌써 일어났지
+
+652
+00:45:08,668 --> 00:45:12,538
+My tail taps twice on the umbrella stand
+꼬리로 우산꽂이를 두 번 툭툭 치니까
+
+653
+00:45:12,588 --> 00:45:15,538
+You take the hint and set down your cup
+넌 눈치채고 컵을 내려놔
+
+654
+00:45:15,588 --> 00:45:20,158
+You check the weather, I check the breeze
+넌 날씨를 확인하고, 난 바람 냄새를 확인해
+
+655
+00:45:20,208 --> 00:45:24,538
+Something good’s been underneath these trees
+이 나무들 밑에 좋은 게 있었던 게 분명해
+
+656
+00:45:24,588 --> 00:45:29,338
+You’ve walked this block a thousand times
+넌 이 길을 수천 번 걸었겠지만
+
+657
+00:45:29,388 --> 00:45:34,418
+Today I’ll show you my side
+오늘은 내가 보는 세상을 보여줄게
+
+658
+00:45:34,468 --> 00:45:36,498
+Follow my nose
+내 코를 따라와
+
+659
+00:45:36,548 --> 00:45:40,558
+That’s how the morning goes
+아침은 원래 이렇게 가는 거야
+
+660
+00:45:40,608 --> 00:45:45,518
+Left where the rosemary grows
+로즈마리 자라는 데서 왼쪽으로
+
+661
+00:45:45,568 --> 00:45:49,568
+Then slow, slow, slow
+그리고 천천히, 천천히
+
+662
+00:45:50,348 --> 00:45:52,998
+You see a gate, I smell the sea
+넌 대문을 보지만, 난 바다 냄새를 맡아
+
+663
+00:45:53,048 --> 00:45:58,418
+On somebody’s cuffs from half past three
+3시 반쯤 지나간 누군가의 바짓단에서
+
+664
+00:45:58,468 --> 00:46:01,978
+Where have they been? Nobody knows
+어디 갔다 온 걸까? 아무도 모르지
+
+665
+00:46:02,028 --> 00:46:05,948
+Come on, follow my nose
+자, 내 코를 따라와
+
+666
+00:46:06,688 --> 00:46:09,918
+Outside the bakery you say my name
+빵집 앞에서 네가 내 이름을 불러
+
+667
+00:46:09,968 --> 00:46:14,178
+I know that voice, I know this game
+그 목소리 알아, 이 놀이도 알아
+
+668
+00:46:14,228 --> 00:46:18,238
+I sit so straight the baker grins
+내가 얌전히 앉으니까 빵집 아저씨가 웃으면서
+
+669
+00:46:18,288 --> 00:46:23,008
+And slips a biscuit in your hand
+네 손에 비스킷 하나를 슬쩍 쥐여줘
+
+670
+00:46:23,058 --> 00:46:26,338
+But there’s a boy with grass on his knees
+근데 무릎에 풀물 든 남자애가 있고
+
+671
+00:46:26,388 --> 00:46:30,518
+And a tennis ball that smells like me
+내 냄새가 나는 테니스공이 있어
+
+672
+00:46:30,568 --> 00:46:35,358
+You ask him, “Where’d you find that thing?”
+네가 "그거 어디서 찾았어?" 하고 물으니
+
+673
+00:46:35,408 --> 00:46:39,518
+He points beneath the willow tree
+걔가 버드나무 밑을 가리켜
+
+674
+00:46:39,568 --> 00:46:43,518
+One good throw
+멋지게 한 번 던지면
+
+675
+00:46:43,568 --> 00:46:46,238
+Off I go
+난 바로 달려가
+
+676
+00:46:46,288 --> 00:46:50,328
+Straight back to you
+곧장 너한테 돌아와
+
+677
+00:46:50,378 --> 00:46:54,678
+With my morning news
+오늘 아침 소식을 물고서
+
+678
+00:46:54,728 --> 00:46:58,498
+Back at the door, you crouch down low
+집 앞에서 넌 쪼그려 앉아
+
+679
+00:46:58,548 --> 00:47:02,498
+There’s half the park between my toes
+내 발가락 사이엔 공원 흙이 한가득
+
+680
+00:47:02,548 --> 00:47:06,598
+You brush me off, I lick your wrist
+넌 날 털어주고, 난 네 손목을 핥아
+
+681
+00:47:06,648 --> 00:47:10,758
+You smell like rosemary, too
+너한테서도 로즈마리 냄새가 나
+
+682
+00:47:10,808 --> 00:47:13,178
+Follow my nose
+내 코를 따라와
+
+683
+00:47:13,228 --> 00:47:17,398
+That’s how the morning goes
+아침은 원래 이렇게 가는 거야
+
+684
+00:47:17,448 --> 00:47:21,418
+Left where the rosemary grows
+로즈마리 자라는 데서 왼쪽으로
+
+685
+00:47:21,468 --> 00:47:26,448
+Then slow, slow, slow
+그리고 천천히, 천천히
+
+686
+00:47:27,228 --> 00:47:29,618
+You hang the leash beside the key
+넌 목줄을 열쇠 옆에 걸고
+
+687
+00:47:29,668 --> 00:47:34,598
+And break that biscuit just for me
+그 비스킷을 나를 위해 반으로 쪼개
+
+688
+00:47:34,648 --> 00:47:40,148
+I curl up warm across your toes
+난 네 발 위에 따뜻하게 웅크리고
+
+689
+00:47:40,368 --> 00:47:44,598
+Dreaming where we’ll go
+다음엔 어디 갈지 꿈꿔
+
+690
+00:47:44,648 --> 00:47:49,638
+One ear up
+한쪽 귀는 쫑긋
+
+691
+00:47:49,688 --> 00:47:58,188
+One eye closed
+한쪽 눈은 감고
+
+692
+00:48:12,472 --> 00:48:15,942
+On the way to the morning market
+아침 시장 가는 길에
+
+693
+00:48:15,992 --> 00:48:17,762
+I practice asking for a pear
+배 하나 달라는 말을 연습해
+
+694
+00:48:17,812 --> 00:48:20,262
+My little book falls open
+작은 회화책이 펼쳐졌는데
+
+695
+00:48:20,312 --> 00:48:22,622
+To a picture of one right there
+마침 배 그림이 있는 페이지야
+
+696
+00:48:22,672 --> 00:48:25,142
+I know the word for yellow
+노란색이라는 말도 알고
+
+697
+00:48:25,192 --> 00:48:26,942
+I know the word for green
+초록색이라는 말도 알아
+
+698
+00:48:26,992 --> 00:48:29,362
+The woman in the apron
+앞치마 두른 아주머니가
+
+699
+00:48:29,412 --> 00:48:31,682
+Holds one out for me
+하나를 집어 내밀어줘
+
+700
+00:48:31,732 --> 00:48:36,632
+She asks me, “For today?”
+"오늘 먹을 거예요?" 하고 묻길래
+
+701
+00:48:36,682 --> 00:48:40,632
+I close the book and say
+책을 덮고 말했어
+
+702
+00:48:40,682 --> 00:48:45,772
+One for today, one for tomorrow
+오늘 먹을 거 하나, 내일 먹을 거 하나
+
+703
+00:48:45,822 --> 00:48:49,862
+She picks them out, I watch her hands
+아주머니가 골라주는 손을 바라봐
+
+704
+00:48:49,912 --> 00:48:54,842
+One for today, one for tomorrow
+오늘 먹을 거 하나, 내일 먹을 거 하나
+
+705
+00:48:54,892 --> 00:48:59,202
+She smiles at me, she understands
+날 보고 웃는 걸 보니 알아들으셨나 봐
+
+706
+00:48:59,252 --> 00:49:04,522
+The words come off the page
+책 속 단어가 밖으로 나와서
+
+707
+00:49:04,572 --> 00:49:08,432
+And just like that, we’re talking
+어느새 우리는 대화하고 있어
+
+708
+00:49:10,992 --> 00:49:13,722
+She taps the softer pear and says
+아주머니가 말랑한 배를 톡톡 치며
+
+709
+00:49:13,772 --> 00:49:17,272
+“This one’s ready when you are”
+"이건 지금 먹어도 딱 좋아요" 해
+
+710
+00:49:20,732 --> 00:49:23,542
+We eat it leaning on the counter
+가판대에 기대서 같이 먹는데
+
+711
+00:49:23,592 --> 00:49:27,712
+With juice all down my arm
+과즙이 팔까지 흘러내려
+
+712
+00:49:28,592 --> 00:49:31,342
+I tell her where I come from
+내가 어디서 왔는지 얘기하니까
+
+713
+00:49:31,392 --> 00:49:33,302
+She asks what grows back home
+우리 동네엔 뭐가 나냐고 물어보셔
+
+714
+00:49:33,352 --> 00:49:35,922
+I draw a peach with my fingertip
+손가락으로 복숭아를 그렸더니
+
+715
+00:49:35,972 --> 00:49:39,072
+She says the word real slow
+그 말을 아주 천천히 알려주셔
+
+716
+00:50:07,872 --> 00:50:09,822
+All week I’d read both parts aloud
+일주일 내내 책 속 대화를 두 역할 다 소리 내 읽었어
+
+717
+00:50:09,872 --> 00:50:14,342
+The shopkeeper, the guest
+가게 주인 역할, 손님 역할
+
+718
+00:50:14,392 --> 00:50:19,642
+Turns out my favorite part is this
+근데 내가 제일 좋아하는 건 이거였어
+
+719
+00:50:19,692 --> 00:50:26,052
+She gets to say what happens next
+다음 말을 상대가 해주는 거
+
+720
+00:50:26,212 --> 00:50:31,362
+One for today, one for tomorrow
+오늘 먹을 거 하나, 내일 먹을 거 하나
+
+721
+00:50:31,412 --> 00:50:36,002
+She folds the paper round the green
+아주머니가 초록 배를 종이로 감싸주는데
+
+722
+00:50:36,052 --> 00:50:41,842
+One for today, one for tomorrow
+오늘 먹을 거 하나, 내일 먹을 거 하나
+
+723
+00:50:41,892 --> 00:50:45,802
+Now I know just what she means
+이제 무슨 말인지 다 알겠어
+
+724
+00:50:45,852 --> 00:50:50,822
+The words come off the page
+책 속 단어가 밖으로 나와서
+
+725
+00:50:50,872 --> 00:50:55,132
+She’s waving as I’m walking
+내가 걸어가는데 손을 흔들어주셔
+
+726
+00:50:55,712 --> 00:50:59,492
+A pear inside my pocket
+주머니엔 배 하나
+
+727
+00:51:00,512 --> 00:51:04,192
+A word for peach to keep
+간직할 "복숭아"라는 단어 하나
+
+728
+00:51:04,492 --> 00:51:08,722
+I say it all the way back home
+집에 오는 내내 그 말을 되뇌어
+
+729
+00:51:08,772 --> 00:51:14,192
+It sounds a little more like me
+이제 조금 더 내 말처럼 들려
+
+730
+00:51:44,396 --> 00:51:48,726
+Ten in the morning, I’m buying a seat
+아침 10시, 영화표를 사
+
+731
+00:51:48,776 --> 00:51:53,126
+Popcorn for breakfast sounds good to me
+아침으로 팝콘도 괜찮지
+
+732
+00:51:53,176 --> 00:51:57,486
+The girl at the counter tears my ticket in two
+매표소 직원이 표를 반으로 찢어주며
+
+733
+00:51:57,536 --> 00:52:02,806
+Says, “I love the bit with the missing shoe”
+"신발 한 짝 없어지는 장면 진짜 좋아요" 해
+
+734
+00:52:02,856 --> 00:52:07,706
+I keep that in mind as I slip into G
+그 말을 기억하며 G열에 앉았어
+
+735
+00:52:07,756 --> 00:52:13,066
+There’s a couple in front and a kid in H3
+앞엔 커플이 있고 H3엔 꼬마가 있어
+
+736
+00:52:13,116 --> 00:52:18,086
+He’s up on two cushions, his feet in the air
+방석 두 개 깔고 앉아 발이 공중에 떠 있는 게
+
+737
+00:52:18,136 --> 00:52:22,866
+Like a king in a red velvet chair
+빨간 벨벳 의자에 앉은 왕 같아
+
+738
+00:52:22,916 --> 00:52:25,646
+Daylight at the door
+문밖은 한낮인데
+
+739
+00:52:25,696 --> 00:52:27,606
+Midnight on the screen
+스크린 속은 한밤중
+
+740
+00:52:27,656 --> 00:52:30,386
+I love a matinee
+난 낮에 보는 영화가 좋아
+
+741
+00:52:30,436 --> 00:52:33,076
+And the hour in between
+그 사이의 한 시간이
+
+742
+00:52:33,126 --> 00:52:35,486
+When a roomful of strangers
+모르는 사람들로 가득한 극장에서
+
+743
+00:52:35,536 --> 00:52:39,086
+Laughs at the very same thing
+다 같이 같은 장면에 웃을 때
+
+744
+00:52:39,136 --> 00:52:42,046
+Daylight at the door
+문밖은 한낮인데
+
+745
+00:52:42,096 --> 00:52:46,496
+Midnight on the screen
+스크린 속은 한밤중
+
+746
+00:52:52,836 --> 00:52:57,806
+The man in the movie steps out with a rose
+영화 속 남자가 장미를 들고 나타나
+
+747
+00:52:57,856 --> 00:53:02,646
+Looks sharp from his hat to the cuffs of his clothes
+모자부터 소맷단까지 멋지게 차려입고
+
+748
+00:53:02,696 --> 00:53:07,946
+The camera stays level, the music plays sweet
+카메라는 가만히, 음악은 달콤하게
+
+749
+00:53:07,996 --> 00:53:12,466
+The kid leans forward to look at his feet
+꼬마가 그 남자 발을 보려고 몸을 숙여
+
+750
+00:53:12,516 --> 00:53:17,386
+One polished loafer, one argyle sock
+한쪽은 반짝이는 로퍼, 한쪽은 체크무늬 양말
+
+751
+00:53:17,436 --> 00:53:22,806
+The king in the back row laughs his socks off
+뒷줄의 꼬마 왕이 배꼽 잡고 웃어
+
+752
+00:53:22,856 --> 00:53:27,226
+The couple in front start shaking the seats
+앞자리 커플은 의자가 흔들릴 만큼 웃고
+
+753
+00:53:27,276 --> 00:53:31,336
+And that’s the bit that gets me
+난 그 장면에서 완전히 빵 터졌어
+
+754
+00:53:53,316 --> 00:53:56,746
+The house lights come up
+극장 불이 켜지고
+
+755
+00:53:56,796 --> 00:53:58,406
+We blink into gold
+우린 눈부신 빛에 눈을 깜빡여
+
+756
+00:53:58,456 --> 00:54:02,326
+The girl at the counter says, “Well?”
+매표소 직원이 "어땠어요?" 하길래
+
+757
+00:54:02,376 --> 00:54:06,266
+I point at my shoes
+난 내 신발을 가리켰어
+
+758
+00:54:06,316 --> 00:54:08,446
+She laughs like she knew
+다 알았다는 듯이 웃더라
+
+759
+00:54:08,496 --> 00:54:13,536
+Some jokes are better that way
+어떤 농담은 말 안 해도 통하는 법이지
+
+760
+00:54:14,416 --> 00:54:17,486
+Daylight at the door
+문밖은 한낮인데
+
+761
+00:54:17,536 --> 00:54:19,446
+Midnight on the screen
+스크린 속은 한밤중
+
+762
+00:54:19,496 --> 00:54:22,166
+I love a matinee
+난 낮에 보는 영화가 좋아
+
+763
+00:54:22,216 --> 00:54:24,346
+And the hour in between
+그 사이의 한 시간이
+
+764
+00:54:24,396 --> 00:54:27,266
+I’ll remember that kid
+그 꼬마는 오래 기억날 것 같아
+
+765
+00:54:27,316 --> 00:54:30,946
+Long after the final scene
+영화가 끝나고 한참 뒤에도
+
+766
+00:54:30,996 --> 00:54:33,866
+Daylight at the door
+문밖은 한낮인데
+
+767
+00:54:33,916 --> 00:54:38,676
+Midnight on the screen
+스크린 속은 한밤중
+
+768
+00:54:38,996 --> 00:54:42,826
+I step out at noon
+정오에 극장을 나서
+
+769
+00:54:42,876 --> 00:54:47,646
+Both shoes on my feet
+신발 두 짝 다 제대로 신고
+
+770
+00:54:47,696 --> 00:54:58,336
+Still smiling halfway down the street
+길 한참 걸어가면서도 계속 웃음이 나
+
+771
+00:55:15,820 --> 00:55:18,990
+Halfway through a movie trailer
+영화 예고편 보다가
+
+772
+00:55:19,040 --> 00:55:23,930
+There’s a line you’d say out loud
+네가 따라 할 것 같은 대사가 나왔어
+
+773
+00:55:23,980 --> 00:55:28,990
+I turn to tell you, then remember
+너한테 말하려고 돌아봤는데, 그제야 생각났어
+
+774
+00:55:29,040 --> 00:55:32,930
+You’re three train stops from my couch
+넌 우리 집에서 지하철로 세 정거장 거리라는 거
+
+775
+00:55:32,980 --> 00:55:36,990
+My thumb’s already on your number
+엄지는 벌써 네 번호를 누르고 있어
+
+776
+00:55:37,040 --> 00:55:41,030
+I send the clip, you send a row
+영상을 보냈더니 넌
+
+777
+00:55:41,080 --> 00:55:45,630
+Of laughing faces, then a question
+웃는 이모티콘을 잔뜩 보내고는 물어
+
+778
+00:55:45,680 --> 00:55:50,790
+“Hey, when are we gonna go?”
+"야, 우리 언제 보러 가?"
+
+779
+00:55:50,840 --> 00:55:52,770
+Make that two
+두 장으로 할게요
+
+780
+00:55:52,820 --> 00:55:54,350
+That’s what I do
+난 늘 이래
+
+781
+00:55:54,400 --> 00:55:56,930
+I find a good thing
+좋은 걸 발견하면
+
+782
+00:55:56,980 --> 00:55:58,590
+And I think of you
+네 생각부터 나
+
+783
+00:55:58,640 --> 00:56:00,970
+Somewhere along the way
+어느 순간부터
+
+784
+00:56:01,020 --> 00:56:03,350
+My “I” picked up a “we”
+"나"라는 말이 "우리"가 됐어
+
+785
+00:56:03,400 --> 00:56:07,300
+Make that two
+두 장으로 할게요
+
+786
+00:56:07,440 --> 00:56:10,540
+It comes so naturally
+너무 자연스럽게
+
+787
+00:56:16,040 --> 00:56:21,230
+At the counter of a little theater
+작은 극장 매표소에서
+
+788
+00:56:21,280 --> 00:56:26,340
+I say, “Two, please,” and there you are
+"두 장이요" 하는데 네가 와 있어
+
+789
+00:56:26,390 --> 00:56:30,110
+You’ve got almonds in your jacket
+넌 재킷 주머니에 아몬드를 챙겨 왔고
+
+790
+00:56:30,160 --> 00:56:34,410
+I’ve got room to hold your scarf
+난 네 목도리를 들어줄 자리가 있어
+
+791
+00:56:34,460 --> 00:56:37,010
+We make it halfway through the credits
+엔딩 크레딧 절반쯤 볼 때까지
+
+792
+00:56:37,060 --> 00:56:42,160
+You’re still humming the last tune
+넌 마지막 노래를 계속 흥얼거려
+
+793
+00:56:42,780 --> 00:56:45,890
+I say, “I think I have a favorite”
+"나 최애 장면 생긴 것 같아" 했더니
+
+794
+00:56:45,940 --> 00:56:51,440
+You say, “I think I do, too”
+"나도" 하더라
+
+795
+00:57:11,020 --> 00:57:14,010
+Walking back, you try the chorus
+돌아오는 길에 넌 후렴을 불러보고
+
+796
+00:57:14,060 --> 00:57:19,690
+You’ve got the words, I’ve got the key
+넌 가사를 알고, 난 음을 알아
+
+797
+00:57:19,740 --> 00:57:22,770
+We get it right outside your building
+너희 집 앞에서 드디어 딱 맞췄어
+
+798
+00:57:22,820 --> 00:57:27,850
+You sing your part and look at me
+넌 네 부분을 부르고 날 쳐다봐
+
+799
+00:57:27,900 --> 00:57:32,050
+“Same again?” you ask me softly
+"다음에 또 갈래?" 하고 조용히 묻는데
+
+800
+00:57:32,100 --> 00:57:36,530
+I’m already counting in
+난 벌써 박자를 세고 있어
+
+801
+00:57:36,580 --> 00:57:39,110
+Make that two
+두 장으로 할게요
+
+802
+00:57:39,160 --> 00:57:40,570
+That’s what we do
+우린 늘 이래
+
+803
+00:57:40,620 --> 00:57:43,170
+You start a good thing
+네가 좋은 걸 시작하면
+
+804
+00:57:43,220 --> 00:57:44,970
+And I sing it with you
+난 같이 따라 불러
+
+805
+00:57:45,020 --> 00:57:47,190
+Somewhere along the way
+어느 순간부터
+
+806
+00:57:47,240 --> 00:57:49,470
+My “I” picked up a “we”
+"나"라는 말이 "우리"가 됐어
+
+807
+00:57:49,520 --> 00:57:53,550
+Make that two
+두 장으로 할게요
+
+808
+00:57:53,600 --> 00:57:56,680
+It comes so naturally
+너무 자연스럽게
+
+809
+00:58:03,760 --> 00:58:07,630
+Three train stops back
+세 정거장 돌아오는 길에도
+
+810
+00:58:07,680 --> 00:58:12,780
+Your tune comes too
+네 노래가 같이 따라와
+
+811
+00:58:23,880 --> 00:58:36,690
+I pick a flat stone off the bank
+강둑에서 납작한 돌 하나를 주워
+
+812
+00:58:36,740 --> 00:58:41,710
+It sits in the crook of my hand
+손안에 쏙 들어와
+
+813
+00:58:41,760 --> 00:58:45,110
+One side’s warm from the sun
+한쪽은 햇볕에 따뜻하고
+
+814
+00:58:45,160 --> 00:58:52,340
+One side’s cool from the sand
+한쪽은 모래에 닿아 시원해
+
+815
+00:58:53,620 --> 00:58:55,530
+I bend down low and let it slide
+몸을 낮게 숙이고 던졌어
+
+816
+00:58:55,580 --> 00:59:00,160
+So close to the water it seems
+물 위에 아주 가깝게
+
+817
+00:59:01,510 --> 00:59:04,830
+For half a breath to be standing still
+잠깐 멈춰 있는 것 같더니
+
+818
+00:59:04,880 --> 00:59:09,540
+Then it skips out of reach
+손 닿지 않는 곳까지 튀어 나가
+
+819
+00:59:10,140 --> 00:59:13,390
+One, two, three, still going
+하나, 둘, 셋, 아직 가는 중
+
+820
+00:59:13,440 --> 00:59:15,970
+Four, five, would you look at that?
+넷, 다섯, 저것 좀 봐
+
+821
+00:59:16,020 --> 00:59:18,970
+Six, and the water opens
+여섯, 물결이 갈라지고
+
+822
+00:59:19,020 --> 00:59:20,990
+Seven rings where the stone went flat
+돌이 내려앉은 자리에 일곱 개의 물결
+
+823
+00:59:21,040 --> 00:59:24,790
+I like the part after letting go
+손을 놓은 다음 순간이 좋아
+
+824
+00:59:24,840 --> 00:59:26,730
+When I’ve done all I can do
+내가 할 수 있는 건 다 하고 나서
+
+825
+00:59:26,780 --> 00:59:30,300
+And it’s still going
+그래도 계속 가는 그 순간
+
+826
+00:59:32,040 --> 00:59:34,760
+Still going
+계속 가는 중
+
+827
+00:59:37,080 --> 00:59:40,090
+I find a white one shaped like a dime
+동전처럼 생긴 하얀 돌을 하나 찾아서
+
+828
+00:59:40,140 --> 00:59:43,880
+Turn it twice in my palm
+손바닥에서 두 번 굴려봐
+
+829
+00:59:45,500 --> 00:59:50,310
+It takes one hop, then settles in
+한 번 튀더니 가라앉고
+
+830
+00:59:50,360 --> 00:59:56,460
+And the circles travel on
+물결은 계속 퍼져 나가
+
+831
+00:59:56,680 --> 01:00:00,550
+They touch a leaf along the edge
+가장자리의 나뭇잎에 닿자
+
+832
+01:00:00,600 --> 01:00:04,140
+It lifts, then settles too
+나뭇잎이 살짝 들렸다가 다시 내려앉아
+
+833
+01:00:05,080 --> 01:00:09,390
+I came down here to count the skips
+몇 번 튀는지 세려고 왔는데
+
+834
+01:00:09,440 --> 01:00:13,400
+Now I’m counting what they move
+이젠 그 물결이 뭘 움직이는지 세고 있어
+
+835
+01:00:35,580 --> 01:00:40,310
+I lie back on the wooden dock
+나무 부두에 누워
+
+836
+01:00:40,360 --> 01:00:45,560
+One arm hanging off the side
+한쪽 팔을 늘어뜨리고 있는데
+
+837
+01:00:46,580 --> 01:00:49,710
+A ripple taps my fingertips
+물결 하나가 손끝에 닿아
+
+838
+01:00:49,760 --> 01:00:54,450
+I know that one was mine
+내가 만든 물결이라는 걸 알아
+
+839
+01:00:54,500 --> 01:00:58,930
+One, two, three, still going
+하나, 둘, 셋, 아직 가는 중
+
+840
+01:00:58,980 --> 01:01:01,030
+I leave the numbers there
+숫자는 거기 두고 와
+
+841
+01:01:01,080 --> 01:01:03,770
+A reed leans into its reflection
+갈대가 물에 비친 자기 모습 쪽으로 기울었다가
+
+842
+01:01:03,820 --> 01:01:07,190
+And draws it back again
+다시 일어서
+
+843
+01:01:07,240 --> 01:01:10,030
+I like the part after letting go
+손을 놓은 다음 순간이 좋아
+
+844
+01:01:10,080 --> 01:01:12,230
+When the lake takes up the tune
+호수가 그 노래를 이어받을 때
+
+845
+01:01:12,280 --> 01:01:15,820
+And it’s still going
+그래도 계속 가는 그 순간
+
+846
+01:01:17,800 --> 01:01:20,680
+Still going
+계속 가는 중
+
+847
+01:01:24,660 --> 01:01:27,300
+Flat stone, open hand
+납작한 돌, 펼친 손
+
+848
+01:01:27,620 --> 01:01:32,220
+One more from where I stand
+여기서 하나만 더
+
+849
+01:01:58,132 --> 01:02:03,102
+My sister left her songbook here
+언니가 노래책을 두고 갔어
+
+850
+01:02:03,152 --> 01:02:09,332
+Her name in green across the front
+앞표지에 초록색으로 이름이 적혀 있고
+
+851
+01:02:10,312 --> 01:02:15,082
+She put a star beside the songs she loved
+좋아하는 노래엔 별을 그려놨는데
+
+852
+01:02:15,132 --> 01:02:20,612
+This one got three instead of one
+이 노래엔 별이 세 개나 있어
+
+853
+01:02:21,532 --> 01:02:25,562
+I take my guitar off the wall
+벽에서 기타를 내려서
+
+854
+01:02:25,612 --> 01:02:31,202
+Slide the capo down two frets
+카포를 두 칸 내려 끼우고
+
+855
+01:02:31,252 --> 01:02:36,762
+That first line sounds different in this room
+첫 소절이 이 방에선 다르게 들려
+
+856
+01:02:36,812 --> 01:02:43,062
+I like the way it settles in my chest
+가슴에 편하게 내려앉는 그 느낌이 좋아
+
+857
+01:02:43,112 --> 01:02:46,482
+Same song, in my key
+같은 노래, 내 키로
+
+858
+01:02:46,532 --> 01:02:49,082
+Sounds a little more like me
+조금 더 나다운 소리가 나
+
+859
+01:02:49,132 --> 01:02:52,562
+Her voice takes the stairs by twos
+언니 목소리는 계단을 두 칸씩 성큼 오르고
+
+860
+01:02:52,612 --> 01:02:54,662
+Mine likes the landing and the view
+내 목소리는 계단참에서 쉬며 경치 보는 걸 좋아해
+
+861
+01:02:54,712 --> 01:02:58,242
+Same words, room to breathe
+같은 가사, 숨 쉴 여유
+
+862
+01:02:58,292 --> 01:03:00,482
+I let the last note ring
+마지막 음을 길게 울려
+
+863
+01:03:00,532 --> 01:03:08,852
+Same song, in my key
+같은 노래, 내 키로
+
+864
+01:03:13,212 --> 01:03:17,482
+She comes to take her songbook back
+언니가 노래책을 찾으러 왔다가
+
+865
+01:03:17,532 --> 01:03:23,372
+And hears me halfway down the hall
+복도에서 내 노래를 들었어
+
+866
+01:03:24,132 --> 01:03:28,822
+I hear her keys land in the dish
+열쇠를 그릇에 내려놓는 소리가 들리고
+
+867
+01:03:28,872 --> 01:03:33,562
+Then her high part through the wall
+벽 너머로 언니의 높은 화음이 들려
+
+868
+01:03:33,612 --> 01:03:37,472
+By the time she makes the doorway
+언니가 방문 앞에 왔을 땐
+
+869
+01:03:37,612 --> 01:03:40,222
+We’re already on verse three
+우린 벌써 3절을 부르고 있어
+
+870
+01:03:40,272 --> 01:03:43,162
+She pulls a chair up for the chorus
+언니는 의자를 끌어와 후렴을 같이 부르고
+
+871
+01:03:43,212 --> 01:03:46,222
+And leaves the melody to me
+멜로디는 나한테 맡겨
+
+872
+01:03:46,272 --> 01:03:49,322
+When we were kids I used to mouth
+어릴 땐 언니보다 한 박자 늦게
+
+873
+01:03:49,372 --> 01:03:52,202
+The words a breath behind her
+입 모양으로만 따라 했었는데
+
+874
+01:03:52,252 --> 01:03:57,062
+Now she waits to hear
+이젠 언니가 기다려
+
+875
+01:03:57,112 --> 01:04:00,202
+Where I’m going with the line
+내가 이 소절을 어떻게 부를지
+
+876
+01:04:00,252 --> 01:04:03,042
+I hold it half a beat
+내가 반 박자 끌면
+
+877
+01:04:03,092 --> 01:04:08,902
+She grins and comes in right on time
+언니가 씩 웃으며 딱 맞춰 들어와
+
+878
+01:04:08,952 --> 01:04:11,622
+Same song, in my key
+같은 노래, 내 키로
+
+879
+01:04:11,672 --> 01:04:14,282
+She takes the high part over me
+언니가 내 위로 높은 화음을 쌓아
+
+880
+01:04:14,332 --> 01:04:17,162
+Two notes hanging in the air
+두 음이 공중에 함께 머물러
+
+881
+01:04:17,212 --> 01:04:20,202
+I never knew that chord was there
+그 화음이 거기 있는 줄 몰랐어
+
+882
+01:04:20,252 --> 01:04:22,602
+Same words, room to breathe
+같은 가사, 숨 쉴 여유
+
+883
+01:04:22,652 --> 01:04:25,142
+How good they sound with company
+함께 부르니까 이렇게 좋다니
+
+884
+01:04:25,192 --> 01:04:34,332
+Same song, in my key
+같은 노래, 내 키로
+
+885
+01:04:42,172 --> 01:04:48,492
+She takes her book and leaves the page
+언니는 책을 챙겨 가면서 그 페이지는 남겨줬어
+
+886
+01:04:48,752 --> 01:04:54,012
+Three green stars above my chords
+내 코드 위에 초록 별 세 개
+
