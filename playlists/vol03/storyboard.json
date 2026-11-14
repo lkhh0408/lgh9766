@@ -1,0 +1,7 @@
+{"world": "seaside", "ritual": true, "lead": 3.2, "captions": true,
+ "intro": {"sub": "코랄 니트 · 네이비 머플러 · 바닷가"},
+ "mobility": [["bike", 1, 7], ["car", 8, 14], ["walk", 15, 20]],
+ "gaps": {"7": 2.0},
+ "outfit": {"top": "#FF9F8A", "bottom": "#3E4A6B", "shoe": "#FFFFFF", "phones": "#FFD84A", "phones_style": "retro", "helmet": "#7ED6C4", "helmet_stripe": "#FFFFFF", "detail": "scarf", "scarf": "#2F3E6B"},
+ "bike_color": "#2F3E6B", "car_color": "#7ED6C4",
+ "tracks": {}}

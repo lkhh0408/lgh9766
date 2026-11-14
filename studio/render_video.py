@@ -26,7 +26,7 @@ ap.add_argument('-o', '--out', default='output.mp4', help='output video path')
 ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence between songs')
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
 ap.add_argument('--outfit', default='signature', help='mascot outfit from studio/character.py OUTFITS')
-ap.add_argument('--world', default='street', choices=['street', 'river'], help='scenery world: street (VOL.01) or river (VOL.02 riverside park)')
+ap.add_argument('--world', default='street', choices=['street', 'river', 'seaside'], help='scenery world: street (VOL.01), river (VOL.02 riverside park) or seaside (VOL.03: bike, open car, walk)')
 ap.add_argument('--bar', default='card', choices=['bottom', 'card', 'card_notime'], help='progress bar: full width at the bottom, or a short line under the track card')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
@@ -45,6 +45,8 @@ import json as _json
 _sp = args.scenes or next((os.path.join(args.songs, f) for f in ('storyboard.json', 'scenes.json') if os.path.exists(os.path.join(args.songs, f))), '')
 RITUAL = bool(_json.load(open(_sp)).get('ritual')) if _sp and os.path.exists(_sp) else False
 LEAD, TAIL = (2.6, 3.0) if RITUAL else (0.0, 0.0)
+SB = _json.load(open(_sp)) if _sp and os.path.exists(_sp) else {}
+if RITUAL and SB.get('lead'): LEAD = float(SB['lead'])
 
 def probe(path):
     out = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path],
@@ -71,7 +73,9 @@ def loudness(path):
 MIX = os.path.splitext(args.out)[0] + '_mix.wav'
 cmd = ['ffmpeg', '-y', '-loglevel', 'error']
 for _, _, p in songs: cmd += ['-i', p]
-for _ in songs[1:]: cmd += ['-f', 'lavfi', '-t', str(GAP), '-i', 'anullsrc=r=48000:cl=stereo']
+# pause after each song: GAP, or a longer one from the storyboard "gaps" ({"7": 2.0} = after track 7, e.g. a hand-over scene)
+GAPS = [float(SB.get('gaps', {}).get(str(i + 1), GAP)) for i in range(len(songs) - 1)]
+for g_ in GAPS: cmd += ['-f', 'lavfi', '-t', str(g_), '-i', 'anullsrc=r=48000:cl=stereo']
 if RITUAL: cmd += ['-f', 'lavfi', '-t', str(LEAD), '-i', 'anullsrc=r=48000:cl=stereo', '-f', 'lavfi', '-t', str(TAIL), '-i', 'anullsrc=r=48000:cl=stereo']
 fl, seq = [], []
 if RITUAL:
@@ -90,7 +94,7 @@ subprocess.run(cmd + ['-filter_complex', ';'.join(fl), '-ar', '48000', '-ac', '2
 
 with wave.open(MIX) as w:
     TOTAL = w.getnframes() / w.getframerate()
-starts = [LEAD + sum(d + GAP for d in DURS[:i]) for i in range(len(TRACKS))]
+starts = [LEAD + sum(DURS[:i]) + sum(GAPS[:i]) for i in range(len(TRACKS))]
 ends = [s0 + d for s0, d in zip(starts, DURS)]
 def sm(u): u = max(0.0, min(1.0, u)); return u * u * (3 - 2 * u)
 def motion(t):
@@ -838,6 +842,7 @@ def tag_alpha(t):
     for i in range(len(TRACKS) - 1):
         a = max(a, min(1, (t - (ends[i] - .15)) / .25, (starts[i + 1] + 2.2 - t) / .4))
     return max(0.0, a)
+TAG_DY = 0   # the seaside world moves the tag to where Haru's head is (bike, car, walking)
 def draw_nametag(frame, t, ba, bob):
     if not INTRO: return
     L = (43, 37, 65)
@@ -846,14 +851,14 @@ def draw_nametag(frame, t, ba, bob):
     if ta > 0:
         sc = .6 + .4 * _ease(ta * 1.2); side = _ease(min(1, ba * 1.5))
         ft = ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-800.ttf'), int(30 * sc)); w = d.textlength('HARU', font=ft)
-        cx, cy = CX + 6 - 70 * side, 484 - bob
+        cx, cy = CX + 6 - 70 * side, 484 - bob + TAG_DY
         d.rounded_rectangle((cx - w / 2 - 16 * sc, cy - 22 * sc, cx + w / 2 + 16 * sc, cy + 22 * sc), int(22 * sc),
                             fill=(255, 255, 255, int(255 * ta)), outline=L + (int(255 * ta),), width=3)
         d.text((cx - w / 2, cy - 19 * sc), 'HARU', font=ft, fill=L + (int(255 * ta),))
     if t < 5 + LEAD:
         a = max(0.0, min(1, (t - .5) / .35, (4.7 + LEAD - t) / .35))
         if a > 0:
-            w, h = 470, 150; x0, y0 = CX - 70 - w, 430 + int(14 * (1 - _ease(a)))
+            w, h = 470, 150; x0, y0 = CX - 70 - w, 430 + TAG_DY + int(14 * (1 - _ease(a)))
             d.rounded_rectangle((x0, y0, x0 + w, y0 + h), 26, fill=(255, 253, 246, int(250 * a)), outline=L + (int(255 * a),), width=4)
             d.text((x0 + 28, y0 + 20), "TODAY'S HARU", font=ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-800.ttf'), 24), fill=(47, 91, 234, int(255 * a)))
             d.text((x0 + 28, y0 + 52), INTRO.get('title', '오늘의 하루(Haru)'), font=ImageFont.truetype(F_KO, 38), fill=L + (int(255 * a),))
@@ -864,6 +869,11 @@ ff = None if STILLS else subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error',
                        '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '384k', '-aac_coder', 'twoloop', '-ar', '48000', '-shortest', '-movflags', '+faststart',
                        args.out], stdin=subprocess.PIPE)
 nframes = int(TOTAL * FPS)
+RIDE = None
+if args.world == 'seaside':
+    import seaside
+    grp = [(m_, a_ - 1, b_ - 1) for m_, a_, b_ in SB.get('mobility', [['walk', 1, len(TRACKS)]])]
+    RIDE = seaside.Ride(starts, ends, TOTAL, FPS, grp, SB.get('outfit', {}), SB.get('bike_color', '#2F3E6B'), SB.get('car_color', '#7ED6C4'))
 scroll = phase = 0.0
 for fi in range(nframes):
     t = fi / FPS
@@ -871,7 +881,10 @@ for fi in range(nframes):
     if STILLS is not None and fi not in STILLS:
         scroll += SPEED * walk / FPS; phase += 2 * math.pi * 0.85 * walk / FPS; continue
     CUR_DON = don_at(t)
-    img, night = scene(t, scroll, phase, walk, reach, press, ba, bs)
+    if RIDE:
+        img, night, TAG_DY, ba = RIDE.frame(t); walk = 0.0
+    else:
+        img, night = scene(t, scroll, phase, walk, reach, press, ba, bs)
     scroll += SPEED * walk / FPS; phase += 2 * math.pi * 0.85 * walk / FPS
     frame = img.convert('RGBA'); dark_ui = night < 0.45
     frame.alpha_composite(logo_d if dark_ui else logo_w, (64, 52))
