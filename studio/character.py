@@ -24,7 +24,24 @@ def _shape(ctx, fill, L):
 
 def _smooth(u): u = max(0.0, min(1.0, u)); return u * u * (3 - 2 * u)
 
-def _phones(ctx, style, hx, hy, R, col, L):
+def phones_pose(hx, hy, R, don):
+    """Headphone pose: don=1 on the head (normal), don=0 resting around the neck (opening/ending ritual).
+    Returns band centre, band radius, band start/end angles (deg) and the cup centre."""
+    u = max(0.0, min(1.0, don))
+    head = (hx - 2, hy - 2, R + 8, 198, 325, hx - 28, hy + 6)
+    neck = (hx, hy + 44, 22, 15, 172, hx - 24, hy + 50)
+    return tuple(n + (h - n) * u for n, h in zip(neck, head))
+
+def _phones(ctx, style, hx, hy, R, col, L, don=1.0):
+    if don < 1.0:          # ritual: same headphones, moved between neck and head
+        bx, by, br, a0, a1, cx_, cy_ = phones_pose(hx, hy, R, don)
+        for w_, c in ((7, L), (3.5, (0.86, 0.88, 0.92))):
+            ctx.set_line_width(w_); ctx.set_source_rgb(*c); ctx.arc(bx, by, br, math.radians(a0), math.radians(a1)); ctx.stroke()
+        ctx.arc(cx_ + 4, cy_, 20, 0, 2 * math.pi); ctx.set_source_rgb(*lerp(col, (0.12, 0.1, 0.15), 0.55)); ctx.fill_preserve()
+        ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke()
+        ctx.arc(cx_, cy_, 18, 0, 2 * math.pi); ctx.set_source_rgb(*col); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.stroke()
+        ctx.arc(cx_, cy_, 9, 0, 2 * math.pi); ctx.set_source_rgb(1, .96, .88); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(2.5); ctx.stroke()
+        return
     if style == 'retro':   # slim silver band, big round cups with a cream plate
         for w_, c in ((7, L), (3.5, (0.86, 0.88, 0.92))):
             ctx.set_line_width(w_); ctx.set_source_rgb(*c); ctx.arc(hx - 2, hy - 2, R + 8, math.radians(198), math.radians(325)); ctx.stroke()
@@ -113,10 +130,11 @@ def _bag_front(ctx, kind, hip, col, L, strap):
         ctx.curve_to(x + 14, y + 8, x + 10, y + 4, x + 12, y - 16); ctx.close_path(); _shape(ctx, col, L)
         ctx.set_line_width(3); ctx.move_to(x + 12, y - 8); ctx.line_to(x + 38, y - 8); ctx.stroke()
 
-def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, phase=None, walk=None, reach=0.0, press=0.0):
+def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, phase=None, walk=None, reach=0.0, press=0.0, don=1.0):
     """Draw the mascot standing on ground line gy at x=cx, facing right.
     phase: walk-cycle phase (radians); walk: 0..1 stride amount (0 = standing still);
-    reach: 0..1 back hand raised to the headphone; press: 0..1 tap pulse while reaching."""
+    reach: 0..1 back hand raised to the headphone; press: 0..1 tap pulse while reaching;
+    don: 1 headphones on the head, 0 around the neck (the hand follows the cup while reaching)."""
     o = OUTFITS[outfit]
     if walk is None: walk = 1.0 if walking else 0.0
     walking = walk > 0
@@ -145,6 +163,8 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
         # blend the swinging arm into an IK pose touching the headphone cup
         hx_, hy_ = cx + 6, hip[1] - 116
         tx, ty = hx_ - 24 + 6 - 2 * press, hy_ + 10
+        if don < 1.0:
+            _, _, _, _, _, cx_, cy_ = phones_pose(hx_, hy_, 42, don); tx, ty = cx_ + 4, cy_ + 4
         dx, dy = tx - sh[0], ty - sh[1]; d = min(61.0, math.hypot(dx, dy))
         at = math.atan2(dx, dy); off = math.acos(max(-1, min(1, (32 ** 2 + d ** 2 - 30 ** 2) / (2 * 32 * d))))
         r1 = at + off; ex_, ey_ = sh[0] + 32 * math.sin(r1), sh[1] + 32 * math.cos(r1); r2 = math.atan2(tx - ex_, ty - ey_)
@@ -176,7 +196,7 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
     ctx.set_source_rgba(1, .45, .55, .45); ctx.arc(gx + 4, gy2 + 22, 7, 0, 2 * math.pi); ctx.fill()
     ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.arc(hx + 30, hy + 26, 6, math.radians(10), math.radians(120)); ctx.stroke()
     # outfit: headphones
-    _phones(ctx, o.get('phones_style', 'classic'), hx, hy, R, phones, L)
+    _phones(ctx, o.get('phones_style', 'classic'), hx, hy, R, phones, L, don)
     if reach > 0: back_arm(_smooth(reach))
     # outfit: front arm + prop
     ctx.set_line_width(12); ctx.set_source_rgb(*top)

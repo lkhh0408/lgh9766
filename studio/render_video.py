@@ -27,6 +27,7 @@ ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence betwe
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
 ap.add_argument('--outfit', default='signature', help='mascot outfit from studio/character.py OUTFITS')
 ap.add_argument('--world', default='street', choices=['street', 'river'], help='scenery world: street (VOL.01) or river (VOL.02 riverside park)')
+ap.add_argument('--bar', default='bottom', choices=['bottom', 'card', 'card_notime'], help='progress bar: full width at the bottom, or a short line under the track card')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
                 'Lyric timings are read from a timing/ folder next to it (see align_lyrics.py).')
@@ -38,6 +39,12 @@ CX = 820            # character x
 SPEED = 130         # px/s of the street layer
 ZLEN = 1700         # world length of one themed zone
 GAP = args.gap      # short pause between songs: stop, tap headphones, next song
+# opening/ending ritual (from VOL.03, storyboard "ritual": true): the video opens with Haru putting the
+# headphones on (silent lead-in, then the first song) and closes with Haru taking them off (silent tail, fade out)
+import json as _json
+_sp = args.scenes or next((os.path.join(args.songs, f) for f in ('storyboard.json', 'scenes.json') if os.path.exists(os.path.join(args.songs, f))), '')
+RITUAL = bool(_json.load(open(_sp)).get('ritual')) if _sp and os.path.exists(_sp) else False
+LEAD, TAIL = (2.6, 3.0) if RITUAL else (0.0, 0.0)
 
 def probe(path):
     out = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path],
@@ -65,7 +72,11 @@ MIX = os.path.splitext(args.out)[0] + '_mix.wav'
 cmd = ['ffmpeg', '-y', '-loglevel', 'error']
 for _, _, p in songs: cmd += ['-i', p]
 for _ in songs[1:]: cmd += ['-f', 'lavfi', '-t', str(GAP), '-i', 'anullsrc=r=48000:cl=stereo']
+if RITUAL: cmd += ['-f', 'lavfi', '-t', str(LEAD), '-i', 'anullsrc=r=48000:cl=stereo', '-f', 'lavfi', '-t', str(TAIL), '-i', 'anullsrc=r=48000:cl=stereo']
 fl, seq = [], []
+if RITUAL:
+    nin = 2 * len(songs) - 1
+    fl.append(f'[{nin}]aformat=sample_fmts=fltp:channel_layouts=stereo[lead]'); seq.append('[lead]')
 for i, ((_, _, p), d) in enumerate(zip(songs, DURS)):
     gain = TARGET_LUFS - loudness(p)
     fl.append(f'[{i}]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,volume={gain:.2f}dB,'
@@ -73,12 +84,13 @@ for i, ((_, _, p), d) in enumerate(zip(songs, DURS)):
     seq.append(f'[a{i}]')
     if i < len(songs) - 1:
         fl.append(f'[{len(songs) + i}]aformat=sample_fmts=fltp:channel_layouts=stereo[g{i}]'); seq.append(f'[g{i}]')
+if RITUAL: fl.append(f'[{nin + 1}]aformat=sample_fmts=fltp:channel_layouts=stereo[tail]'); seq.append('[tail]')
 fl.append(''.join(seq) + f'concat=n={len(seq)}:v=0:a=1')
 subprocess.run(cmd + ['-filter_complex', ';'.join(fl), '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s24le', MIX], check=True)
 
 with wave.open(MIX) as w:
     TOTAL = w.getnframes() / w.getframerate()
-starts = [sum(d + GAP for d in DURS[:i]) for i in range(len(TRACKS))]
+starts = [LEAD + sum(d + GAP for d in DURS[:i]) for i in range(len(TRACKS))]
 ends = [s0 + d for s0, d in zip(starts, DURS)]
 def sm(u): u = max(0.0, min(1.0, u)); return u * u * (3 - 2 * u)
 def motion(t):
@@ -94,7 +106,28 @@ def motion(t):
                 k = t - (e + 0.05); bs = min(1.15, k / 0.22 * 1.15) if k < 0.22 else 1.15 - 0.15 * sm((k - 0.22) / 0.18)
                 ba = 1.0 - sm((t - (nxt + 0.15)) / 0.5)
     if t >= ends[-1] - 1.2: walk = 1 - sm((t - (ends[-1] - 1.2)) / 1.2)
+    if RITUAL:
+        s0, e = starts[0], ends[-1]
+        if t < s0 + 0.9:   # opening: reach for the headphones round the neck, put them on, tap play, walk off
+            walk = sm((t - (s0 - 0.15)) / 0.9)
+            reach = min(sm((t - 0.5) / 0.4), 1 - sm((t - 1.9) / 0.4))
+            if 1.6 <= t < 1.95: press = math.sin((t - 1.6) / 0.35 * math.pi)
+            if t >= 1.65:
+                k = t - 1.65; bs = min(1.15, k / 0.22 * 1.15) if k < 0.22 else 1.15 - 0.15 * sm((k - 0.22) / 0.18)
+                ba = 1.0 - sm((t - (s0 + 0.15)) / 0.5)
+        if t > e:          # ending: stop, take the headphones off and rest them round the neck
+            reach = min(sm((t - e - 0.2) / 0.4), 1 - sm((t - e - 1.4) / 0.4))
     return walk, reach, press, ba, bs
+def don_at(t):
+    """1 = headphones on the head, 0 = round the neck (ritual only)"""
+    if not RITUAL: return 1.0
+    if t < starts[0]: return sm((t - 0.9) / 0.7)
+    if t > ends[-1]: return 1 - sm((t - ends[-1] - 0.7) / 0.7)
+    return 1.0
+def fade_at(t):
+    if not RITUAL: return 1.0
+    return min(1.0, sm(t / 0.5), 1 - sm((t - (TOTAL - 1.1)) / 1.0))
+CUR_DON = 1.0
 rnd = random.Random(args.seed)
 
 def hexc(h): h = h.lstrip('#'); return tuple(int(h[i:i + 2], 16) / 255 for i in (0, 2, 4))
@@ -688,7 +721,7 @@ def scene(t, scroll, phase, walk, reach, press, ba, bs):
             ph = (t * .8 + j / 3) % 1
             ctx.set_font_size(30 + 6 * j); ctx.set_source_rgba(*hexc(['#FF5C8A', '#FFB21A', '#7B3BFF'][j]), ca * (1 - ph))
             ctx.move_to(CX - 70 + j * 60 + 10 * math.sin(t * 3 + j), GY - 250 - 90 * ph); ctx.show_text('\u266a' if j % 2 else '\u266b')
-    ch.draw(ctx, CX, GY, t, L=hexc('#2B2541'), outfit=args.outfit, phase=phase, walk=walk, reach=reach, press=press)
+    ch.draw(ctx, CX, GY, t, L=hexc('#2B2541'), outfit=args.outfit, phase=phase, walk=walk, reach=reach, press=press, don=CUR_DON)
     if fx('dog') > 0.01:      # a dog trots in beside the mascot for the song that needs one
         k = fx('dog'); props.dog(ctx, CX + 150 + 400 * (1 - k), GY, phase, walk, t, hexc('#2B2541'), k)
     if args.world == 'river': WORLD.front(ctx, t, scroll, phase, walk, night, L, fx)
@@ -759,7 +792,7 @@ if os.path.exists(scenes_path):
 F_KO = os.path.join(ASSETS, 'fonts', 'NanumSquareRoundB.ttf')
 def _ease(u): u = max(0.0, min(1.0, u)); return 1 - (1 - u) ** 3
 def tag_alpha(t):
-    a = min(1, (t - .4) / .3, (4.7 - t) / .3) if t < 5 else 0
+    a = min(1, (t - .4) / .3, (4.7 + LEAD - t) / .3) if t < 5 + LEAD else 0
     for i in range(len(TRACKS) - 1):
         a = max(a, min(1, (t - (ends[i] - .15)) / .25, (starts[i + 1] + 2.2 - t) / .4))
     return max(0.0, a)
@@ -775,8 +808,8 @@ def draw_nametag(frame, t, ba, bob):
         d.rounded_rectangle((cx - w / 2 - 16 * sc, cy - 22 * sc, cx + w / 2 + 16 * sc, cy + 22 * sc), int(22 * sc),
                             fill=(255, 255, 255, int(255 * ta)), outline=L + (int(255 * ta),), width=3)
         d.text((cx - w / 2, cy - 19 * sc), 'HARU', font=ft, fill=L + (int(255 * ta),))
-    if t < 5:
-        a = max(0.0, min(1, (t - .5) / .35, (4.7 - t) / .35))
+    if t < 5 + LEAD:
+        a = max(0.0, min(1, (t - .5) / .35, (4.7 + LEAD - t) / .35))
         if a > 0:
             w, h = 470, 150; x0, y0 = CX - 70 - w, 430 + int(14 * (1 - _ease(a)))
             d.rounded_rectangle((x0, y0, x0 + w, y0 + h), 26, fill=(255, 253, 246, int(250 * a)), outline=L + (int(255 * a),), width=4)
@@ -795,23 +828,37 @@ for fi in range(nframes):
     walk, reach, press, ba, bs = motion(t)
     if STILLS is not None and fi not in STILLS:
         scroll += SPEED * walk / FPS; phase += 2 * math.pi * 0.85 * walk / FPS; continue
+    CUR_DON = don_at(t)
     img, night = scene(t, scroll, phase, walk, reach, press, ba, bs)
     scroll += SPEED * walk / FPS; phase += 2 * math.pi * 0.85 * walk / FPS
     frame = img.convert('RGBA'); dark_ui = night < 0.45
     frame.alpha_composite(logo_d if dark_ui else logo_w, (64, 52))
-    ti = max(i for i, s0 in enumerate(starts) if t >= s0); since = t - starts[ti]
+    ti = max((i for i, s0 in enumerate(starts) if t >= s0), default=0); since = t - starts[ti]
     a = min(1.0, since / 1.2)
     a = min(a, (ends[ti] - t) / 1.0)
     cdc = np.array((cards_d if dark_ui else cards_l)[ti]); cdc[..., 3] = (cdc[..., 3] * max(0, a)).astype(np.uint8)
     frame.alpha_composite(Image.fromarray(cdc), (0, 858 - int(10 * (1 - a))))
     dur = DURS[ti]; pr = min(1, since / dur); since = min(since, dur)
     ov = Image.new('RGBA', (W, H), (255, 255, 255, 0)); dl = ImageDraw.Draw(ov)
+    show_bar = starts[0] - 0.3 <= t <= ends[-1] + 0.5
     tc = (43, 37, 65, 200) if dark_ui else (255, 255, 255, 220)
-    dl.rounded_rectangle((BAR_X, BAR_Y, BAR_X + BAR_W, BAR_Y + 6), 3, fill=tc[:3] + (60,))
-    fw = max(6, int(BAR_W * pr)); ov.alpha_composite(barfill.crop((0, 0, fw, 6)), (BAR_X, BAR_Y))
-    dl.ellipse((BAR_X + fw - 10, BAR_Y - 7, BAR_X + fw + 10, BAR_Y + 13), fill=(255, 255, 255, 255), outline=(43, 37, 65, 120))
-    dl.text((BAR_X + BAR_W, BAR_Y + 18), f"{fmt(since)} / {fmt(dur)}", font=F_SM, fill=tc, anchor='ra')
+    if show_bar and args.bar != 'bottom':   # short line under the track title, faded with the card
+        pr, since = max(0.0, pr), max(0.0, since); ca = max(0.0, min(1.0, since / 1.2, (ends[ti] - t) / 1.0)) if t <= ends[ti] else 0.0
+        bx, by, bw = 96, 968, 420
+        dl.rounded_rectangle((bx, by, bx + bw, by + 5), 3, fill=tc[:3] + (int(70 * ca),))
+        fw = max(5, int(bw * pr)); seg = barfill.resize((bw, 5)).crop((0, 0, fw, 5)); sa = np.array(seg); sa[..., 3] = int(255 * ca)
+        ov.alpha_composite(Image.fromarray(sa), (bx, by))
+        if args.bar == 'card': dl.text((bx + bw + 16, by - 12), f"{fmt(since)} / {fmt(dur)}", font=F_SM, fill=tc[:3] + (int(tc[3] * ca),))
+        show_bar = False
+    if show_bar:
+        pr, since = max(0.0, pr), max(0.0, since)
+        dl.rounded_rectangle((BAR_X, BAR_Y, BAR_X + BAR_W, BAR_Y + 6), 3, fill=tc[:3] + (60,))
+        fw = max(6, int(BAR_W * pr)); ov.alpha_composite(barfill.crop((0, 0, fw, 6)), (BAR_X, BAR_Y))
+        dl.ellipse((BAR_X + fw - 10, BAR_Y - 7, BAR_X + fw + 10, BAR_Y + 13), fill=(255, 255, 255, 255), outline=(43, 37, 65, 120))
+        dl.text((BAR_X + BAR_W, BAR_Y + 18), f"{fmt(since)} / {fmt(dur)}", font=F_SM, fill=tc, anchor='ra')
     frame.alpha_composite(ov); draw_nametag(frame, t, ba, 4 * abs(math.cos(phase)) * walk); out = frame.convert('RGB')
+    fa = fade_at(t)
+    if fa < 0.999: out = Image.blend(Image.new('RGB', out.size, (0, 0, 0)), out, max(0.0, fa))
     if STILLS is not None:
         out.save(f'{os.path.splitext(args.out)[0]}_{t:06.1f}s.png'); continue
     ff.stdin.write(out.tobytes())
