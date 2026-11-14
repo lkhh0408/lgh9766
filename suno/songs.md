@@ -39,7 +39,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 ## 곡 길이 (확정)
 - 모든 곡은 **2분 40초 이상 ~ 3분 15초 미만**. 1분대, 2분 초반은 안 돼요.
 - 공통 Styles 끝은 `full length song around 3 minutes`.
-- 가사는 **벌스 2개 + 후렴 3번 + 브리지 + 아웃트로**를 기본으로 해요.
+- 길이는 **가사 총 줄 수로만** 맞춰요. "후렴 3번 + 브리지" 같은 고정 뼈대는 쓰지 않아요(곡이 다 비슷해져요).
 - **BPM에 맞춰 가사 총 줄 수를 정해요** (한 줄 ≈ 480 ÷ BPM 초). 너무 길면 지루해서 안 들어요.
   - 85~90 BPM: 약 28줄 / 94~100 BPM: 약 30줄 / 105~115 BPM: 약 36줄
   - [Intro], [Instrumental Break]를 넣으면 그만큼 줄을 빼요. 후렴은 보통 4~6줄, 벌스는 4줄.
@@ -52,7 +52,12 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
   - E. 후렴구 반복형: 큰 후렴 없이 벌스마다 끝에 제목 문장 (어쿠스틱, 포크)
   - F. 중간 연주 구간: 후렴 → [Instrumental Break] → 마지막 후렴 (R&B, 하우스)
   - G. 듀엣 주고받기: 1절 한 사람, 2절 다른 사람, 후렴 같이, 브리지 한 줄씩 (듀엣)
-- VOL.03 남은 곡 계획: 16 = A+B, 17 = F, 18 = C, 19 = G 대신 여성 솔로라 '인트로가 긴 구성'(긴 [Intro] + 벌스 → 후렴 ×3 + 브리지), 20 = E
+  - H. AABA: A(벌스, 끝에 제목 문장) → A → B(분위기 전환) → A → 연주 마무리. 큰 후렴 없음
+  - I. 반복 훅(루프)형: 짧은 훅 2줄이 계속 돌아오고 사이사이 벌스가 바뀜 (로파이)
+  - J. 끝까지 주고받기: 처음부터 끝까지 두 사람이 한 줄씩 대화, 후렴 2번, 마지막은 다 같이 흥얼거리며 끝 (듀엣)
+  - K. 후렴 2번 + 긴 연주 마무리: 벌스·후렴·벌스·후렴 후 브리지 없이 연주로 끝
+- 곡마다 **뼈대(구간 순서)**가 바로 앞 2곡과 겹치지 않는지 확인하고 써요.
+- VOL.03 계획: 16 = A+B, 17 = F, 18 = C, 19 = I(반복 훅), 20 = J(끝까지 주고받기)
 
 ## 가사 겹침 금지
 - 곡끼리 **후렴 핵심 문장, 제목, 특징적인 표현**이 겹치지 않게 써요(이전 VOL 곡 제목 포함). 꼭 필요한 기본 단어(love, day 등)는 괜찮아요.
@@ -160,6 +165,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 16 | Laptop Closed | 남성 | 이지리스닝 보이그룹 팝 | 108 | 금요일 저녁 노트북을 덮는 순간 시작되는 주말, 일주일을 버틴 나에게 주는 해방감 (기쁨, 구성 A+B) |
 | 17 | Highlight Reel | 여성 | R&B 팝 | 94 | 밤에 SNS를 넘기다 작아지는 순간, 내 비하인드를 남의 하이라이트와 비교하지 말자는 다독임 (공감·위로, 구성 F) |
 | 18 | Porch Light | 남성 | 송랩 (멜로딕 랩) | 100 | 주말에 내려간 고향 집, 어디까지 가든 현관 불을 켜두고 기다리는 가족 (위로·기쁨, 구성 C) |
+| 19 | One More Page | 여성 | 로파이 팝 | 90 | 비 오는 밤 책상 앞, 오늘 밤에 다 끝내지 않아도 괜찮다는 다독임 (위로, 구성 I) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -196,6 +202,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-16: `easy listening K-pop style boy group pop, male vocals with soft group harmonies, bright clean tone, groovy light funk guitar, bouncy synth bass, crisp gentle drums, catchy vocal post-chorus hook, fresh and upbeat but calm, 108 BPM`
 - V3-17: `R&B pop, female vocal, warm silky tone, soft layered harmonies, smooth Rhodes and soft synth pads, warm round bass, crisp laid-back drums, gentle guitar licks, instrumental break with mellow keys solo, comforting late night mood, 94 BPM` (Exclude에서 heavy bass 뺌)
 - V3-18: `melodic hip hop, male vocal, melodic sing-song rap verses, soft relaxed flow, no aggressive delivery, sung warm chorus, mellow guitar and soft keys, warm round bass, laid-back boom bap beat, nostalgic and warm, 100 BPM` (Exclude에서 rap, heavy bass 뺌)
+- V3-19: `lo-fi pop, female vocal, soft breathy close-mic tone, dusty lo-fi drums, warm muted keys, mellow guitar loop, soft rain ambience, warm round bass, repeating hook, cozy study night, 90 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -219,3 +226,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 16 Laptop Closed: laptop closed, friday evening, held it all week, let it go, weekend starts now, no alarm
 - 17 Highlight Reel: highlight reel, behind-the-scenes, scrolling at 2am, filters, my own timeline, put the phone down
 - 18 Porch Light: porch light on, hometown, three hours on the highway, did you eat, same corner same jokes, eat well sleep well
+- 19 One More Page: one more page, one more sip, tea gone cold, desk lamp, you don't have to finish it all tonight, half a chapter
