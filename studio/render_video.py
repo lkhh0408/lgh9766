@@ -27,7 +27,7 @@ ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence betwe
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
 ap.add_argument('--outfit', default='signature', help='mascot outfit from studio/character.py OUTFITS')
 ap.add_argument('--world', default='street', choices=['street', 'river'], help='scenery world: street (VOL.01) or river (VOL.02 riverside park)')
-ap.add_argument('--bar', default='bottom', choices=['bottom', 'card', 'card_notime'], help='progress bar: full width at the bottom, or a short line under the track card')
+ap.add_argument('--bar', default='card', choices=['bottom', 'card', 'card_notime'], help='progress bar: full width at the bottom, or a short line under the track card')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
                 'Lyric timings are read from a timing/ folder next to it (see align_lyrics.py).')
