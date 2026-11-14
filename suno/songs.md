@@ -40,9 +40,11 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 모든 곡은 **2분 40초 이상 ~ 3분 15초 미만**. 1분대, 2분 초반은 안 돼요.
 - 공통 Styles 끝은 `full length song around 3 minutes`.
 - 길이는 **가사 총 줄 수로만** 맞춰요. "후렴 3번 + 브리지" 같은 고정 뼈대는 쓰지 않아요(곡이 다 비슷해져요).
-- **BPM에 맞춰 가사 총 줄 수를 정해요** (한 줄 ≈ 480 ÷ BPM 초). 너무 길면 지루해서 안 들어요.
-  - 85~90 BPM: 약 28줄 / 94~100 BPM: 약 30줄 / 105~115 BPM: 약 36줄
-  - [Intro], [Instrumental Break]를 넣으면 그만큼 줄을 빼요. 후렴은 보통 4~6줄, 벌스는 4줄.
+- **장르에 맞춰 가사 총 줄 수를 정해요** (실제 Suno 결과로 맞춘 기준, 2026-11-14). 너무 길면 지루해서 안 들어요.
+  - 신나는 팝(아이돌, 일렉트로닉, 하우스): 약 40~42줄 / 중간(라틴, 힙합, 어쿠스틱): 약 38~40줄 / 느린 곡(R&B, 로파이): 약 28줄
+  - 연주 구간([Intro], [Instrumental Break], [Instrumental Outro])은 하나에 약 20~30초가 늘어나서 **곡마다 최대 1개**만 넣어요.
+  - 실제 결과: Same Page 37줄/연주 없음 2:43, Fountain Square 42줄/없음 3:05, One More Page 30줄/2개 2:47, Encore Room 36줄/없음 2:11(짧음), Table for One 26줄/2개 3:17, Laptop Closed 38줄/2개 3:22, Highlight Reel 32줄/2개 3:28(김)
+  - 살짝 긴 곡은 영상 만들 때 앞뒤 연주 부분을 잘라 3:15 안으로 맞출 수 있어요(자연스러운 페이드).
 
 ## 곡 구성 다양하게 (VOL.03 16번부터)
 - 모든 곡을 벌스 → 프리코러스 → 코러스로 만들지 않아요. **바로 옆 곡끼리 구성이 겹치지 않게** 아래 유형을 섞어 써요.
@@ -173,7 +175,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 20 | Today Was Good | 듀엣 | 모던 어쿠스틱 팝 | 98 | 하루를 마치고 나란히 걷는 밤길, 완벽하진 않아도 좋은 날로 만든 오늘 (기쁨·위로, 마무리, 구성 J) |
 | 21 | Say Yes | 남성 | 인디 일렉트로닉 팝 | 110 | 망설이던 일들에 "응"이라고 해 보기로 한 해, 제일 무서웠던 선택이 제일 좋았던 순간 (기쁨·용기, 구성 K) |
 | 22 | Table for One | 여성 | 칠 R&B | 88 | 혼자 들어간 식당의 "한 명이요", 어색함 끝에 알게 된 혼자만의 시간의 다정함 (공감·위로, 구성 H AABA) |
-| 23 | Encore Room | 듀엣 | 청량 이지리스닝 혼성 팝 | 104 | 금요일 밤 친구들과 간 노래방, 고음은 못 올라가도 다 같이 신나서 "한 곡만 더" (기쁨, 구성 A) |
+| 23 | Encore Room | 듀엣 | 청량 이지리스닝 혼성 팝 | 104 | 금요일 밤 친구들과 간 노래방, 고음은 못 올라가도 다 같이 신나서 "한 곡만 더" (기쁨, 구성 A, 42줄로 수정) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
