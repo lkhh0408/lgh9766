@@ -166,6 +166,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 17 | Highlight Reel | 여성 | R&B 팝 | 94 | 밤에 SNS를 넘기다 작아지는 순간, 내 비하인드를 남의 하이라이트와 비교하지 말자는 다독임 (공감·위로, 구성 F) |
 | 18 | Porch Light | 남성 | 송랩 (멜로딕 랩) | 100 | 주말에 내려간 고향 집, 어디까지 가든 현관 불을 켜두고 기다리는 가족 (위로·기쁨, 구성 C) |
 | 19 | One More Page | 여성 | 로파이 팝 | 90 | 비 오는 밤 책상 앞, 오늘 밤에 다 끝내지 않아도 괜찮다는 다독임 (위로, 구성 I) |
+| 20 | Today Was Good | 듀엣 | 모던 어쿠스틱 팝 | 98 | 하루를 마치고 나란히 걷는 밤길, 완벽하진 않아도 좋은 날로 만든 오늘 (기쁨·위로, 마무리, 구성 J) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -203,6 +204,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-17: `R&B pop, female vocal, warm silky tone, soft layered harmonies, smooth Rhodes and soft synth pads, warm round bass, crisp laid-back drums, gentle guitar licks, instrumental break with mellow keys solo, comforting late night mood, 94 BPM` (Exclude에서 heavy bass 뺌)
 - V3-18: `melodic hip hop, male vocal, melodic sing-song rap verses, soft relaxed flow, no aggressive delivery, sung warm chorus, mellow guitar and soft keys, warm round bass, laid-back boom bap beat, nostalgic and warm, 100 BPM` (Exclude에서 rap, heavy bass 뺌)
 - V3-19: `lo-fi pop, female vocal, soft breathy close-mic tone, dusty lo-fi drums, warm muted keys, mellow guitar loop, soft rain ambience, warm round bass, repeating hook, cozy study night, 90 BPM`
+- V3-20: `modern acoustic pop, male and female duet vocals, alternating lines conversation, warm fingerpicked and strummed acoustic guitars, soft piano, light stomp and clap, warm round bass, gentle group humming outro, cozy night walk, 98 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -227,3 +229,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 17 Highlight Reel: highlight reel, behind-the-scenes, scrolling at 2am, filters, my own timeline, put the phone down
 - 18 Porch Light: porch light on, hometown, three hours on the highway, did you eat, same corner same jokes, eat well sleep well
 - 19 One More Page: one more page, one more sip, tea gone cold, desk lamp, you don't have to finish it all tonight, half a chapter
+- 20 Today Was Good: today was good, not every day is perfect, we made this one good, walking you home, see you tomorrow
