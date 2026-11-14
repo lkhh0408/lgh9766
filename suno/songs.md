@@ -116,6 +116,10 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 18 | 송랩 (노래하듯 부드러운 멜로딕 랩) | 남 | 100 |
 | 19 | 로파이 팝 | 여 | 90 |
 | 20 | 모던 어쿠스틱 팝 (마무리) | 듀엣 | 98 |
+| 21 (예비) | 인디 일렉트로닉 팝 (구성 K) | 남 | 110 |
+| 22 (예비) | 칠 R&B (환기, 구성 H AABA) | 여 | 88 |
+| 23 (예비) | 모던 기타 팝 (구성 A 후렴 먼저) | 듀엣 | 104 |
+- 예비곡은 쓰지 않는 곡 대신 들어가요. **올드한 장르, 옛날 녹음 느낌은 절대 안 돼요.**
 - VOL.03부터 컨트리, 브라스, 보사, 레게, 시티팝, 디스코 같은 옛날 느낌 장르는 빼고 요즘 장르(베드룸 팝, 칠 하우스, 얼트 R&B 등)를 넣어요. 리듬이 강한 장르도 `heavy bass`는 계속 막고 `warm round bass`, 부드러운 비트로 배경음악 느낌을 지켜요.
 
 ## 지금까지 만든 곡
@@ -167,6 +171,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 18 | Porch Light | 남성 | 송랩 (멜로딕 랩) | 100 | 주말에 내려간 고향 집, 어디까지 가든 현관 불을 켜두고 기다리는 가족 (위로·기쁨, 구성 C) |
 | 19 | One More Page | 여성 | 로파이 팝 | 90 | 비 오는 밤 책상 앞, 오늘 밤에 다 끝내지 않아도 괜찮다는 다독임 (위로, 구성 I) |
 | 20 | Today Was Good | 듀엣 | 모던 어쿠스틱 팝 | 98 | 하루를 마치고 나란히 걷는 밤길, 완벽하진 않아도 좋은 날로 만든 오늘 (기쁨·위로, 마무리, 구성 J) |
+| 21 | Say Yes | 남성 | 인디 일렉트로닉 팝 | 110 | 망설이던 일들에 "응"이라고 해 보기로 한 해, 제일 무서웠던 선택이 제일 좋았던 순간 (기쁨·용기, 구성 K) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -205,6 +210,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-18: `melodic hip hop, male vocal, melodic sing-song rap verses, soft relaxed flow, no aggressive delivery, sung warm chorus, mellow guitar and soft keys, warm round bass, laid-back boom bap beat, nostalgic and warm, 100 BPM` (Exclude에서 rap, heavy bass 뺌)
 - V3-19: `lo-fi pop, female vocal, soft breathy close-mic tone, dusty lo-fi drums, warm muted keys, mellow guitar loop, soft rain ambience, warm round bass, repeating hook, cozy study night, 90 BPM`
 - V3-20: `modern acoustic pop, male and female duet vocals, alternating lines conversation, warm fingerpicked and strummed acoustic guitars, soft piano, light stomp and clap, warm round bass, gentle group humming outro, cozy night walk, 98 BPM`
+- V3-21: `indie electronic pop, male vocal, warm airy tone, shimmering synth arpeggios, clean guitar plucks, punchy but soft electronic drums, warm round bass, uplifting and fresh, long instrumental outro with synth melody, 110 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -230,3 +236,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 18 Porch Light: porch light on, hometown, three hours on the highway, did you eat, same corner same jokes, eat well sleep well
 - 19 One More Page: one more page, one more sip, tea gone cold, desk lamp, you don't have to finish it all tonight, half a chapter
 - 20 Today Was Good: today was good, not every day is perfect, we made this one good, walking you home, see you tomorrow
+- 21 Say Yes: say yes, scariest yes, signed up, solo trip, said hi first, maybe turned into yes
