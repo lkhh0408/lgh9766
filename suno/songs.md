@@ -118,8 +118,8 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 20 | 모던 어쿠스틱 팝 (마무리) | 듀엣 | 98 |
 | 21 (예비) | 인디 일렉트로닉 팝 (구성 K) | 남 | 110 |
 | 22 (예비) | 칠 R&B (환기, 구성 H AABA) | 여 | 88 |
-| 23 (예비) | 모던 기타 팝 (구성 A 후렴 먼저) | 듀엣 | 104 |
-- 예비곡은 쓰지 않는 곡 대신 들어가요. **올드한 장르, 옛날 녹음 느낌은 절대 안 돼요.**
+| 23 (예비) | 청량 이지리스닝 혼성 팝 (구성 A 후렴 먼저) | 듀엣 | 104 |
+- 예비곡은 쓰지 않는 곡 대신 들어가요. **올드한 장르, 옛날 녹음 느낌은 절대 안 돼요.** 기타가 중심인 팝(모던 기타 팝 등)도 올드하게 들려서 쓰지 않아요.
 - VOL.03부터 컨트리, 브라스, 보사, 레게, 시티팝, 디스코 같은 옛날 느낌 장르는 빼고 요즘 장르(베드룸 팝, 칠 하우스, 얼트 R&B 등)를 넣어요. 리듬이 강한 장르도 `heavy bass`는 계속 막고 `warm round bass`, 부드러운 비트로 배경음악 느낌을 지켜요.
 
 ## 지금까지 만든 곡
@@ -173,7 +173,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 20 | Today Was Good | 듀엣 | 모던 어쿠스틱 팝 | 98 | 하루를 마치고 나란히 걷는 밤길, 완벽하진 않아도 좋은 날로 만든 오늘 (기쁨·위로, 마무리, 구성 J) |
 | 21 | Say Yes | 남성 | 인디 일렉트로닉 팝 | 110 | 망설이던 일들에 "응"이라고 해 보기로 한 해, 제일 무서웠던 선택이 제일 좋았던 순간 (기쁨·용기, 구성 K) |
 | 22 | Table for One | 여성 | 칠 R&B | 88 | 혼자 들어간 식당의 "한 명이요", 어색함 끝에 알게 된 혼자만의 시간의 다정함 (공감·위로, 구성 H AABA) |
-| 23 | Sunset Stage | 듀엣 | 모던 기타 팝 | 104 | 해 질 녘 페스티벌 무대 앞, 수천 명 속에서도 우리 목소리만 들리는 순간 (기쁨, 구성 A 후렴 먼저) |
+| 23 | Encore Room | 듀엣 | 청량 이지리스닝 혼성 팝 | 104 | 금요일 밤 친구들과 간 노래방, 고음은 못 올라가도 다 같이 신나서 "한 곡만 더" (기쁨, 구성 A) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -214,7 +214,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-20: `modern acoustic pop, male and female duet vocals, alternating lines conversation, warm fingerpicked and strummed acoustic guitars, soft piano, light stomp and clap, warm round bass, gentle group humming outro, cozy night walk, 98 BPM`
 - V3-21: `indie electronic pop, male vocal, warm airy tone, shimmering synth arpeggios, clean guitar plucks, punchy but soft electronic drums, warm round bass, uplifting and fresh, long instrumental outro with synth melody, 110 BPM`
 - V3-22: `chill R&B, female vocal, smooth intimate tone, warm Rhodes chords, soft muted guitar, warm round bass, gentle laid-back drums, subtle strings, storytelling AABA form, cozy evening, instrumental outro, 88 BPM` (Exclude에서 heavy bass 뺌)
-- V3-23: `modern guitar pop, male and female duet vocals, bright clean electric guitar riffs, jangly strummed guitars, soft punchy drums, warm round bass, crowd sing-along feel, golden hour festival vibe, uplifting but gentle, 104 BPM`
+- V3-23: `fresh easy listening K-pop style co-ed duet pop, male and female vocals trading lines, bright airy tone, soft electronic beat, glossy synth plucks, warm round bass, playful group chant hook, clean modern sound, 104 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -242,4 +242,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 20 Today Was Good: today was good, not every day is perfect, we made this one good, walking you home, see you tomorrow
 - 21 Say Yes: say yes, scariest yes, signed up, solo trip, said hi first, maybe turned into yes
 - 22 Table for One: table for one, just me tonight, good company, I just forgot, window seat, dessert for myself
-- 23 Sunset Stage: sunset stage, a thousand voices, I only hear us, wristband, shoulders up, sing it back
+- 23 Encore Room: encore room, nobody hits the high note, everybody sings, tambourine, mic passed around, last song for real
