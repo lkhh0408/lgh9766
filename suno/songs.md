@@ -261,3 +261,10 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 25 Dear Twenty: dear twenty, not the way you planned, you'll find your way, the ones who stay, you did okay
 - 26 Out Loud: out loud, a hundred times inside my head, walking you home, porch steps, three little words, don't go in yet
 - 27 Nothing Special: nothing special, that's what makes it ours, shared blanket, fell asleep on the show, delivery at the door, same old couch
+
+## K팝 테스트 (한국어 가사)
+| 번호 | 제목 | 보컬 | 장르 | BPM | 내용 |
+|---|---|---|---|---|---|
+| K-TEST-01 | 오늘부터 다르게 | 여자(걸그룹 느낌) | 아이돌 이지리스닝 K팝 | 102 | 오래된 친구와 걷던 밤, 친구에서 연인이 되는 순간 (기쁨) |
+- Styles: `K-pop girl group easy listening, bright soft female vocals, Korean lyrics with a short English hook, airy synth pads, soft plucked synths, clean modern drums, warm round bass, light groove, night walk butterflies, 102 BPM`
+- 사용한 핵심 표현: 친구라는 말로는 부족해, Walk with me tonight, 가로등 아래 그림자, 반 줄까, 한 바퀴만 더 걷자
