@@ -43,7 +43,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - **장르에 맞춰 가사 총 줄 수를 정해요** (실제 Suno 결과로 맞춘 기준, 2026-11-14). 너무 길면 지루해서 안 들어요.
   - 신나는 팝(아이돌, 일렉트로닉, 하우스): 약 40~42줄 / 중간(라틴, 힙합, 어쿠스틱): 약 38~40줄 / 느린 곡(R&B, 로파이): 약 28줄
   - 연주 구간([Intro], [Instrumental Break], [Instrumental Outro])은 하나에 약 20~30초가 늘어나서 **곡마다 최대 1개**만 넣어요.
-  - 실제 결과: Same Page 37줄/연주 없음 2:43, Fountain Square 42줄/없음 3:05, One More Page 30줄/2개 2:47, Encore Room 36줄/없음 2:11(짧음), Table for One 26줄/2개 3:17, Laptop Closed 38줄/2개 3:22, Highlight Reel 32줄/2개 3:28(김)
+  - 실제 결과: Same Page 37줄/연주 없음 2:43, Fountain Square 42줄/없음 3:05, One More Page 30줄/2개 2:47, Encore Room 36줄/없음 2:11(짧음) → 42줄/인트로 2:40, Table for One 26줄/2개 3:17, Laptop Closed 38줄/2개 3:22, Highlight Reel 32줄/2개 3:28(김)
   - 살짝 긴 곡은 영상 만들 때 앞뒤 연주 부분을 잘라 3:15 안으로 맞출 수 있어요(자연스러운 페이드).
 
 ## 곡 구성 다양하게 (VOL.03 16번부터)
@@ -121,6 +121,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 21 (예비) | 인디 일렉트로닉 팝 (구성 K) | 남 | 110 |
 | 22 (예비) | 칠 R&B (환기, 구성 H AABA) | 여 | 88 |
 | 23 (예비) | 청량 이지리스닝 혼성 팝 (구성 A 후렴 먼저) | 듀엣 | 104 |
+| 24 (예비) | 소프트 리퀴드 드럼앤베이스 팝 (구성 B 포스트 코러스) | 여 | 172 (하프타임 86) |
 - 예비곡은 쓰지 않는 곡 대신 들어가요. **올드한 장르, 옛날 녹음 느낌은 절대 안 돼요.** 기타가 중심인 팝(모던 기타 팝 등)도 올드하게 들려서 쓰지 않아요.
 - VOL.03부터 컨트리, 브라스, 보사, 레게, 시티팝, 디스코 같은 옛날 느낌 장르는 빼고 요즘 장르(베드룸 팝, 칠 하우스, 얼트 R&B 등)를 넣어요. 리듬이 강한 장르도 `heavy bass`는 계속 막고 `warm round bass`, 부드러운 비트로 배경음악 느낌을 지켜요.
 
@@ -176,6 +177,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 21 | Say Yes | 남성 | 인디 일렉트로닉 팝 | 110 | 망설이던 일들에 "응"이라고 해 보기로 한 해, 제일 무서웠던 선택이 제일 좋았던 순간 (기쁨·용기, 구성 K) |
 | 22 | Table for One | 여성 | 칠 R&B | 88 | 혼자 들어간 식당의 "한 명이요", 어색함 끝에 알게 된 혼자만의 시간의 다정함 (공감·위로, 구성 H AABA) |
 | 23 | Encore Room | 듀엣 | 청량 이지리스닝 혼성 팝 | 104 | 금요일 밤 친구들과 간 노래방, 고음은 못 올라가도 다 같이 신나서 "한 곡만 더" (기쁨, 구성 A, 42줄로 수정) |
+| 24 | Run Club | 여성 | 소프트 리퀴드 드럼앤베이스 팝 | 172 | 토요일 아침 러닝 크루, 처음 만난 사람들과 보폭을 맞춰 달리는 강변 (기쁨, 구성 B) |
 
 곡별 Styles 뒷부분:
 - 01: `female vocal, acoustic pop, warm acoustic guitar, soft percussion, light handclaps, 100 BPM`
@@ -217,6 +219,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V3-21: `indie electronic pop, male vocal, warm airy tone, shimmering synth arpeggios, clean guitar plucks, punchy but soft electronic drums, warm round bass, uplifting and fresh, long instrumental outro with synth melody, 110 BPM`
 - V3-22: `chill R&B, female vocal, smooth intimate tone, warm Rhodes chords, soft muted guitar, warm round bass, gentle laid-back drums, subtle strings, storytelling AABA form, cozy evening, instrumental outro, 88 BPM` (Exclude에서 heavy bass 뺌)
 - V3-23: `fresh easy listening K-pop style co-ed duet pop, male and female vocals trading lines, bright airy tone, soft electronic beat, glossy synth plucks, warm round bass, playful group chant hook, clean modern sound, 104 BPM`
+- V3-24: `soft liquid drum and bass pop, female vocal, airy breathy tone, gentle rolling breakbeat, half-time feel, warm sub bass kept soft, lush pads, shimmering keys, uplifting morning energy, post-chorus vocal hook, 172 BPM`
 - 03: `female vocal, bossa nova pop, nylon string guitar, soft ukulele, light shaker, gentle whistling melody, 92 BPM`
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
@@ -245,3 +248,4 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 21 Say Yes: say yes, scariest yes, signed up, solo trip, said hi first, maybe turned into yes
 - 22 Table for One: table for one, just me tonight, good company, I just forgot, window seat, dessert for myself
 - 23 Encore Room: encore room, nobody hits the high note, everybody sings, tambourine, mic passed around, last song for real
+- 24 Run Club: run club, saturday 7am, same pace, we run to feel alive, breathing in time, high five at the finish
