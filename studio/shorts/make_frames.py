@@ -20,7 +20,7 @@ hook='''    if True:
         if _id not in _PIPE:
             _PIPE[_id]=subprocess.Popen(['ffmpeg','-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r',str(FPS),'-i','-','-c:v','libx264','-preset','medium','-crf','17','-pix_fmt','yuv420p',S+'/shorts/out/v_'+_id+'.mp4'],stdin=subprocess.PIPE)
         _fr=img.crop((CX-304,0,CX+304,1080)).resize((1080,1920),Image.LANCZOS); _sh=_it.get('shift',0)
-        if _sh: _n=Image.new('RGB',(1080,1920),_fr.getpixel((540,1919))); _n.paste(_fr,(0,-_sh)); _fr=_n  # lift the scene so a car or bike clears the player bar
+        if _sh: _n=Image.new('RGB',(1080,1920),__import__('collections').Counter(_fr.crop((0,1916,1080,1920)).getdata()).most_common(1)[0][0]); _n.paste(_fr,(0,-_sh)); _fr=_n  # lift the scene so a car or bike clears the player bar
         _fr=_fr.convert('RGBA'); _fr.alpha_composite(_OV[_id])
         _k = 1080 / 608; _d = ImageDraw.Draw(_fr); _ft = ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-800.ttf'), int(30 * _k))
         _tw = _d.textlength('HARU', font=_ft); _cx, _cy = 310 * _k, (484 - 4 * abs(math.cos(phase)) * walk + TAG_DY) * _k - _sh  # TAG_DY: seaside rides move Haru's head
