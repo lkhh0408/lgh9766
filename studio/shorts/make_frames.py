@@ -21,7 +21,7 @@ hook='''    if True:
             _PIPE[_id]=subprocess.Popen(['ffmpeg','-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r',str(FPS),'-i','-','-c:v','libx264','-preset','medium','-crf','17','-pix_fmt','yuv420p',S+'/shorts/out/v_'+_id+'.mp4'],stdin=subprocess.PIPE)
         _fr=img.crop((CX-304,0,CX+304,1080)).resize((1080,1920),Image.LANCZOS).convert('RGBA'); _fr.alpha_composite(_OV[_id])
         _k = 1080 / 608; _d = ImageDraw.Draw(_fr); _ft = ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-800.ttf'), int(30 * _k))
-        _tw = _d.textlength('HARU', font=_ft); _cx, _cy = 310 * _k, (484 - 4 * abs(math.cos(phase)) * walk) * _k
+        _tw = _d.textlength('HARU', font=_ft); _cx, _cy = 310 * _k, (484 - 4 * abs(math.cos(phase)) * walk + TAG_DY) * _k  # TAG_DY: seaside rides move Haru's head
         _d.rounded_rectangle((_cx - _tw / 2 - 16 * _k, _cy - 22 * _k, _cx + _tw / 2 + 16 * _k, _cy + 22 * _k), int(22 * _k), fill=(255, 255, 255, 255), outline=(43, 37, 65, 255), width=int(3 * _k))
         _d.text((_cx - _tw / 2, _cy - 19 * _k), 'HARU', font=_ft, fill=(43, 37, 65, 255))
         _PIPE[_id].stdin.write(_fr.convert('RGB').tobytes()); continue
