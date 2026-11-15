@@ -7,7 +7,7 @@ for v,c in cfg.items():
     acc=c['acc']
     for it in c['items']:
         L=it['lines']; fs=int(min(130, 940/max(w(l) for l in L)))
-        lines=''.join(f'<div style="margin-top:{14 if k else 0}px">'+(f'<span class=hl>{l}</span>' if k==2 else l)+'</div>' for k,l in enumerate(L))
+        lines=''.join(f'<div style="margin-top:{14 if k else 0}px">'+(f'<span class=hl>{l}</span>' if k==it.get('hi',2) else l)+'</div>' for k,l in enumerate(L))
         song=it['song']; sfs=40 if len(song)<22 else 32
         h=f'''<!doctype html><html><head><meta charset=utf-8><link rel=stylesheet href={NM}/outfit/800.css><link rel=stylesheet href={NM}/noto-sans-kr/900.css>
 <style>html,body{{margin:0;background:transparent}}*{{box-sizing:border-box}}
