@@ -26,15 +26,15 @@ def light_string(c, x0, x1, y, t, lit, n=10):
         if lit: glow(c, x, y + 5, 14, col, .5 + .2 * math.sin(t * 4 + k))
         c.arc(x, y + 5, 4.5, 0, 6.3); shape(c, col, L)
 
-def skate(c, x, gy, t, outfit):
+def skate(c, x, gy, t, outfit, moving=1.0, **kw):
     """gliding on ice: a slow stride with skate blades"""
     o = dict(ch.OUTFITS[outfit], skates=True); ch.OUTFITS['_skate'] = o
     ph = t * 2 * math.pi * .45
-    c.save(); c.translate(x, gy); c.rotate(.04 * math.sin(ph)); ch.draw(c, 0, -12, t, outfit='_skate', walk=.75, phase=ph); c.restore()
+    c.save(); c.translate(x, gy); c.rotate(.04 * math.sin(ph) * moving); ch.draw(c, 0, -12, t, outfit='_skate', walk=.75 * moving, phase=ph, **kw); c.restore()
     c.set_line_width(2.5); c.set_source_rgba(1, 1, 1, .8)
-    for k in range(3): c.move_to(x - 40 - k * 60, gy + 2 + k * 3); c.line_to(x - 90 - k * 60, gy + 3 + k * 3); c.stroke()
+    for k in range(int(3 * moving + .5)): c.move_to(x - 40 - k * 60, gy + 2 + k * 3); c.line_to(x - 90 - k * 60, gy + 3 + k * 3); c.stroke()
 
-def tram(c, x, gy, t, outfit, lit=False):
+def tram(c, x, gy, t, outfit, lit=False, moving=1.0, **kw):
     """red Christmas tram; Haru stands at the second window"""
     w, h, y0 = 560, 220, gy - 250
     c.set_line_width(4)
@@ -48,7 +48,7 @@ def tram(c, x, gy, t, outfit, lit=False):
         rrect(c, wx, y0 + 30, 96, 100, 14); shape(c, hx('#FFE9A8') if lit else hx('#D6EEFF'), L)
         if i == 1:
             c.save(); rrect(c, wx, y0 + 30, 96, 100, 14); c.clip()
-            haru(c, wx + 46, y0 + 240, t, outfit, scale=.8); c.restore()
+            haru(c, wx + 46, y0 + 240, t, outfit, scale=.8, **kw); c.restore()
             c.set_line_width(4); rrect(c, wx, y0 + 30, 96, 100, 14); c.set_source_rgb(*L); c.stroke()
         elif i == 3:
             c.set_line_width(7); c.set_source_rgb(*hx(GREEN)); c.arc(wx + 48, y0 + 80, 26, 0, 6.3); c.stroke()
@@ -59,10 +59,10 @@ def tram(c, x, gy, t, outfit, lit=False):
         c.arc(wx, gy - 18, 22, 0, 6.3); shape(c, hx('#3B3F5C'), L); c.arc(wx, gy - 18, 8, 0, 6.3); shape(c, hx('#C9CCD8'), L)
     c.set_line_width(3); c.set_source_rgb(*L); c.move_to(x - w / 2 + 40, y0 + 170); c.select_font_face('Outfit', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD); c.set_font_size(22); c.show_text('NO. 25  CHRISTMAS LINE')
 
-def sled(c, x, gy, t, outfit, tilt=0.0):
+def sled(c, x, gy, t, outfit, tilt=0.0, moving=1.0, **kw):
     """wooden toboggan sliding downhill; tilt in radians"""
     c.save(); c.translate(x, gy); c.rotate(tilt)
-    c.save(); c.rectangle(-400, -600, 800, 572); c.clip(); haru(c, -10, 56, t, outfit, scale=1.0); c.restore()   # sitting: legs hidden in the sled
+    c.save(); c.rectangle(-400, -600, 800, 572); c.clip(); haru(c, -10, 56, t, outfit, scale=1.0, **kw); c.restore()   # sitting: legs hidden in the sled
     c.set_line_width(4)
     c.move_to(-110, -40); c.line_to(90, -40); c.curve_to(150, -40, 150, -110, 110, -100); c.curve_to(130, -70, 120, -10, 90, -10); c.line_to(-110, -10); c.close_path()
     shape(c, hx('#C98F6A'), L)
@@ -72,13 +72,13 @@ def sled(c, x, gy, t, outfit, tilt=0.0):
     c.move_to(110, -96); c.line_to(150, -110); c.set_line_width(3); c.stroke()
     c.restore()
     c.set_line_width(3)
-    for k in range(6):
+    for k in range(int(6 * moving + .5)):
         c.arc(x - 140 - k * 34, gy + 4 - 10 * math.sin(t * 12 + k), 6 + k, 0, 6.3); c.set_source_rgba(1, 1, 1, .8 - k * .1); c.fill()
 
-def horse(c, x, gy, t, col='#F4F1EC'):
-    ph = t * 2 * math.pi * 1.1; c.set_line_width(4)
+def horse(c, x, gy, t, col='#F4F1EC', moving=1.0):
+    ph = t * 2 * math.pi * 1.1 * moving; c.set_line_width(4)
     for k, dx in enumerate((-60, -40, 40, 60)):
-        a = .35 * math.sin(ph + k * math.pi / 2)
+        a = .35 * math.sin(ph + k * math.pi / 2) * moving
         c.set_line_width(12); c.set_source_rgb(*L); c.move_to(x + dx, gy - 80); c.line_to(x + dx + 40 * math.sin(a), gy - 4); c.stroke()
         c.set_line_width(7); c.set_source_rgb(*hx(col)); c.move_to(x + dx, gy - 80); c.line_to(x + dx + 40 * math.sin(a), gy - 4); c.stroke()
     c.set_line_width(4); c.save(); c.translate(x, gy - 110); c.scale(1, .55); c.arc(0, 0, 90, 0, 6.3); c.restore(); shape(c, hx(col), L)
@@ -92,11 +92,11 @@ def horse(c, x, gy, t, col='#F4F1EC'):
     for k in range(4):
         bx, by = x + 66 - k * 12, gy - 146 + k * 14; c.arc(bx, by, 6, 0, 6.3); shape(c, hx(GOLD), L)
 
-def carriage(c, x, gy, t, outfit, lit=False):
+def carriage(c, x, gy, t, outfit, lit=False, moving=1.0, **kw):
     """open red carriage with gold trim pulled by a white horse with jingle bells"""
-    horse(c, x + 330, gy, t)
+    horse(c, x + 330, gy, t, moving=moving)
     c.set_line_width(5); c.set_source_rgb(*L); c.move_to(x + 130, gy - 110); c.line_to(x + 270, gy - 110); c.stroke()
-    c.save(); c.rectangle(x - 400, 0, 800, gy - 70); c.clip(); haru(c, x - 10, gy - 40, t, outfit, scale=1.0); c.restore()
+    c.save(); c.rectangle(x - 400, 0, 800, gy - 70); c.clip(); haru(c, x - 10, gy - 40, t, outfit, scale=1.0, **kw); c.restore()
     c.set_line_width(4)
     c.move_to(x - 150, gy - 160); c.line_to(x + 120, gy - 160); c.curve_to(x + 160, gy - 160, x + 160, gy - 60, x + 120, gy - 60); c.line_to(x - 140, gy - 60); c.curve_to(x - 170, gy - 60, x - 180, gy - 160, x - 150, gy - 160); c.close_path()
     shape(c, hx('#B3263A'), L)
@@ -109,7 +109,7 @@ def carriage(c, x, gy, t, outfit, lit=False):
     for wx, r in ((x - 110, 50), (x + 90, 40)):
         c.arc(wx, gy - r, r, 0, 6.3); c.set_line_width(5); shape(c, hx(GOLD), L)
         c.set_line_width(3); c.set_source_rgb(*L)
-        for k in range(8): a = k * math.pi / 4 + t * 3; c.move_to(wx, gy - r); c.line_to(wx + r * math.cos(a), gy - r + r * math.sin(a)); c.stroke()
+        for k in range(8): a = k * math.pi / 4 + t * 3 * moving; c.move_to(wx, gy - r); c.line_to(wx + r * math.cos(a), gy - r + r * math.sin(a)); c.stroke()
         c.arc(wx, gy - r, 8, 0, 6.3); shape(c, hx('#B3263A'), L)
 
 def reindeer(c, x, y, t, k=0, nose=False):
@@ -132,7 +132,7 @@ def reindeer(c, x, y, t, k=0, nose=False):
     c.set_line_width(6); c.set_source_rgb(*hx(RED)); c.move_to(x + 40, y - 12); c.line_to(x + 56, y + 10); c.stroke()
     c.arc(x + 50, y + 4, 6, 0, 6.3); c.set_line_width(3); shape(c, hx(GOLD), L)
 
-def sky_sleigh(c, x, y, t, outfit):
+def sky_sleigh(c, x, y, t, outfit, moving=1.0, **kw):
     """flying sleigh: two reindeer in front, gift sack behind, trail of sparkles"""
     bob = 10 * math.sin(t * 2)
     for k in range(14):
@@ -144,7 +144,7 @@ def sky_sleigh(c, x, y, t, outfit):
     c.save(); c.translate(0, bob)
     c.move_to(x - 130, y - 70); c.curve_to(x - 150, y - 140, x - 60, y - 160, x - 40, y - 110); c.line_to(x - 60, y - 60); c.close_path(); shape(c, hx('#7A4A2E'), L)
     c.rectangle(x - 120, y - 120, 18, 16); shape(c, hx(GREEN), L); c.rectangle(x - 90, y - 140, 20, 18); shape(c, hx(GOLD), L)
-    haru(c, x, y + 20, t, outfit, scale=1.0)
+    haru(c, x, y + 20, t, outfit, scale=1.0, **kw)
     c.set_line_width(4)
     c.move_to(x - 150, y - 90); c.line_to(x + 90, y - 90); c.curve_to(x + 140, y - 90, x + 160, y - 150, x + 130, y - 160); c.curve_to(x + 170, y - 140, x + 170, y - 40, x + 110, y - 20)
     c.line_to(x - 140, y - 20); c.curve_to(x - 170, y - 20, x - 170, y - 90, x - 150, y - 90); c.close_path(); shape(c, hx('#C62E2E'), L)
