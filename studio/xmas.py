@@ -269,6 +269,7 @@ def canal(c, m, scroll, t):
     for k, col in enumerate(('#5BA8FF', RED, GOLD, GREEN, '#FF9FC2')):
         kid(c, wrapx(k * 420 + 300, scroll, .9, 2100), 880 + (k % 3) * 40, 1.2, col, m, t, 'walk')
     for k in range(3): pine(c, wrapx(k * 900 + 500, scroll, 1.1, 2700), 1040, 1.1, m, t)
+    import xmas_life; xmas_life.life(c, 'canal', m, scroll, t)
     snowfall(c, t, scroll, 120, 4)
 
 def downtown(c, m, scroll, t):
@@ -307,6 +308,7 @@ def downtown(c, m, scroll, t):
     gift_tower(c, wrapx(150, scroll, .9, 2300), 760, m, t)
     for k in range(2): nutcracker(c, wrapx(700 + k * 120, scroll, .9, 2300), 770, 1.0, m)
     for k in range(2): reindeer_light(c, wrapx(1100 + k * 110, scroll, .9, 2300), 770, m, t)
+    import xmas_life; xmas_life.life(c, 'downtown', m, scroll, t)
     snowfall(c, t, scroll, 120, 5)
 
 def park(c, m, scroll, t):
@@ -341,6 +343,7 @@ def park(c, m, scroll, t):
     for k, col in enumerate(('#5BA8FF', RED)):
         kx = wrapx(1300 + k * 70, scroll, .9, 2400); kid(c, kx, GY + 40, 1.3, col, m, t)
         c.arc(kx + 40, GY - 20 + 10 * math.sin(t * 3 + k), 8, 0, 6.3); shape(c, tone(SNOW, m), L)
+    import xmas_life; xmas_life.life(c, 'park', m, scroll, t)
     snowfall(c, t, scroll, 140, 6)
 
 def market(c, m, scroll, t):
@@ -384,6 +387,7 @@ def market(c, m, scroll, t):
     santa(c, wrapx(1700, scroll, .9, 2100), 810, m, t)
     for k, col in enumerate((RED, GREEN, GOLD, '#5BA8FF', RED)):
         kid(c, wrapx(k * 380 + 200, scroll, .9, 1900), 860 + (k % 2) * 30, 1.3, col, m, t, 'walk')
+    import xmas_life; xmas_life.life(c, 'market', m, scroll, t)
     snowfall(c, t, scroll, 160, 8)
 
 def lane(c, m, scroll, t):
@@ -404,6 +408,7 @@ def lane(c, m, scroll, t):
     snowman(c, wrapx(1100, scroll, .9, 2400), 840, .9, m)
     for k in range(16):
         fx = wrapx(k * 70, scroll, 1.0, 16 * 70); c.save(); c.translate(fx, 900 + (k % 2) * 16); c.scale(1, .5); c.arc(0, 0, 8, 0, 6.3); c.restore(); c.set_source_rgba(.7, .75, .9, .5); c.fill()
+    import xmas_life; xmas_life.life(c, 'lane', m, scroll, t)
     snowfall(c, t, scroll, 240, 9)
 
 def nightsky(c, m, scroll, t):
@@ -435,6 +440,7 @@ def nightsky(c, m, scroll, t):
     for k in range(10): rr = 24 if k % 2 == 0 else 10; a = -math.pi / 2 + k * math.pi / 5; c.line_to(tx0 + rr * math.cos(a), 690 + rr * math.sin(a))
     c.close_path(); shape(c, hx(GOLD), L)
     c.rectangle(0, 960, W, 120); c.set_source_rgb(*hx('#6C77A3')); c.fill()
+    import xmas_life; xmas_life.life(c, 'sky', m, scroll, t)
     snowfall(c, t, scroll, 160, 10)
 
 SCENES = {'canal': (canal, 'morning'), 'downtown': (downtown, 'day'), 'park': (park, 'golden'),

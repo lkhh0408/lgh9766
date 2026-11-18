@@ -72,6 +72,20 @@ def blade(c, f):
     c.set_line_width(5); c.move_to(f[0] - 10, f[1] + 12); c.line_to(f[0] + 20, f[1] + 12); c.curve_to(f[0] + 27, f[1] + 12, f[0] + 27, f[1] + 4, f[0] + 22, f[1] + 4)
     c.set_source_rgb(*L); c.stroke_preserve(); c.set_source_rgb(.85, .89, .95); c.set_line_width(2.5); c.stroke()
 
+
+def crack(c, x, y, k):
+    """little star burst where a whip or the reins snap"""
+    if not 0 < k < 1: return
+    for j in range(8):
+        a = j * math.pi / 4; r0, r1 = 8 + 20 * k, 18 + 34 * k
+        c.set_line_width(3); c.set_source_rgba(1, .95, .7, 1 - k); c.move_to(x + r0 * math.cos(a), y + r0 * math.sin(a)); c.line_to(x + r1 * math.cos(a), y + r1 * math.sin(a)); c.stroke()
+    glow(c, x, y, 40, (1, .9, .6), .5 * (1 - k))
+
+def snap(t, every=5.0, dur=.9, off=0.0):
+    """0..1 progress of a whip/rein snap that happens once every `every` seconds, else -1"""
+    u = (t + off) % every
+    return u / dur if u < dur else -1
+
 # ---------------- 1. ice skates ----------------
 def skate(c, x, gy, t, outfit, moving=1.0, **kw):
     """leaning forward, arms out for balance, one foot gliding while the other pushes back and out"""
@@ -80,7 +94,8 @@ def skate(c, x, gy, t, outfit, moving=1.0, **kw):
     glide = (x + 10 + 10 * s, gy)
     push = (x - 52 + 34 * s, gy - 6 - 12 * max(0, -s))
     feet = (push, glide) if s < 0 else (glide, push)
-    hands = ((x - 60 - 12 * s, hip[1] - 60), (x + 60 + 12 * s, hip[1] - 48))
+    cr = math.cos(ph) * moving   # +1 arms open wide, -1 arms crossed in front
+    hands = ((x - 4 - 60 * cr, hip[1] - 50 - 14 * abs(cr)), (x + 14 + 60 * cr, hip[1] - 44 - 10 * abs(cr)))
     shadow(c, x, gy + 14, 70)
     pose(c, hip, t, outfit, feet, hands, lean=.22 * moving, wind=.6 * moving, **kw)
     for f in feet: blade(c, f)
@@ -215,8 +230,19 @@ def coachman(c, x, y, t):
     c.rectangle(x - 16, y - 126, 32, 30); shape(c, hx('#2B2541'), L); c.rectangle(x - 24, y - 100, 48, 6); shape(c, hx('#2B2541'), L)
     c.rectangle(x - 16, y - 108, 32, 6); shape(c, hx(RED), L)
     c.arc(x + 8, y - 90, 2.5, 0, 6.3); c.set_source_rgb(*L); c.fill()
-    c.set_line_width(9); c.set_source_rgb(*hx('#2E7D4F')); c.move_to(x + 10, y - 56); c.line_to(x + 40, y - 40); c.stroke()
-    _hand(c, (x + 42, y - 40), {})
+    k = snap(t, 5.0, .9)
+    lift = math.sin(math.pi * k) if k >= 0 else 0
+    hand = (x + 40 + 6 * lift, y - 40 - 40 * lift)
+    c.set_line_width(9); c.set_source_rgb(*hx('#2E7D4F')); c.move_to(x + 10, y - 56); c.line_to(*hand); c.stroke()
+    # whip: a stick and a lash that flicks forward
+    tip = (hand[0] + 30 + 20 * lift, hand[1] - 70 + 20 * lift)
+    c.set_line_width(4); c.set_source_rgb(*hx('#6B4A2E')); c.move_to(*hand); c.line_to(*tip); c.stroke()
+    w = 1 - abs(2 * k - 1) if k >= 0 else 0
+    c.set_line_width(2); c.set_source_rgb(*L); c.move_to(*tip)
+    end = (tip[0] + 60 + 50 * w, tip[1] + 30 - 60 * w)
+    c.curve_to(tip[0] + 30, tip[1] - 20 - 30 * w, end[0] - 30, end[1] + 30 * (1 - w), *end); c.stroke()
+    if k > .45: crack(c, *end, (k - .45) / .55)
+    _hand(c, hand, {})
 
 def carriage(c, x, gy, t, outfit, lit=False, moving=1.0, **kw):
     """open red carriage: Haru sits under a plaid blanket and waves, a coachman holds the reins of a white horse"""
@@ -295,13 +321,16 @@ def sky_sleigh(c, x, y, t, outfit, moving=1.0, **kw):
     c.set_line_width(4); c.move_to(x - 150, y - 70); c.curve_to(x - 170, y - 150, x - 80, y - 170, x - 60, y - 118); c.line_to(x - 74, y - 64); c.close_path(); shape(c, hx('#7A4A2E'), L)
     c.rectangle(x - 140, y - 128, 22, 20); shape(c, hx(GREEN), L); c.rectangle(x - 108, y - 150, 24, 22); shape(c, hx(GOLD), L)
     hip = (x - 10, y - 74)
-    hands = ((x + 52, hip[1] - 34), (x + 64, hip[1] - 30))
+    k = snap(t, 5.0, .9, 2.5); lift = math.sin(math.pi * k) if k >= 0 else 0
+    hands = ((x + 52, hip[1] - 34 - 34 * lift), (x + 66, hip[1] - 30 - 34 * lift))
     pose(c, hip, t, outfit, ((x + 40, y - 30), (x + 56, y - 30)), hands, lean=.08, wind=1.0 * moving, **kw)
     c.restore()
     # reins from Haru's hands to the reindeer
     hy_ = y + bob + hands[1][1] - y
     c.set_line_width(3); c.set_source_rgb(*hx(GOLD))
-    c.move_to(x + 64, hy_); c.curve_to(x + 160, hy_ + 30, x + 250, r2[1] - 10, r2[0] + 50, r2[1] - 12); c.stroke()
+    wv = 40 * math.sin(math.pi * k) * math.sin(k * 8) if k >= 0 else 0   # the wave running down the reins
+    c.move_to(x + 66, hy_); c.curve_to(x + 160, hy_ + 30 - wv, x + 250, r2[1] - 10 + wv, r2[0] + 50, r2[1] - 12); c.stroke()
+    if k > .4: crack(c, x + 210, (hy_ + r2[1]) / 2 + 10, (k - .4) / .6)
     c.move_to(r2[0] + 50, r2[1] - 12); c.curve_to(r2[0] + 110, r2[1], r1[0] - 60, r1[1] - 10, r1[0] + 50, r1[1] - 12); c.stroke()
     c.save(); c.translate(x, y + bob); c.rotate(tilt); c.translate(-x, -y)
     c.set_line_width(4)
