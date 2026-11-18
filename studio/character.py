@@ -49,10 +49,16 @@ def _phones(ctx, style, hx, hy, R, col, L, don=1.0):
         ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke()
         ctx.arc(hx - 28, hy + 6, 18, 0, 2 * math.pi); ctx.set_source_rgb(*col); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.stroke()
         ctx.arc(hx - 28, hy + 6, 9, 0, 2 * math.pi); ctx.set_source_rgb(1, .96, .88); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(2.5); ctx.stroke()
+    elif style == 'fluffy':  # earmuff headphones: slim band, big fur cups
+        for w_, c in ((7, L), (3.5, (0.86, 0.88, 0.92))):
+            ctx.set_line_width(w_); ctx.set_source_rgb(*c); ctx.arc(hx - 2, hy - 2, R + 8, math.radians(198), math.radians(325)); ctx.stroke()
+        _fur_ring(ctx, hx - 28, hy + 6, 19, col, L, 12)
+        ctx.arc(hx - 28, hy + 6, 8, 0, 2 * math.pi); ctx.set_source_rgba(1, 1, 1, .55); ctx.fill()
     else:                  # classic thin band
         ctx.set_line_width(8); ctx.set_source_rgb(*col); ctx.arc(hx - 4, hy, R + 6, math.radians(195), math.radians(320)); ctx.stroke()
         ctx.arc(hx - 24, hy + 4, 11, 0, 2 * math.pi); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.stroke()
 
+MITTEN = [None]
 def _prop(ctx, kind, ex, ey, t, L, sleeve):
     sleeve = hexc(sleeve)
     skin = SKIN
@@ -82,6 +88,19 @@ def _prop(ctx, kind, ex, ey, t, L, sleeve):
             s = math.sin(t * 3 + i)
             ctx.move_to(cx + dx, by - h - 17); ctx.curve_to(cx + dx + 5 * s, by - h - 23, cx + dx - 5 * s, by - h - 29, cx + dx, by - h - 35); ctx.stroke()
         ctx.restore()
+    elif kind == 'cocoa':        # mug of hot chocolate with marshmallows
+        ctx.rectangle(cx - 14, by - 34, 28, 34); _shape(ctx, hexc('#D94040'), L)
+        ctx.arc(cx + 17, by - 18, 8, -math.pi / 2, math.pi / 2); ctx.set_line_width(4); ctx.set_source_rgb(*L); ctx.stroke()
+        ctx.set_line_width(3.2); ctx.rectangle(cx - 14, by - 38, 28, 6); _shape(ctx, hexc('#7A4A2E'), L)
+        for dx in (-8, 0, 8):
+            ctx.rectangle(cx + dx - 4, by - 44, 8, 7); _shape(ctx, (1, 1, 1), L)
+        ctx.save(); ctx.set_source_rgba(1, 1, 1, .9); ctx.set_line_width(3.5)
+        s_ = math.sin(t * 3); ctx.move_to(cx, by - 48); ctx.curve_to(cx + 5 * s_, by - 54, cx - 5 * s_, by - 60, cx, by - 66); ctx.stroke(); ctx.restore()
+    elif kind == 'gift':         # small present with a ribbon
+        ctx.rectangle(cx - 16, by - 30, 32, 30); _shape(ctx, hexc('#2E8B57'), L)
+        ctx.rectangle(cx - 4, by - 30, 8, 30); _shape(ctx, hexc('#F2C230'), L)
+        ctx.move_to(cx, by - 30); ctx.curve_to(cx - 18, by - 46, cx - 18, by - 26, cx, by - 30); _shape(ctx, hexc('#F2C230'), L)
+        ctx.move_to(cx, by - 30); ctx.curve_to(cx + 18, by - 46, cx + 18, by - 26, cx, by - 30); _shape(ctx, hexc('#F2C230'), L)
     elif kind == 'iced':
         top, bot, h = 15, 11, 40
         ctx.move_to(cx - top, by - h); ctx.line_to(cx + top, by - h); ctx.line_to(cx + bot, by); ctx.line_to(cx - bot, by); ctx.close_path()
@@ -98,8 +117,66 @@ def _prop(ctx, kind, ex, ey, t, L, sleeve):
         ctx.set_line_width(3); ctx.set_source_rgb(*hexc('#E0457B')); ctx.move_to(cx + 3, by - h - 4); ctx.line_to(cx + 9, by - h - 30); ctx.stroke()
         ctx.set_source_rgb(*L); ctx.set_line_width(3.2)
     # hand wrapped round the cup
-    ctx.arc(cx - 9, by - 16, 8, 0, 2 * math.pi); _shape(ctx, skin, L)
+    ctx.arc(cx - 9, by - 16, 8, 0, 2 * math.pi); _shape(ctx, hexc(MITTEN[0]) if MITTEN[0] else skin, L)
     ctx.set_line_width(2); ctx.move_to(cx - 6, by - 21); ctx.line_to(cx, by - 21); ctx.move_to(cx - 6, by - 16); ctx.line_to(cx, by - 16); ctx.move_to(cx - 6, by - 11); ctx.line_to(cx, by - 11); ctx.stroke()
+
+def _fur_ring(ctx, x, y, r, col, L, n=12):
+    """scalloped fluffy ring (earmuff cups, pompoms, hat trims)"""
+    ctx.new_path()
+    for i in range(n + 1):
+        a = 2 * math.pi * i / n
+        ctx.arc(x + r * math.cos(a), y + r * math.sin(a), r * 0.32, a - 1.2, a + 1.2)
+    ctx.close_path(); _shape(ctx, col, L)
+
+def _hat(ctx, kind, hx, hy, R, col, L, t=0.0):
+    """winter hats over the (unchanged) bob hair: beanie, santa, antlers (reindeer headband)"""
+    col = hexc(col); ctx.set_line_width(4)
+    if kind in ('beanie', 'santa'):
+        ctx.move_to(hx - R - 2, hy - 14)
+        ctx.curve_to(hx - R + 2, hy - R - 26, hx + R - 2, hy - R - 26, hx + R + 2, hy - 18)
+        if kind == 'santa':   # floppy tip falling back
+            ctx.curve_to(hx + 10, hy - R - 34, hx - 30, hy - R - 46, hx - R - 22, hy - 30)
+        ctx.close_path(); _shape(ctx, col, L)
+        if kind == 'beanie':
+            ctx.set_line_width(2.5)
+            for dx in (-24, -10, 4, 18):
+                ctx.move_to(hx + dx, hy - R - 8); ctx.line_to(hx + dx + 2, hy - 22); ctx.stroke()
+            ctx.set_line_width(4)
+            ctx.move_to(hx - R - 4, hy - 12); ctx.curve_to(hx - R, hy - 32, hx + R, hy - 34, hx + R + 4, hy - 16)
+            ctx.line_to(hx + R + 2, hy - 6); ctx.curve_to(hx + R - 4, hy - 22, hx - R + 4, hy - 20, hx - R - 4, hy - 2); ctx.close_path()
+            _shape(ctx, lerp(col, (0.1, 0.1, 0.15), 0.18), L)
+            _fur_ring(ctx, hx - 4, hy - R - 22, 11, (1, 1, 1), L, 10)
+        else:
+            ctx.move_to(hx - R - 4, hy - 10); ctx.curve_to(hx - R, hy - 34, hx + R, hy - 36, hx + R + 4, hy - 14)
+            ctx.line_to(hx + R + 2, hy - 2); ctx.curve_to(hx + R - 4, hy - 20, hx - R + 4, hy - 18, hx - R - 4, hy + 2); ctx.close_path()
+            _shape(ctx, (1, 1, 1), L)
+            _fur_ring(ctx, hx - R - 22, hy - 28, 10, (1, 1, 1), L, 10)
+    elif kind == 'antlers':
+        brown = (0.62, 0.43, 0.27)
+        for bx, lean in ((hx - 14, -1), (hx + 14, 1)):
+            for w_, c in ((9, L), (5, brown)):
+                ctx.set_line_width(w_); ctx.set_source_rgb(*c)
+                ctx.move_to(bx, hy - R + 4); ctx.curve_to(bx + 4 * lean, hy - R - 18, bx + 10 * lean, hy - R - 30, bx + 6 * lean, hy - R - 44); ctx.stroke()
+                ctx.move_to(bx + 5 * lean, hy - R - 22); ctx.line_to(bx + 20 * lean, hy - R - 30); ctx.stroke()
+                ctx.move_to(bx + 8 * lean, hy - R - 34); ctx.line_to(bx - 6 * lean, hy - R - 46); ctx.stroke()
+        ctx.set_line_width(6); ctx.set_source_rgb(*L); ctx.arc(hx, hy - 2, R + 3, math.radians(205), math.radians(335)); ctx.stroke()
+        ctx.set_line_width(3); ctx.set_source_rgb(*col); ctx.arc(hx, hy - 2, R + 3, math.radians(205), math.radians(335)); ctx.stroke()
+
+def _knit(ctx, hip, L):
+    """cable-knit lines on a sweater"""
+    x, y = hip; ctx.save(); ctx.set_source_rgba(*L, .35); ctx.set_line_width(2.2)
+    for dx in (-12, 10):
+        for k in range(5):
+            yy = y - 66 + k * 13
+            ctx.move_to(x + dx - 4, yy); ctx.curve_to(x + dx + 4, yy + 3, x + dx + 4, yy + 8, x + dx - 4, yy + 11); ctx.stroke()
+    ctx.restore()
+
+def _coat(ctx, hip, col, L):
+    """long coat hem below the hips + toggle buttons"""
+    x, y = hip; col = hexc(col); ctx.set_line_width(4)
+    ctx.move_to(x - 27, y + 2); ctx.line_to(x - 30, y + 34); ctx.line_to(x + 30, y + 34); ctx.line_to(x + 27, y + 2); ctx.close_path(); _shape(ctx, col, L)
+    for yy in (y - 50, y - 30, y - 10, y + 12):
+        ctx.rectangle(x + 9, yy - 3, 10, 6); _shape(ctx, (0.96, 0.9, 0.78), L)
 
 def shades_on_head(ctx, hx, hy, R, L, lift=0.0):
     """round sunglasses pushed up and resting on top of the head (an outfit prop, the real glasses stay on)"""
@@ -180,10 +257,12 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
     if reach <= 0: back_arm(0)
     bag = o.get('bag')
     if bag: _bag_back(ctx, bag, hip, hexc(o.get('bag_color', '#E9A23B')), L)
+    if o.get('coat'): _coat(ctx, hip, o['top'], L)
     ctx.set_line_width(4)
     ctx.move_to(hip[0] - 26, hip[1] + 8); ctx.curve_to(hip[0] - 30, hip[1] - 40, hip[0] - 24, hip[1] - 72, hip[0] + 2, hip[1] - 74)
     ctx.curve_to(hip[0] + 26, hip[1] - 72, hip[0] + 30, hip[1] - 40, hip[0] + 26, hip[1] + 8); ctx.close_path(); _shape(ctx, top, L)
     ctx.move_to(hip[0] + 4, hip[1] - 30); ctx.line_to(hip[0] + 22, hip[1] - 30); ctx.stroke()
+    if o.get('knit'): _knit(ctx, hip, L)
     if bag: _bag_front(ctx, bag, hip, hexc(o.get('bag_color', '#E9A23B')), L, o.get('strap'))
     if o.get('scarf'):   # muffler: wrap round the neck + a tail down the front
         x, y = hip; sc = hexc(o['scarf']); ctx.set_line_width(3)
@@ -206,6 +285,7 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
     else: ctx.arc(gx + 2, gy2 + 1, 3.6, 0, 2 * math.pi); ctx.fill()
     ctx.set_source_rgba(1, .45, .55, .45); ctx.arc(gx + 4, gy2 + 22, 7, 0, 2 * math.pi); ctx.fill()
     ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.arc(hx + 30, hy + 26, 6, math.radians(10), math.radians(120)); ctx.stroke()
+    if o.get('hat'): _hat(ctx, o['hat'], hx, hy, R, o.get('hat_color', '#D94040'), L, t)
     # outfit: headphones
     _phones(ctx, o.get('phones_style', 'classic'), hx, hy, R, phones, L, don)
     if o.get('shades_up'): shades_on_head(ctx, hx, hy, R, L)
@@ -213,5 +293,5 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
     # outfit: front arm + prop
     ctx.set_line_width(12); ctx.set_source_rgb(*top)
     ex, ey = limb(sh[0], sh[1], math.radians(10), 30, math.radians(-75), 28)
-    _prop(ctx, o['prop'], ex, ey, t, L, o.get('sleeve', '#C68B59'))
+    MITTEN[0] = o.get('mitten'); _prop(ctx, o['prop'], ex, ey, t, L, o.get('sleeve', '#C68B59')); MITTEN[0] = None
     return (hx, hy, R)
