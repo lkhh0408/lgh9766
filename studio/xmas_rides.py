@@ -88,12 +88,13 @@ def snap(t, every=5.0, dur=.9, off=0.0):
 
 # ---------------- 1. ice skates ----------------
 def skate(c, x, gy, t, outfit, moving=1.0, **kw):
-    """leaning forward, arms out for balance, one foot gliding while the other pushes back and out"""
+    """leaning forward; arms swing open and cross in front, legs cross over (an X) with every step"""
     ph = t * 2 * math.pi * .55; s = math.sin(ph) * moving; gy -= 12
     hip = (x, gy - 78 - 4 * abs(s))
-    glide = (x + 10 + 10 * s, gy)
-    push = (x - 52 + 34 * s, gy - 6 - 12 * max(0, -s))
-    feet = (push, glide) if s < 0 else (glide, push)
+    d = 6 + 34 * abs(math.cos(ph)) * moving              # how far the crossed feet spread
+    ahead = (x + 10 + d, gy)                               # far leg's foot lands ahead ...
+    behind = (x - d, gy - 14 * abs(s))                     # ... near leg crosses over behind it, lifted as it steps
+    feet = (ahead, behind); push = behind
     cr = math.cos(ph) * moving   # +1 arms open wide, -1 arms crossed in front
     hands = ((x - 4 - 60 * cr, hip[1] - 50 - 14 * abs(cr)), (x + 14 + 60 * cr, hip[1] - 44 - 10 * abs(cr)))
     shadow(c, x, gy + 14, 70)
@@ -108,8 +109,8 @@ def skate(c, x, gy, t, outfit, moving=1.0, **kw):
 
 # ---------------- 2. tram ----------------
 def tram(c, x, gy, t, outfit, lit=False, moving=1.0, **kw):
-    """red Christmas tram seen from the side; Haru stands inside holding a ceiling strap, swaying with the ride"""
-    sway = .012 * math.sin(t * 5) * moving; bump = 2.5 * abs(math.sin(t * 7)) * moving
+    """red Christmas tram seen from the side; Haru stands inside holding a ceiling strap"""
+    sway = 0.0; bump = 0.0
     w, h = 640, 300; x0, y0 = x - w / 2, gy - 40 - h - bump
     c.save(); c.translate(x, gy); c.rotate(sway); c.translate(-x, -gy)
     shadow(c, x, gy + 6, 300, .22)
@@ -127,8 +128,8 @@ def tram(c, x, gy, t, outfit, lit=False, moving=1.0, **kw):
     for k, px in enumerate((wx + 50, wx + 300)):   # passengers (simple, not Haru)
         c.set_line_width(3); rrect(c, px - 22, wy + 92, 44, 90, 14); shape(c, hx(('#2C3E66', '#7B1E3A')[k]), L)
         c.arc(px, wy + 72, 20, 0, 6.3); shape(c, SKIN, L); c.arc(px, wy + 66, 21, math.pi, 2 * math.pi); c.close_path(); shape(c, hx(('#5A3B2E', '#2B2541')[k]), L)
-    hip = (x - 40 + 4 * math.sin(t * 5) * moving, wy + 200)
-    strap = (x - 10 + 6 * math.sin(t * 5 + .6) * moving, wy + 40)
+    hip = (x - 40, wy + 200)
+    strap = (x - 10, wy + 40)
     c.set_line_width(3); c.set_source_rgb(*L); c.move_to(strap[0], wy + 24); c.line_to(strap[0], strap[1] - 8); c.stroke()
     c.arc(strap[0], strap[1], 9, 0, 6.3); c.set_line_width(4); c.set_source_rgb(*hx(GOLD)); c.stroke()
     pose(c, hip, t, outfit, ((hip[0] - 14, hip[1] + 86), (hip[0] + 16, hip[1] + 86)), ((hip[0] - 30, hip[1] - 20), strap), **kw)
@@ -178,16 +179,20 @@ def husky(c, x, y, t, k=0, moving=1.0):
     c.set_line_width(5); c.set_source_rgb(*hx(RED)); c.move_to(x + 36, by - 14); c.line_to(x + 46, by + 8); c.stroke()
 
 def dogsled(c, x, gy, t, outfit, moving=1.0, **kw):
-    """three huskies on a gangline pull a basket sled; Haru stands on the runners holding the handlebar"""
+    """three huskies on a gangline pull a basket sled; Haru stands with one foot on each runner, holding the handlebar"""
     bump = 3 * abs(math.sin(t * 6)) * moving
     shadow(c, x + 250, gy + 8, 360, .2)
     c.set_line_width(3); c.set_source_rgb(*L); c.move_to(x + 120, gy - 50); c.line_to(x + 620, gy - 50); c.stroke()
     for k in range(3): husky(c, x + 230 + k * 170, gy, t, k, moving)
     # runners + basket
-    c.set_line_width(6); c.set_source_rgb(*L); c.move_to(x - 120, gy - 4); c.line_to(x + 110, gy - 4); c.curve_to(x + 150, gy - 4, x + 160, gy - 40, x + 130, gy - 56); c.stroke()
-    c.set_line_width(3); c.set_source_rgb(*hx('#C9CCD8')); c.move_to(x - 120, gy - 4); c.line_to(x + 110, gy - 4); c.stroke()
-    hip = (x - 96, gy - 86 - bump)
-    pose(c, hip, t, outfit, ((x - 112, gy - 12), (x - 80, gy - 12)), ((x - 30, hip[1] - 44), (x - 20, hip[1] - 40)), lean=.18 * moving, wind=moving, **kw)
+    for k, (dy, dx, shade) in enumerate(((-20, -18, .35), (-2, 0, 0))):   # far runner (higher, darker), near runner: one ski per foot
+        ry = gy + dy
+        c.set_line_width(12); c.set_source_rgb(*L); c.move_to(x - 150 + dx, ry); c.line_to(x + 110 + dx, ry); c.curve_to(x + 150 + dx, ry, x + 160 + dx, ry - 36, x + 130 + dx, ry - 52); c.stroke()
+        c.set_line_width(6); c.set_source_rgb(*lerp(hx('#C98F6A'), (.2, .2, .3), shade)); c.move_to(x - 150 + dx, ry); c.line_to(x + 110 + dx, ry); c.curve_to(x + 150 + dx, ry, x + 160 + dx, ry - 36, x + 130 + dx, ry - 52); c.stroke()
+        c.set_line_width(2.5); c.set_source_rgb(*lerp(hx('#C9CCD8'), (.2, .2, .3), shade)); c.move_to(x - 150 + dx, ry + 4); c.line_to(x + 110 + dx, ry + 4); c.stroke()
+        c.set_line_width(3); rrect(c, x - 146 + dx + 30 * k, ry - 12, 46, 8, 3); shape(c, lerp(hx('#3B3F5C'), (0, 0, 0), shade), L)   # foot pad
+    hip = (x - 100, gy - 96 - bump)
+    pose(c, hip, t, outfit, ((x - 134, gy - 34), (x - 88, gy - 16)), ((x - 30, hip[1] - 44), (x - 20, hip[1] - 40)), lean=.18 * moving, wind=moving, **kw)
     c.set_line_width(5); c.set_source_rgb(*L); c.move_to(x - 28, hip[1] - 44); c.line_to(x - 40, gy - 4); c.stroke()
     c.set_line_width(4); c.move_to(x - 40, gy - 90 - bump); c.line_to(x + 120, gy - 90 - bump); c.line_to(x + 120, gy - 34); c.line_to(x - 40, gy - 34); c.close_path(); shape(c, hx('#C98F6A'), L)
     for k in range(5): c.move_to(x - 20 + k * 32, gy - 88 - bump); c.line_to(x - 20 + k * 32, gy - 36); c.set_line_width(2); c.set_source_rgb(*L); c.stroke()
