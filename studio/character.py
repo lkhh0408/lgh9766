@@ -238,6 +238,11 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
         ctx.set_line_width(14); ctx.set_source_rgb(*lerp(pants, (.1, .1, .2), .35 if back else 0))
         fx, fy = limb(hip[0], hip[1], a, 44, a - bend, 42)
         ctx.set_line_width(13); ctx.set_source_rgb(*L); ctx.move_to(fx - 5, fy); ctx.line_to(fx + 14, fy); ctx.stroke()
+        if o.get('skates'):   # ice skates: white boot cuff + silver blade
+            ctx.set_line_width(4); ctx.rectangle(fx - 7, fy - 14, 22, 12); _shape(ctx, (1, 1, 1), L)
+            ctx.set_line_width(3); ctx.move_to(fx - 8, fy + 11); ctx.line_to(fx + 20, fy + 11); ctx.curve_to(fx + 26, fy + 11, fx + 26, fy + 4, fx + 22, fy + 4)
+            ctx.set_source_rgb(.82, .86, .92); ctx.stroke_preserve(); ctx.set_source_rgb(*L); ctx.set_line_width(1.5); ctx.stroke()
+            ctx.set_line_width(3); ctx.set_source_rgb(*L); ctx.move_to(fx - 2, fy + 5); ctx.line_to(fx - 2, fy + 11); ctx.move_to(fx + 12, fy + 5); ctx.line_to(fx + 12, fy + 11); ctx.stroke()
 
     leg(ph + math.pi, True)
     sh = (cx + 2, hip[1] - 62)

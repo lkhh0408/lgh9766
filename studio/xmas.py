@@ -148,14 +148,105 @@ def ground(c, m, top=GY, col=SNOW, edge='#DCE8F5'):
     c.set_line_width(4); c.set_source_rgb(*L); c.move_to(0, top); c.line_to(W, top); c.stroke()
     c.rectangle(0, top + 2, W, 10); c.set_source_rgb(*tone(edge, m)); c.fill()
 
+
+def banner(c, x0, x1, y, text, m, t, col=RED):
+    """MERRY CHRISTMAS banner hung between two points"""
+    c.set_line_width(3); c.set_source_rgb(*L); c.move_to(x0, y - 30); c.line_to(x0 + 30, y); c.move_to(x1, y - 30); c.line_to(x1 - 30, y); c.stroke()
+    c.set_line_width(4); c.move_to(x0 + 20, y); c.curve_to(x0 + (x1 - x0) * .3, y + 24, x0 + (x1 - x0) * .7, y + 24, x1 - 20, y)
+    c.line_to(x1 - 24, y + 50); c.curve_to(x0 + (x1 - x0) * .7, y + 74, x0 + (x1 - x0) * .3, y + 74, x0 + 24, y + 50); c.close_path(); shape(c, tone(col, m), L)
+    c.select_font_face('Outfit', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD); c.set_font_size(30)
+    e = c.text_extents(text); c.move_to((x0 + x1) / 2 - e.width / 2, y + 48); c.set_source_rgb(1, .97, .88); c.show_text(text)
+
+def santa(c, x, base, m, t):
+    """Santa ringing a bell beside a red kettle"""
+    c.set_line_width(3.5)
+    c.move_to(x - 16, base - 70); c.line_to(x + 16, base - 70); c.line_to(x + 12, base - 30); c.line_to(x - 12, base - 30); c.close_path(); shape(c, tone(RED, m), L)
+    c.set_line_width(3); c.move_to(x - 12, base - 30); c.line_to(x - 20, base); c.move_to(x + 12, base - 30); c.line_to(x + 20, base); c.set_source_rgb(*L); c.stroke()
+    sx = x + 60; c.set_line_width(3.5)
+    rrect(c, sx - 26, base - 110, 52, 80, 18); shape(c, tone(RED, m), L)
+    c.rectangle(sx - 26, base - 76, 52, 10); shape(c, tone('#2B2541', m), L); c.rectangle(sx - 6, base - 78, 12, 14); shape(c, hx(GOLD), L)
+    c.set_line_width(10); c.set_source_rgb(*L); c.move_to(sx - 12, base - 32); c.line_to(sx - 14, base); c.move_to(sx + 12, base - 32); c.line_to(sx + 14, base); c.stroke()
+    c.arc(sx, base - 128, 20, 0, 6.3); c.set_line_width(3.5); shape(c, tone((1, .88, .78), m), L)
+    c.move_to(sx - 20, base - 124); c.curve_to(sx - 24, base - 92, sx + 24, base - 92, sx + 20, base - 124); c.close_path(); shape(c, (1, 1, 1), L)
+    c.move_to(sx - 22, base - 140); c.curve_to(sx - 10, base - 172, sx + 26, base - 170, sx + 40, base - 150); c.line_to(sx + 22, base - 140); c.close_path(); shape(c, tone(RED, m), L)
+    rrect(c, sx - 24, base - 146, 48, 10, 5); shape(c, (1, 1, 1), L); c.arc(sx + 42, base - 150, 7, 0, 6.3); shape(c, (1, 1, 1), L)
+    bx, by = sx + 40, base - 90 + 6 * math.sin(t * 8)
+    c.move_to(bx - 8, by); c.line_to(bx + 8, by); c.line_to(bx + 5, by - 14); c.line_to(bx - 5, by - 14); c.close_path(); shape(c, hx(GOLD), L)
+
+def carolers(c, x, base, m, t, n=4):
+    """a small choir in scarves holding songbooks, swaying"""
+    for k in range(n):
+        px = x + k * 42; sw = 3 * math.sin(t * 2 + k)
+        c.save(); c.translate(px, base); c.rotate(.04 * math.sin(t * 2 + k))
+        c.set_line_width(3); rrect(c, -15, -70, 30, 56, 12); shape(c, tone(('#2C3E66', '#7B1E3A', '#2E7D4F', '#B5651D')[k % 4], m), L)
+        c.arc(0, -84, 14, 0, 6.3); shape(c, tone((1, .88, .78), m), L)
+        c.arc(0, -88, 14.5, math.pi, 2 * math.pi); c.close_path(); shape(c, tone(('#5A3B2E', '#2B2541', '#C68B59', '#5A3B2E')[k % 4], m), L)
+        c.set_line_width(5); c.set_source_rgb(*tone((RED, CREAM, GOLD, RED)[k % 4], m)); c.move_to(-12, -64); c.line_to(12, -64); c.stroke()
+        c.set_line_width(3); c.rectangle(4, -58, 20, 14); shape(c, tone(CREAM, m), L)
+        c.arc(4, -80, 4, 0, 6.3); c.set_source_rgb(*L); c.fill()
+        c.restore()
+    for k in range(3):
+        nx, ny = x + 40 + k * 40, base - 130 - ((t * 30 + k * 20) % 60)
+        c.set_source_rgba(*L, max(0, 1 - ((t * 30 + k * 20) % 60) / 60)); c.arc(nx, ny, 5, 0, 6.3); c.fill(); c.set_line_width(2.5); c.move_to(nx + 5, ny); c.line_to(nx + 5, ny - 18); c.stroke()
+
+def nutcracker(c, x, base, s, m):
+    c.save(); c.translate(x, base); c.scale(s, s); c.set_line_width(3.5)
+    c.rectangle(-14, -40, 12, 40); shape(c, tone('#2B2541', m), L); c.rectangle(2, -40, 12, 40); shape(c, tone('#2B2541', m), L)
+    c.rectangle(-18, -96, 36, 58); shape(c, tone(RED, m), L)
+    for k in range(3): c.arc(0, -84 + k * 16, 3, 0, 6.3); c.set_source_rgb(*hx(GOLD)); c.fill()
+    c.rectangle(-14, -124, 28, 28); shape(c, tone((1, .88, .78), m), L)
+    c.rectangle(-16, -170, 32, 48); shape(c, tone('#2B2541', m), L); c.rectangle(-16, -132, 32, 8); shape(c, hx(GOLD), L)
+    c.rectangle(-12, -108, 24, 12); shape(c, (1, 1, 1), L)
+    c.restore()
+
+def reindeer_light(c, x, base, m, t):
+    """wire-frame light-up reindeer lawn decoration"""
+    lit = SKY[m][3]; col = (1, .92, .7) if lit else hx('#C9B48C')
+    c.set_line_width(4)
+    pts = [(-40, -70), (30, -70), (40, -110), (58, -100), (40, -60), (36, 0), (20, 0), (24, -40), (-24, -40), (-20, 0), (-36, 0), (-40, -70)]
+    if lit:
+        for px, py in pts: glow(c, x + px, base + py, 14, (1, .9, .6), .4)
+    c.move_to(x + pts[0][0], base + pts[0][1])
+    for px, py in pts[1:]: c.line_to(x + px, base + py)
+    c.set_source_rgb(*col); c.stroke()
+    c.move_to(x + 44, base - 106); c.line_to(x + 34, base - 140); c.move_to(x + 52, base - 104); c.line_to(x + 66, base - 136); c.stroke()
+
+def gift_tower(c, x, base, m, t):
+    for k, (w_, h_, col, rib) in enumerate(((120, 70, RED, GOLD), (90, 60, GREEN, RED), (60, 50, GOLD, GREEN))):
+        y = base - sum((70, 60, 50)[:k]) - h_
+        c.set_line_width(3.5); c.rectangle(x - w_ / 2, y, w_, h_); shape(c, tone(col, m), L)
+        c.rectangle(x - 6, y, 12, h_); shape(c, tone(rib, m), L)
+    y = base - 180
+    for d in (-1, 1): c.move_to(x, y); c.curve_to(x + 26 * d, y - 26, x + 26 * d, y + 4, x, y); shape(c, tone(RED, m), L)
+
+def igloo(c, x, base, m):
+    c.set_line_width(4); c.arc(x, base, 80, math.pi, 2 * math.pi); c.close_path(); shape(c, tone('#F4F8FC', m), L)
+    c.set_line_width(2); c.set_source_rgb(*tone('#B9C9DA', m))
+    for k in range(1, 4): c.arc(x, base, 80, math.pi, 2 * math.pi); c.new_path(); c.move_to(x - 80 + k * 6, base - k * 22); c.line_to(x + 80 - k * 6, base - k * 22); c.stroke()
+    c.set_line_width(4); c.arc(x + 20, base, 28, math.pi, 2 * math.pi); c.close_path(); shape(c, tone('#3B4677', m), L)
+
+def shooting_star(c, t, period=6.0, seed=0):
+    u = ((t + seed * 2.3) % period) / period
+    if u > .25: return
+    k = u / .25; x, y = 300 + 1200 * k + seed * 200, 80 + 200 * k
+    g = cairo.LinearGradient(x - 160, y - 40, x, y); g.add_color_stop_rgba(0, 1, 1, 1, 0); g.add_color_stop_rgba(1, 1, 1, 1, .9 * (1 - k))
+    c.set_source(g); c.set_line_width(3); c.move_to(x - 160, y - 40); c.line_to(x, y); c.stroke()
+
 # ---------- the six neighbourhoods ----------
 def canal(c, m, scroll, t):
     """01-04 skate: frozen canal through a gabled town (morning)"""
     sky(c, m, t)
     r = random.Random(11); cols = ['#F6C6A8', '#F3E1B8', '#BFD9C8', '#F2B8C6', '#C9D6F2', '#F5D58E']
+    spx = wrapx(700, scroll, .2, 3000)
+    c.set_line_width(4); c.rectangle(spx - 40, 360, 80, 340); shape(c, tone('#E8DCCB', m), L)
+    c.move_to(spx - 50, 360); c.line_to(spx, 210); c.line_to(spx + 50, 360); c.close_path(); shape(c, tone('#3E6E8E', m), L)
+    snowy_roof(c, [(spx - 52, 362), (spx, 206), (spx + 52, 362), (spx + 44, 366), (spx, 230), (spx - 44, 366)], m)
+    c.arc(spx, 420, 22, 0, 6.3); shape(c, tone(CREAM, m), L)
+    c.set_line_width(3); c.set_source_rgb(*hx(GOLD)); c.move_to(spx, 210); c.line_to(spx, 180); c.move_to(spx - 10, 194); c.line_to(spx + 10, 194); c.stroke()
     for k in range(14):
         x = wrapx(k * 170, scroll, .45, 14 * 170) ; w = 120 + (k % 3) * 18; h = 150 + (k * 37) % 90
         house(c, x, 700, w, h, cols[k % len(cols)], m, t, wreath=True)
+        if k % 2 == 0: bulbs(c, x - 6, 700 - h, x + w + 6, 700 - h, 14, m, t, 9)
     # quay wall + railing + lamps with garland
     c.rectangle(0, 700, W, 60); shape(c, tone('#B9A48C', m), L)
     for k in range(40): bx = wrapx(k * 60, scroll, .6, 40 * 60); c.rectangle(bx, 704, 56, 24); c.set_source_rgb(*tone('#CDB9A0', m)); c.fill()
@@ -167,6 +258,7 @@ def canal(c, m, scroll, t):
     c.curve_to(bx + 130, 660, bx - 130, 660, bx - 190, 760); c.close_path(); shape(c, tone('#C98F6A', m), L)
     snowy_roof(c, [(bx - 236, 760), (bx - 160, 606), (bx + 160, 606), (bx + 236, 760), (bx + 228, 752), (bx + 156, 618), (bx - 156, 618), (bx - 228, 752)], m)
     bulbs(c, bx - 200, 690, bx + 200, 690, -60, m, t, 12)
+    banner(c, bx - 150, bx + 150, 560, 'MERRY CHRISTMAS', m, t)
     # ice
     g = cairo.LinearGradient(0, 760, 0, H); g.add_color_stop_rgb(0, *tone('#BFE3F5', m)); g.add_color_stop_rgb(1, *tone('#E8F6FF', m)); c.rectangle(0, 760, W, H - 760); c.set_source(g); c.fill()
     c.set_line_width(2.5)
@@ -174,8 +266,9 @@ def canal(c, m, scroll, t):
         sx = wrapx(k * 113, scroll, 1.0, 30 * 113); sy = 790 + (k * 53) % 230
         c.move_to(sx, sy); c.line_to(sx + 60, sy - 6); c.set_source_rgba(1, 1, 1, .7); c.stroke()
         if (k + int(t * 2)) % 7 == 0: c.arc(sx + 30, sy - 3, 3, 0, 6.3); c.set_source_rgba(1, 1, 1, .95); c.fill()
-    for k, col in enumerate(('#5BA8FF', RED, GOLD)):
-        kid(c, wrapx(k * 640 + 300, scroll, .9, 1900), 900 + k * 30, 1.2, col, m, t, 'walk')
+    for k, col in enumerate(('#5BA8FF', RED, GOLD, GREEN, '#FF9FC2')):
+        kid(c, wrapx(k * 420 + 300, scroll, .9, 2100), 880 + (k % 3) * 40, 1.2, col, m, t, 'walk')
+    for k in range(3): pine(c, wrapx(k * 900 + 500, scroll, 1.1, 2700), 1040, 1.1, m, t)
     snowfall(c, t, scroll, 120, 4)
 
 def downtown(c, m, scroll, t):
@@ -208,8 +301,12 @@ def downtown(c, m, scroll, t):
     c.select_font_face('NanumSquareRound', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD); c.set_font_size(26); c.set_source_rgb(1, 1, 1); c.move_to(sx - 46, 690); c.show_text('붕어빵')
     for k in range(3):
         fx = sx - 40 + k * 30; c.move_to(fx - 12, 630); c.curve_to(fx - 6, 618, fx + 8, 618, fx + 12, 630); c.curve_to(fx + 6, 640, fx - 6, 640, fx - 12, 630); shape(c, hx('#E2A04A'), L)
-    for k, col in enumerate((RED, GREEN, RED, GOLD)):
-        kid(c, wrapx(1600 + k * 46, scroll, .9, 2300), 760, 1.25, col, m, t)
+    banner(c, wrapx(900, scroll, .7, 3000), wrapx(900, scroll, .7, 3000) + 420, 230, 'MERRY CHRISTMAS', m, t, GREEN)
+    santa(c, wrapx(1500, scroll, .9, 2300), 790, m, t)
+    carolers(c, wrapx(1950, scroll, .9, 2300), 800, m, t)
+    gift_tower(c, wrapx(150, scroll, .9, 2300), 760, m, t)
+    for k in range(2): nutcracker(c, wrapx(700 + k * 120, scroll, .9, 2300), 770, 1.0, m)
+    for k in range(2): reindeer_light(c, wrapx(1100 + k * 110, scroll, .9, 2300), 770, m, t)
     snowfall(c, t, scroll, 120, 5)
 
 def park(c, m, scroll, t):
@@ -237,7 +334,10 @@ def park(c, m, scroll, t):
     c.save(); c.translate(rx, 760); c.scale(1, .35); c.arc(0, 0, 230, 0, 6.3); c.restore(); shape(c, tone('#CFEAF7', m), L)
     for k, col in enumerate((RED, '#5BA8FF', GOLD, GREEN)): kid(c, rx - 150 + k * 95, 770 + (k % 2) * 14, 1.0, col, m, t, 'walk')
     for k in range(4): snowman(c, wrapx(k * 520 + 300, scroll, .8, 4 * 520), GY + 10, 1.0 + (k % 2) * .2, m)
+    igloo(c, wrapx(1700, scroll, .8, 2600), GY + 4, m)
     ground(c, m, GY)
+    for k, col in enumerate((GOLD, GREEN, '#FF9FC2')):
+        kid(c, wrapx(200 + k * 520, scroll, .9, 2400), GY + 80 + (k % 2) * 30, 1.2, col, m, t, 'walk')
     for k, col in enumerate(('#5BA8FF', RED)):
         kx = wrapx(1300 + k * 70, scroll, .9, 2400); kid(c, kx, GY + 40, 1.3, col, m, t)
         c.arc(kx + 40, GY - 20 + 10 * math.sin(t * 3 + k), 8, 0, 6.3); shape(c, tone(SNOW, m), L)
@@ -257,7 +357,7 @@ def market(c, m, scroll, t):
     c.move_to(tx0, 160)
     for k in range(10): rr = 34 if k % 2 == 0 else 14; a = -math.pi / 2 + k * math.pi / 5; c.line_to(tx0 + rr * math.cos(a), 196 + rr * math.sin(a))
     c.close_path(); shape(c, hx(GOLD), L)
-    cx0 = wrapx(300, scroll, .45, 3000)
+    cx0 = wrapx(300, scroll, .45, 1800)
     c.move_to(cx0 - 130, 520); c.line_to(cx0, 440); c.line_to(cx0 + 130, 520); c.close_path(); shape(c, tone(RED, m), L)
     for k in range(6): c.move_to(cx0 - 130 + k * 43, 520); c.line_to(cx0 - 108 + k * 43, 540); c.line_to(cx0 - 86 + k * 43, 520); c.close_path(); shape(c, tone(CREAM if k % 2 else GOLD, m), L)
     c.rectangle(cx0 - 120, 690, 240, 18); shape(c, tone('#B5651D', m), L)
@@ -279,6 +379,9 @@ def market(c, m, scroll, t):
         if k % 4 == 0:
             for j in range(3): c.move_to(sx + 90 + j * 26, 640); c.curve_to(sx + 96 + j * 26, 625, sx + 84 + j * 26, 612, sx + 92 + j * 26, 598); c.set_source_rgba(1, 1, 1, .6); c.set_line_width(4); c.stroke()
     ground(c, m, 780, '#F4F1F6', '#E4DDEA')
+    for k in range(3): nutcracker(c, wrapx(200 + k * 700, scroll, .9, 2100), 800, 1.1, m)
+    gift_tower(c, wrapx(1250, scroll, .9, 2100), 800, m, t)
+    santa(c, wrapx(1700, scroll, .9, 2100), 810, m, t)
     for k, col in enumerate((RED, GREEN, GOLD, '#5BA8FF', RED)):
         kid(c, wrapx(k * 380 + 200, scroll, .9, 1900), 860 + (k % 2) * 30, 1.3, col, m, t, 'walk')
     snowfall(c, t, scroll, 160, 8)
@@ -296,6 +399,9 @@ def lane(c, m, scroll, t):
         bulbs(c, x - 4, 800 - h, x + w + 4, 800 - h, 10, m, t, 9)
     for k in range(5): lamp(c, wrapx(k * 480 + 260, scroll, .8, 5 * 480), 820, m, t, garland=False)
     ground(c, m, 820)
+    for k in range(3): reindeer_light(c, wrapx(150 + k * 800, scroll, .8, 2400), 822, m, t)
+    carolers(c, wrapx(1500, scroll, .9, 2400), 850, m, t)
+    snowman(c, wrapx(1100, scroll, .9, 2400), 840, .9, m)
     for k in range(16):
         fx = wrapx(k * 70, scroll, 1.0, 16 * 70); c.save(); c.translate(fx, 900 + (k % 2) * 16); c.scale(1, .5); c.arc(0, 0, 8, 0, 6.3); c.restore(); c.set_source_rgba(.7, .75, .9, .5); c.fill()
     snowfall(c, t, scroll, 240, 9)
@@ -303,6 +409,7 @@ def lane(c, m, scroll, t):
 def nightsky(c, m, scroll, t):
     """18-20 reindeer sleigh: aurora, moon, the whole town far below with its lights, the giant tree"""
     sky(c, 'aurora', t)
+    for k in range(3): shooting_star(c, t, 7.0, k)
     r = random.Random(13)
     for k, (yy, col) in enumerate(((760, '#3B4677'), (850, '#56618F'))):
         c.move_to(0, H)
