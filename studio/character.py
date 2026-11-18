@@ -213,6 +213,28 @@ def _bag_front(ctx, kind, hip, col, L, strap):
         ctx.curve_to(x + 14, y + 8, x + 10, y + 4, x + 12, y - 16); ctx.close_path(); _shape(ctx, col, L)
         ctx.set_line_width(3); ctx.move_to(x + 12, y - 8); ctx.line_to(x + 38, y - 8); ctx.stroke()
 
+def draw_head(ctx, hx, hy, t, o, L=hexc('#2B2541'), don=1.0):
+    """Haru's head, identical in every pose: face, round glasses, bob hair, then the outfit's hat and headphones."""
+    R = 42; phones = hexc(o['phones'])
+    ctx.set_line_width(4); ctx.arc(hx, hy, R, 0, 2 * math.pi); _shape(ctx, SKIN, L)
+    ctx.save(); ctx.arc(hx, hy, R + 1, 0, 2 * math.pi); ctx.clip()
+    ctx.move_to(hx + R + 4, hy - 12); ctx.curve_to(hx + 20, hy - 22, hx - 6, hy - 16, hx - 12, hy - 4)
+    ctx.line_to(hx - 14, hy + 30); ctx.line_to(hx - R - 6, hy + 30); ctx.line_to(hx - R - 6, hy - R - 6); ctx.line_to(hx + R + 6, hy - R - 6); ctx.close_path()
+    ctx.set_source_rgb(*HAIR); ctx.fill(); ctx.restore()
+    ctx.set_source_rgb(*L); ctx.set_line_width(4); ctx.arc(hx, hy, R, 0, 2 * math.pi); ctx.stroke()
+    gx, gy2 = hx + 24, hy + 4
+    ctx.set_line_width(4); ctx.move_to(gx - 14, gy2 - 2); ctx.line_to(hx - 16, gy2 - 4); ctx.stroke()
+    ctx.arc(gx, gy2, 14, 0, 2 * math.pi); ctx.set_source_rgba(1, 1, 1, .45); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.stroke()
+    if (t % 4.0) < 0.12: ctx.move_to(gx - 2, gy2 + 1); ctx.line_to(gx + 6, gy2 + 1); ctx.stroke()
+    else: ctx.arc(gx + 2, gy2 + 1, 3.6, 0, 2 * math.pi); ctx.fill()
+    ctx.set_source_rgba(1, .45, .55, .45); ctx.arc(gx + 4, gy2 + 22, 7, 0, 2 * math.pi); ctx.fill()
+    ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.arc(hx + 30, hy + 26, 6, math.radians(10), math.radians(120)); ctx.stroke()
+    if o.get('hat'): _hat(ctx, o['hat'], hx, hy, R, o.get('hat_color', '#D94040'), L, t)
+    # outfit: headphones
+    _phones(ctx, o.get('phones_style', 'classic'), hx, hy, R, phones, L, don)
+    if o.get('shades_up'): shades_on_head(ctx, hx, hy, R, L)
+
+
 def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, phase=None, walk=None, reach=0.0, press=0.0, don=1.0):
     """Draw the mascot standing on ground line gy at x=cx, facing right.
     phase: walk-cycle phase (radians); walk: 0..1 stride amount (0 = standing still);
@@ -275,25 +297,9 @@ def draw(ctx, cx, gy, t, L=hexc('#2B2541'), outfit='signature', walking=True, ph
         ctx.move_to(x - 22, y - 80); ctx.curve_to(x - 10, y - 66, x + 16, y - 64, x + 26, y - 78); ctx.line_to(x + 24, y - 66); ctx.curve_to(x + 12, y - 54, x - 12, y - 56, x - 24, y - 68); ctx.close_path(); _shape(ctx, sc, L)
         ctx.set_line_width(4)
     leg(ph, False)
-    # head (fixed identity)
+    # head (fixed identity) + hat + headphones
     hx, hy, R = cx + 6, hip[1] - 116, 42
-    ctx.set_line_width(4); ctx.arc(hx, hy, R, 0, 2 * math.pi); _shape(ctx, SKIN, L)
-    ctx.save(); ctx.arc(hx, hy, R + 1, 0, 2 * math.pi); ctx.clip()
-    ctx.move_to(hx + R + 4, hy - 12); ctx.curve_to(hx + 20, hy - 22, hx - 6, hy - 16, hx - 12, hy - 4)
-    ctx.line_to(hx - 14, hy + 30); ctx.line_to(hx - R - 6, hy + 30); ctx.line_to(hx - R - 6, hy - R - 6); ctx.line_to(hx + R + 6, hy - R - 6); ctx.close_path()
-    ctx.set_source_rgb(*HAIR); ctx.fill(); ctx.restore()
-    ctx.set_source_rgb(*L); ctx.set_line_width(4); ctx.arc(hx, hy, R, 0, 2 * math.pi); ctx.stroke()
-    gx, gy2 = hx + 24, hy + 4
-    ctx.set_line_width(4); ctx.move_to(gx - 14, gy2 - 2); ctx.line_to(hx - 16, gy2 - 4); ctx.stroke()
-    ctx.arc(gx, gy2, 14, 0, 2 * math.pi); ctx.set_source_rgba(1, 1, 1, .45); ctx.fill_preserve(); ctx.set_source_rgb(*L); ctx.stroke()
-    if (t % 4.0) < 0.12: ctx.move_to(gx - 2, gy2 + 1); ctx.line_to(gx + 6, gy2 + 1); ctx.stroke()
-    else: ctx.arc(gx + 2, gy2 + 1, 3.6, 0, 2 * math.pi); ctx.fill()
-    ctx.set_source_rgba(1, .45, .55, .45); ctx.arc(gx + 4, gy2 + 22, 7, 0, 2 * math.pi); ctx.fill()
-    ctx.set_source_rgb(*L); ctx.set_line_width(3); ctx.arc(hx + 30, hy + 26, 6, math.radians(10), math.radians(120)); ctx.stroke()
-    if o.get('hat'): _hat(ctx, o['hat'], hx, hy, R, o.get('hat_color', '#D94040'), L, t)
-    # outfit: headphones
-    _phones(ctx, o.get('phones_style', 'classic'), hx, hy, R, phones, L, don)
-    if o.get('shades_up'): shades_on_head(ctx, hx, hy, R, L)
+    draw_head(ctx, hx, hy, t, o, L, don)
     if reach > 0: back_arm(_smooth(reach))
     # outfit: front arm + prop
     ctx.set_line_width(12); ctx.set_source_rgb(*top)
