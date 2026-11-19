@@ -235,6 +235,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 
 ## VOL.04 (크리스마스 편, 파일 61~80, 곡 순서 = 에너지 곡선, `playlists/vol04/PLAN.md`)
 - 사용자가 만든 곡 중에서 골라 써요. "다음 곡"이면 20곡이 넘어도 계속 크리스마스 시즌 곡을 이어서 만들어요(번호 81, 82…). 최종 순서는 사용자가 고른 곡을 61~80번으로 붙여 올릴 때 정해져요(영상 = 파일 번호 순서).
+- 11/19: 사용자가 15곡 결정. 남은 자리는 영상 후반부(밤)용, 단 너무 늘어지는 곡은 빼요(템포 90대 후반, 일정한 그루브).
 | # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
 |---|---|---|---|---|---|
 | 61 | Snow on the Sill | 여성 | 윈터 베드룸 팝 | 84 | 밤새 내린 첫눈, 단톡방에 쏟아지는 같은 사진과 아무도 안 밟은 길에 찍는 첫 발자국 (기쁨, 구성 E, 32줄+인트로 → 2:54) |
@@ -258,6 +259,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 79 | Reindeer on the Roof | 남성 | 소프트 팝 (윈터) | 78 | 산타를 기다리던 일곱 살과 아빠 서랍의 초록 펜, 이제 조카의 산타가 된 나 (공감, 구성 H, 30줄+연주 마무리) |
 | 80 | Goodnight, Christmas | 여성 | 소프트 자장가 발라드 (윈터) | 70 | 모두 잠든 크리스마스 밤 트리에게 건네는 인사, 헤드폰을 벗고 한 해를 내려놓는 마무리 (위로, 구성 K, 28줄+연주 마무리, 플레이리스트 마지막) |
 | 81 | Pajama Morning | 남성 | 라이트 아프로비트 팝 (윈터) | 106 | 파자마 차림 크리스마스 아침, 선물 뜯기 경주와 두 번째 팬케이크, 함께 눈뜬 게 제일 좋은 선물 (기쁨, 구성 B, 40줄, 추가 곡) |
+| 82 | Everyone's Asleep But Me | 여성 | 칠 인디 신스 팝 (윈터) | 98 | 크리스마스 밤 다들 잠든 차를 운전해 집에 데려다주는 길, 조용한 사랑 (기쁨·위로, 구성 C, 40줄, 후반부용·늘어지지 않게) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -281,6 +283,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-79: `soft pop, male vocal, gentle nostalgic warm tone, music box motif, soft piano, warm acoustic guitar, celesta and sleigh bells, light brushed percussion, soft strings, childhood Christmas Eve wonder, 78 BPM`
 - V4-80: `soft lullaby ballad, female vocal, tender airy hushed tone, gentle felt piano, soft music box, warm string pad, light celesta, barely-there soft brushes, sleepy Christmas night, 70 BPM`
 - V4-81: `light afrobeats pop, male vocal, warm smooth sunny tone, gentle bouncy syncopated groove, bright highlife guitar licks, soft log drum, warm round bass, shakers and sleigh bells, cheerful Christmas morning, 106 BPM`
+- V4-82: `chill indie synth pop, female vocal, warm calm clear tone, steady soft drum machine groove, warm analog synth pads, clean shimmering guitar, gentle bass, soft sleigh bells, late night winter drive, 98 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -304,6 +307,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 79 Reindeer on the Roof: reindeer on the roof, note in curly green, the pen in Dad's old drawer, the one who keeps the magic, some magic finds a new place to stay
 - 80 Goodnight, Christmas: goodnight Christmas, thank you for the light, let the little lights keep watch, whatever this year asked of you, set it down tonight, headphones off the music fades
 - 81 Pajama Morning: pajama morning, the best gift wasn't under the tree, second round of pancakes, unwrapping race, puzzle of my dog, phone's in a drawer
+- 82 Everyone's Asleep But Me: everyone's asleep but me, driving sleepy hearts back home, some love just drives you home at night, gas station coffee, snowplow waves
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails

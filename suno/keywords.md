@@ -137,7 +137,7 @@
 
 ## 🤝 따뜻한 마음과 하루의 마무리
 - 예상 밖의 친절 ✅ (Secret Santa)
-- 누군가에게 힘이 되어주는 기쁨
+- 누군가에게 힘이 되어주는 기쁨 ✅ (Everyone's Asleep But Me)
 - 고마운 마음을 전하는 날 ✅ (I Remembered)
 - 작은 약속을 지키는 마음 ✅ (First to Say It)
 - 다름을 알아가는 즐거움
