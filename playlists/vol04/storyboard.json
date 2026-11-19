@@ -1,0 +1,120 @@
+{
+ "world": "xmas",
+ "ritual": true,
+ "lead": 3.2,
+ "captions": true,
+ "intro": {
+  "sub": "여섯 벌 크리스마스 코디 · 크리스마스 마을"
+ },
+ "gaps": {
+  "4": 2.0,
+  "7": 2.0,
+  "10": 2.0,
+  "14": 2.0,
+  "17": 2.0
+ },
+ "segments": [
+  [
+   "canal",
+   "skate",
+   {
+    "top": "#9A6B47",
+    "bottom": "#3E4A6B",
+    "phones": "#F3E9D2",
+    "phones_style": "retro",
+    "prop": "gift",
+    "hat": "antlers",
+    "hat_color": "#D94040",
+    "coat": true,
+    "scarf": "#2E8B57",
+    "mitten": "#D94040"
+   },
+   1,
+   4
+  ],
+  [
+   "downtown",
+   "tram",
+   {
+    "top": "#7B1E3A",
+    "bottom": "#3A3A46",
+    "phones": "#F2C230",
+    "phones_style": "retro",
+    "prop": "hot",
+    "hat": "beanie",
+    "hat_color": "#F3E6CF",
+    "knit": true,
+    "scarf": "#F2C230"
+   },
+   5,
+   7
+  ],
+  [
+   "park",
+   "dogsled",
+   {
+    "top": "#D94040",
+    "bottom": "#2F3E46",
+    "phones": "#FFFFFF",
+    "phones_style": "fluffy",
+    "prop": "gift",
+    "hat": "beanie",
+    "hat_color": "#2E8B57",
+    "knit": true,
+    "mitten": "#2E8B57"
+   },
+   8,
+   10
+  ],
+  [
+   "market",
+   "carriage",
+   {
+    "top": "#2E7D4F",
+    "bottom": "#2B2B3A",
+    "phones": "#D94040",
+    "phones_style": "retro",
+    "prop": "hot",
+    "hat": "beanie",
+    "hat_color": "#D94040",
+    "coat": true,
+    "scarf": "#F3E6CF"
+   },
+   11,
+   14
+  ],
+  [
+   "lane",
+   "walk",
+   {
+    "top": "#F7F7F7",
+    "bottom": "#C62E2E",
+    "phones": "#D94040",
+    "phones_style": "fluffy",
+    "prop": "cocoa",
+    "scarf": "#D94040",
+    "mitten": "#D94040"
+   },
+   15,
+   17
+  ],
+  [
+   "sky",
+   "sleigh",
+   {
+    "top": "#C62E2E",
+    "bottom": "#2B2B3A",
+    "phones": "#F2C230",
+    "phones_style": "retro",
+    "prop": "cocoa",
+    "hat": "santa",
+    "hat_color": "#D94040",
+    "coat": true,
+    "mitten": "#FFFFFF"
+   },
+   18,
+   20
+  ]
+ ],
+ "tracks": {}
+}

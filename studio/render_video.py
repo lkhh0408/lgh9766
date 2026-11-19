@@ -26,7 +26,7 @@ ap.add_argument('-o', '--out', default='output.mp4', help='output video path')
 ap.add_argument('--gap', type=float, default=1.5, help='seconds of silence between songs')
 ap.add_argument('--seed', type=int, default=21, help='scenery seed (change it for a different walk)')
 ap.add_argument('--outfit', default='signature', help='mascot outfit from studio/character.py OUTFITS')
-ap.add_argument('--world', default='street', choices=['street', 'river', 'seaside'], help='scenery world: street (VOL.01), river (VOL.02 riverside park) or seaside (VOL.03: bike, open car, walk)')
+ap.add_argument('--world', default='street', choices=['street', 'river', 'seaside', 'xmas'], help='scenery world: street (VOL.01), river (VOL.02 riverside park), seaside (VOL.03: bike, open car, walk) or xmas (VOL.04: six Christmas neighbourhoods and rides)')
 ap.add_argument('--bar', default='card', choices=['bottom', 'card', 'card_notime'], help='progress bar: full width at the bottom, or a short line under the track card')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
@@ -875,6 +875,9 @@ if args.world == 'seaside':
     import seaside
     grp = [(m_, a_ - 1, b_ - 1) for m_, a_, b_ in SB.get('mobility', [['walk', 1, len(TRACKS)]])]
     RIDE = seaside.Ride(starts, ends, TOTAL, FPS, grp, SB.get('outfit', {}), SB.get('bike_color', '#2F3E6B'), SB.get('car_color', '#7ED6C4'))
+elif args.world == 'xmas':
+    import xmas_world
+    RIDE = xmas_world.XRide(starts, ends, TOTAL, FPS, SB['segments'])
 scroll = phase = 0.0
 for fi in range(nframes):
     t = fi / FPS
