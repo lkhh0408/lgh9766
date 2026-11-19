@@ -266,6 +266,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 85 | Thank You from Up Here | 남성 | 업리프팅 소울 팝 (윈터) | 102 | 하늘에서 내려다보며 한 해의 작은 친절들과 포기하지 않은 나에게 보내는 감사 (기쁨·위로, 구성 F, 36줄+연주, 최종 79 자리) |
 | 86 | Till Next December | 여성 | 모던 시티팝 (윈터) | 94 | 크리스마스 밤의 끝, 헤드폰을 벗고 리본을 챙겨 두며 간직하는 따스함 (기쁨·위로, 구성 K, 32줄+연주 마무리, 최종 80 후보 · 엔딩, 늘어지지 않게) |
 | 87 | Gather Round the Light | 듀엣+합창 | 업리프팅 팝 앤섬 (윈터) | 100 | 플레이리스트 장면들을 불러 모으는 피날레, 트리보다 그 둘레에 모인 우리, 헤드폰을 벗어도 계속되는 노래 (기쁨, 듀엣 G 변형 + 합창, 42줄, 최종 80 · 마지막 곡) |
+| 88 | Darling, It's Snowing | 남성 | 모던 크루너 스윙 (윈터) | 118 | 눈 오는 밤 휴대폰도 설거지도 두고 거실 트리 옆에서 추는 스윙 (기쁨, AABA+빅밴드 연주, 34줄. 사용자 요청: 크루너 캐롤 느낌, 가수 이름은 Styles에 안 씀, 옛날 녹음 느낌은 Exclude) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -295,6 +296,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-85: `uplifting soul pop, male vocal, warm bright heartfelt tone, gentle gospel-tinged backing choir, bright piano chords, warm round bass, soft clap groove, sleigh bells, light strings, grateful Christmas night, 102 BPM`
 - V4-86: `modern city pop, female vocal, soft warm smiling tone, smooth electric piano, clean funky guitar touches, warm round bass, gentle laid-back groove, soft sleigh bells, twinkling synth, end of Christmas night glow, 94 BPM`
 - V4-87: `uplifting pop anthem, male and female duet vocals, warm group singalong choir in the final chorus, bright piano, strummed acoustic guitar, gently building drums, sweeping strings, sleigh bells and glockenspiel, joyful grand finale, 100 BPM`
+- V4-88: `modern crooner swing, male vocal, smooth rich baritone, playful charming phrasing, polished big band arrangement with soft muted brass, lush strings, walking upright bass, brushed swing drums, sparkling piano fills, sleigh bells, cozy Christmas evening, clean modern mix, 118 BPM` (Exclude에 vinyl crackle, old recording, lo-fi 추가)
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -324,6 +326,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 85 Thank You from Up Here: thank you from up here, every kind face I met this year, never said it loud enough, stayed on the line, even the me who didn't quit
 - 86 Till Next December: till next December, keep the glow, pack the stars away, what we found is here to stay, take my headphones off, from open to close
 - 87 Gather Round the Light: gather round the light, never about the tree but who we gathered round, a seat we saved for you, headphones off but the song plays on, see you when the next snow comes (앞 곡 장면을 일부러 불러옴: first snow, cinnamon, tangled lights, ten containers, camera roll)
+- 88 Darling, It's Snowing: darling it's snowing all over town, that's what snow is for, the world can wait outside the door, leave the dishes leave your phone, dip you low
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
