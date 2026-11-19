@@ -243,6 +243,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 65 | Secret Santa | 남성 | 모던 펑크 팝 | 112 | 회사 마니또와 송년회, 시치미 떼는 일주일과 조용한 동료의 정체 공개, 함께 버틴 한 해에 건배 (공감, 구성 C, 40줄, 번역 "Secret Santa" = 시크릿 산타) |
 | 66 | Tangled Lights | 여성 | 윈터 R&B 팝 | 92 | 엉킨 전구를 같이 풀며 꾸미는 트리, 가지마다 걸린 한 해의 장면들 (기쁨, 구성 F, 30줄+연주) |
 | 67 | Kept a Little of Me | 남성 | 모던 포크 팝 (윈터) | 100 | 어린 시절 겨울 동네를 다시 찾은 하루, 썰매 언덕과 대문에 새긴 이름, 나를 기다려 준 장소 (위로, 구성 H, 34줄+연주 마무리. Porch Light와 겹치지 않게 고향 집 대신 추억의 장소) |
+| 68 | Let Go of the Wall | 여성 | 브라이트 신스 팝 (윈터) | 118 | 아홉 살 이후 처음 선 야외 스케이트장, 난간을 놓고 넘어지며 웃다 보니 어느새 달리고 있는 나 (기쁨, 구성 K, 36줄+연주 마무리) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -252,6 +253,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-65: `modern funk pop, male vocal, smooth playful tone with light falsetto touches, clean funky guitar riff, warm groovy bass, bright Rhodes stabs, crisp gentle drums, sleigh bells, cheeky office party fun, 112 BPM`
 - V4-66: `R&B pop, female vocal, silky warm tone, soft layered harmonies, warm Rhodes, warm round bass, gentle finger snaps and soft drums, twinkling celesta, cozy living room glow, 92 BPM` (Exclude에서 heavy bass 뺌)
 - V4-67: `modern folk pop, male vocal, warm gentle slightly husky tone, fingerpicked acoustic guitar, soft piano, light cello swells, gentle brushed drums, soft sleigh bell shimmer, nostalgic snowy hometown, 100 BPM`
+- V4-68: `bright synth pop, female vocal, light airy tone, shimmering synth arpeggios, punchy soft drum machine, bouncy synth bass, sparkling bells, gliding wintry feel, 118 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -261,6 +263,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 65 Secret Santa: secret Santa, who's got who, sticky note on my screen, we didn't always get along, we made it through, the quiet one had my name
 - 66 Tangled Lights: tangled lights, untangle each other, every ornament's a little piece of the year, our whole year hanging in a row, lift me up to place the star
 - 67 Kept a Little of Me: kept a little of me, some places keep a piece of you, names carved in the wooden gate, the hill behind the school, lighter than I came
+- 68 Let Go of the Wall: let go of the wall, falling's not so bad at all, every slip makes us laugh, rented skates, holding the rail like a lifeline, gliding after all
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
