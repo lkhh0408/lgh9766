@@ -264,7 +264,8 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 83 | Christmas Lights Tour | 남성 | 어쿠스틱 소울 팝 (윈터) | 100 | 동네 크리스마스 장식 순위 매기며 걷는 밤, 온 동네 불빛을 빌린 두 사람 (기쁨, 구성 B, 38줄, 최종 77 자리) |
 | 84 | Over the Rooftops | 여성 | 시네마틱 팝 (윈터) | 110 | 크리스마스 밤 꿈속 루돌프 썰매 비행, 하늘에서 내려다본 빙판·마켓·트램·우리 동네 (기쁨, 구성 A, 42줄, 최종 78 자리 · 하이라이트) |
 | 85 | Thank You from Up Here | 남성 | 업리프팅 소울 팝 (윈터) | 102 | 하늘에서 내려다보며 한 해의 작은 친절들과 포기하지 않은 나에게 보내는 감사 (기쁨·위로, 구성 F, 36줄+연주, 최종 79 자리) |
-| 86 | Till Next December | 여성 | 모던 시티팝 (윈터) | 94 | 크리스마스 밤의 끝, 헤드폰을 벗고 리본을 챙겨 두며 간직하는 따스함 (기쁨·위로, 구성 K, 32줄+연주 마무리, 최종 80 자리 · 엔딩, 늘어지지 않게) |
+| 86 | Till Next December | 여성 | 모던 시티팝 (윈터) | 94 | 크리스마스 밤의 끝, 헤드폰을 벗고 리본을 챙겨 두며 간직하는 따스함 (기쁨·위로, 구성 K, 32줄+연주 마무리, 최종 80 후보 · 엔딩, 늘어지지 않게) |
+| 87 | Gather Round the Light | 듀엣+합창 | 업리프팅 팝 앤섬 (윈터) | 100 | 플레이리스트 장면들을 불러 모으는 피날레, 트리보다 그 둘레에 모인 우리, 헤드폰을 벗어도 계속되는 노래 (기쁨, 듀엣 G 변형 + 합창, 42줄, 최종 80 · 마지막 곡) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -293,6 +294,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-84: `cinematic pop, female vocal, bright soaring clear tone, sweeping strings, twinkling celesta and sleigh bells, driving soft pop drums, warm synth bass, airy choir pads, magical flight feel, 110 BPM`
 - V4-85: `uplifting soul pop, male vocal, warm bright heartfelt tone, gentle gospel-tinged backing choir, bright piano chords, warm round bass, soft clap groove, sleigh bells, light strings, grateful Christmas night, 102 BPM`
 - V4-86: `modern city pop, female vocal, soft warm smiling tone, smooth electric piano, clean funky guitar touches, warm round bass, gentle laid-back groove, soft sleigh bells, twinkling synth, end of Christmas night glow, 94 BPM`
+- V4-87: `uplifting pop anthem, male and female duet vocals, warm group singalong choir in the final chorus, bright piano, strummed acoustic guitar, gently building drums, sweeping strings, sleigh bells and glockenspiel, joyful grand finale, 100 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -321,6 +323,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 84 Over the Rooftops: over the rooftops, every little light looks like somebody's wish, Merry Christmas from the sky, climb in fast, the town twinkles back hello
 - 85 Thank You from Up Here: thank you from up here, every kind face I met this year, never said it loud enough, stayed on the line, even the me who didn't quit
 - 86 Till Next December: till next December, keep the glow, pack the stars away, what we found is here to stay, take my headphones off, from open to close
+- 87 Gather Round the Light: gather round the light, never about the tree but who we gathered round, a seat we saved for you, headphones off but the song plays on, see you when the next snow comes (앞 곡 장면을 일부러 불러옴: first snow, cinnamon, tangled lights, ten containers, camera roll)
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails

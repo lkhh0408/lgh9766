@@ -66,5 +66,6 @@
 | 77 | Christmas Lights Tour (후보) | 83 |
 | 78 | Over the Rooftops (후보) | 84 |
 | 79 | Thank You from Up Here (후보) | 85 |
-| 80 | Till Next December (후보) | 86 |
+| 80 | Gather Round the Light (마지막 곡) | 87 |
+(77~79는 사용자가 선택 완료, 후보: 83 Christmas Lights Tour · 84 Over the Rooftops · 85 Thank You from Up Here · 86 Till Next December)
 빠진 곡: Kept a Little of Me, Ugly Sweater Party, First to Say It, Reindeer on the Roof, Goodnight, Christmas, Pajama Morning
