@@ -254,6 +254,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 75 | Ten Containers | 여성 | 웜 팝 발라드 (윈터) | 76 | 부모님 집 크리스마스 저녁, 아빠와 나란히 하는 설거지, 종이 가방 가득 싸 주신 반찬통 열 개 (공감, 구성 F, 30줄+연주. Porch Light와 겹치지 않게 반찬통 중심) |
 | 76 | Camera Roll | 남성 | 소프트 피아노 팝 (윈터) | 82 | 연말에 사진첩을 거꾸로 넘기며 세어 보는 올해의 작은 용기들, 사진 없는 3월까지 내 한 해 (위로, 구성 K, 32줄+연주 마무리. Dear Twenty·Highlight Reel과 겹치지 않게) |
 | 77 | When the City Whispers | 여성 | 드림 팝 (윈터) | 88 | 야근 후 버스를 보내고 먼 길로 걷는 눈 오는 밤, 조용해진 도시에서 다시 들리는 내 목소리 (기쁨, 구성 C, 34줄) |
+| 78 | First to Say It | 듀엣 | 어쿠스틱 포크 팝 듀엣 (윈터) | 90 | 이브 자정 직전 창가 카운트다운, 첫 "메리 크리스마스"를 먼저 말해 주려는 두 사람 (기쁨, 구성 G, 34줄) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -273,6 +274,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-75: `warm pop ballad, female vocal, tender clear tone, soft grand piano, gentle acoustic guitar, warm string pads, soft brushed drums, light bells, family dinner glow, 76 BPM`
 - V4-76: `soft piano pop, male vocal, warm reflective tone, intimate felt piano, soft string quartet, gentle pulsing kick, airy synth pad, light chimes, year-end reflection, 82 BPM`
 - V4-77: `dream pop, female vocal, hazy soft close tone, shimmering reverb guitars, lush pad swells, slow gentle drum machine, soft round bass, twinkling glockenspiel, snowy night stillness, 88 BPM`
+- V4-78: `soft acoustic folk-pop duet, male and female vocals, tender hushed harmonies, fingerpicked nylon guitar, soft piano, gentle cello, light shaker, distant church bell chimes, hushed midnight glow, 90 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -292,6 +294,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 75 Ten Containers: ten containers in a paper bag, love doesn't always say the words, take it dear, dishes side by side, every lid says take good care
 - 76 Camera Roll: camera roll, wasn't a big year but it was mine, small brave things, a hundred little days, gap in March, kept the hard parts out of frame
 - 77 When the City Whispers: when the city whispers, I can hear myself again, footsteps soft as pillows, took the long way, smile on a frosted car, the snow said take a walk
+- 78 First to Say It: I'll say it first, the first Merry Christmas from me to you, eleven fifty-nine alarm, heart on the fogged-up pane, my wish this year you again, let Christmas in
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
