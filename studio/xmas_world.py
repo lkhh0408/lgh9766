@@ -1,6 +1,6 @@
 """PLAY LIST 04 Christmas world for render_video.py (--world xmas).
 Six neighbourhoods, each with its own ride and outfit; songs inside a segment end with a stop + headphone tap + play bubble,
-and the change to the next segment happens under a snow burst in the gap. Opening: headphones go on; ending: they come off.
+and the change to the next segment happens behind advent-calendar doors in the gap. Opening: headphones go on; ending: they come off.
 Same interface as seaside.Ride: frame(t) -> (PIL RGB, night 0..1 for the UI, name-tag y offset, bubble alpha)."""
 import math, random
 import cairo, numpy as np
@@ -86,15 +86,40 @@ class XRide:
                     mid = (self.e[j] + nxt) / 2; ba *= 1 - sm((t - (mid - .45)) / .2)
         return reach, press, don, ba
 
+    def doors(self):
+        """closed advent-calendar doors with "Merry Christmas" in white round script, drawn once"""
+        if getattr(self, '_doors', None) is None:
+            from PIL import ImageDraw, ImageFont
+            import os
+            s = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H); c = cairo.Context(s)
+            c.rectangle(0, 0, W, H); c.set_source_rgb(*R.hx('#B8323A')); c.fill()
+            c.set_line_width(6); c.set_source_rgb(*R.L); c.move_to(W / 2, 0); c.line_to(W / 2, H); c.stroke()
+            c.set_line_width(12); c.set_source_rgb(*R.hx('#F2C230'))
+            R.rrect(c, 60, 60, W / 2 - 100, H - 120, 30); c.stroke(); R.rrect(c, W / 2 + 40, 60, W / 2 - 100, H - 120, 30); c.stroke()
+            for x in (W / 2 - 40, W / 2 + 40): c.arc(x, H / 2 + 170, 14, 0, 6.3); R.shape(c, R.hx('#F2C230'), R.L)
+            s.flush()
+            im = Image.fromarray(np.ndarray((H, W, 4), np.uint8, s.get_data())[..., [2, 1, 0]].copy()).convert('RGBA')
+            d = ImageDraw.Draw(im); ft = ImageFont.truetype(os.path.join(os.path.dirname(__file__), 'assets', 'fonts', 'Pacifico-Regular.ttf'), 170)
+            txt = 'Merry Christmas'; bb = d.textbbox((0, 0), txt, font=ft)
+            x, y = W / 2 - (bb[2] - bb[0]) / 2 - bb[0], H / 2 - (bb[3] - bb[1]) / 2 - bb[1] - 40
+            d.text((x + 4, y + 6), txt, font=ft, fill=(90, 20, 30, 160)); d.text((x, y), txt, font=ft, fill=(255, 255, 255))
+            a = np.array(im.convert('RGB')); bgra = np.dstack([a[..., 2], a[..., 1], a[..., 0], np.full(a.shape[:2], 255, np.uint8)]).copy()
+            self._doors = cairo.ImageSurface.create_for_data(bgra, cairo.FORMAT_ARGB32, W, H); self._dbuf = bgra
+        return self._doors
+
     def burst(self, c, t):
+        """segment change: advent-calendar doors slide shut after the headphone tap, the scene, ride and outfit
+        change behind them, and they slide open on the next place"""
+        self.cover = 0.0
         for i, k in self.cuts.items():
-            mid = (self.e[i] + self.s[i + 1]) / 2; v = (t - mid) / .55
-            if -1 < v < 1:
-                a = 1 - abs(v); r = random.Random(i)
-                c.set_source_rgba(1, 1, 1, .9 * sm(a * 1.4)); c.paint()
-                for _ in range(130):
-                    x, y, sz = r.uniform(0, W), r.uniform(0, H), r.uniform(10, 64)
-                    c.arc(x + 300 * v, y + 200 * v, sz * a, 0, 6.3); c.set_source_rgba(1, 1, 1, .92 * a); c.fill()
+            mid = (self.e[i] + self.s[i + 1]) / 2
+            if mid - .6 < t < mid + .8:
+                a = sm((t - (mid - .55)) / .5) if t < mid else 1 - sm((t - (mid + .05)) / .7)
+                if a <= 0: continue
+                self.cover = a
+                off = W / 2 * (1 - a); ds = self.doors()
+                c.save(); c.rectangle(0, 0, W / 2 - off, H); c.clip(); c.set_source_surface(ds, -off, 0); c.paint(); c.restore()
+                c.save(); c.rectangle(W / 2 + off, 0, W / 2, H); c.clip(); c.set_source_surface(ds, off, 0); c.paint(); c.restore()
 
     def frame(self, t):
         k = self.seg_at(t); scene, ride, outfit, _, _ = self.segs[k]

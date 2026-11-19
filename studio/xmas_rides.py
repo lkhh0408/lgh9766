@@ -118,9 +118,35 @@ def skate(c, x, gy, t, outfit, moving=1.0, **kw):
         for k in range(6):
             a = (t * 7 + k * .5) % 1; c.arc(push[0] - 10 - 50 * a, push[1] + 10 - 18 * a * (1 - a) * 4, 3 * (1 - a) + 1, 0, 6.3); c.set_source_rgba(1, 1, 1, .9 * (1 - a)); c.fill()
 
+def tram_people(c, wx, wy, t):
+    """two passengers that live a little: a man reading a newspaper (lowers it now and then) and a kid who waves"""
+    px = wx + 50; c.set_line_width(3)
+    rrect(c, px - 22, wy + 92, 44, 90, 14); shape(c, hx('#2C3E66'), L)
+    c.arc(px, wy + 72, 20, 0, 6.3); shape(c, SKIN, L); c.arc(px, wy + 66, 21, math.pi, 2 * math.pi); c.close_path(); shape(c, hx('#5A3B2E'), L)
+    c.arc(px + 7, wy + 74, 2.5, 0, 6.3); c.arc(px + 15, wy + 74, 2.5, 0, 6.3); c.set_source_rgb(*L); c.fill()
+    u = t % 9; low = min(1, max(0, (u - 5) / .4), max(0, (8 - u) / .4)) if 5 < u < 8 else 0
+    flip = max(0, 1 - abs((t % 4.5) - .4) / .4)
+    py = wy + 54 + 46 * low
+    rrect(c, px - 30, py, 68, 66, 4); shape(c, hx('#F4EEDC'), L)
+    c.set_line_width(2); c.set_source_rgba(*L, .6)
+    for k in range(4): c.move_to(px - 22, py + 14 + k * 12); c.line_to(px + 28, py + 14 + k * 12); c.stroke()
+    if flip > 0: c.move_to(px + 4, py); c.line_to(px + 4 + 30 * flip, py + 6); c.line_to(px + 4 + 30 * flip, py + 60); c.line_to(px + 4, py + 66); c.close_path(); c.set_line_width(2); shape(c, hx('#FFFFFF'), L)
+    for hx_ in (px - 30, px + 38): c.arc(hx_, py + 34, 7, 0, 6.3); c.set_line_width(2.5); shape(c, SKIN, L)
+    # kid
+    kx = wx + 300; c.set_line_width(3)
+    rrect(c, kx - 17, wy + 124, 34, 60, 12); shape(c, hx('#E2574C'), L)
+    c.arc(kx, wy + 106, 17, 0, 6.3); shape(c, SKIN, L)
+    c.arc(kx, wy + 100, 18, math.pi, 2 * math.pi); c.close_path(); shape(c, hx('#2E8B57'), L); c.arc(kx, wy + 80, 6, 0, 6.3); shape(c, (1, 1, 1), L)
+    c.arc(kx - 7, wy + 108, 2.2, 0, 6.3); c.arc(kx - 15, wy + 108, 2.2, 0, 6.3); c.set_source_rgb(*L); c.fill()
+    u = t % 7; wave = 1 if 1 < u < 3 else 0
+    if wave:
+        a = math.sin(t * 14) * .35; ex, ey = kx - 24 - 8 * math.sin(a), wy + 92 - 26 * math.cos(a)
+        c.set_line_width(7); c.set_source_rgb(*hx('#E2574C')); c.move_to(kx - 12, wy + 132); c.line_to(ex, ey + 6); c.stroke()
+        c.arc(ex, ey, 6, 0, 6.3); c.set_line_width(2.5); shape(c, SKIN, L)
+
 # ---------------- 2. tram ----------------
 def tram(c, x, gy, t, outfit, lit=False, moving=1.0, **kw):
-    """red Christmas tram seen from the side; Haru stands inside holding a ceiling strap"""
+    """red Christmas tram seen from the side; Haru stands inside, nodding to the music, with two passengers"""
     sway = 0.0; bump = 0.0
     w, h = 640, 300; x0, y0 = x - w / 2, gy - 40 - h - bump
     c.save(); c.translate(x, gy); c.rotate(sway); c.translate(-x, -gy)
@@ -136,14 +162,26 @@ def tram(c, x, gy, t, outfit, lit=False, moving=1.0, **kw):
     rrect(c, wx, wy, ww, wh, 18); shape(c, hx('#FFF2D0') if lit else hx('#EAF4FF'), L)
     c.save(); rrect(c, wx, wy, ww, wh, 18); c.clip()
     c.set_line_width(5); c.set_source_rgb(*hx('#B0B6C8')); c.move_to(wx, wy + 24); c.line_to(wx + ww, wy + 24); c.stroke()
-    for k, px in enumerate((wx + 50, wx + 300)):   # passengers (simple, not Haru)
-        c.set_line_width(3); rrect(c, px - 22, wy + 92, 44, 90, 14); shape(c, hx(('#2C3E66', '#7B1E3A')[k]), L)
-        c.arc(px, wy + 72, 20, 0, 6.3); shape(c, SKIN, L); c.arc(px, wy + 66, 21, math.pi, 2 * math.pi); c.close_path(); shape(c, hx(('#5A3B2E', '#2B2541')[k]), L)
+    tram_people(c, wx, wy, t)
     hip = (x - 40, wy + 200)
-    strap = (x - 10, wy + 40)
-    c.set_line_width(3); c.set_source_rgb(*L); c.move_to(strap[0], wy + 24); c.line_to(strap[0], strap[1] - 8); c.stroke()
-    c.arc(strap[0], strap[1], 9, 0, 6.3); c.set_line_width(4); c.set_source_rgb(*hx(GOLD)); c.stroke()
-    pose(c, hip, t, outfit, ((hip[0] - 14, hip[1] + 86), (hip[0] + 16, hip[1] + 86)), ((hip[0] - 30, hip[1] - 20), strap), **kw)
+    # empty straps sway with the ride; Haru stands free, nodding and swaying to the music
+    for k, sx in enumerate((x - 120, x + 30, x + 110)):
+        a = .12 * math.sin(t * 2.1 + k) * moving; ex, ey = sx + 34 * math.sin(a), wy + 24 + 34 * math.cos(a)
+        c.set_line_width(3); c.set_source_rgb(*L); c.move_to(sx, wy + 24); c.line_to(ex, ey - 8); c.stroke()
+        c.arc(ex, ey, 9, 0, 6.3); c.set_line_width(4); c.set_source_rgb(*hx(GOLD)); c.stroke()
+    beat = t * math.pi * 1.9; nod = abs(math.sin(beat)); sw = math.sin(beat / 2)
+    kw2 = dict(kw); kw2.setdefault('head_dy', 0.0); kw2['head_dy'] += 5 * nod
+    pose(c, hip, t, outfit, ((hip[0] - 14, hip[1] + 86), (hip[0] + 16, hip[1] + 86)),
+         ((hip[0] - 24 - 6 * sw, hip[1] - 6), (hip[0] + 24 + 6 * sw, hip[1] - 10)), lean=.05 * sw, **kw2)
+    # window reflections: light streaks and coloured lights flowing past while the tram moves
+    if moving > .02:
+        for k in range(4):
+            sx = wx + ww + 60 - ((t * 260 + k * 150) % (ww + 200))
+            c.move_to(sx, wy); c.line_to(sx + 40, wy); c.line_to(sx - 30, wy + wh); c.line_to(sx - 70, wy + wh); c.close_path()
+            c.set_source_rgba(1, 1, 1, .28 * moving); c.fill()
+        for k in range(7):
+            bx = wx + ww + 30 - ((t * 420 + k * 71) % (ww + 60)); by = wy + 40 + (k * 37) % 120
+            glow(c, bx, by, 18, (hx(RED), hx(GOLD), hx(GREEN), hx('#5BA8FF'))[k % 4], .45 * moving)
     c.restore()
     c.set_line_width(5); c.set_source_rgb(*L)
     for k in (1, 2): c.move_to(wx + ww * k / 3, wy); c.line_to(wx + ww * k / 3, wy + wh); c.stroke()

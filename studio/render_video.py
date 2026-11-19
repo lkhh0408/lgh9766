@@ -29,6 +29,7 @@ ap.add_argument('--outfit', default='signature', help='mascot outfit from studio
 ap.add_argument('--world', default='street', choices=['street', 'river', 'seaside', 'xmas'], help='scenery world: street (VOL.01), river (VOL.02 riverside park), seaside (VOL.03: bike, open car, walk) or xmas (VOL.04: six Christmas neighbourhoods and rides)')
 ap.add_argument('--bar', default='card', choices=['bottom', 'card', 'card_notime'], help='progress bar: full width at the bottom, or a short line under the track card')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
+ap.add_argument('--start', type=float, default=0.0, help='start the video at this many seconds (for a short check clip)')
 ap.add_argument('--until', type=float, help='stop after this many seconds (to re-render only the start of a video and join it to the rest)')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
                 'Lyric timings are read from a timing/ folder next to it (see align_lyrics.py).')
@@ -849,7 +850,7 @@ def draw_nametag(frame, t, ba, bob):
     if not INTRO: return
     L = (43, 37, 65)
     ov = Image.new('RGBA', frame.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
-    ta = tag_alpha(t)
+    ta = tag_alpha(t) * (1 - getattr(RIDE, 'cover', 0.0))   # hidden while a scene change covers the screen
     if ta > 0:
         sc = .6 + .4 * _ease(ta * 1.2); side = _ease(min(1, ba * 1.5))
         ft = ImageFont.truetype(os.path.join(ASSETS, 'fonts', 'Outfit-800.ttf'), int(30 * sc)); w = d.textlength('HARU', font=ft)
@@ -867,7 +868,7 @@ def draw_nametag(frame, t, ba, bob):
             d.text((x0 + 28, y0 + 102), INTRO.get('sub', ''), font=ImageFont.truetype(F_KO, 22), fill=(90, 90, 110, int(255 * a)))
     frame.alpha_composite(ov)
 ff = None if STILLS else subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
-                       '-i', MIX, '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
+                       '-ss', f'{args.start:.4f}', '-i', MIX, '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
                        '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '384k', '-aac_coder', 'twoloop', '-ar', '48000', '-shortest', '-movflags', '+faststart',
                        args.out], stdin=subprocess.PIPE)
 nframes = int(TOTAL * FPS)
@@ -884,7 +885,7 @@ scroll = phase = 0.0
 for fi in range(nframes):
     t = fi / FPS
     walk, reach, press, ba, bs = motion(t)
-    if STILLS is not None and fi not in STILLS:
+    if (STILLS is not None and fi not in STILLS) or (STILLS is None and fi < int(round(args.start * FPS))):
         scroll += SPEED * walk / FPS; phase += 2 * math.pi * 0.85 * walk / FPS; continue
     CUR_DON = don_at(t)
     if RIDE:
