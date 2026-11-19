@@ -246,6 +246,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 68 | Let Go of the Wall | 여성 | 브라이트 신스 팝 (윈터) | 118 | 아홉 살 이후 처음 선 야외 스케이트장, 난간을 놓고 넘어지며 웃다 보니 어느새 달리고 있는 나 (기쁨, 구성 K, 36줄+연주 마무리) |
 | 69 | Ugly Sweater Party | 남성 | 댄스 팝 (윈터) | 122 | 원룸에 열두 명이 모인 이브 홈 파티, 양말 댄스와 같이 놀게 된 이웃, 눈 감은 단체 사진 (기쁨, 구성 B, 40줄, 피크 시작) |
 | 70 | No Plus-One | 여성 | 뉴디스코 팝 (윈터) | 120 | 2인석뿐인 크리스마스 거리, 의자 하나 더 끌어와 셋이 찍는 셀카와 포장마차 저녁, 친구라는 이름의 데이트 (공감, 구성 A, 42줄, 피크) |
+| 71 | Start a Tradition | 남성 | 모던 팝 (윈터) | 108 | 처음 함께 맞는 크리스마스, 텅 빈 집에서 하나씩 만들어 가는 둘만의 전통 (기쁨, 구성 C, 40줄, 쿨다운 시작) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -258,6 +259,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-68: `bright synth pop, female vocal, light airy tone, shimmering synth arpeggios, punchy soft drum machine, bouncy synth bass, sparkling bells, gliding wintry feel, 118 BPM`
 - V4-69: `dance pop, male vocal, bright smooth tone, groovy soft four-on-the-floor beat, funky guitar chops, bubbly synth bass, festive bells and handclaps, friendly group singalong hooks, house party energy, 122 BPM`
 - V4-70: `nu-disco pop, female vocal, confident sparkling tone, light groovy disco bassline, glossy string stabs, funky clean guitar, crisp hi-hats, glittery synths, festive bells, friends night out energy, 120 BPM`
+- V4-71: `modern pop, male vocal, warm earnest tone, bright piano chords, clean electric guitar, soft synth pads, gentle groove drums, sleigh bells, light string swells, heartfelt first Christmas, 108 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -270,6 +272,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 68 Let Go of the Wall: let go of the wall, falling's not so bad at all, every slip makes us laugh, rented skates, holding the rail like a lifeline, gliding after all
 - 69 Ugly Sweater Party: ugly sweater party, dancing in our socks, not about how big the room is but who's in it, neighbor knocked, half of us blink, ho-ho-ho hey
 - 70 No Plus-One: no plus-one, every table's set for two, who said Christmas needs a couple, group selfie, here's to the ones who came as friends
+- 71 Start a Tradition: start a tradition, laugh about at eighty, pancakes shaped like snowmen, matching socks, wish on a paper star, same spot every year
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails

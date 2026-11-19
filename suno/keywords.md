@@ -25,7 +25,7 @@
 - 함께하는 평범한 저녁 ✅ (Nothing Special)
 - 사랑하는 사람과의 주말 ✅ (Cinnamon and You)
 - 닮아가는 두 사람
-- 미래를 함께 그리는 마음
+- 미래를 함께 그리는 마음 ✅ (Start a Tradition)
 
 ## ☀️ 작은 행복과 일상
 - 작은 일상의 행복
