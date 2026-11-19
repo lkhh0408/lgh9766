@@ -95,7 +95,7 @@
 - 친구의 좋은 소식을 축하하는 마음
 - 언제 만나도 편안한 사이 ✅ (Same Page)
 - 평범한 하루를 특별하게 만드는 친구 ✅ (Ugly Sweater Party)
-- 서로 다른 길에서도 이어지는 우정
+- 서로 다른 길에서도 이어지는 우정 ✅ (Your Morning, My Night)
 - 새로운 친구를 만나는 순간 ✅ (Run Club)
 - 함께라서 더 즐거운 시간 ✅ (Fountain Square)
 
