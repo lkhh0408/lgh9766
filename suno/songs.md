@@ -244,6 +244,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 66 | Tangled Lights | 여성 | 윈터 R&B 팝 | 92 | 엉킨 전구를 같이 풀며 꾸미는 트리, 가지마다 걸린 한 해의 장면들 (기쁨, 구성 F, 30줄+연주) |
 | 67 | Kept a Little of Me | 남성 | 모던 포크 팝 (윈터) | 100 | 어린 시절 겨울 동네를 다시 찾은 하루, 썰매 언덕과 대문에 새긴 이름, 나를 기다려 준 장소 (위로, 구성 H, 34줄+연주 마무리. Porch Light와 겹치지 않게 고향 집 대신 추억의 장소) |
 | 68 | Let Go of the Wall | 여성 | 브라이트 신스 팝 (윈터) | 118 | 아홉 살 이후 처음 선 야외 스케이트장, 난간을 놓고 넘어지며 웃다 보니 어느새 달리고 있는 나 (기쁨, 구성 K, 36줄+연주 마무리) |
+| 69 | Ugly Sweater Party | 남성 | 댄스 팝 (윈터) | 122 | 원룸에 열두 명이 모인 이브 홈 파티, 양말 댄스와 같이 놀게 된 이웃, 눈 감은 단체 사진 (기쁨, 구성 B, 40줄, 피크 시작) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -254,6 +255,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-66: `R&B pop, female vocal, silky warm tone, soft layered harmonies, warm Rhodes, warm round bass, gentle finger snaps and soft drums, twinkling celesta, cozy living room glow, 92 BPM` (Exclude에서 heavy bass 뺌)
 - V4-67: `modern folk pop, male vocal, warm gentle slightly husky tone, fingerpicked acoustic guitar, soft piano, light cello swells, gentle brushed drums, soft sleigh bell shimmer, nostalgic snowy hometown, 100 BPM`
 - V4-68: `bright synth pop, female vocal, light airy tone, shimmering synth arpeggios, punchy soft drum machine, bouncy synth bass, sparkling bells, gliding wintry feel, 118 BPM`
+- V4-69: `dance pop, male vocal, bright smooth tone, groovy soft four-on-the-floor beat, funky guitar chops, bubbly synth bass, festive bells and handclaps, friendly group singalong hooks, house party energy, 122 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -264,6 +266,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 66 Tangled Lights: tangled lights, untangle each other, every ornament's a little piece of the year, our whole year hanging in a row, lift me up to place the star
 - 67 Kept a Little of Me: kept a little of me, some places keep a piece of you, names carved in the wooden gate, the hill behind the school, lighter than I came
 - 68 Let Go of the Wall: let go of the wall, falling's not so bad at all, every slip makes us laugh, rented skates, holding the rail like a lifeline, gliding after all
+- 69 Ugly Sweater Party: ugly sweater party, dancing in our socks, not about how big the room is but who's in it, neighbor knocked, half of us blink, ho-ho-ho hey
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
