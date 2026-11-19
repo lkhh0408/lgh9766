@@ -46,7 +46,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - **장르에 맞춰 가사 총 줄 수를 정해요** (실제 Suno 결과로 맞춘 기준, 2026-11-14). 너무 길면 지루해서 안 들어요.
   - 신나는 팝(아이돌, 일렉트로닉, 하우스): 약 40~42줄 / 중간(라틴, 힙합, 어쿠스틱): 약 38~40줄 / 느린 곡(R&B, 로파이): 약 28줄
   - 연주 구간([Intro], [Instrumental Break], [Instrumental Outro])은 하나에 약 20~30초가 늘어나서 **곡마다 최대 1개**만 넣어요.
-  - 실제 결과: Same Page 37줄/연주 없음 2:43, Fountain Square 42줄/없음 3:05, One More Page 30줄/2개 2:47, Encore Room 36줄/없음 2:11(짧음) → 42줄/인트로 2:40, Table for One 26줄/2개 3:17, Laptop Closed 38줄/2개 3:22, Highlight Reel 32줄/2개 3:28(김), Nothing Special 40줄/없음 3:24·3:08(칠 R&B 듀엣)
+  - 실제 결과: Snow on the Sill 32줄/인트로 1개 2:54(베드룸 팝 84), Same Page 37줄/연주 없음 2:43, Fountain Square 42줄/없음 3:05, One More Page 30줄/2개 2:47, Encore Room 36줄/없음 2:11(짧음) → 42줄/인트로 2:40, Table for One 26줄/2개 3:17, Laptop Closed 38줄/2개 3:22, Highlight Reel 32줄/2개 3:28(김), Nothing Special 40줄/없음 3:24·3:08(칠 R&B 듀엣)
   - 살짝 긴 곡은 영상 만들 때 앞뒤 연주 부분을 잘라 3:15 안으로 맞출 수 있어요(자연스러운 페이드).
 
 ## 곡 구성 다양하게 (VOL.03 16번부터)
@@ -236,13 +236,16 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 ## VOL.04 (크리스마스 편, 파일 61~80, 곡 순서 = 에너지 곡선, `playlists/vol04/PLAN.md`)
 | # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
 |---|---|---|---|---|---|
-| 61 | Snow on the Sill | 여성 | 윈터 베드룸 팝 | 84 | 밤새 내린 첫눈, 단톡방에 쏟아지는 같은 사진과 아무도 안 밟은 길에 찍는 첫 발자국 (기쁨, 구성 E, 32줄+인트로) |
+| 61 | Snow on the Sill | 여성 | 윈터 베드룸 팝 | 84 | 밤새 내린 첫눈, 단톡방에 쏟아지는 같은 사진과 아무도 안 밟은 길에 찍는 첫 발자국 (기쁨, 구성 E, 32줄+인트로 → 2:54) |
+| 62 | Humming on the 8:15 | 남성 | 윈터 인디 팝 | 96 | 12월 아침 꽉 찬 지하철, 이어폰에서 새어 나온 캐롤을 다 같이 흥얼거리는 출근길 (공감, 구성 B, 38줄) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
+- V4-62: `indie pop, male vocal, warm friendly tone, jangly clean electric guitar, bouncy bass, light tambourine and sleigh bells, crisp soft drums, glockenspiel hook, cozy city winter morning, 96 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
+- 62 Humming on the 8:15: humming on the 8:15, the same tune, squeezed in tight, Santa hat barista, December's riding with us, nine to five
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
