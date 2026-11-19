@@ -233,6 +233,17 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 
 다음 곡 후보 방향: 남성 또는 듀엣 보컬, 칠 R&B, 재즈 팝, 잔잔한 시티팝, 피아노 팝, 인디 포크
 
+## VOL.04 (크리스마스 편, 파일 61~80, 곡 순서 = 에너지 곡선, `playlists/vol04/PLAN.md`)
+| # | 제목 | 보컬 | 장르 | BPM | 한 줄 소개 |
+|---|---|---|---|---|---|
+| 61 | Snow on the Sill | 여성 | 윈터 베드룸 팝 | 84 | 밤새 내린 첫눈, 단톡방에 쏟아지는 같은 사진과 아무도 안 밟은 길에 찍는 첫 발자국 (기쁨, 구성 E, 32줄+인트로) |
+
+곡별 Styles 앞부분:
+- V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
+
+사용한 핵심 표현 (VOL.04):
+- 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
+
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
 - 02 Balcony Tomatoes: little by little(⚠ VOL.01 곡 제목과 겹침), good things grow, turning red, watering can
