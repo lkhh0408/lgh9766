@@ -104,7 +104,7 @@
 - 학창 시절의 추억 ✅ (Encore Room)
 - 오래된 사진 속 우리
 - 처음 좋아했던 음악
-- 익숙한 동네의 풍경
+- 익숙한 동네의 풍경 ✅ (Christmas Lights Tour)
 - 가족과 함께하는 식사 ✅ (Ten Containers)
 - 집밥이 주는 따뜻함 ✅ (Porch Light)
 - 나를 기다리는 사람이 있는 집 ✅ (Porch Light)
