@@ -29,6 +29,7 @@ ap.add_argument('--outfit', default='signature', help='mascot outfit from studio
 ap.add_argument('--world', default='street', choices=['street', 'river', 'seaside', 'xmas'], help='scenery world: street (VOL.01), river (VOL.02 riverside park), seaside (VOL.03: bike, open car, walk) or xmas (VOL.04: six Christmas neighbourhoods and rides)')
 ap.add_argument('--bar', default='card', choices=['bottom', 'card', 'card_notime'], help='progress bar: full width at the bottom, or a short line under the track card')
 ap.add_argument('--stills', help='comma-separated times in seconds: save PNG stills instead of rendering the video')
+ap.add_argument('--until', type=float, help='stop after this many seconds (to re-render only the start of a video and join it to the rest)')
 ap.add_argument('--scenes', help='storyboard JSON with per-song scenes and lyric beats (default: storyboard.json or scenes.json in the songs folder). '
                 'Lyric timings are read from a timing/ folder next to it (see align_lyrics.py).')
 args = ap.parse_args()
@@ -870,6 +871,7 @@ ff = None if STILLS else subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error',
                        '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '384k', '-aac_coder', 'twoloop', '-ar', '48000', '-shortest', '-movflags', '+faststart',
                        args.out], stdin=subprocess.PIPE)
 nframes = int(TOTAL * FPS)
+if args.until: nframes = min(nframes, int(round(args.until * FPS)))
 RIDE = None
 if args.world == 'seaside':
     import seaside

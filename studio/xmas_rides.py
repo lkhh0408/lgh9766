@@ -88,22 +88,33 @@ def snap(t, every=5.0, dur=.9, off=0.0):
 
 # ---------------- 1. ice skates ----------------
 def skate(c, x, gy, t, outfit, moving=1.0, **kw):
-    """leaning forward; arms swing open and cross in front, legs cross over (an X) with every step"""
-    ph = t * 2 * math.pi * .55; s = math.sin(ph) * moving; gy -= 12
-    hip = (x, gy - 78 - 4 * abs(s))
-    d = 6 + 34 * abs(math.cos(ph)) * moving              # how far the crossed feet spread
-    ahead = (x + 10 + d, gy)                               # far leg's foot lands ahead ...
-    behind = (x - d, gy - 14 * abs(s))                     # ... near leg crosses over behind it, lifted as it steps
-    feet = (ahead, behind); push = behind
-    cr = math.cos(ph) * moving   # +1 arms open wide, -1 arms crossed in front
-    hands = ((x - 4 - 60 * cr, hip[1] - 50 - 14 * abs(cr)), (x + 14 + 60 * cr, hip[1] - 44 - 10 * abs(cr)))
+    """speed skater: bent low with both hands behind the back; the two legs take turns gliding under the body
+    and pushing out behind. Feet are placed on the ice, then turned back by the lean so the boots stay on the blades."""
+    ph = t * 2 * math.pi * .6; gy -= 12; feet = []
+    for j in (0, 1):
+        u = (ph / (2 * math.pi) + j * .5) % 1
+        if u < .5: fx, fy = x + 18 - 30 * (u / .5), gy                      # glide: the foot runs back under the body
+        else:                                                               # push: out behind, lifted, then back in
+            v = (u - .5) / .5; a = math.sin(math.pi * v)
+            fx = x - 12 - 72 * a + (30 * v if v > .5 else 0) * (1 - a); fy = gy - 18 * a
+        feet.append((x + (fx - x) * moving, gy + (fy - gy) * moving))
+    hip = (x, gy - 76 + 4 * abs(math.sin(ph)) * moving)
+    hands = ((x - 34, hip[1] - 6), (x - 26, hip[1] - 2))
+    ln = .45 * moving; fixed = []
+    for fx, fy in feet:                                                     # never further than the leg can reach
+        dx, dy = fx - hip[0], fy - hip[1]; d = math.hypot(dx, dy)
+        if d > 84: dx, dy = dx * 84 / d, dy * 84 / d
+        fixed.append((hip[0] + dx, hip[1] + dy))
+    feet = fixed; co, si = math.cos(-ln), math.sin(-ln)
+    loc = tuple((hip[0] + (fx - hip[0]) * co - (fy - hip[1]) * si, hip[1] + (fx - hip[0]) * si + (fy - hip[1]) * co) for fx, fy in feet)
     shadow(c, x, gy + 14, 70)
-    pose(c, hip, t, outfit, feet, hands, lean=.22 * moving, wind=.6 * moving, **kw)
+    pose(c, hip, t, outfit, loc, hands, lean=ln, wind=.6 * moving, **kw)
     for f in feet: blade(c, f)
     c.set_line_width(2.5)
     for k in range(int(4 * moving + .5)):
         c.move_to(x - 30 - k * 70, gy + 14 + k * 2); c.line_to(x - 100 - k * 70, gy + 16 + k * 2); c.set_source_rgba(1, 1, 1, .85 - k * .18); c.stroke()
     if moving > .3:
+        push = min(feet, key=lambda f: f[0])
         for k in range(6):
             a = (t * 7 + k * .5) % 1; c.arc(push[0] - 10 - 50 * a, push[1] + 10 - 18 * a * (1 - a) * 4, 3 * (1 - a) + 1, 0, 6.3); c.set_source_rgba(1, 1, 1, .9 * (1 - a)); c.fill()
 
