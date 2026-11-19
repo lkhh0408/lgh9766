@@ -255,6 +255,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 76 | Camera Roll | 남성 | 소프트 피아노 팝 (윈터) | 82 | 연말에 사진첩을 거꾸로 넘기며 세어 보는 올해의 작은 용기들, 사진 없는 3월까지 내 한 해 (위로, 구성 K, 32줄+연주 마무리. Dear Twenty·Highlight Reel과 겹치지 않게) |
 | 77 | When the City Whispers | 여성 | 드림 팝 (윈터) | 88 | 야근 후 버스를 보내고 먼 길로 걷는 눈 오는 밤, 조용해진 도시에서 다시 들리는 내 목소리 (기쁨, 구성 C, 34줄) |
 | 78 | First to Say It | 듀엣 | 어쿠스틱 포크 팝 듀엣 (윈터) | 90 | 이브 자정 직전 창가 카운트다운, 첫 "메리 크리스마스"를 먼저 말해 주려는 두 사람 (기쁨, 구성 G, 34줄) |
+| 79 | Reindeer on the Roof | 남성 | 소프트 팝 (윈터) | 78 | 산타를 기다리던 일곱 살과 아빠 서랍의 초록 펜, 이제 조카의 산타가 된 나 (공감, 구성 H, 30줄+연주 마무리) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -275,6 +276,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-76: `soft piano pop, male vocal, warm reflective tone, intimate felt piano, soft string quartet, gentle pulsing kick, airy synth pad, light chimes, year-end reflection, 82 BPM`
 - V4-77: `dream pop, female vocal, hazy soft close tone, shimmering reverb guitars, lush pad swells, slow gentle drum machine, soft round bass, twinkling glockenspiel, snowy night stillness, 88 BPM`
 - V4-78: `soft acoustic folk-pop duet, male and female vocals, tender hushed harmonies, fingerpicked nylon guitar, soft piano, gentle cello, light shaker, distant church bell chimes, hushed midnight glow, 90 BPM`
+- V4-79: `soft pop, male vocal, gentle nostalgic warm tone, music box motif, soft piano, warm acoustic guitar, celesta and sleigh bells, light brushed percussion, soft strings, childhood Christmas Eve wonder, 78 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -295,6 +297,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 76 Camera Roll: camera roll, wasn't a big year but it was mine, small brave things, a hundred little days, gap in March, kept the hard parts out of frame
 - 77 When the City Whispers: when the city whispers, I can hear myself again, footsteps soft as pillows, took the long way, smile on a frosted car, the snow said take a walk
 - 78 First to Say It: I'll say it first, the first Merry Christmas from me to you, eleven fifty-nine alarm, heart on the fogged-up pane, my wish this year you again, let Christmas in
+- 79 Reindeer on the Roof: reindeer on the roof, note in curly green, the pen in Dad's old drawer, the one who keeps the magic, some magic finds a new place to stay
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
