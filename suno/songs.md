@@ -296,7 +296,8 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-85: `uplifting soul pop, male vocal, warm bright heartfelt tone, gentle gospel-tinged backing choir, bright piano chords, warm round bass, soft clap groove, sleigh bells, light strings, grateful Christmas night, 102 BPM`
 - V4-86: `modern city pop, female vocal, soft warm smiling tone, smooth electric piano, clean funky guitar touches, warm round bass, gentle laid-back groove, soft sleigh bells, twinkling synth, end of Christmas night glow, 94 BPM`
 - V4-87: `uplifting pop anthem, male and female duet vocals, warm group singalong choir in the final chorus, bright piano, strummed acoustic guitar, gently building drums, sweeping strings, sleigh bells and glockenspiel, joyful grand finale, 100 BPM`
-- V4-88: `modern crooner swing, male vocal, smooth rich baritone, playful charming phrasing, polished big band arrangement with soft muted brass, lush strings, walking upright bass, brushed swing drums, sparkling piano fills, sleigh bells, cozy Christmas evening, clean modern mix, 118 BPM` (Exclude에 vinyl crackle, old recording, lo-fi 추가)
+- V4-88 (수정본, 사용자: 남자 톤이 너무 올드함): `modern jazz-pop swing, young male vocal, light smooth tenor, warm airy youthful tone, casual effortless phrasing, contemporary pop singer style, light big band touches with soft muted horns, lush strings, walking upright bass, brushed swing drums, sparkling piano fills, sleigh bells, cozy Christmas evening, clean modern mix, 118 BPM` (Exclude에 vinyl crackle, old recording, lo-fi, deep baritone, vintage crooner vocal, heavy vibrato, operatic 추가)
+  - 배운 점: 크루너/스윙 요청이어도 `baritone`은 올드한 목소리를 부르니 `young male vocal, light tenor`로 써요.
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
