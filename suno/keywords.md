@@ -143,6 +143,6 @@
 - 다름을 알아가는 즐거움
 - 오늘의 작은 성취 ✅ (Camera Roll)
 - 하루를 잘 보냈다는 뿌듯함 ✅ (Today Was Good)
-- 편안하게 잠드는 밤
+- 편안하게 잠드는 밤 ✅ (Goodnight, Christmas)
 - 내일을 기다리는 마음
 - 지금 이 순간을 충분히 즐기기 ✅ (No Plus-One)
