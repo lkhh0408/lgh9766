@@ -257,6 +257,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 78 | First to Say It | 듀엣 | 어쿠스틱 포크 팝 듀엣 (윈터) | 90 | 이브 자정 직전 창가 카운트다운, 첫 "메리 크리스마스"를 먼저 말해 주려는 두 사람 (기쁨, 구성 G, 34줄) |
 | 79 | Reindeer on the Roof | 남성 | 소프트 팝 (윈터) | 78 | 산타를 기다리던 일곱 살과 아빠 서랍의 초록 펜, 이제 조카의 산타가 된 나 (공감, 구성 H, 30줄+연주 마무리) |
 | 80 | Goodnight, Christmas | 여성 | 소프트 자장가 발라드 (윈터) | 70 | 모두 잠든 크리스마스 밤 트리에게 건네는 인사, 헤드폰을 벗고 한 해를 내려놓는 마무리 (위로, 구성 K, 28줄+연주 마무리, 플레이리스트 마지막) |
+| 81 | Pajama Morning | 남성 | 라이트 아프로비트 팝 (윈터) | 106 | 파자마 차림 크리스마스 아침, 선물 뜯기 경주와 두 번째 팬케이크, 함께 눈뜬 게 제일 좋은 선물 (기쁨, 구성 B, 40줄, 추가 곡) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -279,6 +280,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-78: `soft acoustic folk-pop duet, male and female vocals, tender hushed harmonies, fingerpicked nylon guitar, soft piano, gentle cello, light shaker, distant church bell chimes, hushed midnight glow, 90 BPM`
 - V4-79: `soft pop, male vocal, gentle nostalgic warm tone, music box motif, soft piano, warm acoustic guitar, celesta and sleigh bells, light brushed percussion, soft strings, childhood Christmas Eve wonder, 78 BPM`
 - V4-80: `soft lullaby ballad, female vocal, tender airy hushed tone, gentle felt piano, soft music box, warm string pad, light celesta, barely-there soft brushes, sleepy Christmas night, 70 BPM`
+- V4-81: `light afrobeats pop, male vocal, warm smooth sunny tone, gentle bouncy syncopated groove, bright highlife guitar licks, soft log drum, warm round bass, shakers and sleigh bells, cheerful Christmas morning, 106 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -301,6 +303,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 78 First to Say It: I'll say it first, the first Merry Christmas from me to you, eleven fifty-nine alarm, heart on the fogged-up pane, my wish this year you again, let Christmas in
 - 79 Reindeer on the Roof: reindeer on the roof, note in curly green, the pen in Dad's old drawer, the one who keeps the magic, some magic finds a new place to stay
 - 80 Goodnight, Christmas: goodnight Christmas, thank you for the light, let the little lights keep watch, whatever this year asked of you, set it down tonight, headphones off the music fades
+- 81 Pajama Morning: pajama morning, the best gift wasn't under the tree, second round of pancakes, unwrapping race, puzzle of my dog, phone's in a drawer
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails

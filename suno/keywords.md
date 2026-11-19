@@ -28,7 +28,7 @@
 - 미래를 함께 그리는 마음 ✅ (Start a Tradition)
 
 ## ☀️ 작은 행복과 일상
-- 작은 일상의 행복
+- 작은 일상의 행복 ✅ (Pajama Morning)
 - 뜻밖의 좋은 소식
 - 이유 없이 기분 좋은 날 ✅ (Humming on the 8:15)
 - 좋아하는 음악을 듣는 시간 ✅ (B-Side)
