@@ -263,6 +263,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 82 | Everyone's Asleep But Me | 여성 | 칠 인디 신스 팝 (윈터) | 98 | 크리스마스 밤 다들 잠든 차를 운전해 집에 데려다주는 길, 조용한 사랑 (기쁨·위로, 구성 C, 40줄, 후반부용·늘어지지 않게 → 최종 76) |
 | 83 | Christmas Lights Tour | 남성 | 어쿠스틱 소울 팝 (윈터) | 100 | 동네 크리스마스 장식 순위 매기며 걷는 밤, 온 동네 불빛을 빌린 두 사람 (기쁨, 구성 B, 38줄, 최종 77 자리) |
 | 84 | Over the Rooftops | 여성 | 시네마틱 팝 (윈터) | 110 | 크리스마스 밤 꿈속 루돌프 썰매 비행, 하늘에서 내려다본 빙판·마켓·트램·우리 동네 (기쁨, 구성 A, 42줄, 최종 78 자리 · 하이라이트) |
+| 85 | Thank You from Up Here | 남성 | 업리프팅 소울 팝 (윈터) | 102 | 하늘에서 내려다보며 한 해의 작은 친절들과 포기하지 않은 나에게 보내는 감사 (기쁨·위로, 구성 F, 36줄+연주, 최종 79 자리) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -289,6 +290,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-82: `chill indie synth pop, female vocal, warm calm clear tone, steady soft drum machine groove, warm analog synth pads, clean shimmering guitar, gentle bass, soft sleigh bells, late night winter drive, 98 BPM`
 - V4-83: `acoustic soul pop, male vocal, smooth playful warm tone, warm acoustic guitar strums, Rhodes chords, finger snaps and light percussion, soft round bass, sleigh bells, cozy neighborhood night walk, 100 BPM`
 - V4-84: `cinematic pop, female vocal, bright soaring clear tone, sweeping strings, twinkling celesta and sleigh bells, driving soft pop drums, warm synth bass, airy choir pads, magical flight feel, 110 BPM`
+- V4-85: `uplifting soul pop, male vocal, warm bright heartfelt tone, gentle gospel-tinged backing choir, bright piano chords, warm round bass, soft clap groove, sleigh bells, light strings, grateful Christmas night, 102 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -315,6 +317,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 82 Everyone's Asleep But Me: everyone's asleep but me, driving sleepy hearts back home, some love just drives you home at night, gas station coffee, snowplow waves
 - 83 Christmas Lights Tour: Christmas lights tour, block by block, every house saying welcome home, we borrowed every light, rate this night, look at that one
 - 84 Over the Rooftops: over the rooftops, every little light looks like somebody's wish, Merry Christmas from the sky, climb in fast, the town twinkles back hello
+- 85 Thank You from Up Here: thank you from up here, every kind face I met this year, never said it loud enough, stayed on the line, even the me who didn't quit
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
