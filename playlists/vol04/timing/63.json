@@ -1,0 +1,247 @@
+[
+ {
+  "line": "You said, \"Meet me where the lights begin\"",
+  "section": "Verse 1: Female",
+  "start": 5.1,
+  "end": 8.1,
+  "estimated": true
+ },
+ {
+  "line": "I was early, you were late again",
+  "section": "Verse 1: Female",
+  "start": 10.2,
+  "end": 13.2,
+  "estimated": true
+ },
+ {
+  "line": "Wooden stalls in a candy-colored row",
+  "section": "Verse 1: Female",
+  "start": 15.3,
+  "end": 18.3,
+  "estimated": true
+ },
+ {
+  "line": "Every corner smells like cinnamon and snow",
+  "section": "Verse 1: Female",
+  "start": 20.4,
+  "end": 23.4,
+  "estimated": true
+ },
+ {
+  "line": "You showed up with two cups in your hands",
+  "section": "Verse 1: Female",
+  "start": 25.5,
+  "end": 28.5,
+  "estimated": true
+ },
+ {
+  "line": "\"Sorry,\" steam rising, \"here's my plan\"",
+  "section": "Verse 1: Female",
+  "start": 30.6,
+  "end": 33.08
+ },
+ {
+  "line": "Cinnamon and you",
+  "section": "Chorus: Both",
+  "start": 34.2,
+  "end": 35.98
+ },
+ {
+  "line": "Steam on our breath, lights in a row",
+  "section": "Chorus: Both",
+  "start": 35.98,
+  "end": 39.44
+ },
+ {
+  "line": "Your hand was colder than mine",
+  "section": "Chorus: Both",
+  "start": 39.44,
+  "end": 41.96
+ },
+ {
+  "line": "So I didn't let it go",
+  "section": "Chorus: Both",
+  "start": 41.96,
+  "end": 46.34
+ },
+ {
+  "line": "Carousel spinning slow",
+  "section": "Chorus: Both",
+  "start": 47.38,
+  "end": 49.86
+ },
+ {
+  "line": "Little bells on every stall",
+  "section": "Chorus: Both",
+  "start": 49.86,
+  "end": 53.28
+ },
+ {
+  "line": "Of all the things I found tonight",
+  "section": "Chorus: Both",
+  "start": 53.28,
+  "end": 57.18
+ },
+ {
+  "line": "Cinnamon and you, best of all",
+  "section": "Chorus: Both",
+  "start": 58.76,
+  "end": 63.7
+ },
+ {
+  "line": "You picked a glass star for my tree",
+  "section": "Verse 2: Male",
+  "start": 63.7,
+  "end": 66.32
+ },
+ {
+  "line": "Said it looked a little bit like me",
+  "section": "Verse 2: Male",
+  "start": 66.32,
+  "end": 69.76
+ },
+ {
+  "line": "I found a snowman with a crooked hat",
+  "section": "Verse 2: Male",
+  "start": 69.76,
+  "end": 73.34
+ },
+ {
+  "line": "You laughed so loud, \"We're keeping that\"",
+  "section": "Verse 2: Male",
+  "start": 73.34,
+  "end": 76.55
+ },
+ {
+  "line": "Gingerbread hearts with our names spelled wrong",
+  "section": "Verse 2: Male",
+  "start": 77.32,
+  "end": 80.36
+ },
+ {
+  "line": "We ate them anyway and sang along",
+  "section": "Verse 2: Male",
+  "start": 80.36,
+  "end": 84.52
+ },
+ {
+  "line": "Cinnamon and you",
+  "section": "Chorus: Both",
+  "start": 89.9,
+  "end": 91.8
+ },
+ {
+  "line": "Steam on our breath, lights in a row",
+  "section": "Chorus: Both",
+  "start": 91.8,
+  "end": 95.1
+ },
+ {
+  "line": "Your hand was colder than mine",
+  "section": "Chorus: Both",
+  "start": 95.45,
+  "end": 97.8
+ },
+ {
+  "line": "So I didn't let it go",
+  "section": "Chorus: Both",
+  "start": 97.8,
+  "end": 102.68
+ },
+ {
+  "line": "Carousel spinning slow",
+  "section": "Chorus: Both",
+  "start": 103.64,
+  "end": 105.74
+ },
+ {
+  "line": "Little bells on every stall",
+  "section": "Chorus: Both",
+  "start": 105.74,
+  "end": 109.1
+ },
+ {
+  "line": "Of all the things I found tonight",
+  "section": "Chorus: Both",
+  "start": 109.1,
+  "end": 113.4
+ },
+ {
+  "line": "Cinnamon and you, best of all",
+  "section": "Chorus: Both",
+  "start": 114.46,
+  "end": 119.5
+ },
+ {
+  "line": "You've got sugar on your nose",
+  "section": "Bridge: Female",
+  "start": 119.72,
+  "end": 122.12
+ },
+ {
+  "line": "And you've got snow in your hair",
+  "section": "Bridge: Male",
+  "start": 122.12,
+  "end": 124.98
+ },
+ {
+  "line": "Should we head home now?",
+  "section": "Bridge: Female",
+  "start": 124.98,
+  "end": 127.52
+ },
+ {
+  "line": "One more lap around the square",
+  "section": "Bridge: Male",
+  "start": 128.06,
+  "end": 132.2
+ },
+ {
+  "line": "Cinnamon and you",
+  "section": "Final Chorus: Both",
+  "start": 133.54,
+  "end": 135.4
+ },
+ {
+  "line": "Steam on our breath, lights in a row",
+  "section": "Final Chorus: Both",
+  "start": 135.4,
+  "end": 138.68
+ },
+ {
+  "line": "Your hand was colder than mine",
+  "section": "Final Chorus: Both",
+  "start": 138.68,
+  "end": 141.36
+ },
+ {
+  "line": "So I didn't let it go",
+  "section": "Final Chorus: Both",
+  "start": 141.36,
+  "end": 146.14
+ },
+ {
+  "line": "Carousel spinning slow",
+  "section": "Final Chorus: Both",
+  "start": 146.68,
+  "end": 149.22
+ },
+ {
+  "line": "Little bells on every stall",
+  "section": "Final Chorus: Both",
+  "start": 150.1,
+  "end": 152.68
+ },
+ {
+  "line": "Of all the things I found tonight",
+  "section": "Final Chorus: Both",
+  "start": 152.68,
+  "end": 156.82
+ },
+ {
+  "line": "Cinnamon and you, best of all",
+  "section": "Final Chorus: Both",
+  "start": 157.96,
+  "end": 163.26
+ }
+]
