@@ -45,7 +45,7 @@
 - 햇빛 아래 느긋한 오후 ✅ (Line Dried)
 - 잠깐의 낮잠
 - 바쁜 하루 속 짧은 휴식
-- 천천히 살아가는 즐거움
+- 천천히 살아가는 즐거움 ✅ (Marshmallow Weather)
 - 휴대폰 없이 보내는 시간 ✅ (Do Not Disturb)
 - 마음이 가벼워지는 순간 ✅ (Let Go of the Wall)
 - 아무것도 하지 않아도 좋은 날 ✅ (알람 없는 아침)

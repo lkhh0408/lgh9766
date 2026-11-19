@@ -247,6 +247,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 69 | Ugly Sweater Party | 남성 | 댄스 팝 (윈터) | 122 | 원룸에 열두 명이 모인 이브 홈 파티, 양말 댄스와 같이 놀게 된 이웃, 눈 감은 단체 사진 (기쁨, 구성 B, 40줄, 피크 시작) |
 | 70 | No Plus-One | 여성 | 뉴디스코 팝 (윈터) | 120 | 2인석뿐인 크리스마스 거리, 의자 하나 더 끌어와 셋이 찍는 셀카와 포장마차 저녁, 친구라는 이름의 데이트 (공감, 구성 A, 42줄, 피크) |
 | 71 | Start a Tradition | 남성 | 모던 팝 (윈터) | 108 | 처음 함께 맞는 크리스마스, 텅 빈 집에서 하나씩 만들어 가는 둘만의 전통 (기쁨, 구성 C, 40줄, 쿨다운 시작) |
+| 72 | Marshmallow Weather | 여성 | 네오소울 팝 (윈터) | 90 | 약속이 취소된 눈보라 밤, 담요와 핫초코로 한 해의 '해야 할 일'을 덮어 두는 쉼 (위로, 구성 I, 30줄+연주) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -260,6 +261,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-69: `dance pop, male vocal, bright smooth tone, groovy soft four-on-the-floor beat, funky guitar chops, bubbly synth bass, festive bells and handclaps, friendly group singalong hooks, house party energy, 122 BPM`
 - V4-70: `nu-disco pop, female vocal, confident sparkling tone, light groovy disco bassline, glossy string stabs, funky clean guitar, crisp hi-hats, glittery synths, festive bells, friends night out energy, 120 BPM`
 - V4-71: `modern pop, male vocal, warm earnest tone, bright piano chords, clean electric guitar, soft synth pads, gentle groove drums, sleigh bells, light string swells, heartfelt first Christmas, 108 BPM`
+- V4-72: `neo-soul pop, female vocal, smoky warm low tone, lazy behind-the-beat phrasing, warm Wurlitzer keys, warm round bass, soft brushed swing drums, muted jazzy guitar, soft snowstorm ambience, blanket coziness, 90 BPM` (Exclude에서 heavy bass 뺌)
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -273,6 +275,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 69 Ugly Sweater Party: ugly sweater party, dancing in our socks, not about how big the room is but who's in it, neighbor knocked, half of us blink, ho-ho-ho hey
 - 70 No Plus-One: no plus-one, every table's set for two, who said Christmas needs a couple, group selfie, here's to the ones who came as friends
 - 71 Start a Tradition: start a tradition, laugh about at eighty, pancakes shaped like snowmen, matching socks, wish on a paper star, same spot every year
+- 72 Marshmallow Weather: marshmallow weather, nowhere to be, let the world snow without me, covering every should and why, rest is not a waste of time
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
