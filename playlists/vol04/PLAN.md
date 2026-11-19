@@ -63,5 +63,8 @@
 | 74 | Camera Roll | 76 |
 | 75 | When the City Whispers | 77 |
 | 76 | Everyone's Asleep But Me | 82 |
-| 77~80 | (새로 만들 곡: 걷기 마지막 100 → 하늘 썰매 출발 108~112 → 비행 100~104 → 엔딩 92~96, 늘어지지 않게) | |
+| 77 | Christmas Lights Tour (후보) | 83 |
+| 78 | Over the Rooftops (후보) | 84 |
+| 79 | Thank You from Up Here (후보) | 85 |
+| 80 | Till Next December (후보) | 86 |
 빠진 곡: Kept a Little of Me, Ugly Sweater Party, First to Say It, Reindeer on the Roof, Goodnight, Christmas, Pajama Morning

@@ -119,7 +119,7 @@
 - 비 그친 뒤의 거리
 - 노을을 바라보는 시간 ✅ (Rooftop Hours)
 - 창가에서 듣는 빗소리 ✅ (One More Page)
-- 계절이 바뀌는 순간
+- 계절이 바뀌는 순간 ✅ (Till Next December)
 - 별이 잘 보이는 밤 ✅ (Glow-in-the-Dark Stars)
 - 겨울 집 안의 따뜻함 ✅ (Tangled Lights)
 
