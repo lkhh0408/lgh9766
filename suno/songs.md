@@ -249,6 +249,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 71 | Start a Tradition | 남성 | 모던 팝 (윈터) | 108 | 처음 함께 맞는 크리스마스, 텅 빈 집에서 하나씩 만들어 가는 둘만의 전통 (기쁨, 구성 C, 40줄, 쿨다운 시작) |
 | 72 | Marshmallow Weather | 여성 | 네오소울 팝 (윈터) | 90 | 약속이 취소된 눈보라 밤, 담요와 핫초코로 한 해의 '해야 할 일'을 덮어 두는 쉼 (위로, 구성 I, 30줄+연주) |
 | 73 | Your Morning, My Night | 듀엣 | R&B 듀엣 (윈터) | 84 | 시차가 있는 크리스마스 영상통화, 화면 너머로 같이 여는 선물과 끊지 않고 잠드는 통화 (위로, 구성 J, 30줄. Voice Note와 겹치지 않게 음성메시지 대신 영상통화·시차) |
+| 74 | Merry Christmas, Me | 남성 | 로파이 팝 (윈터) | 80 | 일부러 혼자 남은 크리스마스, 할머니 레시피 스튜와 혼자 보는 불빛, 내년의 나에게 쓰는 편지 (위로, 구성 E, 28줄+인트로. Table for One·No Plus-One과 겹치지 않게) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -264,6 +265,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-71: `modern pop, male vocal, warm earnest tone, bright piano chords, clean electric guitar, soft synth pads, gentle groove drums, sleigh bells, light string swells, heartfelt first Christmas, 108 BPM`
 - V4-72: `neo-soul pop, female vocal, smoky warm low tone, lazy behind-the-beat phrasing, warm Wurlitzer keys, warm round bass, soft brushed swing drums, muted jazzy guitar, soft snowstorm ambience, blanket coziness, 90 BPM` (Exclude에서 heavy bass 뺌)
 - V4-73: `R&B, male and female duet vocals, intimate conversational trade-offs, soft harmonies, warm electric piano, warm round bass, gentle soft trap-soul drums, airy guitar, soft chimes, late-night video call glow, 84 BPM` (Exclude에서 heavy bass 뺌)
+- V4-74: `lo-fi pop, male vocal, soft hushed warm tone, dusty lo-fi drums, mellow jazzy guitar loop, warm Rhodes, warm round bass, soft vinyl crackle, gentle music box twinkles, quiet snowy apartment, 80 BPM`
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -279,6 +281,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 71 Start a Tradition: start a tradition, laugh about at eighty, pancakes shaped like snowmen, matching socks, wish on a paper star, same spot every year
 - 72 Marshmallow Weather: marshmallow weather, nowhere to be, let the world snow without me, covering every should and why, rest is not a waste of time
 - 73 Your Morning, My Night: your morning my night, different sky same Christmas lights, right here on my screen, the screen is cold but your laugh is warm, leave the call on
+- 74 Merry Christmas, Me: merry Christmas me, alone isn't lonely, grandma's stew on the phone, roasted chestnuts, letter to next year's me, braver than you knew
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails

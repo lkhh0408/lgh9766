@@ -32,7 +32,7 @@
 - 뜻밖의 좋은 소식
 - 이유 없이 기분 좋은 날 ✅ (Humming on the 8:15)
 - 좋아하는 음악을 듣는 시간 ✅ (B-Side)
-- 혼자 보내는 즐거운 하루
+- 혼자 보내는 즐거운 하루 ✅ (Merry Christmas, Me)
 - 나에게 주는 작은 선물 ✅ (Soft Reset)
 - 소소한 행운
 - 평범한 날의 특별한 순간 ✅ (Save Point)
