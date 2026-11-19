@@ -121,7 +121,7 @@
 - 창가에서 듣는 빗소리 ✅ (One More Page)
 - 계절이 바뀌는 순간
 - 별이 잘 보이는 밤 ✅ (Glow-in-the-Dark Stars)
-- 겨울 집 안의 따뜻함
+- 겨울 집 안의 따뜻함 ✅ (Tangled Lights)
 
 ## 🌃 도시와 공간
 - 도시의 불빛

@@ -240,7 +240,8 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 | 62 | Humming on the 8:15 | 남성 | 윈터 인디 팝 | 96 | 12월 아침 꽉 찬 지하철, 이어폰에서 새어 나온 캐롤을 다 같이 흥얼거리는 출근길 (공감, 구성 B, 38줄 → 2:52) |
 | 63 | Cinnamon and You | 듀엣 | 어쿠스틱 팝 | 104 | 크리스마스 마켓 데이트, 김 오르는 컵과 이름이 틀린 진저브레드, 차가운 손을 놓지 못한 밤 (기쁨, 구성 G, 40줄 → 2:51) |
 | 64 | I Remembered | 여성 | 윈터 브라이트 팝 | 110 | 쇼핑 탭 마흔 개와 삐뚤어진 리본, 선물보다 먼저 도착하는 "다 기억하고 있었어"라는 마음 (기쁨, 구성 A, 42줄) |
-| 65 | Secret Santa | 남성 | 모던 펑크 팝 | 112 | 회사 마니또와 송년회, 시치미 떼는 일주일과 조용한 동료의 정체 공개, 함께 버틴 한 해에 건배 (공감, 구성 C, 40줄) |
+| 65 | Secret Santa | 남성 | 모던 펑크 팝 | 112 | 회사 마니또와 송년회, 시치미 떼는 일주일과 조용한 동료의 정체 공개, 함께 버틴 한 해에 건배 (공감, 구성 C, 40줄, 번역 "Secret Santa" = 시크릿 산타) |
+| 66 | Tangled Lights | 여성 | 윈터 R&B 팝 | 92 | 엉킨 전구를 같이 풀며 꾸미는 트리, 가지마다 걸린 한 해의 장면들 (기쁨, 구성 F, 30줄+연주) |
 
 곡별 Styles 앞부분:
 - V4-61: `bedroom pop, female vocal, soft breathy close-mic vocals, warm clean electric guitar, mellow Rhodes, soft celesta and sleigh bell accents, gentle drum machine, soft bass, cozy first snow morning, 84 BPM`
@@ -248,6 +249,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - V4-63: `acoustic pop, male and female duet vocals, sweet trade-off verses, close harmonies in the chorus, bright strummed acoustic guitar, warm upright bass, light brushed drums, sleigh bells and soft glockenspiel, gentle handclaps, Christmas market warmth, 104 BPM`
 - V4-64: `bright pop, female vocal, clear sweet tone, bouncy piano chords, plucky synths, punchy but soft drums, light claps, sleigh bells, playful counter-melody, festive shopping energy, 110 BPM`
 - V4-65: `modern funk pop, male vocal, smooth playful tone with light falsetto touches, clean funky guitar riff, warm groovy bass, bright Rhodes stabs, crisp gentle drums, sleigh bells, cheeky office party fun, 112 BPM`
+- V4-66: `R&B pop, female vocal, silky warm tone, soft layered harmonies, warm Rhodes, warm round bass, gentle finger snaps and soft drums, twinkling celesta, cozy living room glow, 92 BPM` (Exclude에서 heavy bass 뺌)
 
 사용한 핵심 표현 (VOL.04):
 - 61 Snow on the Sill: snow on the sill, the group chat woke up early, footprints by the door, a window and a warm cup, counting down to twenty-five
@@ -255,6 +257,7 @@ belting, shouting, screaming, aggressive, loud drums, heavy bass, EDM drop, sudd
 - 63 Cinnamon and You: cinnamon and you, colder than mine so I didn't let it go, glass star, gingerbread hearts, one more lap around the square
 - 64 I Remembered: I remembered, not the box not the bow, listening all year, lose your left glove, forty tabs open, saw this and I thought of you
 - 65 Secret Santa: secret Santa, who's got who, sticky note on my screen, we didn't always get along, we made it through, the quiet one had my name
+- 66 Tangled Lights: tangled lights, untangle each other, every ornament's a little piece of the year, our whole year hanging in a row, lift me up to place the star
 
 ## 사용한 핵심 표현 (VOL.03)
 - 01 Line Dried: line dried, sun kissed, hung up all my worries, brand new day, pegs, basket, billowing sails
