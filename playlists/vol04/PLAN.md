@@ -43,3 +43,25 @@
 | 15~17 | 밤 | 걷기 | 눈 내리는 주택가 골목 |
 | 18~20 | 밤 | 루돌프 하늘 썰매 | 밤하늘, 마지막에 큰 트리 꼭대기 |
 - 의상 (구간마다 갈아입기, 눈보라 전환): 스케이트 4 · 트램 7 · 개썰매 2 · 마차 5 · 걷기 6 · 하늘 썰매 3 (studio/concepts/xmas_outfits.py 번호)
+
+## 최종 곡 선택 (11/19, 사용자 선택 · 파일 번호 = 영상 순서)
+| 최종 | 곡 | 만든 번호 |
+|---|---|---|
+| 61 | Snow on the Sill | 61 |
+| 62 | Humming on the 8:15 | 62 |
+| 63 | Cinnamon and You | 63 |
+| 64 | I Remembered | 64 |
+| 65 | Secret Santa | 65 |
+| 66 | Tangled Lights | 66 |
+| 67 | Let Go of the Wall | 68 |
+| 68 | No Plus-One | 70 |
+| 69 | Start a Tradition | 71 |
+| 70 | Marshmallow Weather | 72 |
+| 71 | Your Morning, My Night | 73 |
+| 72 | Merry Christmas, Me | 74 |
+| 73 | Ten Containers | 75 |
+| 74 | Camera Roll | 76 |
+| 75 | When the City Whispers | 77 |
+| 76 | Everyone's Asleep But Me | 82 |
+| 77~80 | (새로 만들 곡: 걷기 마지막 100 → 하늘 썰매 출발 108~112 → 비행 100~104 → 엔딩 92~96, 늘어지지 않게) | |
+빠진 곡: Kept a Little of Me, Ugly Sweater Party, First to Say It, Reindeer on the Roof, Goodnight, Christmas, Pajama Morning
