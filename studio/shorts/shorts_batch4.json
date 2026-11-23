@@ -1,0 +1,13 @@
+{
+ "vol01": {"acc": "#E0457B", "num": "01", "items": [
+  {"id": "01-01", "i": 0, "a": 75.8, "b": 105.86, "song": "Good Side of the Street", "lines": ["목요일 아침", "이거 틀면", "금요일 같음"], "shift": 230}]},
+ "vol02": {"acc": "#2F5BEA", "num": "02", "items": [
+  {"id": "02-19", "i": 18, "a": 96.9, "b": 123.56, "song": "Roller Rink Saturday", "lines": ["약속 없는 일요일인데", "혼자", "신나버림"], "shift": 230}]},
+ "vol03": {"acc": "#F26B55", "num": "03", "items": [
+  {"id": "03-09", "i": 8, "a": 90.9, "b": 118.68, "song": "Rooftop Hours", "lines": ["노을 질 때 들으면", "오늘 고생한 게", "다 괜찮아짐"], "shift": 230}]},
+ "vol04": {"acc": "#C8323C", "num": "04", "items": [
+  {"id": "04-18", "i": 17, "a": 58.8, "b": 89.16, "song": "Over the Rooftops", "lines": ["이어폰 꽂는 순간", "출근길이", "크리스마스 영화 됨"], "shift": 230},
+  {"id": "04-05", "i": 4, "a": 82.0, "b": 110.96, "song": "Secret Santa", "lines": ["월요일 출근길", "이거 틀면", "발걸음이 리듬 탐"], "shift": 230},
+  {"id": "04-17", "i": 16, "a": 78.8, "b": 108.08, "song": "Christmas Lights Tour", "lines": ["이거 듣고 나가면", "동네 전구가", "다 예뻐 보임"], "shift": 230},
+  {"id": "04-20", "i": 19, "a": 39.9, "b": 70.98, "song": "Darling, It's Snowing", "lines": ["금요일 밤", "이거 틀면", "거실이 재즈바 됨"], "shift": 230}]}
+}
