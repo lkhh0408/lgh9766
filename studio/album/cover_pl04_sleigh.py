@@ -1,4 +1,4 @@
-"""Haru's Christmas Playlist 01 cover, #18 reworked (colour, big sleigh, HARU tag, three title styles): the video's reindeer sky sleigh, big across the moon.
+"""Merry Christmas from Haru (PLAY LIST 04) cover, #18 reworked (colour, big sleigh, HARU tag, three title styles): the video's reindeer sky sleigh, big across the moon.
 python3 cover_pl04_sleigh.py OUTDIR [size]  -> sleigh_A.png (silhouette), sleigh_B.png (full colour), sleigh_sheet.png"""
 import sys, json, cairo, numpy as np
 from PIL import Image, ImageDraw
@@ -126,7 +126,11 @@ sheet.save(f'{OUTDIR}/sleigh_sheet3.png'); print('ok')
 
 def final18b():  # big sleigh + HARU tag, title exactly like the first 18-B
     im = scene(); d = ImageDraw.Draw(im)
-    title(d, 1230, CREAM, W, GOLD, 250); text(d, (S // 2, 1455), 'OPEN TO CLOSE', font('Outfit-800.ttf', 50), CREAM, 'mm', sp=14)
+    f = font('Pacifico-Regular.ttf', 250); fm = font('Pacifico-Regular.ttf', 120)
+    for (txt, ff, x, y) in (('Merry', fm, 600, 1045), ('Christmas', f, S // 2, 1262)):
+        d.text((x + 8, y + 12), txt, font=ff, fill=(0, 0, 0, 90), anchor='mm'); d.text((x, y), txt, font=ff, fill=W, anchor='mm')
+    text(d, (S // 2, 1415), 'FROM HARU', font('Outfit-800.ttf', 50), GOLD, 'mm', sp=15)
+    text(d, (S // 2, 1468), 'OPEN TO CLOSE', font('Outfit-800.ttf', 36), CREAM, 'mm', sp=14)
     return im
 _f = final18b().convert('RGB'); _f.save(f'{OUTDIR}/sleigh_final_preview.png')
 if K > 1: _f.resize((S * K, S * K), Image.LANCZOS).save(f'{OUTDIR}/sleigh_final_{S * K}.png')
