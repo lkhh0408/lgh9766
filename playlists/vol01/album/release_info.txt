@@ -50,4 +50,5 @@ Songwriter(작사·작곡자): 본인 실명 (디스트로키드 정책상 실�
 
 [제출 완료] 2026-11-24 디스트로키드 제출, 발매 2026-12-11 (스포티파이 현지 시간 12:00 AM)
 HyperFollow: https://distrokid.com/hyperfollow/opentoclose/harus-playlist-01
-남은 일: 가사 추가(lyrics 폴더), Spotify for Artists 프로필 등록 + 신곡 추천 신청(12/4까지)
+가사: 일반 가사 20곡 등록 완료(Basic). 싱크 가사는 건너뜀(직접 누르는 방식).
+남은 일: Spotify for Artists 프로필 등록 + 신곡 추천 신청(12/4까지)
