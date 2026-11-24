@@ -51,7 +51,7 @@ def pill(d, cx, cy, s_, fs):
 
 def scene():
     im = Image.new('RGBA', (S, S), NIGHT + (255,)); flakes(im, 220, 11, (255, 255, 255, 200), 5); d = ImageDraw.Draw(im)
-    d.ellipse((230, 80, 1270, 1120), fill=(255, 236, 170))
+    d.ellipse((300, 100, 1200, 1000), fill=(255, 236, 170))
     lay = sleigh_layer(1.75, 410, 700); im.alpha_composite(lay)
     a = np.array(lay.split()[3]); hx_ = int(410 - 10 * 1.75); band = a[:, hx_ - 60:hx_ + 60]; ys = np.where(band.max(axis=1) > 0)[0]
     top = int(ys.min()) if len(ys) else 200
@@ -126,10 +126,7 @@ sheet.save(f'{OUTDIR}/sleigh_sheet3.png'); print('ok')
 
 def final18b():  # big sleigh + HARU tag, title exactly like the first 18-B
     im = scene(); d = ImageDraw.Draw(im)
-    title(d, 1230, (0, 0, 0, 0), W, GOLD, 250); text(d, (S // 2, 1455), 'OPEN TO CLOSE', font('Outfit-800.ttf', 50), CREAM, 'mm', sp=14)
-    f = font('Outfit-800.ttf', 50); sp = 15; tw = sum(d.textlength(c_, font=f) + sp for c_ in "HARU'S") - sp; x = S / 2 - tw / 2
-    for c_ in "HARU'S":   # navy outline so it stays readable over the moon
-        d.text((x, 1075), c_, font=f, fill=CREAM, anchor='lm', stroke_width=7, stroke_fill=NIGHT); x += d.textlength(c_, font=f) + sp
+    title(d, 1230, CREAM, W, GOLD, 250); text(d, (S // 2, 1455), 'OPEN TO CLOSE', font('Outfit-800.ttf', 50), CREAM, 'mm', sp=14)
     return im
 _f = final18b().convert('RGB'); _f.save(f'{OUTDIR}/sleigh_final_preview.png')
 if K > 1: _f.resize((S * K, S * K), Image.LANCZOS).save(f'{OUTDIR}/sleigh_final_{S * K}.png')
