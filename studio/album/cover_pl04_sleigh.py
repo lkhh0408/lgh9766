@@ -71,12 +71,55 @@ def v3():  # red script, white outline, snow on the letters
     text(d, (S // 2, 1408), 'PLAYLIST 01', font('Outfit-800.ttf', 64), GOLD, 'mm', sp=16)
     text(d, (S // 2, 1478), 'OPEN TO CLOSE', font('Outfit-800.ttf', 30), CREAM, 'mm', sp=12); return im
 
-ims = [v1(), v2(), v3()]
+def t1():  # modern: huge bold CHRISTMAS, letter-spaced
+    im = scene(); d = ImageDraw.Draw(im)
+    text(d, (S // 2, 1150), "HARU'S", font('Outfit-800.ttf', 62), GOLD, 'mm', sp=22)
+    f = font('Outfit-800.ttf', 190); d.text((S // 2 + 6, 1290 + 8), 'CHRISTMAS', font=f, fill=(0, 0, 0, 120), anchor='mm')
+    d.text((S // 2, 1290), 'CHRISTMAS', font=f, fill=W, anchor='mm')
+    text(d, (S // 2, 1420), 'PLAYLIST 01  ·  OPEN TO CLOSE', font('Outfit-800.ttf', 40), CREAM, 'mm', sp=10); return im
+def t2():  # snowy ground band, red bold title on white
+    im = scene(); d = ImageDraw.Draw(im)
+    d.rectangle((0, 1180, S, S), fill=W)
+    for x in range(-60, S + 60, 120): d.ellipse((x - 90, 1120, x + 90, 1250), fill=W)
+    text(d, (S // 2, 1215), "HARU'S", font('Outfit-800.ttf', 52), NIGHT, 'mm', sp=20)
+    text(d, (S // 2, 1325), 'CHRISTMAS', font('Outfit-800.ttf', 170), RED, 'mm', sp=6)
+    text(d, (S // 2, 1440), 'PLAYLIST 01  ·  OPEN TO CLOSE', font('Outfit-800.ttf', 38), NIGHT, 'mm', sp=10); return im
+def t3():  # hanging shop sign
+    im = scene(); d = ImageDraw.Draw(im)
+    for x in (430, 1070): d.line((x, 1060, x, 1130), fill=GOLD, width=8)
+    d.rounded_rectangle((210, 1120, 1290, 1440), 50, fill=RED, outline=GOLD, width=12)
+    text(d, (S // 2, 1182), "HARU'S", font('Outfit-800.ttf', 42), GOLD, 'mm', sp=18)
+    d.text((S // 2, 1268), 'Christmas', font=font('Pacifico-Regular.ttf', 170), fill=W, anchor='mm')
+    text(d, (S // 2, 1385), 'PLAYLIST 01', font('Outfit-800.ttf', 46), GOLD, 'mm', sp=18)
+    text(d, (S // 2, 1478), 'OPEN TO CLOSE', font('Outfit-800.ttf', 30), CREAM, 'mm', sp=12); return im
+def t4():  # white label card at the bottom
+    im = scene(); d = ImageDraw.Draw(im)
+    d.rounded_rectangle((190, 1110, 1310, 1460), 40, fill=W)
+    text(d, (S // 2, 1160), "HARU'S", font('Outfit-800.ttf', 46), NIGHT, 'mm', sp=18)
+    d.text((S // 2, 1262), 'Christmas', font=font('Pacifico-Regular.ttf', 180), fill=RED, anchor='mm')
+    text(d, (S // 2, 1385), 'PLAYLIST 01', font('Outfit-800.ttf', 46), (46, 125, 79), 'mm', sp=18)
+    text(d, (S // 2, 1430), 'OPEN TO CLOSE', font('Outfit-800.ttf', 26), NIGHT, 'mm', sp=12); return im
+def t5():  # two-line bold stack, cream, red pill
+    im = scene(); d = ImageDraw.Draw(im)
+    text(d, (S // 2, 1160), "HARU'S", font('Outfit-800.ttf', 120), CREAM, 'mm', sp=10)
+    text(d, (S // 2, 1290), 'CHRISTMAS', font('Outfit-800.ttf', 150), CREAM, 'mm', sp=10)
+    d.rounded_rectangle((S / 2 - 260, 1370, S / 2 + 260, 1450), 40, fill=RED); text(d, (S // 2, 1410), 'PLAYLIST 01', font('Outfit-800.ttf', 46), W, 'mm', sp=14)
+    text(d, (S // 2, 1478), 'OPEN TO CLOSE', font('Outfit-800.ttf', 24), CREAM, 'mm', sp=12); return im
+def t6():  # elegant: cream script, no outline, gold underline
+    im = scene(); d = ImageDraw.Draw(im)
+    text(d, (S // 2, 1135), "HARU'S", font('Outfit-800.ttf', 50), GOLD, 'mm', sp=24)
+    d.text((S // 2, 1255), 'Christmas', font=font('Pacifico-Regular.ttf', 220), fill=CREAM, anchor='mm')
+    d.line((S / 2 - 300, 1372, S / 2 + 300, 1372), fill=GOLD, width=5); d.regular_polygon((S / 2, 1372, 16), 4, fill=GOLD)
+    text(d, (S // 2, 1420), 'PLAYLIST 01  ·  OPEN TO CLOSE', font('Outfit-800.ttf', 38), GOLD, 'mm', sp=12); return im
+
+ims = [t1(), t2(), t3(), t4(), t5(), t6()]
 for i, im in enumerate(ims):
     out = im.convert('RGB')
     if K > 1: out = out.resize((S * K, S * K), Image.LANCZOS)
-    out.save(f'{OUTDIR}/sleigh_v{i + 1}.png')
-T = 620; sheet = Image.new('RGB', (3 * T + 160, T + 110), 'white'); dd = ImageDraw.Draw(sheet)
-for i, (n, im) in enumerate(zip(['1. 금색 글씨 + 빨간 리본', '2. 흰 글씨 + 빨간 테두리 + 금빛', '3. 빨간 글씨 + 눈 쌓인 글자'], ims)):
-    x = 40 + i * (T + 40); dd.text((x, 30), n, font=font('NanumSquareRoundB.ttf', 30), fill=(31, 35, 64)); sheet.paste(im.convert('RGB').resize((T, T), Image.LANCZOS), (x, 80))
-sheet.save(f'{OUTDIR}/sleigh_sheet2.png'); print('ok')
+    out.save(f'{OUTDIR}/sleigh_t{i + 1}.png')
+T = 560; sheet = Image.new('RGB', (3 * T + 160, 2 * (T + 80) + 40), 'white'); dd = ImageDraw.Draw(sheet)
+labels = ['A. 굵은 대문자 (모던)', 'B. 눈 쌓인 땅 + 빨간 글씨', 'C. 매달린 간판', 'D. 흰 라벨 카드', 'E. 두 줄 굵은 글씨', 'F. 깔끔한 필기체 + 금색 선']
+for i, (n, im) in enumerate(zip(labels, ims)):
+    x = 40 + (i % 3) * (T + 40); y = 30 + (i // 3) * (T + 80)
+    dd.text((x, y), n, font=font('NanumSquareRoundB.ttf', 30), fill=(31, 35, 64)); sheet.paste(im.convert('RGB').resize((T, T), Image.LANCZOS), (x, y + 46))
+sheet.save(f'{OUTDIR}/sleigh_sheet3.png'); print('ok')
