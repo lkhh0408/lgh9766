@@ -47,3 +47,7 @@ Songwriter(작사·작곡자): 본인 실명 (디스트로키드 정책상 실�
 - Social Media Pack(유튜브 콘텐츠 ID 포함)은 체크하지 않아요.
 - 스토어 목록에 멜론 등 한국 사이트가 보여도 AI 곡이라 나가지 않을 수 있어요.
 - 스포티파이 신곡 추천(Spotify for Artists 피칭)은 발매 7일 전(12/4)까지.
+
+[제출 완료] 2026-11-24 디스트로키드 제출, 발매 2026-12-11 (스포티파이 현지 시간 12:00 AM)
+HyperFollow: https://distrokid.com/hyperfollow/opentoclose/harus-playlist-01
+남은 일: 가사 추가(lyrics 폴더), Spotify for Artists 프로필 등록 + 신곡 추천 신청(12/4까지)
