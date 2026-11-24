@@ -15,7 +15,7 @@ w = haru(2.4 * K, phase=2.2); im.alpha_composite(w, (2 * g + c + c // 2 - w.widt
 st = haru(2.6 * K, flip=False); im.alpha_composite(st, (g + c // 2 - st.width // 2, 2 * g + 2 * c - st.height + 20 * K))
 x0 = y0 = 2 * g + c
 text(d, (x0 + c // 2, y0 + c // 2 - 90 * K), 'OPEN TO', font('Outfit-800.ttf', 96 * K), CREAM, 'mm'); text(d, (x0 + c // 2, y0 + c // 2 + 10 * K), 'CLOSE', font('Outfit-800.ttf', 96 * K), CREAM, 'mm')
-text(d, (x0 + c // 2, y0 + c // 2 + 130 * K), f'PLAY LIST {NUM}', font('Outfit-800.ttf', 50 * K), A, 'mm', sp=10 * K)
+text(d, (x0 + c // 2, y0 + c // 2 + 130 * K), f"HARU'S PLAYLIST {NUM}", font('Outfit-800.ttf', 50 * K), A, 'mm', sp=8 * K)
 fs = 50 * K; f = font('Outfit-800.ttf', fs); cx, cy = g + c // 2 - 10 * K, g + 70 * K; tw = d.textlength('HARU', font=f)
 d.rounded_rectangle((cx - tw / 2 - fs * .55, cy - fs * .75, cx + tw / 2 + fs * .55, cy + fs * .75), int(fs * .75), fill=(255, 255, 255), outline=INK, width=fs // 10)
 d.text((cx, cy), 'HARU', font=f, fill=INK, anchor='mm')
