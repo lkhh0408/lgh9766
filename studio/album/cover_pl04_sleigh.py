@@ -162,3 +162,9 @@ for i, ((n, _), im) in enumerate(zip(variants, ims)):
     x = 40 + (i % 3) * (T + 40); y = 30 + (i // 3) * (T + 80)
     dd.text((x, y), n, font=font('NanumSquareRoundB.ttf', 30), fill=(31, 35, 64)); sheet.paste(im.convert('RGB').resize((T, T), Image.LANCZOS), (x, y + 46))
 sheet.save(f'{OUTDIR}/merry_sheet.png'); print('merry ok')
+
+# ---- final: variant 2 (one line + gold signature), 3000x3000 ----
+_fin = scene(); L2(ImageDraw.Draw(_fin)); _fin = _fin.convert('RGB').resize((3000, 3000), Image.LANCZOS)
+import os; os.makedirs('/home/user/lgh9766/playlists/vol04/album', exist_ok=True)
+_fin.save('/home/user/lgh9766/playlists/vol04/album/cover.png'); _fin.save('/home/user/lgh9766/playlists/vol04/album/cover.jpg', quality=95)
+print('final cover saved')
