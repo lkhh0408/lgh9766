@@ -3,7 +3,7 @@ import sys, math, cairo, numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 sys.path.insert(0, '/home/user/lgh9766/studio')
 import character as ch
-OUT = sys.argv[1]; OUTFIT = sys.argv[2] if len(sys.argv) > 2 else 'vol01'
+OUT = sys.argv[1] if len(sys.argv) > 1 else '.'; OUTFIT = sys.argv[2] if len(sys.argv) > 2 else 'vol01'
 NUM = sys.argv[3] if len(sys.argv) > 3 else '01'; ACC = sys.argv[4] if len(sys.argv) > 4 else '#E0457B'
 F = '/home/user/lgh9766/studio/assets/fonts/'
 S = 1500; INK = (43, 37, 65); CREAM = (255, 246, 224)
@@ -111,11 +111,13 @@ def cover8():  # big number
     st = haru(4.0, sticker=True); im.alpha_composite(st, (1250 - st.width // 2, S - st.height + 110))
     text(d, (100, 110), 'OPEN TO CLOSE', font('Outfit-800.ttf', 84), CREAM, sp=12)
     text(d, (104, 215), 'PLAY LIST', font('Outfit-800.ttf', 56), A, sp=18); return im
-names = ['① 썸네일 스타일', '② 미니멀 (얼굴 크게)', '③ LP 레코드', '④ 카세트 테이프', '⑤ 해 아래 걷는 하루', '⑥ 헤드폰 패턴 + 배지', '⑦ 폴라로이드', '⑧ 큰 숫자']
-ims = [f() for f in (cover1, cover2, cover3, cover4, cover5, cover6, cover7, cover8)]
-for i, im in enumerate(ims): im.convert('RGB').save(f'{OUT}/cover{i + 1}.png')
-T = 520; G = 40; sheet = Image.new('RGB', (4 * T + 5 * G, 2 * (T + 90) + G), 'white'); d = ImageDraw.Draw(sheet)
-for i, im in enumerate(ims):
-    x = G + (i % 4) * (T + G); y = G + (i // 4) * (T + 90)
-    d.text((x, y), names[i], font=font('NanumSquareRoundB.ttf', 34), fill=INK); sheet.paste(im.convert('RGB').resize((T, T), Image.LANCZOS), (x, y + 50))
-sheet.save(f'{OUT}/covers_sheet.png'); print('ok')
+def main():
+    names = ['① 썸네일 스타일', '② 미니멀 (얼굴 크게)', '③ LP 레코드', '④ 카세트 테이프', '⑤ 해 아래 걷는 하루', '⑥ 헤드폰 패턴 + 배지', '⑦ 폴라로이드', '⑧ 큰 숫자']
+    ims = [f() for f in (cover1, cover2, cover3, cover4, cover5, cover6, cover7, cover8)]
+    for i, im in enumerate(ims): im.convert('RGB').save(f'{OUT}/cover{i + 1}.png')
+    T = 520; G = 40; sheet = Image.new('RGB', (4 * T + 5 * G, 2 * (T + 90) + G), 'white'); d = ImageDraw.Draw(sheet)
+    for i, im in enumerate(ims):
+        x = G + (i % 4) * (T + G); y = G + (i // 4) * (T + 90)
+        d.text((x, y), names[i], font=font('NanumSquareRoundB.ttf', 34), fill=INK); sheet.paste(im.convert('RGB').resize((T, T), Image.LANCZOS), (x, y + 50))
+    sheet.save(f'{OUT}/covers_sheet.png'); print('ok')
+if __name__ == '__main__': main()
