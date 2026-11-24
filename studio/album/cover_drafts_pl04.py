@@ -1,4 +1,4 @@
-"""Haru's Christmas Playlist (PLAY LIST 04) album cover drafts. python3 cover_drafts_pl04.py OUTDIR"""
+"""Haru's Christmas Playlist 01 (PLAY LIST 04) album cover drafts. python3 cover_drafts_pl04.py OUTDIR"""
 import sys, math, json
 from PIL import Image, ImageDraw, ImageFilter
 OUTDIR = sys.argv[1]
@@ -10,7 +10,7 @@ ch.OUTFITS['xmas_santa'] = dict(SB['segments'][5][2])      # sky-sleigh look: re
 import cover_drafts as cd
 from cover_drafts import haru, text, font, INK, CREAM, S
 RED = (217, 64, 64); GREEN = (46, 125, 79); GOLD = (242, 194, 48); NIGHT = (24, 32, 64); SNOW = (255, 255, 255)
-TITLE = "HARU'S CHRISTMAS PLAYLIST"
+TITLE = "HARU'S CHRISTMAS PLAYLIST 01"
 
 def flakes(im, n=140, seed=4, col=(255, 255, 255, 200), rmax=7):
     import random; r = random.Random(seed); d = ImageDraw.Draw(im)
