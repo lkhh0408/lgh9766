@@ -135,3 +135,30 @@ def final18b():  # big sleigh + HARU tag, title exactly like the first 18-B
 _f = final18b().convert('RGB'); _f.save(f'{OUTDIR}/sleigh_final_preview.png')
 if K > 1: _f.resize((S * K, S * K), Image.LANCZOS).save(f'{OUTDIR}/sleigh_final_{S * K}.png')
 print('final ok')
+
+# ---- lettering variants for "Merry Christmas from Haru" (same scene) ----
+def _s(d, xy, txt, size, fill=W, anchor='mm'):
+    f = font('Pacifico-Regular.ttf', size); d.text((xy[0] + 8, xy[1] + 12), txt, font=f, fill=(0, 0, 0, 90), anchor=anchor); d.text(xy, txt, font=f, fill=fill, anchor=anchor)
+def _oc(d, y=1468, size=36): text(d, (S // 2, y), 'OPEN TO CLOSE', font('Outfit-800.ttf', size), CREAM, 'mm', sp=14)
+def L1(d):  # current
+    _s(d, (600, 1045), 'Merry', 120); _s(d, (S // 2, 1262), 'Christmas', 250); text(d, (S // 2, 1415), 'FROM HARU', font('Outfit-800.ttf', 50), GOLD, 'mm', sp=15); _oc(d)
+def L2(d):  # one line + gold script signature
+    _s(d, (S // 2, 1150), 'Merry Christmas', 170); _s(d, (S // 2 + 150, 1330), 'from Haru', 120, GOLD); _oc(d, 1465)
+def L3(d):  # stacked, same size
+    _s(d, (S // 2, 1080), 'Merry', 175); _s(d, (S // 2, 1255), 'Christmas', 200); text(d, (S // 2, 1405), 'FROM HARU', font('Outfit-800.ttf', 50), GOLD, 'mm', sp=15); _oc(d)
+def L4(d):  # big Christmas, gold Merry + gold signature
+    _s(d, (560, 1060), 'Merry', 120, GOLD); _s(d, (S // 2, 1250), 'Christmas', 250); _s(d, (1060, 1395), 'from Haru', 90, GOLD); _oc(d, 1470, 32)
+def L5(d):  # one line + red pill
+    _s(d, (S // 2, 1160), 'Merry Christmas', 175)
+    d.rounded_rectangle((S / 2 - 230, 1300, S / 2 + 230, 1390), 45, fill=(217, 64, 64)); text(d, (S // 2, 1345), 'FROM HARU', font('Outfit-800.ttf', 50), W, 'mm', sp=15); _oc(d, 1455)
+def L6(d):  # all script, centred, letter-like
+    _s(d, (S // 2, 1090), 'Merry Christmas', 160); _s(d, (S // 2, 1270), 'from Haru', 150, GOLD); _oc(d, 1450, 40)
+variants = [('1. 지금 시안', L1), ('2. 한 줄 + 금색 서명', L2), ('3. 두 줄 같은 크기', L3), ('4. 금색 Merry + 금색 서명', L4), ('5. 한 줄 + 빨간 바', L5), ('6. 전부 필기체 (편지처럼)', L6)]
+ims = []
+for n, fn in variants:
+    im = scene(); fn(ImageDraw.Draw(im)); ims.append(im); im.convert('RGB').save(f'{OUTDIR}/merry_{n[0]}.png')
+T = 560; sheet = Image.new('RGB', (3 * T + 160, 2 * (T + 80) + 40), 'white'); dd = ImageDraw.Draw(sheet)
+for i, ((n, _), im) in enumerate(zip(variants, ims)):
+    x = 40 + (i % 3) * (T + 40); y = 30 + (i // 3) * (T + 80)
+    dd.text((x, y), n, font=font('NanumSquareRoundB.ttf', 30), fill=(31, 35, 64)); sheet.paste(im.convert('RGB').resize((T, T), Image.LANCZOS), (x, y + 46))
+sheet.save(f'{OUTDIR}/merry_sheet.png'); print('merry ok')
