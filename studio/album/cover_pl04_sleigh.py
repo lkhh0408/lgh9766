@@ -123,3 +123,14 @@ for i, (n, im) in enumerate(zip(labels, ims)):
     x = 40 + (i % 3) * (T + 40); y = 30 + (i // 3) * (T + 80)
     dd.text((x, y), n, font=font('NanumSquareRoundB.ttf', 30), fill=(31, 35, 64)); sheet.paste(im.convert('RGB').resize((T, T), Image.LANCZOS), (x, y + 46))
 sheet.save(f'{OUTDIR}/sleigh_sheet3.png'); print('ok')
+
+def final18b():  # big sleigh + HARU tag, title exactly like the first 18-B
+    im = scene(); d = ImageDraw.Draw(im)
+    title(d, 1230, (0, 0, 0, 0), W, GOLD, 250); text(d, (S // 2, 1455), 'OPEN TO CLOSE', font('Outfit-800.ttf', 50), CREAM, 'mm', sp=14)
+    f = font('Outfit-800.ttf', 50); sp = 15; tw = sum(d.textlength(c_, font=f) + sp for c_ in "HARU'S") - sp; x = S / 2 - tw / 2
+    for c_ in "HARU'S":   # navy outline so it stays readable over the moon
+        d.text((x, 1075), c_, font=f, fill=CREAM, anchor='lm', stroke_width=7, stroke_fill=NIGHT); x += d.textlength(c_, font=f) + sp
+    return im
+_f = final18b().convert('RGB'); _f.save(f'{OUTDIR}/sleigh_final_preview.png')
+if K > 1: _f.resize((S * K, S * K), Image.LANCZOS).save(f'{OUTDIR}/sleigh_final_{S * K}.png')
+print('final ok')
